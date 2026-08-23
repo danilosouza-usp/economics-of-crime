@@ -1,0 +1,41 @@
+project:
+  output-dir: docs/undergraduate-pt
+
+lang: pt-BR
+
+book:
+  title: "Economia do Crime"
+  subtitle: "Faculdade de Economia, Administração, Contabilidade e Atuária<br>Universidade de São Paulo"
+  author: "[Danilo Souza](https://www.danilosouza.com/)"
+  date: "2026-08-24"
+  date-format: "DD [ de ] MMMM, YYYY"
+  #cover-image: images/python_code.png
+
+  site-url: https://danilosouza-usp.github.io/economics-of-crime/undergraduate-pt/
+
+  page-footer:
+    left: "© 2026 [Danilo Souza](https://www.danilosouza.com/) · Departamento de Economia · FEA-USP"
+    right: "Notas de aula de **EAE1247 — Economia do Crime** · Feito com [Quarto](https://quarto.org/)"
+  
+  chapters:
+    - index.qmd
+    - undergrad/prefacio.qmd
+    
+    - part: undergrad/modelo_racional.qmd
+      chapters:
+        - undergrad/Becker1968.qmd
+        - undergrad/Ehrlich1973.qmd
+        
+    #- part: classic_evidence.qmd
+    #  chapters:
+    #    - policing.qmd
+    #    - incarceration.qmd
+    #    - labor_markets.qmd
+    #    - education.qmd
+        
+    #- part: topics.qmd
+    #  chapters:
+    #    - organized_crime.qmd
+    #    - illegal_markets.qmd
+      
+    - undergrad/referencias.qmd

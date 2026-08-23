@@ -1,0 +1,44 @@
+project:
+  output-dir: docs/graduate-en
+
+lang: en-US
+
+book:
+  title: "Economics of Crime"
+  subtitle: "Department of Economics, School of Economics, Business and Accounting<br>University of São Paulo"
+  author: "[Danilo Souza](https://www.danilosouza.com/)"
+  date: "2026-08-24"
+  date-format: "MMMM DD, YYYY"
+  #cover-image: images/python_code.png
+
+  site-url: https://danilosouza-usp.github.io/economics-of-crime/graduate-en/
+
+  page-footer:
+    left: "© 2026 [Danilo Souza](https://www.danilosouza.com/) · Department of Economics · FEA-USP"
+    right: "Lecture Notes of **EAE6089 — Economics of Crime I** · Made with [Quarto](https://quarto.org/)"
+  
+  chapters:
+    - index.qmd
+    - grad/preface.qmd
+    
+    - part: grad/rational_model.qmd
+      chapters:
+        - grad/BeckerEhrlich.qmd
+        - grad/Dynamics.qmd
+        
+    #- part: grad/classic_evidence.qmd
+    #  chapters:
+    #    - grad/policing.qmd
+    #    - grad/incarceration.qmd
+    #    - grad/labor_markets.qmd
+    #    - grad/education.qmd
+        
+    #- part: grad/topics.qmd
+    #  chapters:
+    #    - grad/organized_crime.qmd
+    #    - grad/illegal_markets.qmd
+      
+    - grad/references.qmd
+
+
+

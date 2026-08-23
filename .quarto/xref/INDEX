@@ -1,0 +1,35 @@
+{
+  "index.qmd": {
+    "index.html": "3490d2a4"
+  },
+  "undergrad/prefacio.qmd": {
+    "prefacio.html": "ef95561f"
+  },
+  "undergrad/modelo_racional.qmd": {
+    "modelo_racional.html": "499b2a64"
+  },
+  "undergrad/Becker1968.qmd": {
+    "Becker1968.html": "d9d3784b"
+  },
+  "undergrad/Ehrlich1973.qmd": {
+    "Ehrlich1973.html": "ae925507"
+  },
+  "undergrad/referencias.qmd": {
+    "referencias.html": "03f2064b"
+  },
+  "grad/preface.qmd": {
+    "preface.html": "0df9489f"
+  },
+  "grad/rational_model.qmd": {
+    "rational_model.html": "02fe5267"
+  },
+  "grad/BeckerEhrlich.qmd": {
+    "BeckerEhrlich.html": "b08225d0"
+  },
+  "grad/Dynamics.qmd": {
+    "Dynamics.html": "21a96c65"
+  },
+  "grad/references.qmd": {
+    "references.html": "126b3dd4"
+  }
+}

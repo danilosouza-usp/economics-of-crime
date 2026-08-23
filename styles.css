@@ -1,0 +1,138 @@
+/* Remove o título textual do livro na sidebar (reader-mode) */
+.sidebar .sidebar-title {
+  display: none;
+}
+
+/* Headings */
+
+.quarto-section-identifier {
+  color: #6C6C6C;
+  font-weight: 600;
+}
+
+.content h2.anchored,
+.content h3.anchored,
+.content h4.anchored {
+  color: #2b2b2b;
+  font-weight: 300;
+}
+
+/* Aumenta a largura máxima do conteúdo principal */
+.page-columns {
+    grid-template-columns:
+        1fr
+        minmax(0, min(960px, 90vw))
+        1fr;
+}
+
+/* Quando há TOC à direita */
+.page-columns.toc-right {
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, min(960px, 90vw))
+        minmax(0, 300px);
+}
+
+/* Código e figuras podem usar mais espaço */
+.content pre,
+.content figure {
+    max-width: 100%;
+}
+
+/* Formatação do código */
+code {
+    color: #373a3c;
+}
+
+code a:any-link {
+    text-decoration: underline;
+    text-decoration-color: #ccc;
+}
+
+div.sourceCode {
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+pre.sourceCode {
+    background-image: linear-gradient(160deg,#f8f8f8 0,#f1f1f1 100%);
+    padding: 0.35rem 0.6rem;
+}
+
+li pre.sourceCode code {
+    background-image: linear-gradient(160deg,#f8f8f8 0,#f1f1f1 100%);
+}
+
+/* Bloco de saída de código*/
+.cell-output {
+    background-color: #f7f7f8;
+    border-left: 3px solid #7fa0e7;
+    padding: 0.35rem 0.6rem;
+    border-radius: 5px;
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Output textual */
+.cell-output pre {
+    font-family: "Source Code Pro", Consolas, monospace;
+    margin: 0;
+    padding: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background: none;
+    border: none;
+    box-shadow: none;  
+}
+
+/* Lista de pré-requisitos*/
+.content p code,
+.content ul code {
+    background: #F2F6FC;
+    color: #2563EB;
+    padding: 0.15em 0.3em 0.15em 0.3em;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* Tipografia dos callouts = texto normal */
+.content .callout-body-container,
+.content .callout-body-container p,
+.content .callout-body-container li {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Padding já ajustado por você */
+.content .callout-body-container {
+    padding: 0.75rem 1rem;
+}
+
+/* Header do callout */
+.content .callout-header {
+    padding: 0.35rem 1rem;
+}
+
+/* Título */
+.content .callout-title-container {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+/* Tabelas */
+table.table thead th {
+  background-color: #eef2fb;
+  color: #2f2f2f;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  border-bottom: 2px solid #d6def3;
+}
+
+table td .math {
+  font-size: 0.9em;
+}

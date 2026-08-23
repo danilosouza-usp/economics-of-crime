@@ -1,0 +1,43 @@
+project:
+  type: book
+
+profile:
+  group: 
+    - [undergraduate, graduate]
+
+book:
+  author: "[Danilo Souza](https://www.danilosouza.com/)"
+  date: "2026-08-24"
+  date-format: "DD [ de ] MMMM, YYYY"
+  reader-mode: true
+
+  repo-url: https://github.com/danilosouza-usp/economics-of-crime
+  repo-branch: main
+  repo-actions: [edit, issue]
+
+  sidebar:
+    search: false
+    #logo: images/usp-logo.jpg
+
+bibliography: crime_refs.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    number-sections: true
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    code-fold: false
+    css: styles.css
+    highlight-style: pygments
+    link-external-newwindow: true
+    author-meta: "Danilo Souza"
+    reference-location: document
+
+
+
+
+
