@@ -118,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./undergrad/prefacio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./undergrad/Becker1968.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first contributions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Modelo de custos e benefícios: Becker (1968)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -147,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./undergrad/referencias.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Referências bibliográficas</span></a>
   </div>
 </li>
     </ul>
@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#como-usar" id="toc-como-usar" class="nav-link" data-scroll-target="#como-usar">Como usar</a></li>
   <li><a href="#histórico-de-atualizações" id="toc-histórico-de-atualizações" class="nav-link" data-scroll-target="#histórico-de-atualizações">Histórico de atualizações</a></li>
-  <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
+  <li><a href="#agradecimentos" id="toc-agradecimentos" class="nav-link" data-scroll-target="#agradecimentos">Agradecimentos</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
@@ -207,33 +207,29 @@ ul.task-list li input[type="checkbox"] {
 <!-- UNDERGRADUATE INDEX -->
 <section id="sobre-este-material" class="level1 unnumbered">
 <h1 class="unnumbered">Sobre este material</h1>
-<p>Este website reúne o material didático da disciplina <a href="https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&amp;sgldis=eae1106"><strong>EAE1106 — Métodos Computacionais para Economia</strong></a>, ministrada no Departamento de Economia da Universidade de São Paulo. Tal disciplina faz parte da grade de matérias obrigatórias e é oferecida no 3º semestre do Bacharelado em Ciências Econômicas.</p>
-<p>A disciplina tem o objetivo de introduzir os estudantes ao raciocínio computacional, aos conceitos relevantes de computação, e às suas aplicações para resolver problemas relevantes no campo da Economia. Como linguagem principal para introdução à lógica de programação e análise de dados, o curso utilizará o <strong>Python</strong>, amplamente utilizado em diversas áreas das ciências e do mercado de trabalho. Espera-se que ao final do curso o estudante tenha, além do domínio sobre a sintaxe da linguagem utilizada no curso, capacidade de formular e resolver problemas desde a sua concepção até a forma de apresentação, numérica e visual, das análises.</p>
-<p>O conteúdo aqui disponível foi desenvolvido para apoiar as aulas ao longo do semestre e servir como referência permanente para os estudantes. As notas combinam texto explicativo, exemplos de código executável e aplicações empíricas, com foco no desenvolvimento de habilidades práticas em programação e análise de dados. O material está organizado como um livro digital, estruturado em capítulos que acompanham a progressão da disciplina. Cada capítulo pode ser lido de forma sequencial ou consultado de maneira independente, conforme a necessidade do leitor.</p>
+<p>Este website reúne as notas de aula da disciplina <a href="https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&amp;sgldis=eae1247"><strong>EAE1247 — Economia do Crime</strong></a>, oferecida pelo Departamento de Economia da Faculdade de Economia, Administração, Contabilidade e Atuária da Universidade de São Paulo (FEA-USP) no Bacharelado em Ciências Econômicas.</p>
+<p>As notas apresentam os principais conceitos e ferramentas utilizados pela Economia para estudar o crime e a violência. O material parte da abordagem econômica da decisão individual de cometer crimes e avança para a análise dos determinantes da criminalidade, das instituições e políticas de segurança pública e de diferentes mecanismos por meio dos quais o crime afeta a sociedade e a economia.</p>
+<p>O objetivo das notas é oferecer uma apresentação organizada e acessível dos temas discutidos ao longo da disciplina, combinando modelos econômicos, evidências empíricas e referências à literatura acadêmica. O material procura, sempre que possível, conectar os modelos teóricos às evidências utilizadas para avaliar suas implicações.</p>
 <section id="como-usar" class="level2">
 <h2 class="anchored" data-anchor-id="como-usar">Como usar</h2>
-<p>Este material foi desenvolvido para ser utilizado em conjunto com as aulas presenciais. Os capítulos seguem, em linhas gerais, a ordem do curso. Recomenda-se que o estudante leia o capítulo correspondente a cada aula, executando os exemplos de código em seu próprio computador ou outro ambiente de programção configurado conforme indicado ao longo do curso. Ler código sem executá-lo raramente é suficiente para desenvolver fluência em qualquer linguagem de programação; a compreensão dos conceitos e implementação prática depende da experimentação direta e contínua.</p>
-<p>O código apresentado ao longo do texto é executável e foi concebido para ser modificado. Alterar o código, cometer erros e observar o comportamento do programa são etapas naturais e desejáveis no aprendizado de programação. Erros não indicam falha; eles fornecem informação sobre como o código funciona.</p>
-<p>Os capítulos incluem exemplos, observações e exercícios. Esses elementos têm objetivos distintos:</p>
-<ul>
-<li><p>Exemplos ilustram conceitos apresentados no texto.</p></li>
-<li><p>Observações destacam detalhes importantes ou armadilhas comuns.</p></li>
-<li><p>Exercícios têm como objetivo consolidar o conteúdo do capítulo e preparar o estudante para aplicações mais complexas. <strong>Não deixe de fazê-los</strong>.</p></li>
-</ul>
-<p>Este material não foi pensado para ser lido do início ao fim de forma linear, como um texto tradicional, e tampouco substitui as aulas. Ele pode ser consultado conforme a necessidade, servindo como referência contínua durante o curso e após seu término. O objetivo é que, ao final da disciplina, o estudante se sinta mais confortável em utilizar linguagens de programação como ferramentas para organizar dados, explorar informações e apoiar análises empíricas em economia.</p>
+<p>As notas foram desenvolvidas para acompanhar as aulas da disciplina e devem ser utilizadas em conjunto com as discussões realizadas em sala e com as referências bibliográficas indicadas ao longo do curso.</p>
+<p>Os capítulos seguem, em linhas gerais, a organização da disciplina. Eles podem ser lidos sequencialmente para acompanhar o desenvolvimento dos tópicos ou consultados individualmente como referência para temas específicos.</p>
+<p>As notas não substituem a leitura dos artigos e demais referências indicadas no curso. Seu objetivo é fornecer uma estrutura para organizar os conceitos, modelos e resultados empíricos discutidos nas aulas e servir como material de consulta durante e após a disciplina.</p>
+<p>O material é atualizado continuamente à medida que novos resultados da literatura são incorporados, exemplos são revisados e o conteúdo da disciplina é aprimorado.</p>
 </section>
 <section id="histórico-de-atualizações" class="level2">
 <h2 class="anchored" data-anchor-id="histórico-de-atualizações">Histórico de atualizações</h2>
-<p>Este website é atualizado continuamente, refletindo <em>feedbacks</em> a respeito do conteúdo e incorporação de novos pacotes e atualizações.</p>
+<p>Este website é atualizado continuamente, refletindo <em>feedbacks</em> a respeito do conteúdo, incorporação de novos resultados da literatura e ajustes na estrutura da disciplina.</p>
 <ul>
-<li><strong>August 24, 2026</strong>: Correção de typos e ajustes de texto; inclusão da versão inicial do capítulo 12.</li>
+<li><strong>24 de Agosto, 2026</strong>: Disponibilização da primeira versão das notas de aula e dos capítulo 1 e 2.</li>
 </ul>
 </section>
-<section id="acknowledgments" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgments">Acknowledgments</h2>
-<p>Esse material deve muito ao Prof.&nbsp;<a href="https://www.claudiolucinda.net/">Claudio Ribeiro de Lucinda</a>. Parte importante do conteúdo foi desenvolvida de forma conjunta entre eu e o Prof.&nbsp;Claudio ao longo do segundo semestre de 2022, ano em que o curso foi oferecido pela primeira vez como uma matéria obrigatória de 30h no Bacharelado em Ciências Econômicas da FEA-USP. Agradecimento especial a Tomás Polido Garcia, que, enquanto monitor da matéria no primeiro semestre de 2026, ajudou muito na elaboração de exercícios e <em>feedbacks</em> em relação aos capítulos após a conversão do curso em uma matéria de 60h.</p>
-<p>Este material é de propriedade intelectual do autor e não deve ser copiado ou reproduzido para fins comerciais. Não houve, até o momento, revisão técnica do material, de modo que o uso para fins acadêmicos é de inteira responsabilidade daquele que decidir por assim utilizar o material. Eventuais erros ou imprecisões são de responsabilidade exclusiva do autor do material.</p>
-<p>Sugestões de ajuste e melhorias são muito bem-vindas, inclusive através de <em>issues</em> via GitHub. Caso queira, você pode me contactar em: danilosouza@usp.br <br><br></p>
+<section id="agradecimentos" class="level2">
+<h2 class="anchored" data-anchor-id="agradecimentos">Agradecimentos</h2>
+<p>[Inserir agradecimentos, caso aplicável.]</p>
+<p>Este material é de propriedade intelectual do autor e não deve ser copiado ou reproduzido para fins comerciais. Não houve, até o momento, revisão técnica completa do material, de modo que o uso para fins acadêmicos é de inteira responsabilidade daquele que decidir por assim utilizar o material. Eventuais erros ou imprecisões são de responsabilidade exclusiva do autor do material.</p>
+<p>Sugestões de ajustes e melhorias são muito bem-vindas, inclusive através de <em>issues</em> via GitHub. Caso queira, você pode me contactar em: danilosouza@usp.br</p>
+<p><br><br></p>
 <div style="text-align: right;">
 <p>Danilo Souza <br> Professor Associado em Economia <br> FEA-USP, Agosto 2026</p>
 </div>
@@ -653,8 +649,8 @@ ul.task-list li input[type="checkbox"] {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./undergrad/prefacio.html" class="pagination-link" aria-label="Preface">
-        <span class="nav-page-text">Preface</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./undergrad/prefacio.html" class="pagination-link" aria-label="Prefacio">
+        <span class="nav-page-text">Prefacio</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

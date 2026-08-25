@@ -8,7 +8,7 @@
 
 <meta name="author" content="Danilo Souza">
 
-<title>Preface – Economia do Crime</title>
+<title>Prefacio – Economia do Crime</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,6 +72,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -85,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../undergrad/prefacio.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../undergrad/prefacio.html">Prefacio</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -119,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../undergrad/prefacio.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -134,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../undergrad/Becker1968.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">The first contributions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Modelo de custos e benefícios: Becker (1968)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -148,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../undergrad/referencias.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">Referências bibliográficas</span></a>
   </div>
 </li>
     </ul>
@@ -156,15 +185,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#evolução-do-campo-de-pesquisa" id="toc-evolução-do-campo-de-pesquisa" class="nav-link active" data-scroll-target="#evolução-do-campo-de-pesquisa">Evolução do campo de pesquisa</a></li>
+  <li><a href="#crimes-violentos-mundo-versus-américa-latina" id="toc-crimes-violentos-mundo-versus-américa-latina" class="nav-link" data-scroll-target="#crimes-violentos-mundo-versus-américa-latina">Crimes violentos: Mundo <em>versus</em> América Latina</a></li>
+  <li><a href="#a-evolução-da-violência-no-brasil" id="toc-a-evolução-da-violência-no-brasil" class="nav-link" data-scroll-target="#a-evolução-da-violência-no-brasil">A evolução da violência no Brasil</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/undergrad/prefacio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-preface" class="quarto-section-identifier">Preface</span></h1>
+<h1 class="title"><span id="sec-prefacio" class="quarto-section-identifier">Prefacio</span></h1>
 </div>
 
 
@@ -181,22 +218,35 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Este material foi desenvolvido como apoio didático para a disciplina EAE1106 – Métodos Computacionais para Economia, ministrada pelo Departamento de Economia da Universidade de São Paulo. A disciplina tem por objetivo oferecer aos estudantes uma introdução sistemática à lógica de programação e às técnicas de análise de dados utilizando linguagens de programação, com ênfase em <strong>Python</strong> e uma breve introdução a <strong>R</strong> ao final do semestre.</p>
-<p>O curso parte da motivação de que grande parte das perguntas contemporâneas em economia – desde a exploração de grandes bases de dados até a implementação de simulações e modelos numéricos – exige o uso de ferramentas computacionais para organizar, manipular, visualizar e interpretar dados de forma eficiente. Consequentemente, a capacidade de expressar uma sequência de operações de forma reproduzível e automatizada é uma competência essencial para economistas que desejam conduzir análises empíricas rigorosas e comunicar resultados de forma clara e estruturada.</p>
-<p>Este material foi concebido com duas orientações principais:</p>
+<p>A atividade criminosa está entre os principais desafios enfrentados por sociedades modernas, com impactos diretos sobre o bem-estar individual, o desenvolvimento econômico e a estabilidade institucional. Crimes comprometem a segurança pública, aumentam os custos de transação, reduzem o investimento em capital humano e físico, e impõem pesadas despesas ao Estado com policiamento, justiça criminal e encarceramento. Diante disso, a economia do crime busca compreender esse fenômeno a partir de uma abordagem analítica baseada em incentivos, restrições e escolhas racionais. Entre as perguntas centrais da área estão:</p>
 <ul>
-<li><p><strong>Progressão pedagógica gradual</strong>. O conteúdo inicia por fundamentos de lógica de programação, tipos de dados e objetos dentro da linguagem, controle de fluxo e funções, e evolui para tópicos aplicados de manipulação de dados, álgebra linear, visualização e análise integrada de dados. A estrutura dos capítulos foi planejada para acompanhar as etapas do raciocínio computacional e da análise empírica.</p></li>
-<li><p><strong>Aplicação orientada a problemas econômicos</strong>. Sempre que possível, os exemplos e exercícios são contextualizados em questões empíricas de interesse econômico, tais como manipulação e análise de bases de dados administrativas, cálculo de estatísticas descritivas e visualização exploratória. Isso visa reforçar a conexão entre métodos computacionais e aplicações reais em pesquisa econômica.</p></li>
+<li>Por que indivíduos cometem crimes?</li>
+<li>Como o ambiente institucional e as condições socioeconômicas afetam esse comportamento?</li>
+<li>Quais políticas são eficazes para prevenir ou punir o crime?</li>
 </ul>
-<p>Além dessas orientações gerais, o curso está organizado em três grandes blocos de conteúdo, que estruturam tanto as aulas quanto este material:</p>
-<ol type="1">
-<li><p><strong>Alfabetização computacional e lógica básica</strong>, que introduz os conceitos fundamentais de computação, a interação entre linguagens de programação e modelos de inteligência artificial, tipos primitivos e objetos básicos dentro do Python, além de como implementar controle de fluxo, iteração, funções personalizadas dentro da linguagem.</p></li>
-<li><p><strong>Computação numérica, análise de dados e visualização</strong>, com foco em estruturas matriciais e álgebra linear através do uso do pacote <code>NumPy</code>, manipulação eficiente de dados em dataframes com <code>Pandas</code>, construção e personalização de gráficos, e princípios básicos de visualização de dados, culminando em uma análise empírica integrada que enfatiza organização de projetos, reprodutibilidade e construção de pipelines completos.</p></li>
-<li><p><strong>Temas complementares</strong>, que incluem uma pequena introdução a tópicos mais avançados, como a programação orientada a objetos, e uma breve introdução à linguagem R, com o objetivo de familiarizar o estudante com outro ecossistema amplamente utilizado em análise empírica e principal linguagem utilizada ao longo da sequência de cursos obrigatórios de Econometria.</p></li>
-</ol>
-<p>De forma geral, o conteúdo foi organizado como um livro digital interativo, com exemplos de código e saídas esperadas, visualizações e anotações integradas. O uso de linguagens de programação neste formato permite que o leitor aprenda de forma construtiva e ativa, facilitando a compreensão da sintaxe, lógica e aprendendo a avaliar erros e como corrigí-los. Espero que este material seja útil tanto para estudantes que se aproximam pela primeira vez da programação aplicada à economia quanto para aqueles que desejam reforçar e aplicar os conceitos em trabalhos empíricos e projetos de pesquisa.</p>
+<p>Questões como essas fazem parte da área de pesquisa desde a sua fundação, embora tenham ganhado corpo, teórico e empírico, mais recentemente com uma maior disponibilidade de método econométricos modernos e dados granulares.</p>
+<section id="evolução-do-campo-de-pesquisa" class="level2">
+<h2 class="anchored" data-anchor-id="evolução-do-campo-de-pesquisa">Evolução do campo de pesquisa</h2>
+<p>O marco inicial da literatura econômica sobre o tema remonta a Gary Becker (1968), que formalizou o ato criminoso como uma decisão racional: indivíduos comparam os benefícios esperados da atividade ilegal com os custos esperados de ser punido. Essa estrutura afastou a análise do crime de explicações exclusivamente normativas, psicológicas ou sociológicas, e permitiu tratá-lo como um comportamento econômico sujeito a incentivos e restrições. Poucos anos depois, Isaac Ehrlich (1973) avançou nesse programa ao fornecer evidência empírica de que a severidade e a probabilidade de punição influenciam decisões criminosas, fortalecendo o argumento de que políticas públicas podem moldar o comportamento ilegal por meio de incentivos concretos.</p>
+<p>Desde então, o campo se expandiu consideravelmente, tanto em escopo quanto em sofisticação metodológica. Hoje, a economia do crime aborda uma gama variada de temas contemporâneos, como os efeitos da imigração sobre a criminalidade, o papel de redes sociais e capital social na propagação do comportamento criminoso, a atuação do crime organizado e o funcionamento de mercados ilegais — especialmente o de drogas — e os impactos de políticas públicas como policiamento, encarceramento, transferências de renda e intervenções urbanas. A incorporação de dados em alta frequência, georreferenciados, e o avanço de métodos de identificação causal têm sido fundamentais para esse progresso. A área também se tornou mais interdisciplinar, dialogando com a criminologia, ciência política e sociologia.</p>
+<p>O resultado é uma produção acadêmica crescente e diversificada. A Figura <span class="math inline">\(\ref{fig:papers_jd}\)</span> ilustra essa tendência, mostrando a evolução do número de publicações acadêmicas dedicadas à economia do crime nas últimas décadas:</p>
+<p>[INSERIR FIGURA]</p>
+</section>
+<section id="crimes-violentos-mundo-versus-américa-latina" class="level2">
+<h2 class="anchored" data-anchor-id="crimes-violentos-mundo-versus-américa-latina">Crimes violentos: Mundo <em>versus</em> América Latina</h2>
+<p>Nos últimos anos, observou-se uma tendência geral de queda nas taxas de crimes violentos em várias partes do mundo, especialmente em países de alta renda. Essa redução tem sido associada a uma combinação de fatores, incluindo mudanças demográficas, melhorias em tecnologia policial, políticas públicas mais eficazes e aumento nos investimentos em capital humano. No entanto, essa tendência global precisa ser interpretada com cautela, dado o problema persistente de subnotificação e diferenças na qualidade dos registros criminais entre países. Mesmo com essa ressalva, os dados disponíveis indicam que, em termos agregados, o mundo está se tornando menos violento. Utilizando dados do Banco Mundial para uma amostra de 61 países, que respondem por mais de <span class="math inline">\(4.6\)</span> bilhões de habitantes e possuem dados para todo o intervalo <span class="math inline">\(2002-2018\)</span>, a taxa de homicídio mundial caiu cerca de <span class="math inline">\(28\%\)</span> no período, de <span class="math inline">\(6.62\)</span> para <span class="math inline">\(4.77\)</span> a cada <span class="math inline">\(100{,}000\)</span> habitantes.</p>
+<p>Essa queda global, contudo, mascara uma distribuição extremamente desigual da violência. A América Latina é o caso mais evidente dessa disparidade. Utilizando essa mesma amostra de 61 países, países da região respondem por um fração constante de <span class="math inline">\(10\%\)</span> da população mundial, mas respondem por uma fração crescente dos homicídios registrados no planeta, tendo atingido impressionantes <span class="math inline">\(53\%\)</span> em 2018. Esse descompasso tem sido persistente e revela um padrão estrutural: a violência letal na América Latina não decorre de conflitos armados ou guerras civis em curso, mas de fatores internos, como instituições frágeis, baixa capacidade estatal, desigualdade elevada, mercados ilegais lucrativos e disputas territoriais entre grupos criminosos. A Figura a <span class="math inline">\(\ref{fig:world_latam}\)</span> ilustra essa assimetria, comparando a participação da América Latina na população global com sua participação nos crimes violentos reportados internacionalmente:</p>
+<p>[INSERIR FIGURA]</p>
+</section>
+<section id="a-evolução-da-violência-no-brasil" class="level2">
+<h2 class="anchored" data-anchor-id="a-evolução-da-violência-no-brasil">A evolução da violência no Brasil</h2>
+<p>O Brasil se destaca como um caso emblemático dentro desse contexto. Nas últimas décadas, o país esteve entre os líderes mundiais em número absoluto de homicídios. Contudo, a dinâmica recente mostra uma reconfiguração regional importante. A partir de meados da década de 2010, observou-se uma redução significativa das taxas de homicídio em estados do Sudeste, como São Paulo, Rio de Janeiro e Minas Gerais. Diversos fatores são apontados como possíveis explicações: mudanças demográficas, políticas estaduais de segurança mais focalizadas, transformações nas estruturas do crime organizado e a consolidação de monopólios territoriais por facções em determinadas áreas.</p>
+<p>Em contrapartida, o Norte e especialmente o Nordeste do Brasil passaram a registrar aumentos expressivos nas taxas de violência letal no mesmo período. Essa transição geográfica da violência parece estar relacionada à expansão de facções criminosas interestaduais, à ausência de coordenação entre políticas de segurança pública, à maior vulnerabilidade institucional e ao enfraquecimento da presença estatal nessas regiões. A Figura <span class="math inline">\(\ref{fig:crimes_brasil}\)</span> mostra a evolução das taxas de homicídio no Brasil ao longo do tempo, destacando o contraste entre a tendência de queda no Sudeste e o aumento preocupante no Nordeste:</p>
+<p>[INSERIR FIGURA]</p>
+<p>Esse padrão desigual de violência, tanto entre países quanto dentro de um mesmo território, é central para a agenda contemporânea da economia do crime. Ele impõe a necessidade de análises contextuais, baseadas em evidência empírica de qualidade, capazes de informar políticas públicas com foco na prevenção, na repressão inteligente e na construção de instituições mais eficazes e legítimas.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -624,7 +674,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/undergrad/prefacio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/undergrad/prefacio.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Notas de aula de <strong>EAE1247 — Economia do Crime</strong> · Feito com <a href="https://quarto.org/">Quarto</a></p>
 </div>

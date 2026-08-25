@@ -4,41 +4,36 @@
 
 # Sobre este material {.unnumbered}
 
-Este website reúne o material didático da disciplina [**EAE1106 — Métodos Computacionais para Economia**](https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=eae1106), ministrada no Departamento de Economia da Universidade de São Paulo. Tal disciplina faz parte da grade de matérias obrigatórias e é oferecida no 3º semestre do Bacharelado em Ciências Econômicas.
+Este website reúne as notas de aula da disciplina [**EAE1247 — Economia do Crime**](https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=eae1247), oferecida pelo Departamento de Economia da Faculdade de Economia, Administração, Contabilidade e Atuária da Universidade de São Paulo (FEA-USP) no Bacharelado em Ciências Econômicas.
 
-A disciplina tem o objetivo de introduzir os estudantes ao raciocínio computacional, aos conceitos relevantes de computação, e às suas aplicações para resolver problemas relevantes no campo da Economia. Como linguagem principal para introdução à lógica de programação e análise de dados, o curso utilizará o **Python**, amplamente utilizado em diversas áreas das ciências e do mercado de trabalho. Espera-se que ao final do curso o estudante tenha, além do domínio sobre a sintaxe da linguagem utilizada no curso, capacidade de formular e resolver problemas desde a sua concepção até a forma de apresentação, numérica e visual, das análises.
+As notas apresentam os principais conceitos e ferramentas utilizados pela Economia para estudar o crime e a violência. O material parte da abordagem econômica da decisão individual de cometer crimes e avança para a análise dos determinantes da criminalidade, das instituições e políticas de segurança pública e de diferentes mecanismos por meio dos quais o crime afeta a sociedade e a economia.
 
-O conteúdo aqui disponível foi desenvolvido para apoiar as aulas ao longo do semestre e servir como referência permanente para os estudantes. As notas combinam texto explicativo, exemplos de código executável e aplicações empíricas, com foco no desenvolvimento de habilidades práticas em programação e análise de dados. O material está organizado como um livro digital, estruturado em capítulos que acompanham a progressão da disciplina. Cada capítulo pode ser lido de forma sequencial ou consultado de maneira independente, conforme a necessidade do leitor.
+O objetivo das notas é oferecer uma apresentação organizada e acessível dos temas discutidos ao longo da disciplina, combinando modelos econômicos, evidências empíricas e referências à literatura acadêmica. O material procura, sempre que possível, conectar os modelos teóricos às evidências utilizadas para avaliar suas implicações.
 
 ## Como usar
 
-Este material foi desenvolvido para ser utilizado em conjunto com as aulas presenciais. Os capítulos seguem, em linhas gerais, a ordem do curso. Recomenda-se que o estudante leia o capítulo correspondente a cada aula, executando os exemplos de código em seu próprio computador ou outro ambiente de programção configurado conforme indicado ao longo do curso. Ler código sem executá-lo raramente é suficiente para desenvolver fluência em qualquer linguagem de programação; a compreensão dos conceitos e implementação prática depende da experimentação direta e contínua. 
+As notas foram desenvolvidas para acompanhar as aulas da disciplina e devem ser utilizadas em conjunto com as discussões realizadas em sala e com as referências bibliográficas indicadas ao longo do curso.
 
-O código apresentado ao longo do texto é executável e foi concebido para ser modificado. Alterar o código, cometer erros e observar o comportamento do programa são etapas naturais e desejáveis no aprendizado de programação. Erros não indicam falha; eles fornecem informação sobre como o código funciona.
+Os capítulos seguem, em linhas gerais, a organização da disciplina. Eles podem ser lidos sequencialmente para acompanhar o desenvolvimento dos tópicos ou consultados individualmente como referência para temas específicos.
 
-Os capítulos incluem exemplos, observações e exercícios. Esses elementos têm objetivos distintos:
+As notas não substituem a leitura dos artigos e demais referências indicadas no curso. Seu objetivo é fornecer uma estrutura para organizar os conceitos, modelos e resultados empíricos discutidos nas aulas e servir como material de consulta durante e após a disciplina.
 
-- Exemplos ilustram conceitos apresentados no texto.
-
-- Observações destacam detalhes importantes ou armadilhas comuns.
-
-- Exercícios têm como objetivo consolidar o conteúdo do capítulo e preparar o estudante para aplicações mais complexas. **Não deixe de fazê-los**.
-
-Este material não foi pensado para ser lido do início ao fim de forma linear, como um texto tradicional, e tampouco substitui as aulas. Ele pode ser consultado conforme a necessidade, servindo como referência contínua durante o curso e após seu término. O objetivo é que, ao final da disciplina, o estudante se sinta mais confortável em utilizar linguagens de programação como ferramentas para organizar dados, explorar informações e apoiar análises empíricas em economia.
+O material é atualizado continuamente à medida que novos resultados da literatura são incorporados, exemplos são revisados e o conteúdo da disciplina é aprimorado.
 
 ## Histórico de atualizações
 
-Este website é atualizado continuamente, refletindo _feedbacks_ a respeito do conteúdo e incorporação de novos pacotes e atualizações.
+Este website é atualizado continuamente, refletindo *feedbacks* a respeito do conteúdo, incorporação de novos resultados da literatura e ajustes na estrutura da disciplina.
 
-- **August 24, 2026**: Correção de typos e ajustes de texto; inclusão da versão inicial do capítulo 12.
+- **24 de Agosto, 2026**: Disponibilização da primeira versão das notas de aula e dos capítulo 1 e 2.
 
-## Acknowledgments
+## Agradecimentos
 
-Esse material deve muito ao Prof. [Claudio Ribeiro de Lucinda](https://www.claudiolucinda.net/). Parte importante do conteúdo foi desenvolvida de forma conjunta entre eu e o Prof. Claudio ao longo do segundo semestre de 2022, ano em que o curso foi oferecido pela primeira vez como uma matéria obrigatória de 30h no Bacharelado em Ciências Econômicas da FEA-USP. Agradecimento especial a Tomás Polido Garcia, que, enquanto monitor da matéria no primeiro semestre de 2026, ajudou muito na elaboração de exercícios e *feedbacks* em relação aos capítulos após a conversão do curso em uma matéria de 60h.
+[Inserir agradecimentos, caso aplicável.]
 
-Este material é de propriedade intelectual do autor e não deve ser copiado ou reproduzido para fins comerciais. Não houve, até o momento, revisão técnica do material, de modo que o uso para fins acadêmicos é de inteira responsabilidade daquele que decidir por assim utilizar o material. Eventuais erros ou imprecisões são de responsabilidade exclusiva do autor do material. 
+Este material é de propriedade intelectual do autor e não deve ser copiado ou reproduzido para fins comerciais. Não houve, até o momento, revisão técnica completa do material, de modo que o uso para fins acadêmicos é de inteira responsabilidade daquele que decidir por assim utilizar o material. Eventuais erros ou imprecisões são de responsabilidade exclusiva do autor do material.
 
-Sugestões de ajuste e melhorias são muito bem-vindas, inclusive através de _issues_ via GitHub. Caso queira, você pode me contactar em: danilosouza\@usp.br
+Sugestões de ajustes e melhorias são muito bem-vindas, inclusive através de *issues* via GitHub. Caso queira, você pode me contactar em: danilosouza@usp.br
+
 <br><br>
 
 ::: {style="text-align: right;"}
@@ -46,7 +41,6 @@ Danilo Souza <br>
 Professor Associado em Economia <br>
 FEA-USP, Agosto 2026
 :::
-
 :::
 
 
@@ -54,43 +48,38 @@ FEA-USP, Agosto 2026
 
 ::: {.content-visible when-profile="graduate"}
 
-# About this material {.unnumbered}
+# About these lecture notes {.unnumbered}
 
-Este website reúne o material didático da disciplina [**EAE1106 — Métodos Computacionais para Economia**](https://uspdigital.usp.br/jupiterweb/obterDisciplina?nomdis=&sgldis=eae1106), ministrada no Departamento de Economia da Universidade de São Paulo. Tal disciplina faz parte da grade de matérias obrigatórias e é oferecida no 3º semestre do Bacharelado em Ciências Econômicas.
+These lecture notes provide the core material for the **Economics of Crime** courses offered by the Department of Economics at the School of Economics, Business Administration, Accounting and Actuarial Science (FEA-USP), University of São Paulo, as part of the Graduate Program in Economics.
 
-A disciplina tem o objetivo de introduzir os estudantes ao raciocínio computacional, aos conceitos relevantes de computação, e às suas aplicações para resolver problemas relevantes no campo da Economia. Como linguagem principal para introdução à lógica de programação e análise de dados, o curso utilizará o **Python**, amplamente utilizado em diversas áreas das ciências e do mercado de trabalho. Espera-se que ao final do curso o estudante tenha, além do domínio sobre a sintaxe da linguagem utilizada no curso, capacidade de formular e resolver problemas desde a sua concepção até a forma de apresentação, numérica e visual, das análises.
+The notes develop an economic framework for the study of crime and violence, covering theoretical models, empirical strategies, and the main findings of the academic literature. The material discusses individual criminal behavior and its determinants, the role of incentives and institutions, the design and evaluation of crime and punishment policies, and broader economic and social consequences of crime.
 
-O conteúdo aqui disponível foi desenvolvido para apoiar as aulas ao longo do semestre e servir como referência permanente para os estudantes. As notas combinam texto explicativo, exemplos de código executável e aplicações empíricas, com foco no desenvolvimento de habilidades práticas em programação e análise de dados. O material está organizado como um livro digital, estruturado em capítulos que acompanham a progressão da disciplina. Cada capítulo pode ser lido de forma sequencial ou consultado de maneira independente, conforme a necessidade do leitor.
+The notes are intended to provide a rigorous framework for the topics discussed in class, combining formal economic models with evidence from the empirical literature. Particular emphasis is placed on the connection between theoretical mechanisms, identification strategies, and the interpretation of empirical evidence.
 
-## Como usar
+The material is designed to be used across the graduate courses in Economics of Crime and can serve as a reference for both **EAE6089 - Economics of Crime I** and **EAE6090 - Economics of Crime II**. While the organization of the notes broadly follows the structure of the courses, individual chapters can also be used independently as references for specific topics.
 
-Este material foi desenvolvido para ser utilizado em conjunto com as aulas presenciais. Os capítulos seguem, em linhas gerais, a ordem do curso. Recomenda-se que o estudante leia o capítulo correspondente a cada aula, executando os exemplos de código em seu próprio computador ou outro ambiente de programção configurado conforme indicado ao longo do curso. Ler código sem executá-lo raramente é suficiente para desenvolver fluência em qualquer linguagem de programação; a compreensão dos conceitos e implementação prática depende da experimentação direta e contínua. 
+## How to use
 
-O código apresentado ao longo do texto é executável e foi concebido para ser modificado. Alterar o código, cometer erros e observar o comportamento do programa são etapas naturais e desejáveis no aprendizado de programação. Erros não indicam falha; eles fornecem informação sobre como o código funciona.
+These lecture notes are intended to complement, rather than replace, the lectures and the academic literature assigned in the courses. Students are expected to engage directly with the papers and other references cited throughout the notes.
 
-Os capítulos incluem exemplos, observações e exercícios. Esses elementos têm objetivos distintos:
+The chapters provide the conceptual and analytical background necessary to understand the topics covered in class. Depending on the subject, they may introduce theoretical models, derive their main implications, review relevant empirical evidence, or discuss methodological approaches used in the literature.
 
-- Exemplos ilustram conceitos apresentados no texto.
+The notes are continuously updated as the literature evolves and the courses are revised. They should therefore be viewed as a working set of lecture notes rather than as a comprehensive textbook on the economics of crime.
 
-- Observações destacam detalhes importantes ou armadilhas comuns.
+## Update history
 
-- Exercícios têm como objetivo consolidar o conteúdo do capítulo e preparar o estudante para aplicações mais complexas. **Não deixe de fazê-los**.
+This website is continuously updated to incorporate new findings from the literature, revise examples and improve the organization and presentation of the material.
 
-Este material não foi pensado para ser lido do início ao fim de forma linear, como um texto tradicional, e tampouco substitui as aulas. Ele pode ser consultado conforme a necessidade, servindo como referência contínua durante o curso e após seu término. O objetivo é que, ao final da disciplina, o estudante se sinta mais confortável em utilizar linguagens de programação como ferramentas para organizar dados, explorar informações e apoiar análises empíricas em economia.
-
-## Histórico de atualizações
-
-Este website é atualizado continuamente, refletindo _feedbacks_ a respeito do conteúdo e incorporação de novos pacotes e atualizações.
-
-- **August 24, 2026**: Correção de typos e ajustes de texto; inclusão da versão inicial do capítulo 12.
+- **August 24, 2026**: First open access edition with chapters 1 and 2.
 
 ## Acknowledgments
 
-Esse material deve muito ao Prof. [Claudio Ribeiro de Lucinda](https://www.claudiolucinda.net/). Parte importante do conteúdo foi desenvolvida de forma conjunta entre eu e o Prof. Claudio ao longo do segundo semestre de 2022, ano em que o curso foi oferecido pela primeira vez como uma matéria obrigatória de 30h no Bacharelado em Ciências Econômicas da FEA-USP. Agradecimento especial a Tomás Polido Garcia, que, enquanto monitor da matéria no primeiro semestre de 2026, ajudou muito na elaboração de exercícios e *feedbacks* em relação aos capítulos após a conversão do curso em uma matéria de 60h.
+[Insert acknowledgments, if applicable.]
 
-Este material é de propriedade intelectual do autor e não deve ser copiado ou reproduzido para fins comerciais. Não houve, até o momento, revisão técnica do material, de modo que o uso para fins acadêmicos é de inteira responsabilidade daquele que decidir por assim utilizar o material. Eventuais erros ou imprecisões são de responsabilidade exclusiva do autor do material. 
+This material is the intellectual property of the author and may not be copied or reproduced for commercial purposes. The material has not undergone a complete technical review, and its use for academic purposes is therefore the sole responsibility of those who choose to use it. Any errors or inaccuracies are the sole responsibility of the author.
 
-Sugestões de ajuste e melhorias são muito bem-vindas, inclusive através de _issues_ via GitHub. Caso queira, você pode me contactar em: danilosouza\@usp.br
+Suggestions for corrections and improvements are welcome, including through *issues* via GitHub. You can also contact me at: danilosouza@usp.br
+
 <br><br>
 
 ::: {style="text-align: right;"}
@@ -98,5 +87,4 @@ Danilo Souza <br>
 Associate Professor, Economics Dept. <br>
 FEA-USP, August 2026
 :::
-
 :::
