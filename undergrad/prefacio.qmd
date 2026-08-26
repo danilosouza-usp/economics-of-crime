@@ -1,4 +1,4 @@
-# Prefacio {#sec-prefacio .unnumbered}
+# Prefácio {#sec-prefacio .unnumbered}
 
 A atividade criminosa está entre os principais desafios enfrentados por sociedades modernas, com impactos diretos sobre o bem-estar individual, o desenvolvimento econômico e a estabilidade institucional. Crimes comprometem a segurança pública, aumentam os custos de transação, reduzem o investimento em capital humano e físico, e impõem pesadas despesas ao Estado com policiamento, justiça criminal e encarceramento. Diante disso, a economia do crime busca compreender esse fenômeno a partir de uma abordagem analítica baseada em incentivos, restrições e escolhas racionais. Entre as perguntas centrais da área estão: 
 

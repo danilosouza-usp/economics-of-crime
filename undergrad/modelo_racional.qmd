@@ -1,4 +1,4 @@
-# The rational choice model {#sec-alfabetizacao .unnumbered}
+# O modelo de escolha racional {#sec-modelo_racional .unnumbered}
 
 Esta parte inicial do curso é dedicada à alfabetização computacional e à construção dos fundamentos da lógica de programação. O objetivo é desenvolver, de forma gradual, a capacidade de compreender, escrever e interpretar código, preparando o terreno para aplicações empíricas mais avançadas nas etapas seguintes do curso.
 

@@ -1,14 +1,14 @@
-# Modelo de custos e benefícios: Becker (1968) {#sec-becker}
+# Custos e benefícios: Becker (1968) {#sec-becker}
 
 ## Introdução
 
-Apesar de o debate acadêmico sobre a atividade criminosa ser antigo em parte da literatura das ciências sociais^[Periódicos importantes da área de criminologia, como _Criminology_, _The British Journal of Criminology_ e _Journal of Criminal Law and Criminology_ remontam à primeira metade do século XX, com este último tendo sido fundado em 1910.], foi apenas à partir da contribuição seminal de 1968 de Gary Becker, _``Crime and Punishment: An Economic Approach''_, que a análise do crime passou a ser incorporada à lógica do modelo de escolha racional. Desde então, a área tem se expandido rapidamente e publicações nos principais periódicos das ciências econômicas têm se tornado cada vez mais recorrentes.
+Apesar de o debate acadêmico sobre a atividade criminosa ser antigo em parte da literatura das ciências sociais^[Periódicos importantes da área de criminologia, como _Criminology_, _The British Journal of Criminology_ e _Journal of Criminal Law and Criminology_ remontam à primeira metade do século XX, com este último tendo sido fundado em 1910.], foi apenas à partir da contribuição seminal de 1968 de Gary Becker, _"Crime and Punishment: An Economic Approach"_, que a análise do crime passou a ser incorporada à lógica do modelo de escolha racional. Desde então, a área tem se expandido rapidamente e publicações nos principais periódicos das ciências econômicas têm se tornado cada vez mais recorrentes.
 
 A ideia central que permeia o modelo proposto por Becker é a de que os indivíduos cometem crimes com base em um cálculo racional de custo-benefício em um ambiente de incerteza. Os indivíduos quando expostos à atividade criminosa decidem pela participação ou não ao levar em conta os ganhos esperados, os riscos associados à punição e o custo de oportunidade, geralmente associado aos ganhos potenciais no mercado de trabalho.
 
-> Some persons become ``criminals'', therefore, not because their basic motivation differs from that of other persons, but because their benefits and costs differ.
+> Some persons become "criminals", therefore, not because their basic motivation differs from that of other persons, but because their benefits and costs differ.
 > 
-> - Gary Becker, 1968, pp. 176
+> Gary Becker, 1968, pp. 176
 
 Dessa forma, incentivos econômicos e não-econômicos afetariam a participação no crime direta e indiretamente. Decisões de políticas públicas deveriam, portanto, levar em consideração potenciais mudanças nos incentivos para a partipação em atividades criminosas. Alguns exemplos:
 
@@ -32,15 +32,15 @@ Nesse sentido, o problema de escolha com o qual o indivíduo se depara é entre 
 - Preferências do indivíduo sobre loterias respeitam os axiomas de continuidade e independência.^[Para uma discussão mais profunda desses axiomas, ver @gollier2001] 
     - Alterações suficientemente pequenas nas probabilidades de ocorrência de cada estado não alteram o ordenamento de preferências entre duas loterias.
     - Se a loteria associada à atividade criminosa é preferida à atividade lícita (loteria degenerada), então uma mistura da loteria associada ao crime com uma terceira loteria também deve ser preferida à mesma mistura entre a atividade lícita e essa terceira loteria. 
-
 <br>
+
 - Indivíduo atribui um nível de probabilidade subjetiva $p$ à chance de ser capturado ao decidir pela atividade criminosa.
 
 Sob a validade dessas hipóteses, as preferências do indivíduo podem ser representadas por uma função de utilidade esperada do tipo *von Neumann-Morgenstern*. A escolha, portanto, é resultado da comparação entre o nível de utilidade esperada da participação na atividade com risco (i.e., crime) com a utilidade esperada da atividade sem risco (emprego lícito). 
 
 ## Participação na atividade criminosa e estática comparativa
 
-Suponha que a utilidade associada a cada estado seja resultado da mesma função, mas avaliada em um nível de renda (monetária e ``psicológica'') diferente. Seja $f$ o valor equivalente, em termos monetários, da punição quando capturado (severidade da pena, condições prisionais, estigma social pós-encarceramento, etc.). Assim, utilizando a notação original do artigo, a utilidade esperada da atividade criminosa é dada por:
+Suponha que a utilidade associada a cada estado seja resultado da mesma função, mas avaliada em um nível de renda (monetária e "psicológica") diferente. Seja $f$ o valor equivalente, em termos monetários, da punição quando capturado (severidade da pena, condições prisionais, estigma social pós-encarceramento, etc.). Assim, utilizando a notação original do artigo, a utilidade esperada da atividade criminosa é dada por:
 
 $$
 E(U(crime)) = pU(Y-f) + (1-p)U(Y)

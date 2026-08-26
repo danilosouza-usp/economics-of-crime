@@ -17,7 +17,7 @@ book:
 
   sidebar:
     search: false
-    #logo: images/usp-logo.jpg
+    logo: images/usp-logo.jpg
 
 bibliography: crime_refs.bib
 
