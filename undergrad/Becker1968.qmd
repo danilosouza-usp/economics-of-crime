@@ -1,4 +1,4 @@
-# Modelo de custos e benefícios: Becker (1968)
+# Modelo de custos e benefícios: Becker (1968) {#sec-becker}
 
 ## Introdução
 
@@ -27,9 +27,13 @@ Este modelo de decisão a respeito da participação na atividade criminosa pode
 Nesse sentido, o problema de escolha com o qual o indivíduo se depara é entre praticar crime ou participar do mercado de trabalho usual. Para tal, é preciso definir algumas primitivas do modelo:
 
 - Preferências sobre loterias são racionais, isto é, completas e transitivas.
+<br>
+
 - Preferências do indivíduo sobre loterias respeitam os axiomas de continuidade e independência.^[Para uma discussão mais profunda desses axiomas, ver @gollier2001] 
     - Alterações suficientemente pequenas nas probabilidades de ocorrência de cada estado não alteram o ordenamento de preferências entre duas loterias.
     - Se a loteria associada à atividade criminosa é preferida à atividade lícita (loteria degenerada), então uma mistura da loteria associada ao crime com uma terceira loteria também deve ser preferida à mesma mistura entre a atividade lícita e essa terceira loteria. 
+
+<br>
 - Indivíduo atribui um nível de probabilidade subjetiva $p$ à chance de ser capturado ao decidir pela atividade criminosa.
 
 Sob a validade dessas hipóteses, as preferências do indivíduo podem ser representadas por uma função de utilidade esperada do tipo *von Neumann-Morgenstern*. A escolha, portanto, é resultado da comparação entre o nível de utilidade esperada da participação na atividade com risco (i.e., crime) com a utilidade esperada da atividade sem risco (emprego lícito). 
@@ -40,7 +44,7 @@ Suponha que a utilidade associada a cada estado seja resultado da mesma função
 
 $$
 E(U(crime)) = pU(Y-f) + (1-p)U(Y)
-$$ {#eq:EU_Becker}
+$$ {#eq-EU_Becker}
 
 em que $Y$ representa o ganho monetário de cometer o crime e $U^{'}(.)>0$. Nesse sentido, o indivíduo decide cometer crime se, e somente se,
 
@@ -58,15 +62,15 @@ Note que o nível de utilidade associado à atividade lícita é dado por $U(a)$
 
 - Aumento da perda esperada ao ser capturado reduz a utilidade esperada de cometer crime e reduz a propensão do indivíduo participar dessa loteria.
 	
-$$ \frac{\partial E(U(crime))}{\partial L} = -pU^{'}(a-L) < 0 $$
+    $$ \frac{\partial E(U(crime))}{\partial L} = -pU^{'}(a-L) < 0 $$
 	
 - Aumento da probabilidade de apreensão também reduz a utilidade esperada e a propensão a cometer crime.
 	
-$$ \frac{\partial E(U(crime))}{\partial p} = U(a-L) - U(a+b) < 0 $$
+    $$ \frac{\partial E(U(crime))}{\partial p} = U(a-L) - U(a+b) < 0 $$
 	
 - Por outro lado, o aumento do benefício associado a atividade criminosa aumenta a participação no crime.
 	
-$$ \frac{\partial E(U(crime))}{\partial b} = (1-p)U^{'}(a+b) > 0 $$
+    $$ \frac{\partial E(U(crime))}{\partial b} = (1-p)U^{'}(a+b) > 0 $$
 
 Por fim, como exemplo adicional assuma o caso de um indivíduo neutro ao risco tal que $a^\star = a$. Nesse caso, o indivíduo estaria indiferente entre as duas atividades caso a renda esperada fosse igual a $a$. Nesse ponto, existe um nivel de benefício associado ao crime $b^\star$ dado pela relação entre $p$ e $L$ tal que:
 
@@ -75,7 +79,7 @@ $$ a - pL + (1-p)b^\star = a $$
 
 $$
 b^\star = L \cdot \frac{p}{(1-p)}
-$$ {#eq:bstar_Becker}
+$$ {#eq-bstar_Becker}
 
 Nesse caso, um aumento tanto do custo efetivo da punição quanto da probabilidade de apreensão desistimulam o crime, representado por um aumento do nível de benefício $b^\star$ necessário para manter o indivíduo indiferente entre a atividade criminosa e a atividade sem risco: 
 

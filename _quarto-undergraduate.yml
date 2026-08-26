@@ -25,6 +25,7 @@ book:
       chapters:
         - undergrad/Becker1968.qmd
         - undergrad/Ehrlich1973.qmd
+        - undergrad/limitacoes.qmd
         
     #- part: classic_evidence.qmd
     #  chapters:

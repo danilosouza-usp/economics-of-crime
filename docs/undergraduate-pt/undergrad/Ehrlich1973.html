@@ -8,7 +8,7 @@
 
 <meta name="author" content="Danilo Souza">
 
-<title>2&nbsp; Dynamics in the crime decision – Economia do Crime</title>
+<title>2&nbsp; Modelo de alocação de tempo: Ehrlich (1973) – Economia do Crime</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,42 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -66,7 +51,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../undergrad/referencias.html" rel="next">
+<link href="../undergrad/limitacoes.html" rel="next">
 <link href="../undergrad/Becker1968.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -149,7 +134,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../undergrad/modelo_racional.html">The rational choice model</a></li><li class="breadcrumb-item"><a href="../undergrad/Ehrlich1973.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dynamics in the crime decision</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../undergrad/modelo_racional.html">The rational choice model</a></li><li class="breadcrumb-item"><a href="../undergrad/Ehrlich1973.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modelo de alocação de tempo: Ehrlich (1973)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -204,7 +189,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../undergrad/Ehrlich1973.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dynamics in the crime decision</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modelo de alocação de tempo: Ehrlich (1973)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../undergrad/limitacoes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Limitações e contribuições mais recentes</span></span></a>
   </div>
 </li>
       </ul>
@@ -225,41 +216,19 @@ window.Quarto = {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">2.1</span> Introduction</a>
-  <ul class="collapse">
-  <li><a href="#pré-requisitos" id="toc-pré-requisitos" class="nav-link" data-scroll-target="#pré-requisitos"><span class="header-section-number">2.1.1</span> Pré-requisitos</a></li>
-  </ul></li>
-  <li><a href="#importância-da-modularização" id="toc-importância-da-modularização" class="nav-link" data-scroll-target="#importância-da-modularização"><span class="header-section-number">2.2</span> Importância da modularização</a></li>
-  <li><a href="#o-que-é-uma-função" id="toc-o-que-é-uma-função" class="nav-link" data-scroll-target="#o-que-é-uma-função"><span class="header-section-number">2.3</span> O que é uma função?</a></li>
-  <li><a href="#argumentos-de-uma-função" id="toc-argumentos-de-uma-função" class="nav-link" data-scroll-target="#argumentos-de-uma-função"><span class="header-section-number">2.4</span> Argumentos de uma função</a>
-  <ul class="collapse">
-  <li><a href="#keyword-arguments-e-default-values" id="toc-keyword-arguments-e-default-values" class="nav-link" data-scroll-target="#keyword-arguments-e-default-values"><span class="header-section-number">2.4.1</span> <em>Keyword arguments</em> e <em>default values</em></a></li>
-  <li><a href="#argumentos-arbitrários" id="toc-argumentos-arbitrários" class="nav-link" data-scroll-target="#argumentos-arbitrários"><span class="header-section-number">2.4.2</span> Argumentos arbitrários</a></li>
-  <li><a href="#execução-condicional-dentro-de-uma-função" id="toc-execução-condicional-dentro-de-uma-função" class="nav-link" data-scroll-target="#execução-condicional-dentro-de-uma-função"><span class="header-section-number">2.4.3</span> Execução condicional dentro de uma função</a></li>
-  <li><a href="#iteração-dentro-de-uma-função" id="toc-iteração-dentro-de-uma-função" class="nav-link" data-scroll-target="#iteração-dentro-de-uma-função"><span class="header-section-number">2.4.4</span> Iteração dentro de uma função</a></li>
-  </ul></li>
-  <li><a href="#valor-de-retorno-de-uma-função" id="toc-valor-de-retorno-de-uma-função" class="nav-link" data-scroll-target="#valor-de-retorno-de-uma-função"><span class="header-section-number">2.5</span> Valor de retorno de uma função</a>
-  <ul class="collapse">
-  <li><a href="#expectativa-de-vida-de-variáveis-dentro-da-função" id="toc-expectativa-de-vida-de-variáveis-dentro-da-função" class="nav-link" data-scroll-target="#expectativa-de-vida-de-variáveis-dentro-da-função"><span class="header-section-number">2.5.1</span> Expectativa de vida de variáveis dentro da função</a></li>
-  </ul></li>
-  <li><a href="#aplicação-teorema-central-do-limite" id="toc-aplicação-teorema-central-do-limite" class="nav-link" data-scroll-target="#aplicação-teorema-central-do-limite"><span class="header-section-number">2.6</span> Aplicação: Teorema Central do Limite</a></li>
-  <li><a href="#documentação" id="toc-documentação" class="nav-link" data-scroll-target="#documentação"><span class="header-section-number">2.7</span> Documentação</a></li>
-  <li><a href="#funções-anônimas" id="toc-funções-anônimas" class="nav-link" data-scroll-target="#funções-anônimas"><span class="header-section-number">2.8</span> Funções anônimas</a>
-  <ul class="collapse">
-  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">2.8.1</span> <em>filter</em></a></li>
-  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><span class="header-section-number">2.8.2</span> <em>map</em></a></li>
-  </ul></li>
-  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão"><span class="header-section-number">2.9</span> Conclusão</a></li>
-  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">2.10</span> Exercícios</a></li>
+  <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">2.1</span> Introdução</a></li>
+  <li><a href="#estrutura-do-modelo" id="toc-estrutura-do-modelo" class="nav-link" data-scroll-target="#estrutura-do-modelo"><span class="header-section-number">2.2</span> Estrutura do modelo</a></li>
+  <li><a href="#escolha-ótima-de-tempo" id="toc-escolha-ótima-de-tempo" class="nav-link" data-scroll-target="#escolha-ótima-de-tempo"><span class="header-section-number">2.3</span> Escolha ótima de tempo</a></li>
+  <li><a href="#estática-comparativa" id="toc-estática-comparativa" class="nav-link" data-scroll-target="#estática-comparativa"><span class="header-section-number">2.4</span> Estática comparativa</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/undergrad/Ehrlich1973.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../undergrad/modelo_racional.html">The rational choice model</a></li><li class="breadcrumb-item"><a href="../undergrad/Ehrlich1973.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dynamics in the crime decision</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../undergrad/modelo_racional.html">The rational choice model</a></li><li class="breadcrumb-item"><a href="../undergrad/Ehrlich1973.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modelo de alocação de tempo: Ehrlich (1973)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-dynamics" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Dynamics in the crime decision</span></span></h1>
+<h1 class="title"><span id="sec-ehrlich" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Modelo de alocação de tempo: Ehrlich (1973)</span></span></h1>
 </div>
 
 
@@ -276,676 +245,151 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2.1</span> Introduction</h2>
-<p>Até aqui, os programas escritos consistem em sequências de instruções, condicionais e laços que manipulam objetos como números, listas e dicionários. Essa forma é suficiente para resolver problemas simples, mas rapidamente se torna difícil de manter quando o código cresce ou quando a mesma lógica precisa ser reutilizada várias vezes.</p>
-<p>Funções são o principal mecanismo de abstração em programação. Elas permitem encapsular um conjunto de instruções sob um nome, definir claramente quais informações entram e quais resultados saem, e separar a lógica interna da interface externa. Em termos computacionais, funções organizam o fluxo de execução, delimitam escopos de variáveis e tornam explícita a transformação entre <em>inputs</em> e <em>outputs</em> – conceito central também em Economia, onde frequentemente modelamos relações funcionais entre variáveis.</p>
-<div id="fig-olddesk" class="quarto-float quarto-figure quarto-figure-center anchored" data-max-width="100%" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-olddesk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/old_desktop.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" data-max-width="100%" width="800">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-olddesk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.1: Setup usual de um computador pessoal no começo dos anos 2000. Fonte: <em>Wikimedia Commons</em>
-</figcaption>
-</figure>
-</div>
-<p>Neste capítulo, o objetivo é compreender o papel das funções como ferramenta de organização, reutilização e clareza lógica. Ao final, o aluno deverá ser capaz de estruturar programas de forma modular e compreender como funções são usadas extensivamente nas bibliotecas científicas que serão estudadas nas próximas aulas.</p>
-<section id="pré-requisitos" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="pré-requisitos"><span class="header-section-number">2.1.1</span> Pré-requisitos</h3>
-<p>Para trabalhar com funções e todas as suas funcionalidades, utilizaremos dois pacotes externos:</p>
+<section id="introdução" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">2.1</span> Introdução</h2>
+<p>Pouco tempo depois de Gary Becker publicar seu trabalho seminal, Isaac Ehrlich publica, em 1973, seu artigo <em>``Participation in Illegitimate Activities: A Theoretical and Empirical Investigation’’</em>, contribuindo enormemente para a consolidação da análise da atividade criminosa através do modelo de escolha racional. No artigo, Ehrlich incorpora na análise a importância dos custos de oportunidade do crime em um ambiente com incerteza. No modelo proposto, o indivíduo decide de forma ótima sua alocação de tempo entre diferentes atividades - crime e atividade lícitas - que, diferente do modelo de Gary Becker, não são mutuamente excludentes.</p>
+<p>A principal diferença, em termos de estrutura, em relação ao modelo em <span class="citation" data-cites="becker1968">Becker (<a href="referencias.html#ref-becker1968" role="doc-biblioref">1968</a>)</span> é que o objetivo do indivíduo nesse caso não é escolher entre atividades, mas o nível ótimo de horas dedicadas a cada atividade individualmente. Existe incerteza em relação ao estado da natureza que irá se concretizar e a decisão do indivíduo é feita <em>a priori</em> de forma contigente a todos os possíveis estados.</p>
+</section>
+<section id="estrutura-do-modelo" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="estrutura-do-modelo"><span class="header-section-number">2.2</span> Estrutura do modelo</h2>
+<p>No modelo original, Ehrlich assume apenas dois possíveis estados da natureza: (i) indivíduo é capturado e punido, e (ii) indivíduo não é capturado e, portanto, não é punido. O modelo, no entanto, comporta análises com múltiplos estados em que, por exemplo, indivíduos são capturados e não punidos ou mesmo indivíduos inocentes são punidos de forma errônea. A apresentação aqui será feita na sua forma mais simples, com dois estados, seguindo de perto <span class="citation" data-cites="pyle1983chp2">Pyle (<a href="referencias.html#ref-pyle1983chp2" role="doc-biblioref">1983</a>)</span> e <span class="citation" data-cites="chalfin2017">Chalfin e McCrary (<a href="referencias.html#ref-chalfin2017" role="doc-biblioref">2017</a>)</span>.</p>
+<p>O valor monetário equivalente associada ao estado A (captura e punição) é dada por <span class="math inline">\(X_A\)</span>, enquanto <span class="math inline">\(X_B\)</span> representa o valor do estado alternativo. Esse valor é transformado diretamente em consumo, sobre o qual o indivíduo aufere utilidade. Assuma também que o indivíduo, para um dado período, distribui sua dotação de tempo <span class="math inline">\(T\)</span> para atividades lícitas (<span class="math inline">\(h_m\)</span>), um conjunto de atividade ilícitas (<span class="math inline">\(h_c\)</span>) e lazer (<span class="math inline">\(L\)</span>). Assim, o consumo associado a cada estado e a restrição de tempo são dadas por:</p>
+<p><span class="math display">\[ C_A = X_A = W_0 + W_c(h_c) + W_m(h_m) - F(h_c) \]</span> <span class="math display">\[ C_B = X_B = W_0 + W_c(h_c) + W_m(h_m) \]</span> <span class="math display">\[ T = L + h_c + h_m \]</span></p>
+<p>em que <span class="math inline">\(W_0\)</span> é a renda do indivíduo que não depende do estado e de suas escolhas, <span class="math inline">\(W_c\)</span> e <span class="math inline">\(W_m\)</span> são funções que representam a renda gerada pelo tempo dedicado às atividades ilícitas e lícitas, respectivamente, e <span class="math inline">\(F\)</span> representa o custo monetário equivalente da punição, que é uma função do tempo dedicado às atividades ilícitas. <span class="math inline">\(W_c\)</span>, <span class="math inline">\(W_m\)</span> e <span class="math inline">\(F\)</span> são funções crescentes no tempo dedicado às respectivas atividades, mas a renda gerada em ambos os estados possui retorno marginal decrescente enquanto o custo monetário da punição cresce a taxas crescentes com <span class="math inline">\(h_c\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>O indíviduo faz suas escolhas período a período e aufere utilidade tanto do nível de consumo em um dado estado, quanto do tempo dedicado ao lazer. Sua função utilidade no estado <span class="math inline">\(s\)</span> é representada por <span class="math inline">\(U_s = U(C_s,L)\)</span> com utilidade marginal do consumo e lazer positivas, i.e., <span class="math inline">\(U_C &gt; 0\)</span> e <span class="math inline">\(U_L &gt; 0\)</span>. Para o caso em que a probabilidade (subjetiva) do indivíduo se encontrar no estado <span class="math inline">\(A\)</span> é independente do tempo dedicado à atividade ilícita e dada por <span class="math inline">\(p\)</span>, a função utilidade esperada, que obedece os axiomas de von Neumann-Morgerstern, é dada por:</p>
+<p><span id="eq-EU_Ehrlich"><span class="math display">\[
+E(U(crime)) = p U(C_A,L) + (1-p) U(C_B, L)
+\tag{2.1}\]</span></span></p>
+</section>
+<section id="escolha-ótima-de-tempo" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="escolha-ótima-de-tempo"><span class="header-section-number">2.3</span> Escolha ótima de tempo</h2>
+<p>O problema de otimização condicional do indivíduo se resume à escolha do tempo dedicado a cada uma das atividades e lazer, sujeito à restrição orçamentária específica a cada estado e à restrição de tempo:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\max_{h_c,h_m,L} \quad &amp; p \cdot U(C_A, L) + (1-p) \cdot U(C_B, L) \\
+\text{sujeito a} \quad &amp; C_A = W_0 + W_c(h_c) + W_m(h_m) - F(h_c) \\
+&amp; C_B = W_0 + W_c(h_c) + W_m(h_m) \\
+&amp; L = T - h_c - h_m
+\end{aligned}
+\]</span></p>
+<p>Assumindo uma solução interior (<span class="math inline">\(h_c, h_m, L &gt; 0\)</span>) e uma função de utilidade contínua e diferenciável, podemos substituir as restrições dentro da função objetivo e transformar o problema em um problema de otimização não-condicional, com o indivíduo escolhendo apenas <span class="math inline">\(h_c\)</span> e <span class="math inline">\(h_m\)</span>. Assim, as condições de primeira ordem são dadas por</p>
+<p><span id="eq-FOC1_Ehrlich"><span class="math display">\[
+\begin{aligned}
+h_c:\quad &amp;
+p \left[
+\frac{\partial U}{\partial C_A}\frac{\partial C_A}{\partial h_c}
++
+\frac{\partial U}{\partial L}\frac{\partial L}{\partial h_c}
+\right]
++
+(1-p)
+\left[
+\frac{\partial U}{\partial C_B}\frac{\partial C_B}{\partial h_c}
++
+\frac{\partial U}{\partial L}\frac{\partial L}{\partial h_c}
+\right]
+= 0
+\end{aligned}
+\tag{2.2}\]</span></span></p>
+<p><span id="eq-FOC2_Ehrlich"><span class="math display">\[
+\begin{aligned}
+h_m:\quad &amp;
+p \left[
+\frac{\partial U}{\partial C_A}\frac{\partial C_A}{\partial h_m}
++
+\frac{\partial U}{\partial L}\frac{\partial L}{\partial h_m}
+\right]
++
+(1-p)
+\left[
+\frac{\partial U}{\partial C_B}\frac{\partial C_B}{\partial h_m}
++
+\frac{\partial U}{\partial L}\frac{\partial L}{\partial h_m}
+\right]
+= 0
+\end{aligned}
+\tag{2.3}\]</span></span></p>
+<p>Defina as derivadas parciais de <span class="math inline">\(U\)</span> em relação ao consumo no estado <span class="math inline">\(s\)</span> como <span class="math inline">\(U_{C_s}\)</span> e de <span class="math inline">\(U\)</span> em relação ao lazer como <span class="math inline">\(U_L\)</span>, igual em ambos os estados. Além disso, <span class="math inline">\(w_c \equiv (d W_c / d h_c)\)</span>, <span class="math inline">\(f_c \equiv (d F / d h_c)\)</span> e <span class="math inline">\(w_m \equiv (d W_m / d h_m)\)</span>. Por fim, note que <span class="math inline">\(\partial L/\partial h_c = \partial L/\partial h_m = -1\)</span>. Substituindo essas definições e valores na equação (<a href="#eq-FOC1_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.2</span></a>):</p>
+<p><span id="eq-FOC1a_Ehrlich"><span class="math display">\[
+\begin{aligned}
+p \left[U_{C_A}(w_c - f_c) - U_L\right]
++ (1-p)\left[U_{C_B}w_c - U_L\right]
+&amp;= 0
+\\
+p U_{C_A}(w_c - f_c) + (1-p)U_{C_B}w_c
+&amp;= U_L
+\end{aligned}
+\tag{2.4}\]</span></span></p>
+<p>O mesmo pode ser feito com a equação (<a href="#eq-FOC2_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.3</span></a>).</p>
+<p><span id="eq-FOC2a_Ehrlich"><span class="math display">\[
+\begin{aligned}
+p \left[U_{C_A}w_m - U_L\right]
++ (1-p)\left[U_{C_B}w_m - U_L\right]
+&amp;= 0
+\\
+w_m \left(pU_{C_A} + (1-p)U_{C_B}\right)
+&amp;= U_L
+\end{aligned}
+\tag{2.5}\]</span></span></p>
+<p>Unindo as equações (<a href="#eq-FOC1a_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.4</span></a>) e (<a href="#eq-FOC2a_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.5</span></a>), é possível reescrever a condição de primeira ordem como:</p>
+<p><span id="eq-opt_Ehrlich"><span class="math display">\[
+\frac{w_c - w_m}{w_c - f_c - w_m}
+=
+\frac{-p U_{C_A}}{(1-p) U_{C_B}}
+\tag{2.6}\]</span></span></p>
+<p>A equação (<a href="#eq-opt_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.6</span></a>) foi derivada a partir da hipótese de uma solução interior, com participação nas atividades lícitas e ilícitas ao mesmo tempo. Assim, uma hipótese implícita para a validade dessa relação é a de que a punição marginal pelo envolvimento no crime seja maior do que a diferença do retorno marginal entre as atividades criminosas e as atividades lícitas, i.e.&nbsp;<span class="math inline">\(f_c &gt; w_c - w_m &gt; 0\)</span>. Caso contrário, atividades lícitas seriam sempre dominadas pelas ilícitas e todo o tempo não dedicado ao lazer seria dedicado ao crime.</p>
+<p>Adicionalmente, note que o lado esquerdo dessa equação pode ser entendido como a inclinação do conjunto de pontos factíveis de produção no espaço <span class="math inline">\(C_A \times C_B\)</span>. Já o lado direito da equação representa a inclinação da curva de indiferença do indivíduo nesse mesmo espaço. Esse ponto de máximo, portanto, é equivalente ao ponto de igualdade entre a taxa de transformação técnica e a taxa marginal de substituição, que você já deve ter visto nos cursos introdutórios de Microeconomia.</p>
+<p>Defina <span class="math inline">\(\hat{T}\)</span> como a dotação de tempo a ser alocada entre as atividades, já descontado o tempo alocado para o lazer, tal que <span class="math inline">\(\hat{T} \equiv T - L\)</span>. A figura abaixo resume o problema de otimização:</p>
+<p>[INSERIR FIGURA]</p>
+<p>em que <span class="math inline">\((C_A^\star, C_B^\star)\)</span> representa o ponto de escolha ótima entre o tempo dedicado a cada atividade, tal que <span class="math inline">\(C_A^\star\)</span> representa o nível de consumo no estado em que o indivíduo é capturado e punido e <span class="math inline">\(C_B^\star\)</span> o consumo no estado em que o indivíduo não é capturado.</p>
+<p>Se o indivíduo se especializa em atividade lícitas (<span class="math inline">\(h_c=0\)</span> e <span class="math inline">\(h_m = \hat{T}\)</span>) seu nível de consumo, tanto no estado A quanto no estado B, será igual a <span class="math inline">\(W_0 + W_m(\hat{T})\)</span>. Esse ponto é representado por <span class="math inline">\(T^{'}\)</span>, que pertence à linha de certeza e onde não há risco associado. No extremo oposto, onde há especialização em atividades ilícitas (<span class="math inline">\(h_c=\hat{T}\)</span> e <span class="math inline">\(h_m = 0\)</span>), o consumo no estado em que o indivíduo é capturado e punido é igual a <span class="math inline">\(W_0 + W_c(\hat{T}) - F(\hat{T})\)</span>, enquanto no estado em que o indivíduo passa impune o consumo é igual a <span class="math inline">\(W_0 + W_c(\hat{T})\)</span>. Esse ponto é representado por <span class="math inline">\(T\)</span>, que se encontra à esquerda e acima do ponto <span class="math inline">\(T^{'}\)</span> pelas hipóteses de que <span class="math inline">\(W_c(0) = W_m(0)\)</span> e <span class="math inline">\(w_c - w_m &gt; 0\)</span>. Finalmente, a concavidade desse conjunto de pontos factíveis de produção no espaço <span class="math inline">\(C_A \times C_B\)</span> está diretamente associada às hipóteses em relação às derivadas parciais de primeira ordem e segunda ordem de <span class="math inline">\(W_c\)</span>, <span class="math inline">\(W_m\)</span> e <span class="math inline">\(F\)</span>.</p>
+<p>No caso das preferências, elas são representadas por curvas de indiferenças convexas em relação à origem, o que vem da hipótese de retornos marginais decrescentes do consumo em ambos os estados. Matematicamente, <span class="math inline">\(U_s^{''}(C_s) &lt; 0\)</span> com <span class="math inline">\(s=\{A,B\}\)</span>. Em termos de preferências em relação ao risco, isso está associado a um indivíduo avesso ao risco.</p>
+</section>
+<section id="estática-comparativa" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="estática-comparativa"><span class="header-section-number">2.4</span> Estática comparativa</h2>
+<p>Uma das perguntas que surgem a partir do modelo e da análise da figura é: sob quais condições um indivíduo avesso ao risco não se especializa em atividade lícitas? Já vimos que, o fato de <span class="math inline">\(f_c &gt; w_c - w_m &gt; 0\)</span> garante que o indivíduo não se especializa no crime, mas precisamos de mais estrutura para dizer o que garante que ele também não especializa em atividades não-criminosas. Note que, para que o ponto de consumo ótimo esteja à esquerda do ponto <span class="math inline">\(T^{'}\)</span>, a inclinação da curva de indiferença no ponto <span class="math inline">\(T^{'}\)</span> deve ser menor do que a inclinação da fronteira do conjunto de produção nesse mesmo ponto. Assim,</p>
+<p><span class="math display">\[ \frac{w_c - w_m}{w_c - f_c - w_m} &gt; \frac{-p U_{C_A}}{(1-p) U_{C_B}} \]</span></p>
+<p>Mas no ponto <span class="math inline">\(T^{'}\)</span>, o consumo no estado A é igual ao consumo no estado B, de modo que <span class="math inline">\(U_{C_A} = U_{C_B}\)</span>. Com um pouco de manipulação algébrica, é possível mostrar que a validade da desigualdade acima é equivalente a $ w_c - w_m &gt; p f_c $. Assim, no caso de um indivíduo avesso ao risco e com <span class="math inline">\(1&gt;p&gt;0\)</span>, há alocação de tempo para atividade lícitas e ilícitas no mesmo período quando</p>
+<p><span id="eq-Ehrlich_intsol"><span class="math display">\[
+f_c &gt; w_c - w_m &gt; p \cdot f_c
+\tag{2.7}\]</span></span></p>
+<p>Assumindo que as oportunidades disponíveis aos potenciais criminosos são independentes do comportamento do indivíduo em relação ao risco, é possível mostrar que um agente amante do risco dedicaria mais tempo à prática de atividades ilícitas do que um agente neutro ao risco e ainda mais tempo quando comparado a um agente avesso ao risco.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> A prática de atividades ilícitas, porém, não depende das preferências em relação ao risco, podendo ocorrer em qualquer um dos casos. Já as condições para especialização em uma atividade ou outra dependem do quão avesso ou amante do risco o indivíduo é.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Agora que você já sabe as condições necessárias para que o indivíduo avesso ao risco dedique tempo tanto a atividades lícitas quanto ilícitas (i.e., não especialização), é possível avançar e compreender como essas escolhas variam com mudanças na probabilidade de apreensão, no retorno marginal de cada atividade e no custo marginal da punição. Com base na condição de ótimo, representada pela equação (<a href="#eq-opt_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.6</span></a>), fica claro que:</p>
 <ul>
-<li><code>numpy</code></li>
-<li><code>time</code></li>
+<li><p>Um aumento da probabilidade de apreensão <span class="math inline">\(p\)</span> implica em um aumento, em valor absoluto, da inclinação da curva de indiferença. Assim, para que a igualdade se mantenha, é preciso que aumente a diferença entre <span class="math inline">\(w_c - w_m\)</span> e/ou diminua <span class="math inline">\(f_c\)</span>. Como a segunda derivada de <span class="math inline">\(W_c\)</span> e <span class="math inline">\(W_m\)</span> é negativa e a segunda derivada de <span class="math inline">\(F\)</span> positiva, então <span class="math inline">\(w_c\)</span> aumenta, <span class="math inline">\(f_c\)</span> e <span class="math inline">\(w_m\)</span> diminuem com uma redução do tempo dedicado às atividades ilícitas e um aumento do tempo dedicado às atividades lícitas. Assim,</p>
+<p><span class="math display">\[ \uparrow p \quad\implies\quad \downarrow h_c \quad e \quad \uparrow h_m \]</span></p></li>
+<li><p>Considere o caso de um aumento do custo marginal da punição <span class="math inline">\(f_c\)</span> para um dado <span class="math inline">\(h_c\)</span>, muitas vezes associado a um aumento da severidade da pena quando capturado. Na região em que <span class="math inline">\(f_c &gt; w_c - w_m &gt; 0\)</span>, esse aumento de <span class="math inline">\(f_c\)</span> implica em uma redução, em valor absoluto, do lado esquerdo da equação (<span class="math inline">\(\ref{eq:opt_Ehrlich}\)</span>). Esse aumento em <span class="math inline">\(f_c\)</span> também reduz <span class="math inline">\(C_A\)</span>, enquanto mantém <span class="math inline">\(C_B\)</span> intacto, o que aumenta, em valor absoluto, o lado direito da mesma equação. Para voltar ao equilíbrio é preciso que <span class="math inline">\(h_c\)</span> diminua e <span class="math inline">\(h_m\)</span> aumente, o que aumenta o lado esquerdo da equação e diminui o lado direito, ambos em valores absolutos.</p>
+<p><span class="math display">\[ \uparrow f_c \quad\implies\quad \downarrow h_c \quad e \quad \uparrow h_m \]</span></p></li>
+<li><p>Alterações na diferença entre o retorno marginal da atividade ilícita e do retorno marginal da atividade lícita, isto é, <span class="math inline">\(w_c - w_m\)</span>, também altera os incentivos para o envolvimento no crime. Tudo o mais constante, um aumento nessa diferença aumenta o lado esquerdo da equação, em valor absoluto. Além disso, em geral, tem pouco efeito sobre <span class="math inline">\(C_A\)</span> e <span class="math inline">\(C_B\)</span> e, portanto, sobre o lado direito da equação. Assim, para que a equação volte à igualdade, é preciso que o lado esquerdo diminua e o direito aumente, o que é atingido com uma redução em <span class="math inline">\(h_m\)</span> e um aumento em <span class="math inline">\(h_c\)</span>.</p>
+<p><span class="math display">\[ \uparrow (w_c - w_m) \quad\implies\quad \uparrow h_c \quad e \quad \downarrow h_m \]</span></p></li>
 </ul>
-<div id="81807a57" class="cell" data-message="false" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>No artigo original, essas estáticas comparativas são utilizadas para discutir o caso de indivíduos que, mesmo punidos em um determinado período, voltam a cometer crimes. Esse resultado não é necessariamente associado a algum tipo de miopia ou comportamento irracional, basta que as oportunidades no mercado de atividades lícitas não se alterem ou mesmo que piorem, o que usualmente acontece com indivíduos com histórico criminal. Nesse caso, mesmo um aumento em <span class="math inline">\(p\)</span> e/ou <span class="math inline">\(f_c\)</span> pode não ser acompanhado de uma redução na atividade criminosa se a diferença <span class="math inline">\(w_c - w_m\)</span> aumenta entre períodos.</p>
+<p>Conjuntamente, esses resultados sobre a alocação ótima de tempo entre atividades e como essa alocação reage a parâmetros são utilizados para construir, assim como em <span class="citation" data-cites="becker1968">Becker (<a href="referencias.html#ref-becker1968" role="doc-biblioref">1968</a>)</span> uma função de oferta de crimes. A partir dessa função, o artigo discute efeitos de política pública sobre o número agregado de crimes. Para além dos efeitos de dissuasão que mudanças na probabilidade de apreensão e severidade das penas tem sobre a decisão de envolvimento no crime (efeito <em>deterrence</em>, em inglês), o artigo discute os efeitos de políticas públicas, como encarceramento, através de um segundo mecanismo potencial: o efeito de incapacitação (<em>incapacitation</em>), já que, por definição, no período em que se encontra preso o indivíduo não consegue se envolver em atividades criminosas como roubo e assalto.</p>
+<p>Ambos os mecanismos – <em>deterrence</em> e <em>incapacitation</em> – são importantes para entender o efeito das mais diversas políticas públicas, como o próprio encarceramento ou mesmo a ampliação da educação pública. Apesar da clara separação teórica, identificar o efeito de cada mecanismo individualmente em aplicações empíricas é bastante difícil. Discutiremos mais a frente algumas estratégias utilizadas por trabalhos empíricos para tentar separa-los. Por hora, saber que existem concomitantemente é mais do que suficiente.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-becker1968" class="csl-entry" role="listitem">
+Becker, Gary S. 1968. <span>“Crime and punishment: an economic approach”</span>. <em>Journal of Political Economy</em> Vol. 76 (No. 2): pp. 169–217.
 </div>
-</section>
-</section>
-<section id="importância-da-modularização" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="importância-da-modularização"><span class="header-section-number">2.2</span> Importância da modularização</h2>
-<p>Até aqui, os programas foram escritos como sequências lineares de instruções executadas de cima para baixo. Esse modelo é suficiente quando resolvemos um único problema específico com um único conjunto de dados. No entanto, ele se torna inadequado quando precisamos aplicar a mesma regra várias vezes ou quando o código começa a crescer.</p>
-<p>Considere o seguinte exemplo. Suponha que desejamos calcular a média de diferentes conjuntos de notas:</p>
-<div id="7221b270" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>notas1 <span class="op">=</span> [<span class="fl">7.5</span>, <span class="fl">8.0</span>, <span class="fl">6.5</span>]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>media1 <span class="op">=</span> <span class="bu">sum</span>(notas1) <span class="op">/</span> <span class="bu">len</span>(notas1)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(media1)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>notas2 <span class="op">=</span> [<span class="fl">9.0</span>, <span class="fl">8.5</span>, <span class="fl">7.0</span>]</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>media2 <span class="op">=</span> <span class="bu">sum</span>(notas2) <span class="op">/</span> <span class="bu">len</span>(notas2)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(media2)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>7.333333333333333
-8.166666666666666</code></pre>
+<div id="ref-chalfin2017" class="csl-entry" role="listitem">
+Chalfin, Aaron, e Justin McCrary. 2017. <span>“Criminal Deterrence: A Review of the Literature”</span>. <em>Journal of Economic Literature</em> Vol. 55 (No. 1): pp. 5–48.
 </div>
+<div id="ref-ehrlich1973" class="csl-entry" role="listitem">
+Ehrlich, Isaac. 1973. <span>“Participation in illegitimate activities: A theoretical and empirical investigation”</span>. <em>Journal of Political Economy</em> Vol. 81 (No. 3): pp. 521–565.
 </div>
-<p>O código funciona, mas a regra de cálculo aparece repetida. Se decidirmos alterar o critério – por exemplo, aplicar um ajuste ou excluir a menor nota – será necessário modificar todas as ocorrências manualmente. Esse padrão aumenta a probabilidade de erro e dificulta a manutenção. O problema não está no cálculo em si, mas na forma como ele está organizado. Estamos misturando duas coisas distintas: os dados, que variam, e a regra de transformação, que permanece a mesma. Uma solução mais robusta é separar essas duas dimensões.</p>
-<p>É aqui que entram as funções, que nos permitem encapsular determinado conjunto de instruções e nomeá-los. Assim, basta chamar a função pelo seu nome para aplicar em certo conjunto de dados o mesmo conjunto de instruções. O uso de funções introduz o conceito de modularização. Em vez de escrever um bloco contínuo de instruções, passamos a estruturar o programa como um conjunto de módulos (funções), cada um responsável por uma transformação específica entre entrada e saída. Do ponto de vista computacional, isso significa que isolamos partes do código, reduzimos redundância e tornamos explícita a relação entre argumentos recebidos e valores retornados.</p>
-<p>A partir desse ponto, o objetivo é compreender formalmente como funções são definidas, como recebem argumentos e como retornam resultados. O foco deixa de ser apenas executar comandos e passa a ser estruturar programas de forma lógica e reutilizável.</p>
-</section>
-<section id="o-que-é-uma-função" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="o-que-é-uma-função"><span class="header-section-number">2.3</span> O que é uma função?</h2>
-<p>Formalmente, no contexto das linguagens de programação, uma função é uma sequência nomeada de instruções, que executa algum tipo de operação específica mas não necessariamente numérica, como é o caso das funções matemáticas. A ideia essencial por trás de uma função é a de juntar algumas tarefas comuns ou repetidas e criar uma função para que, em vez de escrever o mesmo código várias vezes, possamos chama-la pelo nome e reutilizar o conjunto de instruções nela contida sempre que necessário.</p>
-<p>Caso o objetivo de dividir um programa em funções ainda não tenha ficado claro, saiba que:</p>
-<ul>
-<li><p>Criar uma nova função dá a oportunidade de nomear um grupo de instruções, o que deixa o seu programa mais fácil de ler e de depurar.</p></li>
-<li><p>As funções podem tornar um programa menor, eliminando o código repetitivo. Depois, caso precise fazer alguma alteração, basta fazê-la em um lugar só.</p></li>
-<li><p>Dividir um programa longo em funções permite depurar as partes uma de cada vez e então reuni-las em um conjunto funcional.</p></li>
-<li><p>As funções bem projetadas muitas vezes são úteis para muitos programas. Uma vez escritas e depuradas, você pode reutilizar as funções em programas fora daquele para o qual elas foram originalmente construídas.</p></li>
-</ul>
-<p>Existem várias funções nativas no Python (e.g., <code>type()</code> para encontrar o tipo de um objeto) e mesmo dentro de bibliotecas com as quais já trabalhamos um pouco (e.g., <code>numpy.random.uniform()</code> para sortear números aleatórios de acordo com uma distribuição uniforme). À partir de agora veremos como podemos criar nossas próprias funções dentro da linguagem. No Python, a sintaxe para criar uma função personalizada é dada por:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nome_da_funcao(argumentos):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>instruções<span class="op">&gt;</span>    </span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Assim como nos <em>loops</em>, para definir uma nova função no Python é preciso começar com uma palavra-chave, nesse caso <code>def</code>. O nome que daremos à função vem logo em seguida. É através desse nome, que chamaremos essa função em outras partes do nosso código. Entre parênteses definimos os argumentos que a função recebe para realizar o conjunto de instruções em <code>&lt;instruções&gt;</code>. Note, mais uma vez, que todo o bloco de código que estiver identado e abaixo da linha de cabeçalho da função fará parte da função.</p>
-<p>Vejamos um exemplo simples. A função <code>frase_cinema</code> apresentada a seguir tem como objetivo imprimir uma das frases mais emblemáticas da história do cinema, originalmente introduzida na série de filmes <em>Star Wars</em>, criada por George Lucas.</p>
-<div id="06472490" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> frase_cinema():</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Que a força esteja com você!'</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Note que nesse caso, o parênteses logo após o nome da função está vazio. Isso quer dizer que essa função não recebe argumentos, apenas printa a frase entre aspas sempre que for chamada. Para chamá-la, basta usar o nome <code>frase_cinema</code> seguido dos parênteses vazios:</p>
-<div id="40f0f22a" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>frase_cinema()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Que a força esteja com você!</code></pre>
+<div id="ref-pyle1983chp2" class="csl-entry" role="listitem">
+Pyle, David J. 1983. <span>“The Economic Theory of Criminal Behaviour”</span>. Em <em>The Economics of Crime and Law Enforcement</em>, 8–28. London, UK: The MacMillan Press.
 </div>
 </div>
 </section>
-<section id="argumentos-de-uma-função" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="argumentos-de-uma-função"><span class="header-section-number">2.4</span> Argumentos de uma função</h2>
-<p>Na função anterior, não tínhamos nenhum argumento. Ou seja, toda vez que chamarmos a função <code>frase_cinema</code>, ela fará a mesma coisa. Pode até ser que seja esse o objetivo, apenas economizar linhas de código. A ideia de função, no entanto, é muito mais poderosa do que simplesmente uma “abreviação” de um monte de linhas de código. A abstração implícita no conceito de função é poderosa o suficiente para garantir que a função retorne coisas diferentes caso você altere algum <em>argumento</em>. Vamos falar disso a seguir.</p>
-<section id="keyword-arguments-e-default-values" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="keyword-arguments-e-default-values"><span class="header-section-number">2.4.1</span> <em>Keyword arguments</em> e <em>default values</em></h3>
-<p>Comecemos criando uma nova função <code>my_func</code> que receba como argumentos um nome próprio e uma localização.</p>
-<div id="61ff0e12" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_func(name,place):</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    strf<span class="op">=</span><span class="st">'Olá '</span><span class="op">+</span>name<span class="op">+</span><span class="st">'! Você é de '</span><span class="op">+</span>place<span class="op">+</span><span class="st">'?'</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(strf)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>my_func(<span class="st">'Emily'</span>,<span class="st">'Paris'</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Olá Emily! Você é de Paris?</code></pre>
-</div>
-</div>
-<p>Ao chamar a função <code>my_func</code>, ela combina os argumentos <code>Emily</code> e <code>Paris</code> dentro de um único string e printa esse string final. O que acontece, no entanto, se especificarmos o argumento <code>place</code> primeiro e depois o <code>name</code>?</p>
-<div id="0760b5ce" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_func(<span class="st">'Ribeirão Preto'</span>,<span class="st">'Roberto'</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Olá Ribeirão Preto! Você é de Roberto?</code></pre>
-</div>
-</div>
-<p>Um pouco estranho, não? A razão é que nesse exemplo utilizamos os chamados <em>argumentos posicionais</em>. Ou seja, a função vai assumir que o primeiro argumento é o <code>name</code> e o segundo é o <code>place</code>, não importa o que tenhamos passado como argumento. Para lidar com isso, a podemos atribuir um nome, ou _palavra-chave, a cada um dos argumentos. Nesse caso, será a palavra-chave, e não a posição, que vai determinar qual o valor atribuído a cada argumento dentro da função.</p>
-<div id="bb079f4f" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>my_func(place<span class="op">=</span><span class="st">'Ribeirão Preto'</span>,name<span class="op">=</span><span class="st">'Roberto'</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Olá Roberto! Você é de Ribeirão Preto?</code></pre>
-</div>
-</div>
-<p>Note que agora a posição passou a ser irrelevante porque colocamos os nomes de cada um dos argumentos. E se quiséssemos dar ainda mais flexibilidade à função, só especificando um subconjunto dos argumentos? Para que isso funcione, nós precisamos especificar os <em>valores-padrão</em> dos argumentos caso eles não sejam fornecidos. Abaixo uma função que faz exatamente isso.</p>
-<div id="949283ac" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_calc(bill_amount,tip_perc<span class="op">=</span><span class="dv">10</span>):</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    total<span class="op">=</span>bill_amount<span class="op">*</span>(<span class="dv">1</span> <span class="op">+</span> tip_perc<span class="op">/</span><span class="dv">100</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    total<span class="op">=</span><span class="bu">round</span>(total,<span class="dv">2</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'O valor final da sua conta foi: R$'</span>.<span class="bu">format</span>(total))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Nesse caso, o argumento <code>bill_amount</code> é obrigatório. Por outro lado, o argumento <code>tip_perc</code> vai assumir o valor 10 por padrão, caso não seja fornecido nenhum outro valor em seu lugar quando chamarmos a função.</p>
-</section>
-<section id="argumentos-arbitrários" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="argumentos-arbitrários"><span class="header-section-number">2.4.2</span> Argumentos arbitrários</h3>
-<p>Após discutir o uso de <em>keyword arguments</em> na definição de funções em Python é natural avançar para uma questão relacionada: o que fazer quando sequer sabemos, de antemão, quantos argumentos serão fornecidos? Em outras palavras, é possível definir funções capazes de operar com um número variável de entradas? A resposta é sim! O Python permite construir funções que acomodam uma quantidade indefinida de argumentos, preservando generalidade e reutilização de código. Para ilustrar essa ideia, podemos definir uma função simples chamada <code>my_var_sum</code>, cuja finalidade é retornar a soma de todos os valores numéricos recebidos na chamada, independentemente de quantos sejam.</p>
-<div id="06b7771e" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_var_sum(<span class="op">*</span>args):</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> arg <span class="kw">in</span> args:</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">sum</span><span class="op">=</span><span class="bu">sum</span><span class="op">+</span>arg</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'A soma total dos números fornecidos é igual a: '</span><span class="op">+</span><span class="bu">str</span>(<span class="bu">sum</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Observe como a definição da função agora tem <code>*args</code> ao invés de argumentos nomeados. No corpo da função, fazemos um loop em <code>args</code> até usarmos todos os argumentos. A função <code>my_var_sum</code> retorna a soma de todos os números passados como argumentos. Olha só o que acontece quando chamamos a função com diferentes números de argumentos:</p>
-<div id="26dd4505" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>my_var_sum(<span class="dv">99</span>,<span class="dv">10</span>,<span class="dv">54</span>,<span class="dv">23</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>my_var_sum(<span class="dv">9</span>,<span class="dv">87</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>my_var_sum(<span class="dv">5</span>,<span class="dv">21</span>,<span class="dv">36</span>,<span class="dv">79</span>,<span class="dv">45</span>,<span class="dv">65</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>my_var_sum(<span class="dv">1</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>A soma total dos números fornecidos é igual a: 186
-A soma total dos números fornecidos é igual a: 96
-A soma total dos números fornecidos é igual a: 251
-A soma total dos números fornecidos é igual a: 1</code></pre>
-</div>
-</div>
-<p>Mas e se eu quiser passar não apenas uma sequência de valores, mas uma sequência de valores com nomes? Não se preocupe, existe uma possibilidade de fazer isso, usando o <code>**kwargs</code> na definição dos argumentos.</p>
-<p>Qual é a diferença entre <code>*args</code> e <code>**kwargs</code>? A diferença é que você vai passar uma sequência de tamanho arbitrário de parâmetros, cada um deles nomeado. Nesse caso, o Python entende os elementos em <code>**kwargs</code> como parte de um dicionário. Cada elemento passado é um par chave-valor, e dentro da função você tem que desempacotar o valor da chave. Vamos seguir alguns exemplos.</p>
-<div id="ba104d50" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myFun(<span class="op">**</span>kwargs):</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> kwargs.items():</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(key<span class="op">+</span><span class="st">' == '</span><span class="op">+</span>value)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>myFun(first<span class="op">=</span><span class="st">'Geeks'</span>, mid<span class="op">=</span><span class="st">'for'</span>, last<span class="op">=</span><span class="st">'Geeks'</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>first == Geeks
-mid == for
-last == Geeks</code></pre>
-</div>
-</div>
-<p>Podemos misturar os tipos de argumentos (posicionais versus <code>*args</code>/<code>*kwargs</code>)? Sim!</p>
-<div id="f344e9f0" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myFun(arg1, <span class="op">**</span>kwargs):</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> kwargs.items():</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(arg1<span class="op">+</span>key<span class="op">+</span><span class="st">' == '</span><span class="op">+</span>value)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>myFun(<span class="st">"Hi - "</span>, first<span class="op">=</span><span class="st">'Geeks'</span>, mid<span class="op">=</span><span class="st">'for'</span>, last<span class="op">=</span><span class="st">'Geeks'</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hi - first == Geeks
-Hi - mid == for
-Hi - last == Geeks</code></pre>
-</div>
-</div>
-</section>
-<section id="execução-condicional-dentro-de-uma-função" class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" data-anchor-id="execução-condicional-dentro-de-uma-função"><span class="header-section-number">2.4.3</span> Execução condicional dentro de uma função</h3>
-<p>As funções podem retornar objetos booleanos também, o que pode ser conveniente para esconder testes complicados dentro de uma função. Por exemplo:</p>
-<div id="9a68eeb7" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_divisible(x, y):</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">%</span> y <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="va">True</span>)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="va">False</span>)</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>is_divisible(<span class="dv">6</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>False</code></pre>
-</div>
-</div>
-</section>
-<section id="iteração-dentro-de-uma-função" class="level3" data-number="2.4.4">
-<h3 data-number="2.4.4" class="anchored" data-anchor-id="iteração-dentro-de-uma-função"><span class="header-section-number">2.4.4</span> Iteração dentro de uma função</h3>
-<p>Da mesma forma que podemos ter condições lógicas dentro da função, podemos ter blocos de repetição (<code>for</code> e <code>while</code>) dentro da função, assim como no caso de argumentos arbitrários. Vamos olhar para um outro exemplo em que a função recebe uma lista de strings como argumento e faz operações em cada um dos elementos, um a um:</p>
-<div id="4b5ca55f" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> [<span class="st">' Alabama '</span>,<span class="st">'Georgia!'</span>,<span class="st">'Georgia'</span>,<span class="st">'georgia'</span>,<span class="st">'FlOrIda'</span>,<span class="st">'south carolina##'</span>,<span class="st">'West virginia?'</span>]</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> clean_strings(lista_strings):</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    result<span class="op">=</span>[]</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> value <span class="kw">in</span> lista_strings:</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> value.strip()</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> value.title()</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> value.replace(<span class="st">'#'</span>,<span class="st">''</span>)</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> value.replace(<span class="st">'?'</span>,<span class="st">''</span>)</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>        value <span class="op">=</span> value.replace(<span class="st">'!'</span>,<span class="st">''</span>)</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>        result.append(value)</span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(result)</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(states)</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>clean_strings(states)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[' Alabama ', 'Georgia!', 'Georgia', 'georgia', 'FlOrIda', 'south carolina##', 'West virginia?']
-['Alabama', 'Georgia', 'Georgia', 'Georgia', 'Florida', 'South Carolina', 'West Virginia']</code></pre>
-</div>
-</div>
-<p>Conforme as funções se tornam mais complexas, incorporando lógica condicional e laços, torna-se fundamental entender como extrair resultados de funções. Até aqui, muitos exemplos mostraram funções que apenas imprimem valores; na seção seguinte analisaremos o papel do comando <code>return</code> e sua importância na prática.</p>
-</section>
-</section>
-<section id="valor-de-retorno-de-uma-função" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="valor-de-retorno-de-uma-função"><span class="header-section-number">2.5</span> Valor de retorno de uma função</h2>
-<p>A instrução <code>return</code> é o mecanismo pelo qual uma função envia um resultado de volta ao ponto em que foi chamada. Do ponto de vista lógico, uma função representa uma transformação entre entradas (argumentos) e saídas (valores retornados). O <code>return</code> explicita qual é essa saída e, além disso, encerra imediatamente a execução da função no momento em que é encontrado. Se não houver nenhuma instrução <code>return</code> no corpo da função, ou se for utilizado apenas <code>return</code> sem valor explícito, o Python devolve automaticamente o valor especial <code>None</code>.</p>
-<p>Um dos erros mais frequentes entre iniciantes é confundir <code>print</code> com <code>return</code>. Embora ambos possam produzir algo visível na tela, eles têm naturezas completamente distintas. Enquanto o <code>print</code> apenas envia uma representação do valor para a saída padrão (normalmente o terminal), o <code>return</code> produz um valor que pode ser armazenado em uma variável, reutilizado em cálculos ou passado como argumento para outra função.</p>
-<p>Vejamos um exemplo de uma função que calcula a raiz quadrada de um número:</p>
-<div id="16c2add9" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raiz1(x):</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    fx <span class="op">=</span> x<span class="op">**</span><span class="fl">0.5</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(fx)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> raiz1(<span class="dv">100</span>)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>10.0
-None</code></pre>
-</div>
-</div>
-<p>Nesse caso, a função imprime o valor calculado, mas não o retorna. Como não há <code>return</code>, o valor devolvido por <code>raiz1</code> é <code>None</code>. Assim, a variável y passa a armazenar <code>None</code>, e é exatamente isso que será impresso na última linha. Se substituirmos a instrução de impressão pela instrução de retorno, o comportamento muda estruturalmente:</p>
-<div id="b4386338" class="cell" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raiz2(x):</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    fx <span class="op">=</span> x<span class="op">**</span><span class="fl">0.5</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fx</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> raiz2(<span class="dv">100</span>)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>10.0</code></pre>
-</div>
-</div>
-<p>Agora a função devolve o valor numérico calculado. A variável y armazena esse valor, que pode ser reutilizado em outras operações. A função passa a se comportar como uma transformação matemática: recebe um número e devolve outro. Essa distinção torna-se ainda mais clara quando tentamos usar o resultado em outra operação numérica:</p>
-<div id="b573c066" class="cell" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> raiz1(<span class="dv">100</span>) <span class="op">+</span> <span class="dv">5</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>10.0</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[17]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> z = <span class="ansi-yellow-bg">raiz1</span><span class="ansi-yellow-bg">(</span><span class="ansi-green-fg ansi-yellow-bg">100</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">+</span><span class="ansi-yellow-bg"> </span><span class="ansi-green-fg ansi-yellow-bg">5</span>
-<span class="ansi-green-fg">      2</span> <span style="color:rgb(0,135,0)">print</span>(z)
-
-<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: 'NoneType' and 'int'</pre>
-</div>
-</div>
-</div>
-<p>O código acima gera erro porque <code>raiz1(100)</code> devolve <code>None</code>, e não é possível somar None com um número. Já no caso da função que utiliza a instrução de retorno, a operação funciona normalmente:</p>
-<div id="75639a72" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> raiz2(<span class="dv">100</span>) <span class="op">+</span> <span class="dv">5</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>15.0</code></pre>
-</div>
-</div>
-<p>Em programação científica e análise de dados, quase sempre desejamos funções que retornem valores, pois esses resultados serão encadeados em outras operações, armazenados em estruturas de dados ou utilizados em rotinas subsequentes. A impressão na tela é útil para depuração ou visualização intermediária, mas não substitui o mecanismo formal de retorno. Em termos conceituais, a diferença pode ser resumida da seguinte forma: funções que usam apenas print produzem efeitos; funções que utilizam return produzem valores.</p>
-<section id="expectativa-de-vida-de-variáveis-dentro-da-função" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="expectativa-de-vida-de-variáveis-dentro-da-função"><span class="header-section-number">2.5.1</span> Expectativa de vida de variáveis dentro da função</h3>
-<p>Quando você cria uma variável dentro de uma função ela é local, ou seja, só existe dentro da própria função. Por exemplo:</p>
-<div id="38e0d953" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> concat_strings(str1,str2):</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    texto_concatenado <span class="op">=</span> str1 <span class="op">+</span> <span class="st">' '</span> <span class="op">+</span> str2</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(texto_concatenado)</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>texto1 <span class="op">=</span> <span class="st">'Que a força esteja com você,'</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>texto2 <span class="op">=</span> <span class="st">'jovem Padawan.'</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>concat_strings(texto1,texto2)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Que a força esteja com você, jovem Padawan.</code></pre>
-</div>
-</div>
-<p>Essa função recebe dois argumentos, concatena-os e exibe o resultado em uma única linha de texto. No entanto, assim que a função é encerrada, a variável <code>texto_concatenado</code> é deletada. O que acontece se tentarmos acessá-la?</p>
-<div id="ce6885b6" class="cell" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(texto_concatenado)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[20]</span><span class="ansi-green-fg">, line 1</span>
-<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">texto_concatenado</span>)
-
-<span class="ansi-red-fg">NameError</span>: name 'texto_concatenado' is not defined</pre>
-</div>
-</div>
-</div>
-<p>Com a base conceitual de definição, argumentos e retorno consolidada, podemos agora aplicar esses conceitos em um exemplo mais substancial. A aplicação do Teorema Central do Limite mostrará como estruturar uma rotina que recebe distribuições e parâmetros como argumentos e retorna medidas agregadas de interesse. Essa transição marca o passo do conceito para a aplicação.</p>
-</section>
-</section>
-<section id="aplicação-teorema-central-do-limite" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="aplicação-teorema-central-do-limite"><span class="header-section-number">2.6</span> Aplicação: Teorema Central do Limite</h2>
-<p>O primeiro passo para replicarmos, na forma de uma função, a aplicação do Teorema Central do Limite da aula anterior é definir uma função que recebe como argumentos a distribuição da varíavel aleatória X, o intervalo no qual a variável está definida, o número de sorteios que faremos em cada amostra e o número de amostras realizadas. Para tal, definiremos a função <code>func_tcl</code> que recebe como argumentos nomeados <code>dist</code> (função de distribuição da variável X), <code>intervalo</code> (suporte da variável X), <code>n</code> (número de sorteios por amostra) e <code>samples</code> (número de amostras).</p>
-<p>Apesar de definir valores-padrão válidos para <code>intervalo</code>, <code>n</code> e <code>samples</code>, é atribuído ao argumento <code>dist</code> um valor padrão igual a <code>None</code>. Isso permite ao usuário ter controle direto sobre a função de distribuição utilizada para sortear X e evitar tornar a nossa função uma caixa preta. Assim, caso o usuário esqueça de definir uma distribuição válida, a função retorna um erro.</p>
-<p>Caso defina uma função de distribuição válida, a função <code>func_tcl</code> avança e passar a realizar a sequência de sorteios de cada amostra e a média dentro de cada amostra através de um loop do tipo <code>for</code>.</p>
-<div id="67204460" class="cell" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># definição da função</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func_tcl(dist<span class="op">=</span><span class="va">None</span>,intervalo<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">1</span>),n<span class="op">=</span><span class="dv">100</span>, samples<span class="op">=</span><span class="dv">10</span>):</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> dist <span class="op">==</span> <span class="va">None</span>:</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Você esqueceu de carregar uma função que defina a distribuição de X.'</span>)</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>        means <span class="op">=</span> []</span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,samples):</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>            x_func_tcl <span class="op">=</span> dist(intervalo[<span class="dv">0</span>],intervalo[<span class="dv">1</span>],n)</span>
-<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>            mean_x <span class="op">=</span> <span class="bu">sum</span>(x_func_tcl)<span class="op">/</span><span class="bu">len</span>(x_func_tcl)</span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>            means.append(mean_x)</span>
-<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>            mean_of_means <span class="op">=</span> <span class="bu">sum</span>(means)<span class="op">/</span><span class="bu">len</span>(means)</span>
-<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> mean_of_means</span>
-<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a><span class="co"># comando para garantir a reprodutibilidade</span></span>
-<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
-<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a><span class="co"># uso da função</span></span>
-<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>func_tcl(dist<span class="op">=</span>np.random.uniform,intervalo<span class="op">=</span>(<span class="op">-</span><span class="dv">40</span>,<span class="dv">40</span>),n<span class="op">=</span><span class="dv">50</span>,samples<span class="op">=</span><span class="dv">10</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>np.float64(0.662169619365357)</code></pre>
-</div>
-</div>
-<p>Maravilha, agora a função nos retorna apenas o que é do nosso interesse: a média das médias. Para chegar, finalmente, no mesmo resultado da aula passada basta colocar essa função dentro de um loop.</p>
-<div id="5e781de0" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>expoentes <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>]</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> [<span class="dv">2</span><span class="op">**</span>exp <span class="cf">for</span> exp <span class="kw">in</span> expoentes]</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>means_of_means <span class="op">=</span> []</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> y <span class="kw">in</span> Y:</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    mean_of_means <span class="op">=</span> func_tcl(dist<span class="op">=</span>np.random.uniform,intervalo<span class="op">=</span>(<span class="op">-</span><span class="dv">40</span>,<span class="dv">40</span>),n<span class="op">=</span><span class="dv">100</span>,samples<span class="op">=</span>y)</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    means_of_means.append(mean_of_means)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="8f7119db" class="cell" data-execution_count="23">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> means_of_means:</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(np.<span class="bu">round</span>(m,<span class="dv">2</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>-1.17
-0.92
-0.37
--0.25
-0.31
--0.32
-0.23
--0.15
--0.06
-0.03</code></pre>
-</div>
-</div>
-<p><em>Voilá</em>! Como exercício para casa, tente fazer alterações nessa função de modo que ela receba não um valor com o número de amostras, mas uma lista de números de amostras. A função deve cuspir como resultado a lista <code>means_of_means</code> e não apenas o valor <code>mean_of_means</code>.</p>
-<p>Após a aplicação prática, é oportuno discutir como documentar funções de forma que qualquer usuário (inclusive você no futuro) possa compreender rapidamente o propósito, argumentos e comportamento de uma rotina implementada. A próxima seção introduz docstrings como forma padrão de documentação no Python.</p>
-</section>
-<section id="documentação" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="documentação"><span class="header-section-number">2.7</span> Documentação</h2>
-<p>Uma <em>docstring</em> é uma string no início de uma função, definida pelo usuário, que serve como documentação do que a função faz. A docstring vem logo depois da primeira linha que define a função e é delimitada por aspas triplas, o que permite que a string se estenda por várias linhas, como vocês devem se lembrar. Vamos criar como exemplo uma função que printa o tipo do objeto que é passado como argumento:</p>
-<div id="c22f6d74" class="cell" data-execution_count="24">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> imprime_tipo(x):</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Função criada para a matéria EAE1106 - Métodos Computacionais para Economia</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Objetivo: função simples que imprime o tipo do objeto recebido como argumento.</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">type</span>(x))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>Embora opcional, a documentação é uma boa prática de programação. A menos que você consiga se lembrar qual foi o cardápio do bandejão na semana passada, sempre documente seu código. Podemos acessar a documentação de determinada função, nativa ou personalizada, utilizando o atributo <code>__doc__</code>.</p>
-<div id="a7f1ae8e" class="cell" data-execution_count="25">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(imprime_tipo.__doc__)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Função criada para a matéria EAE1106 - Métodos Computacionais para Economia
-Objetivo: função simples que imprime o tipo do objeto recebido como argumento.
-</code></pre>
-</div>
-</div>
-<div id="89ddfa60" class="cell" data-execution_count="26">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># documentação da função nativa len()</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>.__doc__)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Return the number of items in a container.</code></pre>
-</div>
-</div>
-<div id="a7238516" class="cell" data-execution_count="27">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># documentação da função uniform() dentro do pacote NumPy</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.random.uniform.__doc__)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-        uniform(low=0.0, high=1.0, size=None)
-
-        Draw samples from a uniform distribution.
-
-        Samples are uniformly distributed over the half-open interval
-        ``[low, high)`` (includes low, but excludes high).  In other words,
-        any value within the given interval is equally likely to be drawn
-        by `uniform`.
-
-        .. note::
-            New code should use the `~numpy.random.Generator.uniform`
-            method of a `~numpy.random.Generator` instance instead;
-            please see the :ref:`random-quick-start`.
-
-        Parameters
-        ----------
-        low : float or array_like of floats, optional
-            Lower boundary of the output interval.  All values generated will be
-            greater than or equal to low.  The default value is 0.
-        high : float or array_like of floats
-            Upper boundary of the output interval.  All values generated will be
-            less than or equal to high.  The high limit may be included in the 
-            returned array of floats due to floating-point rounding in the 
-            equation ``low + (high-low) * random_sample()``.  The default value 
-            is 1.0.
-        size : int or tuple of ints, optional
-            Output shape.  If the given shape is, e.g., ``(m, n, k)``, then
-            ``m * n * k`` samples are drawn.  If size is ``None`` (default),
-            a single value is returned if ``low`` and ``high`` are both scalars.
-            Otherwise, ``np.broadcast(low, high).size`` samples are drawn.
-
-        Returns
-        -------
-        out : ndarray or scalar
-            Drawn samples from the parameterized uniform distribution.
-
-        See Also
-        --------
-        randint : Discrete uniform distribution, yielding integers.
-        random_integers : Discrete uniform distribution over the closed
-                          interval ``[low, high]``.
-        random_sample : Floats uniformly distributed over ``[0, 1)``.
-        random : Alias for `random_sample`.
-        rand : Convenience function that accepts dimensions as input, e.g.,
-               ``rand(2,2)`` would generate a 2-by-2 array of floats,
-               uniformly distributed over ``[0, 1)``.
-        random.Generator.uniform: which should be used for new code.
-
-        Notes
-        -----
-        The probability density function of the uniform distribution is
-
-        .. math:: p(x) = \frac{1}{b - a}
-
-        anywhere within the interval ``[a, b)``, and zero elsewhere.
-
-        When ``high`` == ``low``, values of ``low`` will be returned.
-        If ``high`` &lt; ``low``, the results are officially undefined
-        and may eventually raise an error, i.e. do not rely on this
-        function to behave when passed arguments satisfying that
-        inequality condition. The ``high`` limit may be included in the
-        returned array of floats due to floating-point rounding in the
-        equation ``low + (high-low) * random_sample()``. For example:
-
-        &gt;&gt;&gt; x = np.float32(5*0.99999999)
-        &gt;&gt;&gt; x
-        np.float32(5.0)
-
-
-        Examples
-        --------
-        Draw samples from the distribution:
-
-        &gt;&gt;&gt; s = np.random.uniform(-1,0,1000)
-
-        All values are within the given interval:
-
-        &gt;&gt;&gt; np.all(s &gt;= -1)
-        True
-        &gt;&gt;&gt; np.all(s &lt; 0)
-        True
-
-        Display the histogram of the samples, along with the
-        probability density function:
-
-        &gt;&gt;&gt; import matplotlib.pyplot as plt
-        &gt;&gt;&gt; count, bins, ignored = plt.hist(s, 15, density=True)
-        &gt;&gt;&gt; plt.plot(bins, np.ones_like(bins), linewidth=2, color='r')
-        &gt;&gt;&gt; plt.show()
-
-        </code></pre>
-</div>
-</div>
-<p>Note do exemplo acima que uma docstring pode conter uma descrição detalhada do funcionamento de uma função, inclusive com exemplos de aplicação. Legal, né? Esse tipo de documentação também está disponível para as bibliotecas como um todo. Isso pode nos ajudar, por exemplo, a conhecer o conteúdo de uma determinada biblioteca.</p>
-<div id="c2d07dd1" class="cell" data-execution_count="28">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># documentação do NumPy</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.__doc__)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-NumPy
-=====
-
-Provides
-  1. An array object of arbitrary homogeneous items
-  2. Fast mathematical operations over arrays
-  3. Linear Algebra, Fourier Transforms, Random Number Generation
-
-How to use the documentation
-----------------------------
-Documentation is available in two forms: docstrings provided
-with the code, and a loose standing reference guide, available from
-`the NumPy homepage &lt;https://numpy.org&gt;`_.
-
-We recommend exploring the docstrings using
-`IPython &lt;https://ipython.org&gt;`_, an advanced Python shell with
-TAB-completion and introspection capabilities.  See below for further
-instructions.
-
-The docstring examples assume that `numpy` has been imported as ``np``::
-
-  &gt;&gt;&gt; import numpy as np
-
-Code snippets are indicated by three greater-than signs::
-
-  &gt;&gt;&gt; x = 42
-  &gt;&gt;&gt; x = x + 1
-
-Use the built-in ``help`` function to view a function's docstring::
-
-  &gt;&gt;&gt; help(np.sort)
-  ... # doctest: +SKIP
-
-For some objects, ``np.info(obj)`` may provide additional help.  This is
-particularly true if you see the line "Help on ufunc object:" at the top
-of the help() page.  Ufuncs are implemented in C, not Python, for speed.
-The native Python help() does not know how to view their help, but our
-np.info() function does.
-
-Available subpackages
----------------------
-lib
-    Basic functions used by several sub-packages.
-random
-    Core Random Tools
-linalg
-    Core Linear Algebra Tools
-fft
-    Core FFT routines
-polynomial
-    Polynomial tools
-testing
-    NumPy testing tools
-distutils
-    Enhancements to distutils with support for
-    Fortran compilers support and more (for Python &lt;= 3.11)
-
-Utilities
----------
-test
-    Run numpy unittests
-show_config
-    Show numpy build configuration
-__version__
-    NumPy version string
-
-Viewing documentation using IPython
------------------------------------
-
-Start IPython and import `numpy` usually under the alias ``np``: `import
-numpy as np`.  Then, directly past or use the ``%cpaste`` magic to paste
-examples into the shell.  To see which functions are available in `numpy`,
-type ``np.&lt;TAB&gt;`` (where ``&lt;TAB&gt;`` refers to the TAB key), or use
-``np.*cos*?&lt;ENTER&gt;`` (where ``&lt;ENTER&gt;`` refers to the ENTER key) to narrow
-down the list.  To view the docstring for a function, use
-``np.cos?&lt;ENTER&gt;`` (to view the docstring) and ``np.cos??&lt;ENTER&gt;`` (to view
-the source code).
-
-Copies vs. in-place operation
------------------------------
-Most of the functions in `numpy` return a copy of the array argument
-(e.g., `np.sort`).  In-place versions of these functions are often
-available as array methods, i.e. ``x = np.array([1,2,3]); x.sort()``.
-Exceptions to this rule are documented.
-
-</code></pre>
-</div>
-</div>
-<p>Podemos usar sempre esse atalho caso desejemos conhecer as funcionalidades que uma biblioteca guarda por trás de suas cortinas!</p>
-</section>
-<section id="funções-anônimas" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="funções-anônimas"><span class="header-section-number">2.8</span> Funções anônimas</h2>
-<p>Uma vez familiarizado com a definição e documentação de funções nomeadas, surge a possibilidade de trabalhar com funções que não possuem nome explícito, as chamadas funções anônimas. Enquanto as funções normais são definidas usando a palavra-chave <code>def</code> no Python, as funções anônimas são definidas usando a palavra-chave <code>lambda</code>. Por essa razão, funções anônimas também são chamadas de funções lambda. A estrutura usual de uma função lambda é a seguinte:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">lambda</span> <span class="op">&lt;</span>argumentos<span class="op">&gt;</span>: <span class="op">&lt;</span>expressão<span class="op">&gt;</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Usualmente, utilizamos uma função lambda porque precisamos de uma função rápida por um determinado período de tempo e/ou quando utilizamos técnicas mais poderosas que possuem funções como argumento, como <code>filter</code> e <code>map</code>. Vou fazer um exemplo com cada uma delas.</p>
-<section id="filter" class="level3" data-number="2.8.1">
-<h3 data-number="2.8.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">2.8.1</span> <em>filter</em></h3>
-<p>A função <code>filter()</code> em Python recebe uma função e uma lista como argumentos. A função é chamada com todos os itens da lista e uma nova lista é retornada contendo itens para os quais a função avalia <code>True</code>. Aqui está um exemplo de uso da função para filtrar apenas números pares de uma lista.</p>
-<div id="2df15b31" class="cell" data-execution_count="29">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">11</span>, <span class="dv">3</span>, <span class="dv">12</span>]</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>new_list <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: (x<span class="op">%</span><span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>) , my_list))</span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(new_list)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[4, 6, 8, 12]</code></pre>
-</div>
-</div>
-</section>
-<section id="map" class="level3" data-number="2.8.2">
-<h3 data-number="2.8.2" class="anchored" data-anchor-id="map"><span class="header-section-number">2.8.2</span> <em>map</em></h3>
-<p>A função <code>map()</code> em Python recebe uma função e uma lista. A função é chamada com todos os itens da lista e uma nova lista é retornada contendo os itens retornados por essa função para cada item. Aqui está um exemplo de uso da função <code>map()</code> para dobrar todos os itens em uma lista.</p>
-<div id="a1e91d2a" class="cell" data-execution_count="30">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">11</span>, <span class="dv">3</span>, <span class="dv">12</span>]</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>new_list <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span> , my_list))</span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(new_list)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[2, 10, 8, 12, 16, 22, 6, 24]</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="conclusão" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">2.9</span> Conclusão</h2>
-<p>Funções representam o principal mecanismo de organização da lógica de um programa. Elas permitem decompor problemas complexos em partes menores, reutilizar código, reduzir redundância e tornar explícita a relação entre entradas e saídas. Do ponto de vista computacional, introduzem o conceito de escopo, estruturam o fluxo de execução e tornam o código mais legível e testável.</p>
-<p>No contexto da Economia aplicada, funções são particularmente relevantes porque grande parte do trabalho empírico envolve transformar dados em resultados por meio de rotinas repetidas: cálculo de estatísticas, limpeza de bases, simulações ou estimações. Escrever essas rotinas como funções facilita replicação, comparação de cenários e organização de projetos.</p>
-<p>Nos próximos capítulos, ao utilizar bibliotecas como <code>NumPy</code> e <code>Pandas</code>, veremos que praticamente todas as operações são estruturadas como chamadas de funções ou métodos. A compreensão sólida do que é uma função é condição necessária para avançar com segurança em programação numérica e análise de dados.</p>
-</section>
-<section id="exercícios" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="exercícios"><span class="header-section-number">2.10</span> Exercícios</h2>
-<ol type="1">
-<li>Escreva uma função chamada triângulo que recebe uma string como argumento e retorna como output um triângulo retângulo de determinada altura, usando cópias da string, como no exemplo:</li>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Isso implica que <span class="math display">\[\frac{d W_c}{d h_c}, \frac{d W_m}{d h_m}, \frac{d F}{d h_c} &gt; 0 \quad;\quad \frac{d^2 W_c}{d h_c^2}, \frac{d^2 W_m}{d h_m^2} &lt; 0 \quad;\quad \frac{d^2 F}{d h_c^2} &gt; 0\]</span> Além disso, é usual assumir que <span class="math inline">\(W_c(0) = W_m(0) = F(0) = 0\)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Ver <span class="citation" data-cites="ehrlich1973">Ehrlich (<a href="referencias.html#ref-ehrlich1973" role="doc-biblioref">1973</a>)</span><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Um caso interessante é dos indivíduos amantes do risco, i.e.&nbsp;<span class="math inline">\(U_s^{''}(C_s) &gt; 0\)</span> e curva de indiferença côncava em relação à origem. Sob a hipótese de uma fronteira de produção linear no espaço <span class="math inline">\(C_A \times C_B\)</span>, o que é garantido por algumas hipóteses em relação à segunda derivada de <span class="math inline">\(W_c\)</span>, <span class="math inline">\(W_c\)</span> e <span class="math inline">\(W_c\)</span>, a decisão ótima para esse tipo de indivíduo é a especialização completa em atividades criminosas.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>triangle(<span class="st">'L'</span>, <span class="dv">5</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>L\
-LL\
-LLL\
-LLLL\
-LLLLL\</code></pre>
-<ol start="2" type="1">
-<li><p>Defina uma função que retorne a quantidade de dinheiro em uma conta corrente após uma transação. Os dois parâmetros para essa função são saldo e transação. Ambos serão argumentos inteiros. O saldo é quanto dinheiro existe atualmente na conta, e a transação quanto adicionar ou subtrair da conta corrente (baseado se é um inteiro positivo ou negativo). Note que essa operação é mais complicada que apenas <code>saldo + transacao</code>. Isso porque se a transação for negativa (saída de dinheiro da conta) e em valor absoluto maior do que o saldo existente, a transação deve ser ignorada e o valor original de saldo retornado pela função.</p></li>
-<li><p>Escreva uma função chamada <code>sum_list</code> que recebe uma lista de números e retorna um dicionário com duas chaves e dois valores.</p>
-<ul>
-<li>O primeiro par chave-valor deve associar à chave <code>soma</code> o valor numérico da soma de todos os elementos.</li>
-<li>O segundo par chave-valor deve associar à chave <code>elementos</code> o número de elementos somados.</li>
-</ul></li>
-<li><p>Defina uma função que recebe uma temperatura em Celsius e retorna o valor convertido para Fahrenheit com duas casas decimais. Agora crie uma segunda função, mais genérica, que receba como primeiro argumento <code>CtoF</code> ou <code>FtoC</code> e como segundo argumento a temperatura. Essa segunda função deve ser capaz de converter as escalas de temperatura em ambas as direções. Por padrão, o primeiro argumento deve ser definido como <code>CtoF</code>.</p></li>
-<li><p>(Prova de 2024) Escreva uma função <code>teste_primo</code> que testa se um número qualquer é primo, ou seja, se ele é divisível apenas por 1 e por ele próprio. Essa função deve imprimir como resultado a frase <code>O número X é um número primo.</code> ou <code>O número X não é um número primo. Seu menor divisor é Y</code>, em que X é o argumento que a função recebe e Y é o menor valor inteiro pelo qual X é divisível. Aplique a função aos valores <span class="math inline">\(523\)</span>, <span class="math inline">\(991\)</span> e <span class="math inline">\(1007\)</span>.</p></li>
-<li><p>(Prova de 2026) Considere as duas funções abaixo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> soma1(a,b):</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    resultado <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(resultado)</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> soma2(a, b):</span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    resultado <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> resultado</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<ol type="a">
-<li>Suponha <span class="math inline">\(a=10\)</span> e <span class="math inline">\(b=15.7\)</span>. Discuta a saída das funções <code>soma1</code> e <code>soma2</code>. Existe alguma diferença?</li>
-<li>Explique o que está incorreto do ponto de vista do funcionamento esperado da função quando da aplicação de soma1. Que tipo de erro é esse?</li>
-</ol></li>
-</ol>
-
-
 </section>
 
 </main> <!-- /main -->
@@ -1361,8 +805,8 @@ LLLLL\</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../undergrad/referencias.html" class="pagination-link" aria-label="Referências bibliográficas">
-        <span class="nav-page-text">Referências bibliográficas</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../undergrad/limitacoes.html" class="pagination-link" aria-label="Limitações e contribuições mais recentes">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Limitações e contribuições mais recentes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

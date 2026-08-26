@@ -1,464 +1,160 @@
-# Dynamics in the crime decision {#sec-dynamics}
+# Modelo de alocação de tempo: Ehrlich (1973) {#sec-ehrlich}
+
+## Introdução
+
+Pouco tempo depois de Gary Becker publicar seu trabalho seminal, Isaac Ehrlich publica, em 1973, seu artigo *``Participation in Illegitimate Activities: A Theoretical and Empirical Investigation''*, contribuindo enormemente para a consolidação da análise da atividade criminosa através do modelo de escolha racional. No artigo, Ehrlich incorpora na análise a importância dos custos de oportunidade do crime em um ambiente com incerteza. No modelo proposto, o indivíduo decide de forma ótima sua alocação de tempo entre diferentes atividades - crime e atividade lícitas - que, diferente do modelo de Gary Becker, não são mutuamente excludentes.
+
+A principal diferença, em termos de estrutura, em relação ao modelo em @becker1968 é que o objetivo do indivíduo nesse caso não é escolher entre atividades, mas o nível ótimo de horas dedicadas a cada atividade individualmente. Existe incerteza em relação ao estado da natureza que irá se concretizar e a decisão do indivíduo é feita *a priori* de forma contigente a todos os possíveis estados.
+
+## Estrutura do modelo
+
+No modelo original, Ehrlich assume apenas dois possíveis estados da natureza: (i) indivíduo é capturado e punido, e (ii) indivíduo não é capturado e, portanto, não é punido. O modelo, no entanto, comporta análises com múltiplos estados em que, por exemplo, indivíduos são capturados e não punidos ou mesmo indivíduos inocentes são punidos de forma errônea. A apresentação aqui será feita na sua forma mais simples, com dois estados, seguindo de perto @pyle1983chp2 e @chalfin2017.
+
+O valor monetário equivalente associada ao estado A (captura e punição) é dada por $X_A$, enquanto $X_B$ representa o valor do estado alternativo. Esse valor é transformado diretamente em consumo, sobre o qual o indivíduo aufere utilidade. Assuma também que o indivíduo, para um dado período, distribui sua dotação de tempo $T$ para atividades lícitas ($h_m$), um conjunto de atividade ilícitas ($h_c$) e lazer ($L$). Assim, o consumo associado a cada estado e a restrição de tempo são dadas por:
+
+$$ C_A = X_A = W_0 + W_c(h_c) + W_m(h_m) - F(h_c) $$
+$$ C_B = X_B = W_0 + W_c(h_c) + W_m(h_m) $$
+$$ T = L + h_c + h_m $$
+
+em que $W_0$ é a renda do indivíduo que não depende do estado e de suas escolhas, $W_c$ e $W_m$ são funções que representam a renda gerada pelo tempo dedicado às atividades ilícitas e lícitas, respectivamente, e $F$ representa o custo monetário equivalente da punição, que é uma função do tempo dedicado às atividades ilícitas. $W_c$, $W_m$ e $F$ são funções crescentes no tempo dedicado às respectivas atividades, mas a renda gerada em ambos os estados possui retorno marginal decrescente enquanto o custo monetário da punição cresce a taxas crescentes com $h_c$.^[Isso implica que $$\frac{d W_c}{d h_c}, \frac{d W_m}{d h_m}, \frac{d F}{d h_c} > 0 \quad;\quad \frac{d^2 W_c}{d h_c^2}, \frac{d^2 W_m}{d h_m^2} < 0 \quad;\quad \frac{d^2 F}{d h_c^2} > 0$$ Além disso, é usual assumir que $W_c(0) = W_m(0) = F(0) = 0$.]
+
+O indíviduo faz suas escolhas período a período e aufere utilidade tanto do nível de consumo em um dado estado, quanto do tempo dedicado ao lazer. Sua função utilidade no estado $s$ é representada por $U_s = U(C_s,L)$ com utilidade marginal do consumo e lazer positivas, i.e., $U_C > 0$ e $U_L > 0$. Para o caso em que a probabilidade (subjetiva) do indivíduo se encontrar no estado $A$ é independente do tempo dedicado à atividade ilícita e dada por $p$, a função utilidade esperada, que obedece os axiomas de von Neumann-Morgerstern, é dada por:
+
+$$
+E(U(crime)) = p U(C_A,L) + (1-p) U(C_B, L)
+$$ {#eq-EU_Ehrlich}
+
+## Escolha ótima de tempo
+
+O problema de otimização condicional do indivíduo se resume à escolha do tempo dedicado a cada uma das atividades e lazer, sujeito à restrição orçamentária específica a cada estado e à restrição de tempo:
+
+$$
+\begin{aligned}
+\max_{h_c,h_m,L} \quad & p \cdot U(C_A, L) + (1-p) \cdot U(C_B, L) \\
+\text{sujeito a} \quad & C_A = W_0 + W_c(h_c) + W_m(h_m) - F(h_c) \\
+& C_B = W_0 + W_c(h_c) + W_m(h_m) \\
+& L = T - h_c - h_m
+\end{aligned}
+$$
+
+Assumindo uma solução interior ($h_c, h_m, L > 0$) e uma função de utilidade contínua e diferenciável, podemos substituir as restrições dentro da função objetivo e transformar o problema em um problema de otimização não-condicional, com o indivíduo escolhendo apenas $h_c$ e $h_m$. Assim, as condições de primeira ordem são dadas por
 
-## Introduction
+$$
+\begin{aligned}
+h_c:\quad &
+p \left[
+\frac{\partial U}{\partial C_A}\frac{\partial C_A}{\partial h_c}
++
+\frac{\partial U}{\partial L}\frac{\partial L}{\partial h_c}
+\right]
++
+(1-p)
+\left[
+\frac{\partial U}{\partial C_B}\frac{\partial C_B}{\partial h_c}
++
+\frac{\partial U}{\partial L}\frac{\partial L}{\partial h_c}
+\right]
+= 0
+\end{aligned}
+$$ {#eq-FOC1_Ehrlich}
 
-Até aqui, os programas escritos consistem em sequências de instruções, condicionais e laços que manipulam objetos como números, listas e dicionários. Essa forma é suficiente para resolver problemas simples, mas rapidamente se torna difícil de manter quando o código cresce ou quando a mesma lógica precisa ser reutilizada várias vezes.
+$$
+\begin{aligned}
+h_m:\quad &
+p \left[
+\frac{\partial U}{\partial C_A}\frac{\partial C_A}{\partial h_m}
++
+\frac{\partial U}{\partial L}\frac{\partial L}{\partial h_m}
+\right]
++
+(1-p)
+\left[
+\frac{\partial U}{\partial C_B}\frac{\partial C_B}{\partial h_m}
++
+\frac{\partial U}{\partial L}\frac{\partial L}{\partial h_m}
+\right]
+= 0
+\end{aligned}
+$$ {#eq-FOC2_Ehrlich}
 
-Funções são o principal mecanismo de abstração em programação. Elas permitem encapsular um conjunto de instruções sob um nome, definir claramente quais informações entram e quais resultados saem, e separar a lógica interna da interface externa. Em termos computacionais, funções organizam o fluxo de execução, delimitam escopos de variáveis e tornam explícita a transformação entre _inputs_ e _outputs_ -- conceito central também em Economia, onde frequentemente modelamos relações funcionais entre variáveis.
+Defina as derivadas parciais de $U$ em relação ao consumo no estado $s$ como $U_{C_s}$ e de $U$ em relação ao lazer como $U_L$, igual em ambos os estados. Além disso, $w_c \equiv (d W_c / d h_c)$, $f_c \equiv (d F / d h_c)$ e $w_m \equiv (d W_m / d h_m)$. Por fim, note que $\partial L/\partial h_c = \partial L/\partial h_m = -1$. Substituindo essas definições e valores na equação (@eq-FOC1_Ehrlich):
 
-![Setup usual de um computador pessoal no começo dos anos 2000. Fonte: _Wikimedia Commons_](images/old_desktop.jpg){#fig-olddesk width=800px max-width=100% fig-align="center"}
+$$
+\begin{aligned}
+p \left[U_{C_A}(w_c - f_c) - U_L\right]
++ (1-p)\left[U_{C_B}w_c - U_L\right]
+&= 0
+\\
+p U_{C_A}(w_c - f_c) + (1-p)U_{C_B}w_c
+&= U_L
+\end{aligned}
+$$ {#eq-FOC1a_Ehrlich}
 
-Neste capítulo, o objetivo é compreender o papel das funções como ferramenta de organização, reutilização e clareza lógica. Ao final, o aluno deverá ser capaz de estruturar programas de forma modular e compreender como funções são usadas extensivamente nas bibliotecas científicas que serão estudadas nas próximas aulas.
+O mesmo pode ser feito com a equação (@eq-FOC2_Ehrlich).
 
-### Pré-requisitos
+$$
+\begin{aligned}
+p \left[U_{C_A}w_m - U_L\right]
++ (1-p)\left[U_{C_B}w_m - U_L\right]
+&= 0
+\\
+w_m \left(pU_{C_A} + (1-p)U_{C_B}\right)
+&= U_L
+\end{aligned}
+$$ {#eq-FOC2a_Ehrlich}
 
-Para trabalhar com funções e todas as suas funcionalidades, utilizaremos dois pacotes externos:
+Unindo as equações (@eq-FOC1a_Ehrlich) e (@eq-FOC2a_Ehrlich), é possível reescrever a condição de primeira ordem como:
 
-- `numpy`
-- `time`
+$$
+\frac{w_c - w_m}{w_c - f_c - w_m}
+=
+\frac{-p U_{C_A}}{(1-p) U_{C_B}}
+$$ {#eq-opt_Ehrlich}
 
-```{python}
-#| message: false
-#| warning: false
+A equação (@eq-opt_Ehrlich) foi derivada a partir da hipótese de uma solução interior, com participação nas atividades lícitas e ilícitas ao mesmo tempo. Assim, uma hipótese implícita para a validade dessa relação é a de que a punição marginal pelo envolvimento no crime seja maior do que a diferença do retorno marginal entre as atividades criminosas e as atividades lícitas, i.e. $f_c > w_c - w_m > 0$. Caso contrário, atividades lícitas seriam sempre dominadas pelas ilícitas e todo o tempo não dedicado ao lazer seria dedicado ao crime.
 
-import numpy as np
-import time
-```
+Adicionalmente, note que o lado esquerdo dessa equação pode ser entendido como a inclinação do conjunto de pontos factíveis de produção no espaço $C_A \times C_B$. Já o lado direito da equação representa a inclinação da curva de indiferença do indivíduo nesse mesmo espaço. Esse ponto de máximo, portanto, é equivalente ao ponto de igualdade entre a taxa de transformação técnica e a taxa marginal de substituição, que você já deve ter visto nos cursos introdutórios de Microeconomia.
 
-## Importância da modularização
+Defina $\hat{T}$ como a dotação de tempo a ser alocada entre as atividades, já descontado o tempo alocado para o lazer, tal que $\hat{T} \equiv T - L$. A figura abaixo resume o problema de otimização:
 
-Até aqui, os programas foram escritos como sequências lineares de instruções executadas de cima para baixo. Esse modelo é suficiente quando resolvemos um único problema específico com um único conjunto de dados. No entanto, ele se torna inadequado quando precisamos aplicar a mesma regra várias vezes ou quando o código começa a crescer.
+[INSERIR FIGURA]
 
-Considere o seguinte exemplo. Suponha que desejamos calcular a média de diferentes conjuntos de notas:
+em que $(C_A^\star, C_B^\star)$ representa o ponto de escolha ótima entre o tempo dedicado a cada atividade, tal que $C_A^\star$ representa o nível de consumo no estado em que o indivíduo é capturado e punido e $C_B^\star$ o consumo no estado em que o indivíduo não é capturado.
 
-```{python}
-notas1 = [7.5, 8.0, 6.5]
-media1 = sum(notas1) / len(notas1)
-print(media1)
+Se o indivíduo se especializa em atividade lícitas ($h_c=0$ e $h_m = \hat{T}$) seu nível de consumo, tanto no estado A quanto no estado B, será igual a $W_0 + W_m(\hat{T})$. Esse ponto é representado por $T^{'}$, que pertence à linha de certeza e onde não há risco associado. No extremo oposto, onde há especialização em atividades ilícitas ($h_c=\hat{T}$ e $h_m = 0$), o consumo no estado em que o indivíduo é capturado e punido é igual a $W_0 + W_c(\hat{T}) - F(\hat{T})$, enquanto no estado em que o indivíduo passa impune o consumo é igual a $W_0 + W_c(\hat{T})$. Esse ponto é representado por $T$, que se encontra à esquerda e acima do ponto $T^{'}$ pelas hipóteses de que $W_c(0) = W_m(0)$ e $w_c - w_m > 0$. Finalmente, a concavidade desse conjunto de pontos factíveis de produção no espaço $C_A \times C_B$ está diretamente associada às hipóteses em relação às derivadas parciais de primeira ordem e segunda ordem de $W_c$, $W_m$ e $F$.
 
-notas2 = [9.0, 8.5, 7.0]
-media2 = sum(notas2) / len(notas2)
-print(media2)
-```
+No caso das preferências, elas são representadas por curvas de indiferenças convexas em relação à origem, o que vem da hipótese de retornos marginais decrescentes do consumo em ambos os estados. Matematicamente, $U_s^{''}(C_s) < 0$ com $s=\{A,B\}$. Em termos de preferências em relação ao risco, isso está associado a um indivíduo avesso ao risco.
 
-O código funciona, mas a regra de cálculo aparece repetida. Se decidirmos alterar o critério -- por exemplo, aplicar um ajuste ou excluir a menor nota -- será necessário modificar todas as ocorrências manualmente. Esse padrão aumenta a probabilidade de erro e dificulta a manutenção. O problema não está no cálculo em si, mas na forma como ele está organizado. Estamos misturando duas coisas distintas: os dados, que variam, e a regra de transformação, que permanece a mesma. Uma solução mais robusta é separar essas duas dimensões.
+## Estática comparativa
 
-É aqui que entram as funções, que nos permitem encapsular determinado conjunto de instruções e nomeá-los. Assim, basta chamar a função pelo seu nome para aplicar em certo conjunto de dados o mesmo conjunto de instruções. O uso de funções introduz o conceito de modularização. Em vez de escrever um bloco contínuo de instruções, passamos a estruturar o programa como um conjunto de módulos (funções), cada um responsável por uma transformação específica entre entrada e saída. Do ponto de vista computacional, isso significa que isolamos partes do código, reduzimos redundância e tornamos explícita a relação entre argumentos recebidos e valores retornados.
+Uma das perguntas que surgem a partir do modelo e da análise da figura é: sob quais condições um indivíduo avesso ao risco não se especializa em atividade lícitas? Já vimos que, o fato de $f_c > w_c - w_m > 0$ garante que o indivíduo não se especializa no crime, mas precisamos de mais estrutura para dizer o que garante que ele também não especializa em atividades não-criminosas. Note que, para que o ponto de consumo ótimo esteja à esquerda do ponto $T^{'}$, a inclinação da curva de indiferença no ponto $T^{'}$ deve ser menor do que a inclinação da fronteira do conjunto de produção nesse mesmo ponto. Assim, 
 
-A partir desse ponto, o objetivo é compreender formalmente como funções são definidas, como recebem argumentos e como retornam resultados. O foco deixa de ser apenas executar comandos e passa a ser estruturar programas de forma lógica e reutilizável.
+$$ \frac{w_c - w_m}{w_c - f_c - w_m} > \frac{-p U_{C_A}}{(1-p) U_{C_B}} $$
 
-## O que é uma função?
+Mas no ponto $T^{'}$, o consumo no estado A é igual ao consumo no estado B, de modo que $U_{C_A} = U_{C_B}$. Com um pouco de manipulação algébrica, é possível mostrar que a validade da desigualdade acima é equivalente a $ w_c - w_m > p f_c $. Assim, no caso de um indivíduo avesso ao risco e com $1>p>0$, há alocação de tempo para atividade lícitas e ilícitas no mesmo período quando
 
-Formalmente, no contexto das linguagens de programação, uma função é uma sequência nomeada de instruções, que executa algum tipo de operação específica mas não necessariamente numérica, como é o caso das funções matemáticas. A ideia essencial por trás de uma função é a de juntar algumas tarefas comuns ou repetidas e criar uma função para que, em vez de escrever o mesmo código várias vezes, possamos chama-la pelo nome e reutilizar o conjunto de instruções nela contida sempre que necessário.
+$$
+f_c > w_c - w_m > p \cdot f_c
+$$ {#eq-Ehrlich_intsol}
 
-Caso o objetivo de dividir um programa em funções ainda não tenha ficado claro, saiba que:
+Assumindo que as oportunidades disponíveis aos potenciais criminosos são independentes do comportamento do indivíduo em relação ao risco, é possível mostrar que um agente amante do risco dedicaria mais tempo à prática de atividades ilícitas do que um agente neutro ao risco e ainda mais tempo quando comparado a um agente avesso ao risco.^[Ver @ehrlich1973] A prática de atividades ilícitas, porém, não depende das preferências em relação ao risco, podendo ocorrer em qualquer um dos casos. Já as condições para especialização em uma atividade ou outra dependem do quão avesso ou amante do risco o indivíduo é.^[Um caso interessante é dos indivíduos amantes do risco, i.e. $U_s^{''}(C_s) > 0$ e curva de indiferença côncava em relação à origem. Sob a hipótese de uma fronteira de produção linear no espaço $C_A \times C_B$, o que é garantido por algumas hipóteses em relação à segunda derivada de $W_c$, $W_c$ e $W_c$, a decisão ótima para esse tipo de indivíduo é a especialização completa em atividades criminosas.]
 
-- Criar uma nova função dá a oportunidade de nomear um grupo de instruções, o que deixa o seu programa mais fácil de ler e de depurar.
+Agora que você já sabe as condições necessárias para que o indivíduo avesso ao risco dedique tempo tanto a atividades lícitas quanto ilícitas (i.e., não especialização), é possível avançar e compreender como essas escolhas variam com mudanças na probabilidade de apreensão, no retorno marginal de cada atividade e no custo marginal da punição. Com base na condição de ótimo, representada pela equação (@eq-opt_Ehrlich), fica claro que:
 
-- As funções podem tornar um programa menor, eliminando o código repetitivo. Depois, caso precise fazer alguma alteração, basta fazê-la em um lugar só.
+- Um aumento da probabilidade de apreensão $p$ implica em um aumento, em valor absoluto, da inclinação da curva de indiferença. Assim, para que a igualdade se mantenha, é preciso que aumente a diferença entre $w_c - w_m$ e/ou diminua $f_c$. Como a segunda derivada de $W_c$ e $W_m$ é negativa e a segunda derivada de $F$ positiva, então $w_c$ aumenta, $f_c$ e $w_m$ diminuem com uma redução do tempo dedicado às atividades ilícitas e um aumento do tempo dedicado às atividades lícitas. Assim,
+	
+    $$ \uparrow p \quad\implies\quad \downarrow h_c \quad e \quad \uparrow h_m $$
+	
+- Considere o caso de um aumento do custo marginal da punição $f_c$ para um dado $h_c$, muitas vezes associado a um aumento da severidade da pena quando capturado. Na região em que $f_c > w_c - w_m > 0$, esse aumento de $f_c$ implica em uma redução, em valor absoluto, do lado esquerdo da equação (\ref{eq:opt_Ehrlich}). Esse aumento em $f_c$ também reduz $C_A$, enquanto mantém $C_B$ intacto, o que aumenta, em valor absoluto, o lado direito da mesma equação. Para voltar ao equilíbrio é preciso que $h_c$ diminua e $h_m$ aumente, o que aumenta o lado esquerdo da equação e diminui o lado direito, ambos em valores absolutos.
+	
+    $$ \uparrow f_c \quad\implies\quad \downarrow h_c \quad e \quad \uparrow h_m $$
+	
+- Alterações na diferença entre o retorno marginal da atividade ilícita e do retorno marginal da atividade lícita, isto é, $w_c - w_m$, também altera os incentivos para o envolvimento no crime. Tudo o mais constante, um aumento nessa diferença aumenta o lado esquerdo da equação, em valor absoluto. Além disso, em geral, tem pouco efeito sobre $C_A$ e $C_B$ e, portanto, sobre o lado direito da equação. Assim, para que a equação volte à igualdade, é preciso que o lado esquerdo diminua e o direito aumente, o que é atingido com uma redução em $h_m$ e um aumento em $h_c$.
+	
+    $$ \uparrow (w_c - w_m) \quad\implies\quad \uparrow h_c \quad e \quad \downarrow h_m $$
 
-- Dividir um programa longo em funções permite depurar as partes uma de cada vez e então reuni-las em um conjunto funcional.
+No artigo original, essas estáticas comparativas são utilizadas para discutir o caso de indivíduos que, mesmo punidos em um determinado período, voltam a cometer crimes. Esse resultado não é necessariamente associado a algum tipo de miopia ou comportamento irracional, basta que as oportunidades no mercado de atividades lícitas não se alterem ou mesmo que piorem, o que usualmente acontece com indivíduos com histórico criminal. Nesse caso, mesmo um aumento em $p$ e/ou $f_c$ pode não ser acompanhado de uma redução na atividade criminosa se a diferença $w_c - w_m$ aumenta entre períodos.
 
-- As funções bem projetadas muitas vezes são úteis para muitos programas. Uma vez escritas e depuradas, você pode reutilizar as funções em programas fora daquele para o qual elas foram originalmente construídas.
+Conjuntamente, esses resultados sobre a alocação ótima de tempo entre atividades e como essa alocação reage a parâmetros são utilizados para construir, assim como em @becker1968 uma função de oferta de crimes. A partir dessa função, o artigo discute efeitos de política pública sobre o número agregado de crimes. Para além dos efeitos de dissuasão que mudanças na probabilidade de apreensão e severidade das penas tem sobre a decisão de envolvimento no crime (efeito *deterrence*, em inglês), o artigo discute os efeitos de políticas públicas, como encarceramento, através de um segundo mecanismo potencial: o efeito de incapacitação (*incapacitation*), já que, por definição, no período em que se encontra preso o indivíduo não consegue se envolver em atividades criminosas como roubo e assalto. 
 
-Existem várias funções nativas no Python (e.g., `type()` para encontrar o tipo de um objeto) e mesmo dentro de bibliotecas com as quais já trabalhamos um pouco (e.g., `numpy.random.uniform()` para sortear números aleatórios de acordo com uma distribuição uniforme). À partir de agora veremos como podemos criar nossas próprias funções dentro da linguagem. No Python, a sintaxe para criar uma função personalizada é dada por:
-
-```python
-def nome_da_funcao(argumentos):
-    <instruções>    
-```
-
-Assim como nos _loops_, para definir uma nova função no Python é preciso começar com uma palavra-chave, nesse caso `def`. O nome  que daremos à função vem logo em seguida. É através desse nome, que chamaremos essa função em outras partes do nosso código. Entre parênteses definimos os argumentos que a função recebe para realizar o conjunto de instruções em `<instruções>`. Note, mais uma vez, que todo o bloco de código que estiver identado e abaixo da linha de cabeçalho da função fará parte da função.
-
-Vejamos um exemplo simples. A função `frase_cinema` apresentada a seguir tem como objetivo imprimir uma das frases mais emblemáticas da história do cinema, originalmente introduzida na série de filmes _Star Wars_, criada por George Lucas.
-
-```{python}
-def frase_cinema():
-    print('Que a força esteja com você!')
-```
-
-Note que nesse caso, o parênteses logo após o nome da função está vazio. Isso quer dizer que essa função não recebe argumentos, apenas printa a frase entre aspas sempre que for chamada. Para chamá-la, basta usar o nome `frase_cinema` seguido dos parênteses vazios:
-
-```{python}
-frase_cinema()
-```
-
-## Argumentos de uma função
-
-Na função anterior, não tínhamos nenhum argumento. Ou seja, toda vez que chamarmos a função `frase_cinema`, ela fará a mesma coisa. Pode até ser que seja esse o objetivo, apenas economizar linhas de código. A ideia de função, no entanto, é muito mais poderosa do que simplesmente uma "abreviação" de um monte de linhas de código. A abstração implícita no conceito de função é poderosa o suficiente para garantir que a função retorne coisas diferentes caso você altere algum _argumento_. Vamos falar disso a seguir.
-
-### _Keyword arguments_ e _default values_
-
-Comecemos criando uma nova função `my_func` que receba como argumentos um nome próprio e uma localização.
-
-```{python}
-def my_func(name,place):
-    strf='Olá '+name+'! Você é de '+place+'?'
-    print(strf)
-
-my_func('Emily','Paris')
-```
-
-Ao chamar a função `my_func`, ela combina os argumentos `Emily` e `Paris` dentro de um único string e printa esse string final. O que acontece, no entanto, se especificarmos o argumento `place` primeiro e depois o `name`?
-
-```{python}
-my_func('Ribeirão Preto','Roberto')
-```
-
-Um pouco estranho, não? A razão é que nesse exemplo utilizamos os chamados _argumentos posicionais_. Ou seja, a função vai assumir que o primeiro argumento é o `name` e o segundo é o `place`, não importa o que tenhamos passado como argumento. Para lidar com isso, a podemos atribuir um nome, ou _palavra-chave, a cada um dos argumentos. Nesse caso, será a palavra-chave, e não a posição, que vai determinar qual o valor atribuído a cada argumento dentro da função.
-
-```{python}
-my_func(place='Ribeirão Preto',name='Roberto')
-```
-
-Note que agora a posição passou a ser irrelevante porque colocamos os nomes de cada um dos argumentos. E se quiséssemos dar ainda mais flexibilidade à função, só especificando um subconjunto dos argumentos? Para que isso funcione, nós precisamos especificar os _valores-padrão_ dos argumentos caso eles não sejam fornecidos. Abaixo uma função que faz exatamente isso.
-
-```{python}
-def total_calc(bill_amount,tip_perc=10):
-    total=bill_amount*(1 + tip_perc/100)
-    total=round(total,2)
-    print('O valor final da sua conta foi: R$'.format(total))
-```
-
-Nesse caso, o argumento `bill_amount` é obrigatório. Por outro lado, o argumento `tip_perc` vai assumir o valor 10 por padrão, caso não seja fornecido nenhum outro valor em seu lugar quando chamarmos a função.
-
-### Argumentos arbitrários
-
-Após discutir o uso de _keyword arguments_ na definição de funções em Python é natural avançar para uma questão relacionada: o que fazer quando sequer sabemos, de antemão, quantos argumentos serão fornecidos? Em outras palavras, é possível definir funções capazes de operar com um número variável de entradas? A resposta é sim! O Python permite construir funções que acomodam uma quantidade indefinida de argumentos, preservando generalidade e reutilização de código. Para ilustrar essa ideia, podemos definir uma função simples chamada `my_var_sum`, cuja finalidade é retornar a soma de todos os valores numéricos recebidos na chamada, independentemente de quantos sejam.
-
-```{python}
-def my_var_sum(*args):
-    
-    sum = 0
-    for arg in args:
-        sum=sum+arg
-        
-    print('A soma total dos números fornecidos é igual a: '+str(sum))
-```
-
-Observe como a definição da função agora tem `*args` ao invés de argumentos nomeados. No corpo da função, fazemos um loop em `args` até usarmos todos os argumentos. A função `my_var_sum` retorna a soma de todos os números passados como argumentos. Olha só o que acontece quando chamamos a função com diferentes números de argumentos:
-
-```{python}
-my_var_sum(99,10,54,23)
-my_var_sum(9,87)
-my_var_sum(5,21,36,79,45,65)
-my_var_sum(1)
-```
-
-Mas e se eu quiser passar não apenas uma sequência de valores, mas uma sequência de valores com nomes? Não se preocupe, existe uma possibilidade de fazer isso, usando o `**kwargs` na definição dos argumentos. 
-
-Qual é a diferença entre `*args` e `**kwargs`? A diferença é que você vai passar uma sequência de tamanho arbitrário de parâmetros, cada um deles nomeado. Nesse caso, o Python entende os elementos em `**kwargs` como parte de um dicionário. Cada elemento passado é um par chave-valor, e dentro da função você tem que desempacotar o valor da chave. Vamos seguir alguns exemplos.
-
-```{python}
-def myFun(**kwargs):
-    
-    for key, value in kwargs.items():
-        print(key+' == '+value)
-  
-myFun(first='Geeks', mid='for', last='Geeks')
-```
-
-Podemos misturar os tipos de argumentos (posicionais versus `*args`/`*kwargs`)? Sim!
-
-```{python}
-def myFun(arg1, **kwargs):
-    
-    for key, value in kwargs.items():
-        print(arg1+key+' == '+value)
-  
-myFun("Hi - ", first='Geeks', mid='for', last='Geeks')
-```
-
-### Execução condicional dentro de uma função
-
-As funções podem retornar objetos booleanos também, o que pode ser conveniente para esconder testes complicados dentro de uma função. Por exemplo:
-
-```{python}
-def is_divisible(x, y):
-    
-    if x % y == 0:
-        print(True)
-    else:
-        print(False)
-    
-is_divisible(6, 4)
-```
-
-### Iteração dentro de uma função
-
-Da mesma forma que podemos ter condições lógicas dentro da função, podemos ter blocos de repetição (`for` e `while`) dentro da função, assim como no caso de argumentos arbitrários. Vamos olhar para um outro exemplo em que a função recebe uma lista de strings como argumento e faz operações em cada um dos elementos, um a um:
-
-```{python}
-states = [' Alabama ','Georgia!','Georgia','georgia','FlOrIda','south carolina##','West virginia?']
-
-def clean_strings(lista_strings):
-    result=[]
-    
-    for value in lista_strings:
-        value = value.strip()
-        value = value.title()
-        value = value.replace('#','')
-        value = value.replace('?','')
-        value = value.replace('!','')
-        result.append(value)
-    
-    print(result)
-
-print(states)
-clean_strings(states)
-```
-
-Conforme as funções se tornam mais complexas, incorporando lógica condicional e laços, torna-se fundamental entender como extrair resultados de funções. Até aqui, muitos exemplos mostraram funções que apenas imprimem valores; na seção seguinte analisaremos o papel do comando `return` e sua importância na prática.
-
-## Valor de retorno de uma função
-
-A instrução `return` é o mecanismo pelo qual uma função envia um resultado de volta ao ponto em que foi chamada. Do ponto de vista lógico, uma função representa uma transformação entre entradas (argumentos) e saídas (valores retornados). O `return` explicita qual é essa saída e, além disso, encerra imediatamente a execução da função no momento em que é encontrado. Se não houver nenhuma instrução `return` no corpo da função, ou se for utilizado apenas `return` sem valor explícito, o Python devolve automaticamente o valor especial `None`.
-
-Um dos erros mais frequentes entre iniciantes é confundir `print` com `return`. Embora ambos possam produzir algo visível na tela, eles têm naturezas completamente distintas. Enquanto o `print` apenas envia uma representação do valor para a saída padrão (normalmente o terminal), o `return` produz um valor que pode ser armazenado em uma variável, reutilizado em cálculos ou passado como argumento para outra função.
-
-Vejamos um exemplo de uma função que calcula a raiz quadrada de um número:
-
-```{python}
-def raiz1(x):
-    fx = x**0.5
-    print(fx)
-
-y = raiz1(100)
-print(y)
-```
-
-Nesse caso, a função imprime o valor calculado, mas não o retorna. Como não há `return`, o valor devolvido por `raiz1` é `None`. Assim, a variável y passa a armazenar `None`, e é exatamente isso que será impresso na última linha. Se substituirmos a instrução de impressão pela instrução de retorno, o comportamento muda estruturalmente:
-
-```{python}
-def raiz2(x):
-    fx = x**0.5
-    return fx
-
-y = raiz2(100)
-print(y)
-```
-
-Agora a função devolve o valor numérico calculado. A variável y armazena esse valor, que pode ser reutilizado em outras operações. A função passa a se comportar como uma transformação matemática: recebe um número e devolve outro. Essa distinção torna-se ainda mais clara quando tentamos usar o resultado em outra operação numérica:
-
-```{python}
-#| error: true
-
-z = raiz1(100) + 5
-print(z)
-```  
-
-O código acima gera erro porque `raiz1(100)` devolve `None`, e não é possível somar None com um número. Já no caso da função que utiliza a instrução de retorno, a operação funciona normalmente:
-
-```{python}
-z = raiz2(100) + 5
-print(z)
-```  
-
-Em programação científica e análise de dados, quase sempre desejamos funções que retornem valores, pois esses resultados serão encadeados em outras operações, armazenados em estruturas de dados ou utilizados em rotinas subsequentes. A impressão na tela é útil para depuração ou visualização intermediária, mas não substitui o mecanismo formal de retorno. Em termos conceituais, a diferença pode ser resumida da seguinte forma: funções que usam apenas print produzem efeitos; funções que utilizam return produzem valores.
-
-### Expectativa de vida de variáveis dentro da função
-
-Quando você cria uma variável dentro de uma função ela é local, ou seja, só existe dentro da própria função. Por exemplo:
-
-```{python}
-def concat_strings(str1,str2):
-    
-    texto_concatenado = str1 + ' ' + str2
-    print(texto_concatenado)
-    
-texto1 = 'Que a força esteja com você,'
-texto2 = 'jovem Padawan.'
-
-concat_strings(texto1,texto2)
-```
-
-Essa função recebe dois argumentos, concatena-os e exibe o resultado em uma única linha de texto. No entanto, assim que a função é encerrada, a variável `texto_concatenado` é deletada. O que acontece se tentarmos acessá-la?
-
-```{python}
-#| error: true
-
-print(texto_concatenado)
-```
-
-Com a base conceitual de definição, argumentos e retorno consolidada, podemos agora aplicar esses conceitos em um exemplo mais substancial. A aplicação do Teorema Central do Limite mostrará como estruturar uma rotina que recebe distribuições e parâmetros como argumentos e retorna medidas agregadas de interesse. Essa transição marca o passo do conceito para a aplicação.
-
-## Aplicação: Teorema Central do Limite
-
-O primeiro passo para replicarmos, na forma de uma função, a aplicação do Teorema Central do Limite da aula anterior é definir uma função que recebe como argumentos a distribuição da varíavel aleatória X, o intervalo no qual a variável está definida, o número de sorteios que faremos em cada amostra e o número de amostras realizadas. Para tal, definiremos a função `func_tcl` que recebe como argumentos nomeados `dist` (função de distribuição da variável X), `intervalo` (suporte da variável X), `n` (número de sorteios por amostra) e `samples` (número de amostras).
-
-Apesar de definir valores-padrão válidos para `intervalo`, `n` e `samples`, é atribuído ao argumento `dist` um valor padrão igual a `None`. Isso permite ao usuário ter controle direto sobre a função de distribuição utilizada para sortear X e evitar tornar a nossa função uma caixa preta. Assim, caso o usuário esqueça de definir uma distribuição válida, a função retorna um erro. 
-
-Caso defina uma função de distribuição válida, a função `func_tcl` avança e passar a realizar a sequência de sorteios de cada amostra e a média dentro de cada amostra através de um loop do tipo `for`.
-
-
-```{python}
-# definição da função
-def func_tcl(dist=None,intervalo=(0,1),n=100, samples=10):
-    
-    if dist == None:
-        print('Você esqueceu de carregar uma função que defina a distribuição de X.')
-    else:
-        means = []
-        for j in range(0,samples):
-            x_func_tcl = dist(intervalo[0],intervalo[1],n)
-            mean_x = sum(x_func_tcl)/len(x_func_tcl)
-            
-            means.append(mean_x)
-            mean_of_means = sum(means)/len(means)
-        
-        return mean_of_means
-
-# comando para garantir a reprodutibilidade
-np.random.seed(1)
-
-# uso da função
-func_tcl(dist=np.random.uniform,intervalo=(-40,40),n=50,samples=10)
-```
-
-Maravilha, agora a função nos retorna apenas o que é do nosso interesse: a média das médias. Para chegar, finalmente, no mesmo resultado da aula passada basta colocar essa função dentro de um loop.
-
-```{python}
-expoentes = [1,2,3,4,5,6,7,8,9,10]
-Y = [2**exp for exp in expoentes]
-
-means_of_means = []
-
-np.random.seed(1)
-for y in Y:
-
-    mean_of_means = func_tcl(dist=np.random.uniform,intervalo=(-40,40),n=100,samples=y)
-    means_of_means.append(mean_of_means)
-```
-
-```{python}
-for m in means_of_means:
-    
-    print(np.round(m,2))
-```
-
-_Voilá_! Como exercício para casa, tente fazer alterações nessa função de modo que ela receba não um valor com o número de amostras, mas uma lista de números de amostras. A função deve cuspir como resultado a lista `means_of_means` e não apenas o valor `mean_of_means`.
-
-Após a aplicação prática, é oportuno discutir como documentar funções de forma que qualquer usuário (inclusive você no futuro) possa compreender rapidamente o propósito, argumentos e comportamento de uma rotina implementada. A próxima seção introduz docstrings como forma padrão de documentação no Python.
-
-## Documentação
-
-Uma _docstring_ é uma string no início de uma função, definida pelo usuário, que serve como documentação do que a função faz. A docstring vem logo depois da primeira linha que define a função e é delimitada por aspas triplas, o que permite que a string se estenda por várias linhas, como vocês devem se lembrar. Vamos criar como exemplo uma função que printa o tipo do objeto que é passado como argumento:
-
-```{python}
-def imprime_tipo(x):
-    
-    '''
-    Função criada para a matéria EAE1106 - Métodos Computacionais para Economia
-    Objetivo: função simples que imprime o tipo do objeto recebido como argumento.
-    '''
-    
-    print(type(x))
-```
-
-Embora opcional, a documentação é uma boa prática de programação. A menos que você consiga se lembrar qual foi o cardápio do bandejão na semana passada, sempre documente seu código. Podemos acessar a documentação de determinada função, nativa ou personalizada, utilizando o atributo `__doc__`.
-
-```{python}
-print(imprime_tipo.__doc__)
-```
-
-```{python}
-# documentação da função nativa len()
-print(len.__doc__)
-```
-
-```{python}
-# documentação da função uniform() dentro do pacote NumPy
-print(np.random.uniform.__doc__)
-```
-
-Note do exemplo acima que uma docstring pode conter uma descrição detalhada do funcionamento de uma função, inclusive com exemplos de aplicação. Legal, né? Esse tipo de documentação também está disponível para as bibliotecas como um todo. Isso pode nos ajudar, por exemplo, a conhecer o conteúdo de uma determinada biblioteca.
-
-```{python}
-# documentação do NumPy
-print(np.__doc__)
-```
-
-Podemos usar sempre esse atalho caso desejemos conhecer as funcionalidades que uma biblioteca guarda por trás de suas cortinas!
-
-## Funções anônimas
-
-Uma vez familiarizado com a definição e documentação de funções nomeadas, surge a possibilidade de trabalhar com funções que não possuem nome explícito, as chamadas funções anônimas. Enquanto as funções normais são definidas usando a palavra-chave `def` no Python, as funções anônimas são definidas usando a palavra-chave `lambda`. Por essa razão, funções anônimas também são chamadas de funções lambda. A estrutura usual de uma função lambda é a seguinte: 
-
-```python
-lambda <argumentos>: <expressão>
-```
-
-Usualmente, utilizamos uma função lambda porque precisamos de uma função rápida por um determinado período de tempo e/ou quando utilizamos técnicas mais poderosas que possuem funções como argumento, como `filter` e `map`. Vou fazer um exemplo com cada uma delas.
-
-### _filter_
-
-A função `filter()` em Python recebe uma função e uma lista como argumentos. A função é chamada com todos os itens da lista e uma nova lista é retornada contendo itens para os quais a função avalia `True`. Aqui está um exemplo de uso da função para filtrar apenas números pares de uma lista.
-
-```{python}
-my_list = [1, 5, 4, 6, 8, 11, 3, 12]
-
-new_list = list(filter(lambda x: (x%2 == 0) , my_list))
-
-print(new_list)
-```
-
-### _map_
-
-A função `map()` em Python recebe uma função e uma lista. A função é chamada com todos os itens da lista e uma nova lista é retornada contendo os itens retornados por essa função para cada item. Aqui está um exemplo de uso da função `map()` para dobrar todos os itens em uma lista.
-
-```{python}
-my_list = [1, 5, 4, 6, 8, 11, 3, 12]
-
-new_list = list(map(lambda x: x * 2 , my_list))
-
-print(new_list)
-```
-
-## Conclusão
-
-Funções representam o principal mecanismo de organização da lógica de um programa. Elas permitem decompor problemas complexos em partes menores, reutilizar código, reduzir redundância e tornar explícita a relação entre entradas e saídas. Do ponto de vista computacional, introduzem o conceito de escopo, estruturam o fluxo de execução e tornam o código mais legível e testável.
-
-No contexto da Economia aplicada, funções são particularmente relevantes porque grande parte do trabalho empírico envolve transformar dados em resultados por meio de rotinas repetidas: cálculo de estatísticas, limpeza de bases, simulações ou estimações. Escrever essas rotinas como funções facilita replicação, comparação de cenários e organização de projetos.
-
-Nos próximos capítulos, ao utilizar bibliotecas como `NumPy` e `Pandas`, veremos que praticamente todas as operações são estruturadas como chamadas de funções ou métodos. A compreensão sólida do que é uma função é condição necessária para avançar com segurança em programação numérica e análise de dados.
-
-
-## Exercícios
-
-1. Escreva uma função chamada triângulo que recebe uma string como argumento e retorna como output um triângulo retângulo de determinada altura, usando cópias da string, como no exemplo:
-
-```python
-triangle('L', 5)
-```
-    L\
-    LL\
-    LLL\
-    LLLL\
-    LLLLL\
-
-2. Defina uma função que retorne a quantidade de dinheiro em uma conta corrente após uma transação. Os dois parâmetros para essa função são saldo e transação. Ambos serão argumentos inteiros. O saldo é quanto dinheiro existe atualmente na conta, e a transação quanto adicionar ou subtrair da conta corrente (baseado se é um inteiro positivo ou negativo). Note que essa operação é mais complicada que apenas `saldo + transacao`. Isso porque se a transação for negativa (saída de dinheiro da conta) e em valor absoluto maior do que o saldo existente, a transação deve ser ignorada e o valor original de saldo retornado pela função.
-
-3. Escreva uma função chamada `sum_list` que recebe uma lista de números e retorna um dicionário com duas chaves e dois valores. 
-
-    - O primeiro par chave-valor deve associar à chave `soma` o valor numérico da soma de todos os elementos. 
-    - O segundo par chave-valor deve associar à chave `elementos` o número de elementos somados.
-
-4. Defina uma função que recebe uma temperatura em Celsius e retorna o valor convertido para Fahrenheit com duas casas decimais. Agora crie uma segunda função, mais genérica, que receba como primeiro argumento `CtoF` ou `FtoC` e como segundo argumento a temperatura. Essa segunda função deve ser capaz de converter as escalas de temperatura em ambas as direções. Por padrão, o primeiro argumento deve ser definido como `CtoF`.
-
-5. (Prova de 2024) Escreva uma função `teste_primo` que testa se um número qualquer é primo, ou seja, se ele é divisível apenas por 1 e por ele próprio. Essa função deve imprimir como resultado a frase `O número X é um número primo.` ou `O número X não é um número primo. Seu menor divisor é Y`, em que X é o argumento que a função recebe e Y é o menor valor inteiro pelo qual X é divisível. Aplique a função aos valores $523$, $991$ e $1007$.
-
-6. (Prova de 2026) Considere as duas funções abaixo:
-
-    ```python
-    def soma1(a,b):
-        resultado = a + b
-        print(resultado)
-
-    def soma2(a, b):
-        resultado = a + b
-        return resultado
-    ```
-
-    a. Suponha $a=10$ e $b=15.7$. Discuta a saída das funções `soma1` e `soma2`. Existe alguma diferença?
-    b. Explique o que está incorreto do ponto de vista do funcionamento esperado da função quando da aplicação de soma1. Que tipo de erro é esse?
-
+Ambos os mecanismos -- *deterrence* e *incapacitation* -- são importantes para entender o efeito das mais diversas políticas públicas, como o próprio encarceramento ou mesmo a ampliação da educação pública. Apesar da clara separação teórica, identificar o efeito de cada mecanismo individualmente em aplicações empíricas é bastante difícil. Discutiremos mais a frente algumas estratégias utilizadas por trabalhos empíricos para tentar separa-los. Por hora, saber que existem concomitantemente é mais do que suficiente.
