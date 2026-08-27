@@ -4,6 +4,77 @@
 
 É fato que os modelos em @becker1968 e @ehrlich1973 foram essenciais para o pleno desenvolvimento da Economia do Crime enquanto área de pesquisa. Muitos dos artigos mais recentes e publicados nos principais periódicos da profissão citam esses artigos dada a sua relevância para a consolidação do tema e análise da atividade criminal sob o prisma da teoria da escolha racional. Segundo consulta realizada na plataforma Google Scholar no dia $22$ de Julho de $2025$, haviam sido registradas até o momento $27{,}982$ citações ao artigo seminal de Gary Becker e $4{,}167$ citações ao artigo de Isaac Ehrlich.
 
-Talvez a principal crítica a esses modelos iniciais seja o fato de serem modelos estáticos, que não levam em consideração de forma explícita a importância da dinâmica e das preferências em relação ao tempo nas decisões de envolvimento em atividades criminosas (@chalfin2017). São vários os artigos mais recentes que incorporam a lógica de incentivos, inicialmente proposta por Becker e Ehrlich, em um modelo dinâmico de mercado de trabalho que considera (i) a existência de fricções no processo de busca por vagas e (ii) o envolvimento na atividade criminosa como alternativa ao mercado de trabalho formal ou desemprego (@burdett2003,@burdett2004,@engelhardt2008,@lee2017). Nesses casos, questões como o tipo de desconto intertemporal e a importância da dinâmica para formação de melhores previsões a respeito da probabilidade de apreensão @durlauf2011 se tornam centrais para entender a magnitude do efeito *deterrence* de diversas políticas públicas. 
+Reconhecer a importância desses trabalhos, porém, não é o mesmo que tomá-los como descrição definitiva do fenômeno. A crítica mais séria — e a que ocupa a maior parte deste capítulo — é a de que se trata de modelos estáticos: a punição aparece como um valor único, descontado de uma só vez. Isso não nos permite, por exemplo, avaliar possíveis efeitos do grau de impaciência dos agentes sobre suas decisões ou compreender os efeitos reais do encarceramento, um fluxo que se estende no tempo e que só começa *depois* da apreensão. Para isso, é essencial que os modelos incluam dinâmica temporal. Ao final do capítulo, revisamos mais brevemente três outras limitações: a diferença entre probabilidade objetiva e percebida de punição, o tratamento de $p$ e dos retornos como exógenos, e o fato de que a prisão não é apenas um custo, mas também um tratamento.
 
-Por fim, esses modelos mais recentes se utilizam de um *framework* de equilíbrio geral, em que as decisões de participação nos diferentes mercados afetam o retorno marginal dessas atividades de forma endógena. Essa é uma abordagem diferente da abordagem de equilíbrio parcial adotada pelos modelos do fim dos anos 1960 e começo dos anos 1970, em que decisões de participação no mercado criminal eram avaliadas de forma isolada, sem que isso afetasse o equilíbrio dos mercados alternativos.
+## Por que a ausência de dinâmica importa
+
+Colapsar as penas e punições em um número único apaga duas coisas. **A primeira é o desconto intertemporal.** Para um indivíduo impaciente, uma pena de dez anos não é duas vezes pior do que uma de cinco: os anos adicionais são descontados a taxas que podem torná-los quase irrelevantes na decisão de hoje. Não se trata de uma hipótese comportamental exótica, mas da aplicação direta do desconto intertemporal padrão.
+
+**A segunda é a celeridade.** Há bastante tempo, a criminologia organiza a dissuasão advinda da punição em torno de três atributos: certeza, severidade e celeridade. O modelo de Becker representa os dois primeiros ($p$ e $f$) e é literalmente incapaz de representar o terceiro, já que não há tempo no modelo. Em sistemas de justiça lentos, a defasagem entre crime e punição é longa e variável, e um modelo que a ignora deixa de fora justamente o instrumento que pode ser mais barato de manipular.
+
+Como observam @chalfin2017, é essa incapacidade de "levar em consideração de forma explícita a importância da dinâmica" que motiva os modelos discutidos a seguir.
+
+## O modelo de Lee e McCrary (2017) {#sec-leemccrary}
+
+@lee2017 propõem um modelo dinâmico cuja principal virtude é ser minimamente diferente do modelo de Becker. A estrutura de incentivos é a mesma; o que muda é que a punição passa a ser um fluxo e o indivíduo, que é neutro ao risco, considera sua trajetória futura no processo de escolha do presente. Seguimos aqui a apresentação de @chalfin2017.^[A solução formal do modelo exige ferramentas matemáticas fora do escopo de um curso de graduação. O que nos interessa é a intuição econômica e as implicações empíricas.] A pergunta é o que a dinâmica, sozinha, é capaz de gerar.
+
+A cada período, o indivíduo se depara com uma oportunidade criminosa cujo ganho $b$ varia: às vezes aparece um crime muito lucrativo, às vezes um de retorno modesto. Ele aproveita a oportunidade quando o ganho supera certo patamar — o **benefício de reserva** $b^\star$ — e deixa passar quando não supera. Toda a análise de política pública se resume, então, a uma pergunta: o que desloca $b^\star$?
+
+### Por que uma pena longa vale menos do que parece
+
+Este é o ponto central, e ele é puramente intuitivo. A pena é cumprida um dia de cada vez, e o indivíduo desconta o futuro. O primeiro mês de prisão pesa integralmente na decisão de hoje; o mês número sessenta pesa bem menos; e, para alguém suficientemente impaciente, o mês número cento e vinte não pesa praticamente nada. O custo esperado de ser preso, portanto, não cresce proporcionalmente à duração da pena: cresce cada vez mais devagar.
+
+Seja $\delta$ o fator de desconto e $S$ a duração da pena, e defina $\nu = \delta + \delta^{2} + \dots + \delta^{S-1}$, o peso em valor presente de todos os períodos de pena além do primeiro. Dois fatos sobre $\nu$ organizam o resto da seção: ele é nulo quando a pena dura um único período ou quando o indivíduo é completamente míope; e, por mais longa que seja a pena, ele nunca ultrapassa $\delta/(1-\delta)$.
+
+| $\delta$ | $S=2$ | $S=5$ | $S=10$ | $S=20$ | $S\to\infty$ | % do teto já atingida em $S=5$ |
+|:--|--:|--:|--:|--:|--:|--:|
+| 0,95 | 0,95 | 3,52 | 7,03 | 11,83 | 19,00 | 19% |
+| 0,90 | 0,90 | 3,10 | 5,51 | 7,78 | 9,00 | 34% |
+| 0,70 | 0,70 | 1,77 | 2,24 | 2,33 | 2,33 | 76% |
+| 0,50 | 0,50 | 0,94 | 1,00 | 1,00 | 1,00 | 94% |
+
+: Valor de $\nu$ por fator de desconto e duração da pena (em anos) {#tbl-nu}
+
+Leia a última linha da @tbl-nu: para um indivíduo com $\delta = 0{,}5$, uma pena de cinco anos já entrega $94\%$ de todo o poder dissuasório que o encarceramento é capaz de gerar — dobrar ou quadruplicar essa pena praticamente não desloca $b^\star$. Para um indivíduo paciente ($\delta = 0{,}95$), a mesma pena entrega menos de um quinto do potencial, e aumentos continuam surtindo efeito por muito tempo. A eficácia da severidade depende inteiramente de quem é o público-alvo da política.
+
+### O que determina o patamar
+
+@chalfin2017 resumem assim a condição que define o benefício de reserva:
+
+$$
+b^\star \;=\; \underbrace{\frac{p}{1-p}\,c}_{\text{primeiro período de pena}} \;+\; \nu\left[\;\underbrace{\frac{p}{1-p}\,c}_{\text{demais períodos}} \;+\; \underbrace{p\,\Omega}_{\text{valor de opção da liberdade}}\;\right]
+$$ {#eq-bstar_LM}
+
+em que $c$ é o custo do encarceramento por período — o análogo de fluxo do $L$ do @sec-becker — e $\Omega$ o valor esperado das oportunidades criminosas perdidas enquanto se está preso. Não é preciso derivar a expressão para lê-la; basta observar três coisas.
+
+O termo inicial é exatamente o modelo estático: a condição de indiferença de um indivíduo neutro ao risco que vimos na @eq-bstar_Becker, com $c$ no lugar de $L$. A duração da pena entra na expressão apenas através de $\nu$ — e já sabemos que esse canal tem teto. E o termo $p\,\Omega$ não tem contrapartida no modelo estático: ele diz que a liberdade tem valor econômico, pois estar solto preserva o acesso a oportunidades futuras. Daí uma implicação curiosa: em um ambiente com muitas oportunidades lucrativas, ser preso custa mais, o que eleva $b^\star$ e reduz a atratividade do crime.
+
+### Três implicações
+
+1. O modelo de Becker é o caso limite em que o indivíduo é completamente míope. Quando $\nu = 0$, a @eq-bstar_LM se reduz ao primeiro termo e a duração da pena torna-se irrelevante. O modelo estático não está "errado": é a aproximação válida quando o horizonte de decisão é curto.
+
+2. O poder dissuasório da severidade é limitado; o da certeza, não. A probabilidade de apreensão entra pelo fator $p/(1-p)$, que é crescente, acelera à medida que $p$ sobe e não tem teto. 
+
+3. A assimetria entre certeza e severidade é estrutural e não depende das preferências pelo risco. @lee2017 obtêm essa assimetria com indivíduos neutros ao risco, por um mecanismo bastante aceitável: impaciência. Nas palavras de @chalfin2017, à medida que $\delta$ se aproxima de zero o indivíduo torna-se "arbitrariamente mais responsivo à captura do que à punição". A pergunta deixa de ser "criminosos são amantes do risco?" e passa a ser "qual é o horizonte de decisão relevante?".
+
+## Outras limitações
+
+**Percepção e probabilidade objetiva.** Nos modelos de Becker e Ehrlich, $p$ é uma probabilidade subjetiva, mas a análise procede como se coincidisse com a objetiva. A evidência indica que essas crenças são mal calibradas e se formam sobretudo pela experiência própria e de pares, não pela leitura da lei (@lochner2007, @durlauf2011). Segue-se que políticas visíveis podem dissuadir mais do que políticas de igual efeito objetivo porém invisíveis, e que mudanças legislativas não comunicadas tendem a produzir efeitos nulos no curto prazo.
+
+**Equilíbrio parcial.** Becker e Ehrlich tomam como dados a probabilidade de apreensão, o retorno do crime e o salário lícito. Nenhum dos três é exógeno. A probabilidade de apreensão é congestionável — dado um efetivo policial fixo, mais crimes significam menor chance de punição por crime —, o que gera complementaridade estratégica e abre espaço para **múltiplos equilíbrios**: comunidades idênticas em fundamentos podem se estabilizar em níveis de criminalidade muito distintos (@glaeser1996). Uma literatura mais avançada, que não formalizaremos aqui, incorpora ainda fricções no mercado de trabalho (@burdett2003, @engelhardt2008) e produz resultados como o de que a desigualdade salarial afeta o crime mesmo com salário médio constante.
+
+**A prisão como tratamento.** No arcabouço original a punição só desincentiva. Mas o encarceramento também transforma quem passa por ele: deprecia capital humano, rompe vínculos com o mercado formal, gera estigma e forma redes criminosas. A evidência é mista e a leitura razoável é que o sinal depende do que a prisão de fato é em cada contexto. Essa dimensão é particularmente relevante no caso brasileiro, dada a consolidação de facções no ambiente prisional.
+
+## Conclusão
+
+Bla bla bla
+
+## Questões para discussão
+
+1. Explique, em palavras, por que a duração da pena se torna irrelevante para a decisão quando o indivíduo é completamente impaciente, e por que nesse caso os modelos de @lee2017 e de @becker1968 fazem a mesma previsão.
+
+2. Usando a @tbl-nu, compare o ganho de dissuasão ao passar de uma pena de 5 para uma de 10 anos quando $\delta = 0{,}95$ e quando $\delta = 0{,}70$. Que recomendação de política decorre da comparação, e de que informação adicional você precisaria antes de fazê-la?
+
+3. @lee2017 encontram uma descontinuidade nula na taxa de ofensas aos 18 anos. Ofereça três explicações distintas para esse resultado — uma envolvendo preferências, uma envolvendo informação e uma envolvendo mensuração — e proponha, para cada uma, um teste empírico que ajudaria a distingui-la das demais.
+
+4. Suponha que um pesquisador estime, no mesmo contexto, uma elasticidade do crime em relação ao efetivo policial de $-0{,}5$ e uma elasticidade em relação à duração das penas de $-0{,}4$. À luz do *trade-off* discutido na @sec-leemccrary, por que essas duas estimativas são difíceis de conciliar?

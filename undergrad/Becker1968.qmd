@@ -22,7 +22,46 @@ Para estruturar melhor esse tipo de análise de como a decisão de cometer crime
 
 Este modelo de decisão a respeito da participação na atividade criminosa pode ser compreendido como uma aplicação direta da teoria da escolha em um ambiente de incerteza e risco. A ideia principal é a de que o criminoso potencial se depara com uma loteria com diferentes estados da natureza quando da prática do crime e uma alternativa segura, representada pela atividade lícita. Para os estados _capturado_ e _não capturado_ são atribuídos os níveis de utilidade $U_{cc}$ e $U_{cn}$, respectivamente. A utilidade auferida na atividade sem risco é dada por $U_{n}$.
 
-[INSERIR FIGURA]
+```{mermaid}
+%%{init: {
+  "theme": "base",
+  "flowchart": {
+    "padding": 10,
+    "nodeSpacing": 30,
+    "rankSpacing": 40
+  },
+  "themeVariables": {
+    "fontSize": "19px"
+  }
+}}%%
+
+flowchart LR
+    A[Decisão]
+    B[] 
+    C[$U_{n}$]
+    D[$U_{cc}$]
+    E[$U_{cn}$]
+
+    d1["Atividade criminosa"]
+    d2["Atividade lícita"]
+    d11["Capturado"]
+    d12["Não capturado"]
+
+    A --> d1 --> B
+    A --> d2 --> C
+
+    B --> d11 --> D
+    B --> d12 --> E
+ 
+    %% Estilo opcional para reforçar aparência de árvore de decisão
+    classDef decision fill:none,color:#000000,stroke-width:0px;
+    classDef choice fill:#ffffff,color:#000000,stroke:#ffffff,stroke-width:0px;
+
+    class A,B,C,D,E decision;
+    class d1,d2,d11,d12 choice;
+
+    linkStyle default stroke-width:1px;
+```
 
 Nesse sentido, o problema de escolha com o qual o indivíduo se depara é entre praticar crime ou participar do mercado de trabalho usual. Para tal, é preciso definir algumas primitivas do modelo:
 
@@ -56,7 +95,7 @@ $$ E(U(crime)) = pU(a-L) + (1-p)U(a+b) > U(a) $$
 
 Sob quais condições a inequação acima vale, i.e. o indivíduo comete crime? A resposta depende (i) da atitude do indivíduo em relação ao risco (avesso, neutro, amante) e (ii) do custo efetivo da punição ($L$), do benefício gerado pelo crime ($b$) e da probabilidade de apreensão ($p$). O gráfico abaixo representa o caso de um indivíduo avesso ao risco, com função de utilidade côncava:
 
-[INSERIR FIGURA]
+{{< include ../_widgets/_becker-expectedu.qmd >}}
 
 Note que o nível de utilidade associado à atividade lícita é dado por $U(a)$, localizado no ponto $C$. Já a utilidade esperada da atividade criminosa encontra-se em algum ponto do segmento de reta $AB$, tal que o ponto A representa o resultado da atividade criminosa com probabilidade de captura igual a 1 enquanto o ponto B representa a utilidade esperada para o caso em que $p=0$. Mesmo nesse caso de um indivíduo avesso ao risco, caso a renda esperada da atividade criminosa ($= p(a-L) + (1-p)(a+b)$) seja maior do que $a^\star$, o indivíduo escolhe a loteria e comete o crime. Assim, mudanças em $p$, $L$ e $b$ podem mudar a renda esperada e, portanto, a propensão do indivíduo em participar da atividade criminosa.
 
@@ -101,3 +140,13 @@ Após encontrar as condições de primeira ordem do ponto de ótimo interior e a
 Tais resultados geraram bastante debate ao longo da década de 1970. Diversos autores, propondo formulações ligeiramente diferentes para a função de perda do social e de como a punição é incorporada na renda e na função utilidade, demonstraram que $\xi_p > \xi_f$ não implicava diretamente em preferência pelo risco. Além disso, o próprio resultado a respeito do tipo ótimo de punição (multas) passou a ser questionado. 
 
 No entanto, apesar das críticas, o artigo original inaugurou uma área de pesquisa ao analisar a decisão de cometer crime sob o olhar da teoria da escolha sob incerteza. Além disso, trouxe à discussão a questão a respeito do nível ótimo de crime e dos custos e benfícios associados ao seu combate no nível agregado.
+
+## Conclusão
+
+Bla bla bla
+
+## Questões para discussão
+
+1. X
+
+2. Y

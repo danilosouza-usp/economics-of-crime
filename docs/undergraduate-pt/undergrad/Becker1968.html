@@ -91,6 +91,9 @@ div.csl-indent {
     "search-label": "Procurar"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -224,6 +227,8 @@ window.Quarto = {
   <li><a href="#estrutura-do-modelo" id="toc-estrutura-do-modelo" class="nav-link" data-scroll-target="#estrutura-do-modelo"><span class="header-section-number">1.2</span> Estrutura do modelo</a></li>
   <li><a href="#participação-na-atividade-criminosa-e-estática-comparativa" id="toc-participação-na-atividade-criminosa-e-estática-comparativa" class="nav-link" data-scroll-target="#participação-na-atividade-criminosa-e-estática-comparativa"><span class="header-section-number">1.3</span> Participação na atividade criminosa e estática comparativa</a></li>
   <li><a href="#nível-ótimo-de-crime-e-críticas-ao-modelo" id="toc-nível-ótimo-de-crime-e-críticas-ao-modelo" class="nav-link" data-scroll-target="#nível-ótimo-de-crime-e-críticas-ao-modelo"><span class="header-section-number">1.4</span> Nível ótimo de crime e críticas ao modelo</a></li>
+  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão"><span class="header-section-number">1.5</span> Conclusão</a></li>
+  <li><a href="#questões-para-discussão" id="toc-questões-para-discussão" class="nav-link" data-scroll-target="#questões-para-discussão"><span class="header-section-number">1.6</span> Questões para discussão</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/undergrad/Becker1968.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
@@ -268,7 +273,55 @@ window.Quarto = {
 <section id="estrutura-do-modelo" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="estrutura-do-modelo"><span class="header-section-number">1.2</span> Estrutura do modelo</h2>
 <p>Este modelo de decisão a respeito da participação na atividade criminosa pode ser compreendido como uma aplicação direta da teoria da escolha em um ambiente de incerteza e risco. A ideia principal é a de que o criminoso potencial se depara com uma loteria com diferentes estados da natureza quando da prática do crime e uma alternativa segura, representada pela atividade lícita. Para os estados <em>capturado</em> e <em>não capturado</em> são atribuídos os níveis de utilidade <span class="math inline">\(U_{cc}\)</span> e <span class="math inline">\(U_{cn}\)</span>, respectivamente. A utilidade auferida na atividade sem risco é dada por <span class="math inline">\(U_{n}\)</span>.</p>
-<p>[INSERIR FIGURA]</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {
+  "theme": "base",
+  "flowchart": {
+    "padding": 10,
+    "nodeSpacing": 30,
+    "rankSpacing": 40
+  },
+  "themeVariables": {
+    "fontSize": "19px"
+  }
+}}%%
+
+flowchart LR
+    A[Decisão]
+    B[] 
+    C[$U_{n}$]
+    D[$U_{cc}$]
+    E[$U_{cn}$]
+
+    d1["Atividade criminosa"]
+    d2["Atividade lícita"]
+    d11["Capturado"]
+    d12["Não capturado"]
+
+    A --&gt; d1 --&gt; B
+    A --&gt; d2 --&gt; C
+
+    B --&gt; d11 --&gt; D
+    B --&gt; d12 --&gt; E
+ 
+    %% Estilo opcional para reforçar aparência de árvore de decisão
+    classDef decision fill:none,color:#000000,stroke-width:0px;
+    classDef choice fill:#ffffff,color:#000000,stroke:#ffffff,stroke-width:0px;
+
+    class A,B,C,D,E decision;
+    class d1,d2,d11,d12 choice;
+
+    linkStyle default stroke-width:1px;
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 <p>Nesse sentido, o problema de escolha com o qual o indivíduo se depara é entre praticar crime ou participar do mercado de trabalho usual. Para tal, é preciso definir algumas primitivas do modelo:</p>
 <ul>
 <li><p>Preferências sobre loterias são racionais, isto é, completas e transitivas. <br></p></li>
@@ -292,7 +345,243 @@ E(U(crime)) = pU(Y-f) + (1-p)U(Y)
 <p>Para ganhar mais intuição, vamos seguir <span class="citation" data-cites="pyle1983chp2">Pyle (<a href="referencias.html#ref-pyle1983chp2" role="doc-biblioref">1983</a>)</span> e <span class="citation" data-cites="chalfin2017">Chalfin e McCrary (<a href="referencias.html#ref-chalfin2017" role="doc-biblioref">2017</a>)</span> e redefinir alguns dos objetos acima. Assuma que a renda associada à atividade lícita seja igual a <span class="math inline">\(a\)</span> tal que <span class="math inline">\(U_{n} = U(a)\)</span>. Além disso, defina <span class="math inline">\(L = f - b\)</span>, em que <span class="math inline">\(L\)</span> representa o custo efetivo da punição e <span class="math inline">\(b\)</span> o benefício associado ao crime. Por fim, note que, nesse caso, o ganho monetário associado ao crime <span class="math inline">\(Y\)</span> pode ser reescrito como <span class="math inline">\(a + b\)</span>. Dessa forma, o indivíduo decide pela atividade criminosa se, e somente se,</p>
 <p><span class="math display">\[ E(U(crime)) = pU(a-L) + (1-p)U(a+b) &gt; U(a) \]</span></p>
 <p>Sob quais condições a inequação acima vale, i.e.&nbsp;o indivíduo comete crime? A resposta depende (i) da atitude do indivíduo em relação ao risco (avesso, neutro, amante) e (ii) do custo efetivo da punição (<span class="math inline">\(L\)</span>), do benefício gerado pelo crime (<span class="math inline">\(b\)</span>) e da probabilidade de apreensão (<span class="math inline">\(p\)</span>). O gráfico abaixo representa o caso de um indivíduo avesso ao risco, com função de utilidade côncava:</p>
-<p>[INSERIR FIGURA]</p>
+<!-- ===========================================================================
+     Utilidade esperada do crime — Becker (1968)
+     Widget interativo autocontido: SVG + JavaScript puro, ~11 KB, sem dependências.
+
+     Uso no Quarto: um shortcode de include apontando para este arquivo, com o
+     caminho relativo ao .qmd que faz a inclusão. Veja o GUIA-widget.md.
+     (O exemplo literal do shortcode não pode ser escrito aqui: o Quarto o
+     executaria, e o arquivo se incluiria a si mesmo sem parar.)
+
+     Cada instância se configura por atributos data-* no <div>:
+         data-p  probabilidade de apreensão inicial   (padrão 0.30)
+         data-a  renda lícita inicial                 (padrão 3)
+         data-b  ganho do crime inicial               (padrão 3)
+         data-l  perda se apreendido inicial          (padrão 2)
+         data-shape  concava | linear | convexa       (padrão concava)
+     Pode aparecer mais de uma vez na mesma página.
+     =========================================================================== -->
+
+<div class="becker-expectedu">
+<style>
+.becker-eu{
+  --fg:#1a1a1a; --muted:#8a8a8a; --curve:#1f3864; --chord:#7a7a7a;
+  --bad:#b3261e; --good:#2e7d4f; --panel:#f6f7f9; --edge:#dfe3e8;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--fg);
+  display:grid; grid-template-columns:minmax(0,1fr) 236px; gap:1.1rem;
+  align-items:start; margin:1.4rem 0;
+}
+@media (max-width:800px){ .becker-eu{ grid-template-columns:1fr; } }
+[data-bs-theme="dark"] .becker-eu{
+  --fg:#e8e8e8; --muted:#8b93a0; --curve:#8ab0e8; --chord:#9aa2ad;
+  --bad:#f2837a; --good:#6fc898; --panel:#20242b; --edge:#39414d;
+}
+.becker-eu svg{ width:100%; height:auto; display:block; overflow:visible; }
+.becker-eu .ctrl{ background:var(--panel); border:1px solid var(--edge);
+  border-radius:10px; padding:.9rem; font-size:.82rem; line-height:1.3; }
+.becker-eu .ctrl label{ display:flex; justify-content:space-between; align-items:baseline;
+  gap:.5rem; margin:0 0 .35rem; }
+.becker-eu .ctrl label span{ min-width:0; }
+.becker-eu .ctrl label b{ font-variant-numeric:tabular-nums; font-weight:600;
+  color:var(--curve); white-space:nowrap; }
+.becker-eu input[type=range]{ width:100%; margin:0 0 .85rem; accent-color:var(--curve);
+  display:block; }
+.becker-eu .verdict{ border-radius:8px; padding:.6rem .7rem; margin-top:.2rem;
+  font-size:.8rem; line-height:1.55; border-left:4px solid; }
+.becker-eu .verdict.ok{ background:color-mix(in srgb,var(--good) 12%,transparent);
+  border-color:var(--good); }
+.becker-eu .verdict.no{ background:color-mix(in srgb,var(--bad) 12%,transparent);
+  border-color:var(--bad); }
+.becker-eu .reset{ margin-top:.6rem; font-size:.75rem; background:none; cursor:pointer;
+  border:1px solid var(--edge); border-radius:6px; padding:.3rem .6rem;
+  color:var(--muted); font-family:inherit; }
+.becker-eu text{ font-family:Georgia,"Times New Roman",serif; }
+</style>
+
+<svg viewbox="0 0 620 430" role="img" aria-label="Curva de utilidade côncava com a corda entre os pontos A e B e o ponto de utilidade esperada do crime"><g data-el="plot"></g></svg>
+
+<div class="ctrl">
+  <label><span>Probabilidade de apreensão <i>p</i></span> <b data-el="v-p"></b></label>
+  <input type="range" data-el="p" min="0" max="1" step="0.01">
+  <label><span>Renda lícita <i>a</i></span> <b data-el="v-a"></b></label>
+  <input type="range" data-el="a" min="1" max="6" step="0.1">
+  <label><span>Ganho do crime <i>b</i></span> <b data-el="v-b"></b></label>
+  <input type="range" data-el="b" min="0.2" max="6" step="0.1">
+  <label><span>Perda se apreendido <i>L</i></span> <b data-el="v-L"></b></label>
+  <input type="range" data-el="L" min="0" max="5.5" step="0.1">
+  <div class="verdict" data-el="verdict"></div>
+  <button class="reset" data-el="reset">Restaurar valores iniciais</button>
+</div>
+
+<script>
+(function(){
+  // ---- 1. a instância: tudo é buscado dentro DESTE div, então a mesma página
+  //         pode conter vários widgets sem que um atropele o outro ------------
+  const root = document.currentScript.closest(".becker-eu");
+  const el   = n => root.querySelector('[data-el="' + n + '"]');
+
+  // lê data-p, data-shape, etc. no próprio div ou em qualquer div que o envolva
+  // (assim um ::: {data-shape="linear"} do Quarto também configura a instância)
+  const cfg = n => {
+    for (let e = root; e; e = e.parentElement)
+      if (e.dataset && e.dataset[n] !== undefined && e.dataset[n] !== "") return e.dataset[n];
+  };
+  const num = (n, d) => { const v = cfg(n); return v === undefined ? d : +v; };
+
+  const INI = { p: num("p", 0.30), a: num("a", 3), b: num("b", 3), L: num("l", 2) };
+
+  // ---- 2. as preferências: troque aqui para mudar a economia da figura ------
+  const FORMAS = {
+    concava: w => 3 * Math.log(1 + w),   // avesso ao risco
+    linear:  w => 0.824 * w,             // neutro ao risco
+    convexa: w => 1.033 * (Math.exp(w / 4) - 1),  // propenso ao risco
+  };
+  const U = FORMAS[cfg("shape")] || FORMAS.concava;
+
+  // ---- 3. o desenho: helpers de SVG e as escalas ----------------------------
+  const NS = "http://www.w3.org/2000/svg";
+  const g  = el("plot");
+  const fmt = (x, d = 2) => x.toFixed(d).replace(".", ",");
+  const M = { l: 78, r: 34, t: 24, b: 50 }, W = 620, H = 430;
+  const pw = W - M.l - M.r, ph = H - M.t - M.b;
+
+  const mk = (tag, attrs, txt) => {
+    const n = document.createElementNS(NS, tag);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    if (txt != null) n.textContent = txt;
+    g.appendChild(n); return n;
+  };
+  const line  = (x1, y1, x2, y2, o = {}) => mk("line",
+    Object.assign({ x1, y1, x2, y2, stroke: "currentColor", "stroke-width": 1 }, o));
+  const label = (x, y, t, o = {}) => mk("text",
+    Object.assign({ x, y, "font-size": 13, fill: "currentColor" }, o), t);
+
+  // ---- 4. o coração: recalcula o modelo e redesenha a cada movimento --------
+  function draw(){
+    const p = +el("p").value, a = +el("a").value, b = +el("b").value;
+    const L = Math.min(+el("L").value, a - 0.05);   // garante a - L > 0
+
+    const xA = a - L, xC = a, xB = a + b;           // A: preso, C: lícito, B: impune
+    const yA = U(xA),  yC = U(xC), yB = U(xB);
+
+    const m = (yB - yA) / (xB - xA), c = yA - m * xA;   // corda AB
+    const aStar = (yC - c) / m;                     // renda esperada mínima
+    const Ew = p * xA + (1 - p) * xB;               // renda esperada do crime
+    const EU = p * yA + (1 - p) * yB;               // utilidade esperada do crime
+    const pStar = Math.min(1, Math.max(0, (xB - aStar) / (xB - xA)));
+    const paga = EU >= yC;
+
+    const xmax = Math.max(xB * 1.22, 8), ymax = U(xmax) * 1.10;
+    const X = v => M.l + (v / xmax) * pw;
+    const Y = v => M.t + ph - (v / ymax) * ph;
+
+    const css = getComputedStyle(root), C = n => css.getPropertyValue(n).trim();
+    const cGrey = C("--muted"), cCurve = C("--curve"), cChord = C("--chord");
+    const cBad = C("--bad"), cHi = paga ? C("--good") : cBad;
+
+    g.textContent = "";
+    mk("defs").innerHTML =
+      '<marker id="beu-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" ' +
+      'markerHeight="7" orient="auto-start-reverse">' +
+      '<path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>';
+
+    // eixos
+    line(M.l, Y(0), M.l + pw + 16, Y(0), { "marker-end": "url(#beu-ar)" });
+    line(M.l, Y(0), M.l, M.t - 12,       { "marker-end": "url(#beu-ar)" });
+    label(M.l + pw + 14, Y(0) + 26, "renda",
+      { "text-anchor": "end", "font-size": 12, fill: cGrey });
+
+    // curva de utilidade
+    let d = "";
+    for (let i = 0; i <= 200; i++){
+      const w = (i / 200) * xmax;
+      d += (i ? "L" : "M") + X(w).toFixed(1) + " " + Y(U(w)).toFixed(1) + " ";
+    }
+    mk("path", { d, fill: "none", stroke: cCurve, "stroke-width": 2.2 });
+    label(X(xmax) - 4, Y(U(xmax)) - 10, "U(·)",
+      { fill: cCurve, "text-anchor": "end", "font-style": "italic", "font-size": 14 });
+
+    // guias tracejadas de A, B e C
+    const guia = (x, y, lx, ly) => {
+      const o = { stroke: cGrey, "stroke-width": 1, "stroke-dasharray": "4 3" };
+      line(X(x), Y(0), X(x), Y(y), o);
+      line(M.l, Y(y), X(x), Y(y), o);
+      label(X(x), Y(0) + 20, lx, { "text-anchor": "middle", "font-style": "italic" });
+      label(M.l - 8, Y(y) + 4, ly,
+        { "text-anchor": "end", "font-style": "italic", "font-size": 12.5 });
+    };
+    guia(xA, yA, "a − L", "U(a − L)");
+    guia(xB, yB, "a + b", "U(a + b)");
+    guia(xC, yC, "a", "U(a)");
+
+    // corda AB
+    line(X(xA), Y(yA), X(xB), Y(yB), { stroke: cChord, "stroke-width": 2.2 });
+
+    // a*: renda esperada mínima para o crime compensar
+    // (com U linear, a* coincide com a e o prêmio de risco é zero: nada a marcar)
+    if (Math.abs(aStar - xC) > 0.04){
+      const od = { stroke: cBad, "stroke-width": 1.3, "stroke-dasharray": "4 3" };
+      line(X(xC), Y(yC), X(aStar), Y(yC), od);
+      line(X(aStar), Y(0), X(aStar), Y(yC), od);
+      mk("circle", { cx: X(aStar), cy: Y(yC), r: 4, fill: cBad });
+      const t = label(X(aStar), Y(0) + 20, "a",
+        { "text-anchor": "middle", fill: cBad, "font-style": "italic", "font-weight": "bold" });
+      const sup = document.createElementNS(NS, "tspan");
+      sup.setAttribute("baseline-shift", "super");
+      sup.setAttribute("font-size", "9");
+      sup.textContent = "★";
+      t.appendChild(sup);
+    }
+
+    // pontos A, B e C
+    [[xA, yA, "A"], [xB, yB, "B"], [xC, yC, "C"]].forEach(function(q){
+      mk("circle", { cx: X(q[0]), cy: Y(q[1]), r: 4.5, fill: "currentColor" });
+      label(X(q[0]), Y(q[1]) - 10, q[2], { "text-anchor": "middle", "font-size": 13.5 });
+    });
+
+    // ponto de utilidade esperada, comandado por p
+    const oh = { stroke: cHi, "stroke-width": 1.3, "stroke-dasharray": "2 2" };
+    line(X(Ew), Y(0), X(Ew), Y(EU), oh);
+    line(M.l, Y(EU), X(Ew), Y(EU), oh);
+    mk("circle", { cx: X(Ew), cy: Y(EU), r: 6.5, fill: cHi });
+    label(X(Ew) + 11, Y(EU) + 16, "E[U]",
+      { fill: cHi, "font-style": "italic", "font-size": 13 });
+    label(X(Ew), Y(0) + 36, "E[w]",
+      { "text-anchor": "middle", fill: cHi, "font-style": "italic", "font-size": 12 });
+
+    // leitura numérica e veredito
+    el("v-p").textContent = fmt(p);
+    el("v-a").textContent = fmt(a, 1);
+    el("v-b").textContent = fmt(b, 1);
+    el("v-L").textContent = fmt(L, 1);
+
+    const v = el("verdict");
+    v.className = "verdict " + (paga ? "ok" : "no");
+    v.innerHTML = paga
+      ? "<b>O crime compensa.</b><br>E[w] = " + fmt(Ew) + " ≥ a<sup>★</sup> = " + fmt(aStar) +
+        ", logo E[U] = " + fmt(EU) + " ≥ U(a) = " + fmt(yC) +
+        ".<br>Deixa de compensar se <i>p</i> &gt; <b>" + fmt(pStar) + "</b>."
+      : "<b>O crime não compensa.</b><br>E[w] = " + fmt(Ew) + " &lt; a<sup>★</sup> = " + fmt(aStar) +
+        ", logo E[U] = " + fmt(EU) + " &lt; U(a) = " + fmt(yC) +
+        ".<br>Voltaria a compensar se <i>p</i> ≤ <b>" + fmt(pStar) + "</b>.";
+  }
+
+  // ---- 5. as ligações --------------------------------------------------------
+  const restaurar = () => {
+    el("p").value = INI.p; el("a").value = INI.a;
+    el("b").value = INI.b; el("L").value = INI.L;
+  };
+  ["p", "a", "b", "L"].forEach(n => el(n).addEventListener("input", draw));
+  el("reset").addEventListener("click", () => { restaurar(); draw(); });
+  restaurar();
+  draw();
+  // redesenha quando o Quarto alterna entre tema claro e escuro
+  new MutationObserver(draw).observe(document.documentElement,
+    { attributes: true, attributeFilter: ["data-bs-theme", "class"] });
+})();
+</script>
+</div>
 <p>Note que o nível de utilidade associado à atividade lícita é dado por <span class="math inline">\(U(a)\)</span>, localizado no ponto <span class="math inline">\(C\)</span>. Já a utilidade esperada da atividade criminosa encontra-se em algum ponto do segmento de reta <span class="math inline">\(AB\)</span>, tal que o ponto A representa o resultado da atividade criminosa com probabilidade de captura igual a 1 enquanto o ponto B representa a utilidade esperada para o caso em que <span class="math inline">\(p=0\)</span>. Mesmo nesse caso de um indivíduo avesso ao risco, caso a renda esperada da atividade criminosa (<span class="math inline">\(= p(a-L) + (1-p)(a+b)\)</span>) seja maior do que <span class="math inline">\(a^\star\)</span>, o indivíduo escolhe a loteria e comete o crime. Assim, mudanças em <span class="math inline">\(p\)</span>, <span class="math inline">\(L\)</span> e <span class="math inline">\(b\)</span> podem mudar a renda esperada e, portanto, a propensão do indivíduo em participar da atividade criminosa.</p>
 <ul>
 <li><p>Aumento da perda esperada ao ser capturado reduz a utilidade esperada de cometer crime e reduz a propensão do indivíduo participar dessa loteria.</p>
@@ -322,6 +611,17 @@ b^\star = L \cdot \frac{p}{(1-p)}
 </ul>
 <p>Tais resultados geraram bastante debate ao longo da década de 1970. Diversos autores, propondo formulações ligeiramente diferentes para a função de perda do social e de como a punição é incorporada na renda e na função utilidade, demonstraram que <span class="math inline">\(\xi_p &gt; \xi_f\)</span> não implicava diretamente em preferência pelo risco. Além disso, o próprio resultado a respeito do tipo ótimo de punição (multas) passou a ser questionado.</p>
 <p>No entanto, apesar das críticas, o artigo original inaugurou uma área de pesquisa ao analisar a decisão de cometer crime sob o olhar da teoria da escolha sob incerteza. Além disso, trouxe à discussão a questão a respeito do nível ótimo de crime e dos custos e benfícios associados ao seu combate no nível agregado.</p>
+</section>
+<section id="conclusão" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">1.5</span> Conclusão</h2>
+<p>Bla bla bla</p>
+</section>
+<section id="questões-para-discussão" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="questões-para-discussão"><span class="header-section-number">1.6</span> Questões para discussão</h2>
+<ol type="1">
+<li><p>X</p></li>
+<li><p>Y</p></li>
+</ol>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

@@ -164,3 +164,13 @@ No artigo original, essas estáticas comparativas são utilizadas para discutir 
 Conjuntamente, esses resultados sobre a alocação ótima de tempo entre atividades e como essa alocação reage a parâmetros são utilizados para construir, assim como em @becker1968 uma função de oferta de crimes. A partir dessa função, o artigo discute efeitos de política pública sobre o número agregado de crimes. Para além dos efeitos de dissuasão que mudanças na probabilidade de apreensão e severidade das penas tem sobre a decisão de envolvimento no crime (efeito *deterrence*, em inglês), o artigo discute os efeitos de políticas públicas, como encarceramento, através de um segundo mecanismo potencial: o efeito de incapacitação (*incapacitation*), já que, por definição, no período em que se encontra preso o indivíduo não consegue se envolver em atividades criminosas como roubo e assalto. 
 
 Ambos os mecanismos -- *deterrence* e *incapacitation* -- são importantes para entender o efeito das mais diversas políticas públicas, como o próprio encarceramento ou mesmo a ampliação da educação pública. Apesar da clara separação teórica, identificar o efeito de cada mecanismo individualmente em aplicações empíricas é bastante difícil. Discutiremos mais a frente algumas estratégias utilizadas por trabalhos empíricos para tentar separa-los. Por hora, saber que existem concomitantemente é mais do que suficiente.
+
+## Conclusão
+
+Bla bla bla
+
+## Questões para discussão
+
+1. X
+
+2. Y

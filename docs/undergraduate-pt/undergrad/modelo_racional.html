@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -166,8 +186,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#os-capítulos-desta-parte" id="toc-os-capítulos-desta-parte" class="nav-link active" data-scroll-target="#os-capítulos-desta-parte">Os capítulos desta parte</a></li>
+  <li><a href="#objetivos-de-aprendizagem" id="toc-objetivos-de-aprendizagem" class="nav-link" data-scroll-target="#objetivos-de-aprendizagem">Objetivos de aprendizagem</a></li>
+  <li><a href="#pré-requisitos-e-observações" id="toc-pré-requisitos-e-observações" class="nav-link" data-scroll-target="#pré-requisitos-e-observações">Pré-requisitos e observações</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/undergrad/modelo_racional.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -191,19 +219,53 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Esta parte inicial do curso é dedicada à alfabetização computacional e à construção dos fundamentos da lógica de programação. O objetivo é desenvolver, de forma gradual, a capacidade de compreender, escrever e interpretar código, preparando o terreno para aplicações empíricas mais avançadas nas etapas seguintes do curso.</p>
-<p>Nesta etapa, trabalharemos com os conceitos básicos da linguagem Python, sem assumir conhecimento prévio em programação. O foco está menos em bibliotecas especializadas e mais na compreensão dos elementos fundamentais que estruturam qualquer programa: sintaxe, tipos de dados e objetos, operações, controle de fluxo, funções e boas práticas de código. Listo abaixo alguns dos principais conceitos trabalhados nos capítulos que compõem esta parte do curso:</p>
+<p>A pergunta que organiza esta primeira parte do curso é fácil de enunciar e difícil de responder: <strong>por que algumas pessoas cometem crimes e outras não — e por que a mesma pessoa comete crimes em certos contextos e não em outros?</strong></p>
+<p>Durante boa parte do século XX, a resposta dominante nas ciências sociais buscava a explicação em características que distinguiriam criminosos de não-criminosos: traços de personalidade, patologia individual, socialização deficiente, etc. A contribuição principal de <span class="citation" data-cites="becker1968">Becker (<a href="referencias.html#ref-becker1968" role="doc-biblioref">1968</a>)</span> foi deslocar o eixo da explicação. Se as pessoas respondem a incentivos nas demais dimensões da vida – no consumo, na escolha ocupacional, na decisão de estudar –, não há razão evidente para supor que deixem de fazê-lo quando a atividade em questão é ilegal. O crime passa, então, a ser tratado como uma <strong>escolha</strong>, tomada sob incerteza, e sensível a custos, benefícios e restrições.</p>
+<p>Essa mudança de perspectiva tem três consequências analíticas importantes, e é sobre elas que os três capítulos seguintes se apoiam.</p>
+<p><strong>Primeira: o crime deixa de ser um atributo e passa a ser um comportamento.</strong> O objeto de análise não é “o criminoso”, mas a decisão de cometer um crime em um dado momento, dadas as alternativas disponíveis. Isso explica fatos que uma teoria baseada em tipos de pessoa acomoda com dificuldade: por que as taxas de criminalidade variam tanto entre bairros vizinhos, por que caem abruptamente com a idade, por que respondem a mudanças no mercado de trabalho e por que a mesma pessoa transita entre atividades lícitas e ilícitas ao longo da vida.</p>
+<p><strong>Segunda: a punição vira um preço.</strong> A probabilidade de apreensão e a severidade da pena deixam de ser apenas instrumentos de ordem moral e passam a ser parâmetros que alteram o custo esperado de uma atividade. Isso permite formular perguntas quantitativas e traduzi-las em objetos estimáveis, como elasticidades. É essa tradução que conecta a teoria desta parte do curso à literatura empírica que veremos nas partes seguintes.</p>
+<p><strong>Terceira: torna-se possível falar em política ótima.</strong> Se combater o crime consome recursos escassos e se cada instrumento tem uma eficácia distinta na margem, então a pergunta de política pública não é “como eliminar o crime?”, mas “como alocar recursos limitados entre instrumentos com custos e efeitos diferentes?”.</p>
+<section id="os-capítulos-desta-parte" class="level2">
+<h2 class="anchored" data-anchor-id="os-capítulos-desta-parte">Os capítulos desta parte</h2>
 <ul>
-<li><p><strong>Capítulo 1 – Fundamentos de computação</strong>. Introduz noções básicas sobre como computadores funcionam, o que significa programar e quais as características que diferenciam as várias linguagens de programação disponíveis. O objetivo é construir uma base conceitual mínima para entender o que acontece “por trás” do código.</p></li>
-<li><p><strong>Capítulo 2 – Primeiros passos no Python</strong>. Apresenta o Python como linguagem de programação, discutindo sua sintaxe básica, a execução de comandos simples e a interação com o ambiente de desenvolvimento. Este capítulo marca o primeiro contato prático com a escrita e execução de código.</p></li>
-<li><p><strong>Capítulo 3 – Programação e Inteligência Artificial</strong>. Discute, de forma introdutória, a relação entre programação, automação e modelos de inteligência artificial. O objetivo não é aprofundar técnicas de IA, mas contextualizar o uso de algoritmos, modelos e linguagens de programação em aplicações modernas, incluindo suas limitações e implicações.</p></li>
-<li><p><strong>Capítulo 4 – Tipos primitivos e objetos básicos</strong>. Introduz os principais tipos de dados do Python – como números, <em>strings</em> e booleanos – e os objetos básicos utilizados para armazenar e manipular os diferentes tipos de informação. Este capítulo estabelece a base para compreender como a informação é representada em programas.</p></li>
-<li><p><strong>Capítulo 5 – Controle de fluxo e iteração</strong>. Apresenta estruturas fundamentais para controlar a execução de um programa, como condicionais e laços de repetição (<em>loops</em>, em inglês). São discutidas formas de automatizar tarefas repetitivas e de implementar lógica condicional, elementos centrais em qualquer aplicação computacional.</p></li>
-<li><p><strong>Capítulo 6 – Funções</strong>. Este capítulo tem por objetivo desenvolver o conceito de funções como forma de organizar código, evitar repetição e tornar programas mais legíveis e reutilizáveis. Discute definição, uso e boas práticas na criação de funções, preparando o aluno para estruturar programas mais complexos.</p></li>
+<li><p><strong>Capítulo 1 — Custos e benefícios: <span class="citation" data-cites="becker1968">Becker (<a href="referencias.html#ref-becker1968" role="doc-biblioref">1968</a>)</span>.</strong> Apresenta a decisão criminal como um problema de escolha sob incerteza, no qual o indivíduo compara a utilidade esperada de uma atividade com desfecho incerto (o crime) com a utilidade de uma alternativa segura (a atividade lícita). Derivamos as estáticas comparativas em relação à probabilidade de apreensão, à severidade da punição e ao ganho do crime; e discutimos o problema de minimização da perda social que leva ao resultado do nível ótimo de crime.</p></li>
+<li><p><strong>Capítulo 2 — Alocação de tempo: <span class="citation" data-cites="ehrlich1973">Ehrlich (<a href="referencias.html#ref-ehrlich1973" role="doc-biblioref">1973</a>)</span>.</strong> Substitui a escolha binária de Becker por uma decisão de <strong>alocação de tempo</strong> entre atividades lícitas e ilícitas, que deixam de ser mutuamente excludentes. O modelo torna o custo de oportunidade explícito e permite tratar a margem intensiva do crime — não apenas <em>se</em>, mas <em>quanto</em>. Derivamos a condição de ótimo interior, as condições sob as quais um indivíduo avesso ao risco não se especializa em nenhuma das atividades, e as estáticas comparativas correspondentes. O capítulo introduz também a distinção entre <strong>dissuasão</strong> e <strong>incapacitação</strong>, central para interpretar praticamente toda a literatura empírica sobre policiamento e, principalmente, encarceramento.</p></li>
+<li><p><strong>Capítulo 3 — Limitações e contribuições mais recentes.</strong> Submete os dois modelos anteriores a um exame crítico. A limitação mais séria é o fato de serem estáticos: a punição real não é uma transferência monetária instantânea, mas um fluxo de desutilidade que se estende no tempo e começa <em>depois</em> da apreensão. Apresentamos brevemente o modelo dinâmico de <span class="citation" data-cites="lee2017">Lee e McCrary (<a href="referencias.html#ref-lee2017" role="doc-biblioref">2017</a>)</span>, seguindo a discussão de <span class="citation" data-cites="chalfin2017">Chalfin e McCrary (<a href="referencias.html#ref-chalfin2017" role="doc-biblioref">2017</a>)</span>, e mostramos como a impaciência — e não a preferência pelo risco — pode explicar por que a certeza da punição dissuade mais do que a severidade. Em seguida, revisamos outras limitações: a diferença entre probabilidade objetiva e percebida, a evidência comportamental sobre impulsividade, os modelos de equilíbrio geral com fricções de busca, e o fato de que a prisão não é apenas um preço, mas também um tratamento com efeitos sobre o comportamento futuro.</p></li>
 </ul>
-<p>Juntos, esses seis capítulos estabelecem as bases conceituais e práticas da programação, permitindo que o aluno desenvolva familiaridade com o raciocínio computacional e com a linguagem Python. Ao final desta parte do curso, mais do que memorizar comandos específicos, espera-se que o estudante seja capaz de ler, compreender e construir pequenos programas, criando uma base sólida para o uso de ferramentas computacionais em análise de dados e aplicações empíricas em economia nas etapas seguintes da disciplina.</p>
+</section>
+<section id="objetivos-de-aprendizagem" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Ao final desta parte do curso, espera-se que o aluno seja capaz de:</p>
+<ol type="1">
+<li>Formular a decisão de cometer um crime como um problema de escolha sob incerteza e derivar suas estáticas comparativas.</li>
+<li>Distinguir a margem extensiva (participar ou não) da margem intensiva (quanto tempo alocar), e reconhecer qual delas é relevante em cada aplicação empírica.</li>
+<li>Explicar a distinção entre certeza e severidade da punição e avaliar criticamente as diferentes justificativas teóricas para a assimetria entre elas.</li>
+<li>Separar conceitualmente os mecanismos de <strong>dissuasão</strong> e <strong>incapacitação</strong> e identificar por que são difíceis de distinguir empiricamente.</li>
+<li>Identificar quais parâmetros do modelo uma dada política pública ou desenho de pesquisa efetivamente movimenta.</li>
+<li>Reconhecer as principais limitações do modelo estático e o que os modelos dinâmicos e de equilíbrio acrescentam.</li>
+</ol>
+</section>
+<section id="pré-requisitos-e-observações" class="level2">
+<h2 class="anchored" data-anchor-id="pré-requisitos-e-observações">Pré-requisitos e observações</h2>
+<p>Os pré-requisitos são os de um curso intermediário de microeconomia: otimização com restrições, preferências pelo risco, escolha sob incerteza e utilidade esperada de <em>von Neumann–Morgenstern</em>.</p>
+<p>Uma última observação sobre a função destes modelos no restante do curso. Eles não devem ser lidos como descrições literais de como decisões criminais são tomadas — nenhum modelo econômico é isso. Sua utilidade é tripla: <strong>organizam</strong> os mecanismos pelos quais uma política pode afetar o crime; <strong>disciplinam</strong> a leitura da evidência, ao obrigar a explicitar qual parâmetro um desenho de pesquisa está de fato movimentando; e <strong>entregam</strong> os objetos que a literatura empírica tenta estimar que são exatamente o que a análise de custo-benefício de uma política exige. Quando, nas partes seguintes, discutirmos os efeitos de mais policiamento, de penas mais longas, de programas de transferência de renda ou de expansão da escolaridade, será a este arcabouço que retornaremos para interpretar o sinal e as magnitudes encontradas.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-becker1968" class="csl-entry" role="listitem">
+Becker, Gary S. 1968. <span>“Crime and punishment: an economic approach”</span>. <em>Journal of Political Economy</em> Vol. 76 (No. 2): pp. 169–217.
+</div>
+<div id="ref-chalfin2017" class="csl-entry" role="listitem">
+Chalfin, Aaron, e Justin McCrary. 2017. <span>“Criminal Deterrence: A Review of the Literature”</span>. <em>Journal of Economic Literature</em> Vol. 55 (No. 1): pp. 5–48.
+</div>
+<div id="ref-ehrlich1973" class="csl-entry" role="listitem">
+Ehrlich, Isaac. 1973. <span>“Participation in illegitimate activities: A theoretical and empirical investigation”</span>. <em>Journal of Political Economy</em> Vol. 81 (No. 3): pp. 521–565.
+</div>
+<div id="ref-lee2017" class="csl-entry" role="listitem">
+Lee, David S, e Justin McCrary. 2017. <span>“The deterrence effect of prison: Dynamic theory and evidence”</span>. Em <em>Regression discontinuity designs: Theory and applications</em>, 38:73–146. Advances em Econometrics. Emerald Group Publishing Limited.
+</div>
+</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -631,7 +693,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/undergrad/modelo_racional.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/undergrad/modelo_racional.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Notas de aula de <strong>EAE1247 — Economia do Crime</strong> · Feito com <a href="https://quarto.org/">Quarto</a></p>
 </div>
