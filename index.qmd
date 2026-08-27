@@ -12,13 +12,9 @@ O objetivo das notas é oferecer uma apresentação organizada e acessível dos 
 
 ## Como usar
 
-As notas foram desenvolvidas para acompanhar as aulas da disciplina e devem ser utilizadas em conjunto com as discussões realizadas em sala e com as referências bibliográficas indicadas ao longo do curso.
+As notas foram desenvolvidas para acompanhar as aulas da disciplina e devem ser utilizadas em conjunto com as discussões realizadas em sala e com as referências bibliográficas indicadas ao longo do curso. Os capítulos seguem, em linhas gerais, a organização da disciplina. Eles podem ser lidos sequencialmente para acompanhar o desenvolvimento dos tópicos ou consultados individualmente como referência para temas específicos.
 
-Os capítulos seguem, em linhas gerais, a organização da disciplina. Eles podem ser lidos sequencialmente para acompanhar o desenvolvimento dos tópicos ou consultados individualmente como referência para temas específicos.
-
-As notas não substituem a leitura dos artigos e demais referências indicadas no curso. Seu objetivo é fornecer uma estrutura para organizar os conceitos, modelos e resultados empíricos discutidos nas aulas e servir como material de consulta durante e após a disciplina.
-
-O material é atualizado continuamente à medida que novos resultados da literatura são incorporados, exemplos são revisados e o conteúdo da disciplina é aprimorado.
+As notas não substituem a leitura dos artigos e demais referências indicadas no curso. Seu objetivo é fornecer uma estrutura para organizar os conceitos, modelos e resultados empíricos discutidos nas aulas e servir como material de consulta durante e após a disciplina. O material é atualizado continuamente à medida que novos resultados da literatura são incorporados, exemplos são revisados e o conteúdo da disciplina é aprimorado.
 
 ## Histórico de atualizações
 

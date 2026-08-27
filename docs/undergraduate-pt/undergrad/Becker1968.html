@@ -280,22 +280,16 @@ window.Quarto = {
 <div>
 <pre class="mermaid mermaid-js">%%{init: {
   "theme": "base",
-  "flowchart": {
-    "padding": 10,
-    "nodeSpacing": 30,
-    "rankSpacing": 40
-  },
-  "themeVariables": {
-    "fontSize": "19px"
-  }
+  "flowchart": {"padding": 10,"nodeSpacing": 30,"rankSpacing": 40},
+  "themeVariables": {"fontSize": "19px"}
 }}%%
 
 flowchart LR
-    A[Decisão]
-    B[] 
-    C[$U_{n}$]
-    D[$U_{cc}$]
-    E[$U_{cn}$]
+    A["Decisão"]
+    B[" "] 
+    C["$$U_{n}$$"]
+    D["$$U_{cc}$$"]
+    E["$$U_{cn}$$"]
 
     d1["Atividade criminosa"]
     d2["Atividade lícita"]
@@ -304,13 +298,12 @@ flowchart LR
 
     A --&gt; d1 --&gt; B
     A --&gt; d2 --&gt; C
-
     B --&gt; d11 --&gt; D
     B --&gt; d12 --&gt; E
  
     %% Estilo opcional para reforçar aparência de árvore de decisão
     classDef decision fill:none,color:#000000,stroke-width:0px;
-    classDef choice fill:#ffffff,color:#000000,stroke:#ffffff,stroke-width:0px;
+    classDef choice fill:none,color:#000000,stroke:#ffffff,stroke-width:0px;
 
     class A,B,C,D,E decision;
     class d1,d2,d11,d12 choice;
@@ -347,7 +340,7 @@ E(U(crime)) = pU(Y-f) + (1-p)U(Y)
 <p>Sob quais condições a inequação acima vale, i.e.&nbsp;o indivíduo comete crime? A resposta depende (i) da atitude do indivíduo em relação ao risco (avesso, neutro, amante) e (ii) do custo efetivo da punição (<span class="math inline">\(L\)</span>), do benefício gerado pelo crime (<span class="math inline">\(b\)</span>) e da probabilidade de apreensão (<span class="math inline">\(p\)</span>). O gráfico abaixo representa o caso de um indivíduo avesso ao risco, com função de utilidade côncava:</p>
 <!-- ===========================================================================
      Utilidade esperada do crime — Becker (1968)
-     Widget interativo autocontido: SVG + JavaScript puro, ~11 KB, sem dependências.
+     Widget interativo autocontido: SVG + JavaScript puro, sem dependências.
 
      Uso no Quarto: um shortcode de include apontando para este arquivo, com o
      caminho relativo ao .qmd que faz a inclusão. Veja o GUIA-widget.md.
@@ -357,59 +350,73 @@ E(U(crime)) = pU(Y-f) + (1-p)U(Y)
      Cada instância se configura por atributos data-* no <div>:
          data-p  probabilidade de apreensão inicial   (padrão 0.30)
          data-a  renda lícita inicial                 (padrão 3)
-         data-b  ganho do crime inicial               (padrão 3)
+         data-b  ganho do crime, fixo (sem slider)    (padrão 3)
          data-l  perda se apreendido inicial          (padrão 2)
          data-shape  concava | linear | convexa       (padrão concava)
      Pode aparecer mais de uma vez na mesma página.
-     =========================================================================== -->
 
-<div class="becker-expectedu">
+     ATENÇÃO ao renomear: a classe "expectedu" é o elo entre o <div> e as regras
+     do <style> abaixo. Se você trocar o nome no <div>, troque também em TODAS as
+     regras CSS — senão o widget aparece sem estilo nenhum. (O JavaScript não
+     depende mais do nome: ele acha o <div> por conta própria.)
+     =========================================================================== -->
+<div class="expectedu">
 <style>
-.becker-eu{
+.expectedu{
   --fg:#1a1a1a; --muted:#8a8a8a; --curve:#1f3864; --chord:#7a7a7a;
   --bad:#b3261e; --good:#2e7d4f; --panel:#f6f7f9; --edge:#dfe3e8;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--fg);
-  display:grid; grid-template-columns:minmax(0,1fr) 236px; gap:1.1rem;
-  align-items:start; margin:1.4rem 0;
+  font-family:inherit; color:var(--fg); margin:1.4rem 0;
 }
-@media (max-width:800px){ .becker-eu{ grid-template-columns:1fr; } }
-[data-bs-theme="dark"] .becker-eu{
+[data-bs-theme="dark"] .expectedu{
   --fg:#e8e8e8; --muted:#8b93a0; --curve:#8ab0e8; --chord:#9aa2ad;
   --bad:#f2837a; --good:#6fc898; --panel:#20242b; --edge:#39414d;
 }
-.becker-eu svg{ width:100%; height:auto; display:block; overflow:visible; }
-.becker-eu .ctrl{ background:var(--panel); border:1px solid var(--edge);
-  border-radius:10px; padding:.9rem; font-size:.82rem; line-height:1.3; }
-.becker-eu .ctrl label{ display:flex; justify-content:space-between; align-items:baseline;
-  gap:.5rem; margin:0 0 .35rem; }
-.becker-eu .ctrl label span{ min-width:0; }
-.becker-eu .ctrl label b{ font-variant-numeric:tabular-nums; font-weight:600;
-  color:var(--curve); white-space:nowrap; }
-.becker-eu input[type=range]{ width:100%; margin:0 0 .85rem; accent-color:var(--curve);
+.expectedu svg{ width:100%; height:auto; display:block; overflow:visible; }
+.expectedu .ctrl{ background:var(--panel); border:1px solid var(--edge);
+  border-radius:10px; padding:1rem 1.1rem; margin-top:.9rem; }
+/* subgrid alinha os três controles mesmo quando um rótulo ocupa duas linhas */
+.expectedu .sliders{ display:grid; grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto; gap:.2rem 1.6rem; }
+.expectedu .sliders > div{ display:grid; grid-row:span 2;
+  grid-template-rows:subgrid; align-content:start; }
+@media (max-width:620px){
+  .expectedu .sliders{ grid-template-columns:1fr; grid-template-rows:none; }
+  .expectedu .sliders > div{ grid-row:auto; grid-template-rows:none; }
+}
+.expectedu label{ display:block; margin:0 0 .3rem; font-size:.95rem; }
+.expectedu input[type=range]{ width:100%; margin:0 0 .9rem; accent-color:var(--curve);
   display:block; }
-.becker-eu .verdict{ border-radius:8px; padding:.6rem .7rem; margin-top:.2rem;
-  font-size:.8rem; line-height:1.55; border-left:4px solid; }
-.becker-eu .verdict.ok{ background:color-mix(in srgb,var(--good) 12%,transparent);
+.expectedu .verdict{ border-radius:8px; padding:.65rem .8rem; margin-top:.35rem;
+  font-size:1rem; line-height:1.6; border-left:4px solid; }
+.expectedu .verdict.ok{ background:color-mix(in srgb,var(--good) 12%,transparent);
   border-color:var(--good); }
-.becker-eu .verdict.no{ background:color-mix(in srgb,var(--bad) 12%,transparent);
+.expectedu .verdict.no{ background:color-mix(in srgb,var(--bad) 12%,transparent);
   border-color:var(--bad); }
-.becker-eu .reset{ margin-top:.6rem; font-size:.75rem; background:none; cursor:pointer;
-  border:1px solid var(--edge); border-radius:6px; padding:.3rem .6rem;
+.expectedu .reset{ margin-top:.7rem; font-size:.8rem; background:none; cursor:pointer;
+  border:1px solid var(--edge); border-radius:6px; padding:.32rem .65rem;
   color:var(--muted); font-family:inherit; }
-.becker-eu text{ font-family:Georgia,"Times New Roman",serif; }
+/* Rótulos dentro do gráfico (a, a−L, U(a)…). O serif imita a matemática do texto.
+   Para que sigam a fonte do site como o resto do widget, troque por: inherit */
+.expectedu text{ font-family:Georgia,"Times New Roman",serif; }
 </style>
 
-<svg viewbox="0 0 620 430" role="img" aria-label="Curva de utilidade côncava com a corda entre os pontos A e B e o ponto de utilidade esperada do crime"><g data-el="plot"></g></svg>
+<svg viewbox="0 0 620 420" role="img" aria-label="Curva de utilidade côncava com a corda entre os pontos A e B e o ponto de utilidade esperada do crime"><g data-el="plot"></g></svg>
 
 <div class="ctrl">
-  <label><span>Probabilidade de apreensão <i>p</i></span> <b data-el="v-p"></b></label>
-  <input type="range" data-el="p" min="0" max="1" step="0.01">
-  <label><span>Renda lícita <i>a</i></span> <b data-el="v-a"></b></label>
-  <input type="range" data-el="a" min="1" max="6" step="0.1">
-  <label><span>Ganho do crime <i>b</i></span> <b data-el="v-b"></b></label>
-  <input type="range" data-el="b" min="0.2" max="6" step="0.1">
-  <label><span>Perda se apreendido <i>L</i></span> <b data-el="v-L"></b></label>
-  <input type="range" data-el="L" min="0" max="5.5" step="0.1">
+  <div class="sliders">
+    <div>
+      <label>Probabilidade de apreensão <i>p</i></label>
+      <input type="range" data-el="p" min="0" max="1" step="0.01">
+    </div>
+    <div>
+      <label>Renda lícita <i>a</i></label>
+      <input type="range" data-el="a" min="1" max="6" step="0.1">
+    </div>
+    <div>
+      <label>Perda se apreendido <i>L</i></label>
+      <input type="range" data-el="L" min="0" max="5.5" step="0.1">
+    </div>
+  </div>
   <div class="verdict" data-el="verdict"></div>
   <button class="reset" data-el="reset">Restaurar valores iniciais</button>
 </div>
@@ -418,23 +425,24 @@ E(U(crime)) = pU(Y-f) + (1-p)U(Y)
 (function(){
   // ---- 1. a instância: tudo é buscado dentro DESTE div, então a mesma página
   //         pode conter vários widgets sem que um atropele o outro ------------
-  const root = document.currentScript.closest(".becker-eu");
-  const el   = n => root.querySelector('[data-el="' + n + '"]');
+  const root = document.currentScript.parentElement;
+  root.classList.add("expectedu");   // reaplica a classe usada pelo <style> acima
+  const el = n => root.querySelector('[data-el="' + n + '"]');
 
   // lê data-p, data-shape, etc. no próprio div ou em qualquer div que o envolva
-  // (assim um ::: {data-shape="linear"} do Quarto também configura a instância)
   const cfg = n => {
     for (let e = root; e; e = e.parentElement)
       if (e.dataset && e.dataset[n] !== undefined && e.dataset[n] !== "") return e.dataset[n];
   };
   const num = (n, d) => { const v = cfg(n); return v === undefined ? d : +v; };
 
-  const INI = { p: num("p", 0.30), a: num("a", 3), b: num("b", 3), L: num("l", 2) };
+  const INI = { p: num("p", 0.30), a: num("a", 3), L: num("l", 2) };
+  const B   = num("b", 3);           // ganho do crime: fixo, sem slider
 
   // ---- 2. as preferências: troque aqui para mudar a economia da figura ------
   const FORMAS = {
-    concava: w => 3 * Math.log(1 + w),   // avesso ao risco
-    linear:  w => 0.824 * w,             // neutro ao risco
+    concava: w => 3 * Math.log(1 + w),            // avesso ao risco
+    linear:  w => 0.824 * w,                      // neutro ao risco
     convexa: w => 1.033 * (Math.exp(w / 4) - 1),  // propenso ao risco
   };
   const U = FORMAS[cfg("shape")] || FORMAS.concava;
@@ -442,8 +450,7 @@ E(U(crime)) = pU(Y-f) + (1-p)U(Y)
   // ---- 3. o desenho: helpers de SVG e as escalas ----------------------------
   const NS = "http://www.w3.org/2000/svg";
   const g  = el("plot");
-  const fmt = (x, d = 2) => x.toFixed(d).replace(".", ",");
-  const M = { l: 78, r: 34, t: 24, b: 50 }, W = 620, H = 430;
+  const M = { l: 96, r: 34, t: 26, b: 54 }, W = 620, H = 420;
   const pw = W - M.l - M.r, ph = H - M.t - M.b;
 
   const mk = (tag, attrs, txt) => {
@@ -453,13 +460,13 @@ E(U(crime)) = pU(Y-f) + (1-p)U(Y)
     g.appendChild(n); return n;
   };
   const line  = (x1, y1, x2, y2, o = {}) => mk("line",
-    Object.assign({ x1, y1, x2, y2, stroke: "currentColor", "stroke-width": 1 }, o));
+    Object.assign({ x1, y1, x2, y2, stroke: "currentColor", "stroke-width": 1.2 }, o));
   const label = (x, y, t, o = {}) => mk("text",
-    Object.assign({ x, y, "font-size": 13, fill: "currentColor" }, o), t);
+    Object.assign({ x, y, "font-size": 17, fill: "currentColor" }, o), t);
 
   // ---- 4. o coração: recalcula o modelo e redesenha a cada movimento --------
   function draw(){
-    const p = +el("p").value, a = +el("a").value, b = +el("b").value;
+    const p = +el("p").value, a = +el("a").value, b = B;
     const L = Math.min(+el("L").value, a - 0.05);   // garante a - L > 0
 
     const xA = a - L, xC = a, xB = a + b;           // A: preso, C: lícito, B: impune
@@ -469,7 +476,6 @@ E(U(crime)) = pU(Y-f) + (1-p)U(Y)
     const aStar = (yC - c) / m;                     // renda esperada mínima
     const Ew = p * xA + (1 - p) * xB;               // renda esperada do crime
     const EU = p * yA + (1 - p) * yB;               // utilidade esperada do crime
-    const pStar = Math.min(1, Math.max(0, (xB - aStar) / (xB - xA)));
     const paga = EU >= yC;
 
     const xmax = Math.max(xB * 1.22, 8), ymax = U(xmax) * 1.10;
@@ -489,8 +495,8 @@ E(U(crime)) = pU(Y-f) + (1-p)U(Y)
     // eixos
     line(M.l, Y(0), M.l + pw + 16, Y(0), { "marker-end": "url(#beu-ar)" });
     line(M.l, Y(0), M.l, M.t - 12,       { "marker-end": "url(#beu-ar)" });
-    label(M.l + pw + 14, Y(0) + 26, "renda",
-      { "text-anchor": "end", "font-size": 12, fill: cGrey });
+    label(M.l + pw + 14, Y(0) + 30, "renda",
+      { "text-anchor": "end", "font-size": 15, fill: cGrey });
 
     // curva de utilidade
     let d = "";
@@ -498,81 +504,71 @@ E(U(crime)) = pU(Y-f) + (1-p)U(Y)
       const w = (i / 200) * xmax;
       d += (i ? "L" : "M") + X(w).toFixed(1) + " " + Y(U(w)).toFixed(1) + " ";
     }
-    mk("path", { d, fill: "none", stroke: cCurve, "stroke-width": 2.2 });
-    label(X(xmax) - 4, Y(U(xmax)) - 10, "U(·)",
-      { fill: cCurve, "text-anchor": "end", "font-style": "italic", "font-size": 14 });
+    mk("path", { d, fill: "none", stroke: cCurve, "stroke-width": 2.6 });
+    label(X(xmax) - 4, Y(U(xmax)) - 12, "U(·)",
+      { fill: cCurve, "text-anchor": "end", "font-style": "italic", "font-size": 18 });
 
     // guias tracejadas de A, B e C
     const guia = (x, y, lx, ly) => {
-      const o = { stroke: cGrey, "stroke-width": 1, "stroke-dasharray": "4 3" };
+      const o = { stroke: cGrey, "stroke-width": 1.2, "stroke-dasharray": "4 3" };
       line(X(x), Y(0), X(x), Y(y), o);
       line(M.l, Y(y), X(x), Y(y), o);
-      label(X(x), Y(0) + 20, lx, { "text-anchor": "middle", "font-style": "italic" });
-      label(M.l - 8, Y(y) + 4, ly,
-        { "text-anchor": "end", "font-style": "italic", "font-size": 12.5 });
+      label(X(x), Y(0) + 24, lx, { "text-anchor": "middle", "font-style": "italic" });
+      label(M.l - 10, Y(y) + 5, ly,
+        { "text-anchor": "end", "font-style": "italic", "font-size": 16 });
     };
     guia(xA, yA, "a − L", "U(a − L)");
     guia(xB, yB, "a + b", "U(a + b)");
     guia(xC, yC, "a", "U(a)");
 
     // corda AB
-    line(X(xA), Y(yA), X(xB), Y(yB), { stroke: cChord, "stroke-width": 2.2 });
+    line(X(xA), Y(yA), X(xB), Y(yB), { stroke: cChord, "stroke-width": 2.6 });
 
     // a*: renda esperada mínima para o crime compensar
     // (com U linear, a* coincide com a e o prêmio de risco é zero: nada a marcar)
-    if (Math.abs(aStar - xC) > 0.04){
-      const od = { stroke: cBad, "stroke-width": 1.3, "stroke-dasharray": "4 3" };
+    if (Math.abs(aStar - xC) > 0.25){
+      const od = { stroke: cBad, "stroke-width": 1.6, "stroke-dasharray": "4 3" };
       line(X(xC), Y(yC), X(aStar), Y(yC), od);
       line(X(aStar), Y(0), X(aStar), Y(yC), od);
-      mk("circle", { cx: X(aStar), cy: Y(yC), r: 4, fill: cBad });
-      const t = label(X(aStar), Y(0) + 20, "a",
+      mk("circle", { cx: X(aStar), cy: Y(yC), r: 5, fill: cBad });
+      const t = label(X(aStar), Y(0) + 24, "a",
         { "text-anchor": "middle", fill: cBad, "font-style": "italic", "font-weight": "bold" });
       const sup = document.createElementNS(NS, "tspan");
       sup.setAttribute("baseline-shift", "super");
-      sup.setAttribute("font-size", "9");
+      sup.setAttribute("font-size", "11");
       sup.textContent = "★";
       t.appendChild(sup);
     }
 
     // pontos A, B e C
     [[xA, yA, "A"], [xB, yB, "B"], [xC, yC, "C"]].forEach(function(q){
-      mk("circle", { cx: X(q[0]), cy: Y(q[1]), r: 4.5, fill: "currentColor" });
-      label(X(q[0]), Y(q[1]) - 10, q[2], { "text-anchor": "middle", "font-size": 13.5 });
+      mk("circle", { cx: X(q[0]), cy: Y(q[1]), r: 5.5, fill: "currentColor" });
+      label(X(q[0]), Y(q[1]) - 12, q[2], { "text-anchor": "middle", "font-size": 17 });
     });
 
-    // ponto de utilidade esperada, comandado por p
-    const oh = { stroke: cHi, "stroke-width": 1.3, "stroke-dasharray": "2 2" };
+    // ponto de utilidade esperada, comandado por p, com o par (E[w]; E[U]) colado nele
+    const oh = { stroke: cHi, "stroke-width": 1.6, "stroke-dasharray": "2 2" };
     line(X(Ew), Y(0), X(Ew), Y(EU), oh);
     line(M.l, Y(EU), X(Ew), Y(EU), oh);
-    mk("circle", { cx: X(Ew), cy: Y(EU), r: 6.5, fill: cHi });
-    label(X(Ew) + 11, Y(EU) + 16, "E[U]",
-      { fill: cHi, "font-style": "italic", "font-size": 13 });
-    label(X(Ew), Y(0) + 36, "E[w]",
-      { "text-anchor": "middle", fill: cHi, "font-style": "italic", "font-size": 12 });
+    mk("circle", { cx: X(Ew), cy: Y(EU), r: 8, fill: cHi });
+    // sempre abaixo e à direita: como a corda sobe para a direita, essa é a única
+    // posição que nunca cruza a corda, seja qual for o p
+    label(X(Ew) + 14, Y(EU) + 26, "(E[w] ; E[U])",
+      { fill: cHi, "font-style": "italic", "font-size": 16, "text-anchor": "start" });
 
-    // leitura numérica e veredito
-    el("v-p").textContent = fmt(p);
-    el("v-a").textContent = fmt(a, 1);
-    el("v-b").textContent = fmt(b, 1);
-    el("v-L").textContent = fmt(L, 1);
-
+    // veredito
     const v = el("verdict");
     v.className = "verdict " + (paga ? "ok" : "no");
     v.innerHTML = paga
-      ? "<b>O crime compensa.</b><br>E[w] = " + fmt(Ew) + " ≥ a<sup>★</sup> = " + fmt(aStar) +
-        ", logo E[U] = " + fmt(EU) + " ≥ U(a) = " + fmt(yC) +
-        ".<br>Deixa de compensar se <i>p</i> &gt; <b>" + fmt(pStar) + "</b>."
-      : "<b>O crime não compensa.</b><br>E[w] = " + fmt(Ew) + " &lt; a<sup>★</sup> = " + fmt(aStar) +
-        ", logo E[U] = " + fmt(EU) + " &lt; U(a) = " + fmt(yC) +
-        ".<br>Voltaria a compensar se <i>p</i> ≤ <b>" + fmt(pStar) + "</b>.";
+      ? "<b>O crime compensa.</b><br>E[w] &gt; a<sup>★</sup>, logo E[U] &gt; U(a)"
+      : "<b>O crime não compensa.</b><br>E[w] &lt; a<sup>★</sup>, logo E[U] &lt; U(a)";
   }
 
   // ---- 5. as ligações --------------------------------------------------------
   const restaurar = () => {
-    el("p").value = INI.p; el("a").value = INI.a;
-    el("b").value = INI.b; el("L").value = INI.L;
+    el("p").value = INI.p; el("a").value = INI.a; el("L").value = INI.L;
   };
-  ["p", "a", "b", "L"].forEach(n => el(n).addEventListener("input", draw));
+  ["p", "a", "L"].forEach(n => el(n).addEventListener("input", draw));
   el("reset").addEventListener("click", () => { restaurar(); draw(); });
   restaurar();
   draw();
