@@ -265,9 +265,9 @@
 
     // pontos T′ e T″
     mk("circle", { cx: X(m), cy: Y(m), r: 5.5, fill: "currentColor" });
-    label(X(m) + 12, Y(m) + 18, "T^′", {});
+    label(X(m) + 12, Y(m) + 18, "T′", {});
     mk("circle", { cx: X(cA), cy: Y(cB), r: 5.5, fill: "currentColor" });
-    label(X(cA), Y(cB) - 13, "T^″", { "text-anchor": "middle"});
+    label(X(cA), Y(cB) - 13, "T″", { "text-anchor": "middle"});
 
     // o ótimo, comandado pelos controles
     mk("circle", { cx: X(oA), cy: Y(oB), r: 8, fill: cHi });

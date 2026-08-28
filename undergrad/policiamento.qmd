@@ -12,7 +12,7 @@ Para além do potencial efeito mecânico da polícia sobre o crime através do c
 
 Dessa forma, é possível que o efeito verdadeiro seja negativo (mais polícia, menos crime) mas a correlação empírica mostre um coeficiente positivo, resultado de mais polícia sendo alocada em lugares com mais crime. A @fig-policia_crime mostra exatamente esse caso, de uma correlação empírica positiva entre o efetivo policial e crime, usando dados de 2015 para uma amostra de 73 países.^[Utilizando dados de 2018, @pinotti2020 mostra a mesma correlação positiva entre homicídios e efetivo policial para os estados norte-americanos e para as cidades do país com mais de $10{,}000$ habitantes.]
 
-![Efetivo policial e crimes violentos no mundo (2015). Fonte: _UNODC_](/images/policia_crime.svg){#fig-policia_crime width="80%" fig-align="center"}
+![Efetivo policial e crimes violentos no mundo (2015). Fonte: _United Nations Office on Drugs and Crime (UNODC)_](/images/policia_crime.svg){#fig-policia_crime width="90%" fig-align="center"}
 
 ### Viés de simultaneidade
 
@@ -28,24 +28,24 @@ $$
 p_i = \alpha_0 + \alpha_1 c_i + v_i
 $$ {#eq-simult2}
 
-Nesse caso, é possível demonstrar que o efetivo policial $p_i$ é, geralmente, correlacionado com o termo de erro $u_i$, i.e., $\cov(p_i, u_i) \neq 0$. Para ver isso no caso em que $u_i$ e $v_i$ são não correlacionados, basta um pouco de manipulação algébrica
+Nesse caso, é possível demonstrar que o efetivo policial $p_i$ é, geralmente, correlacionado com o termo de erro $u_i$, i.e., $Cov(p_i, u_i) \neq 0$. Para ver isso no caso em que $u_i$ e $v_i$ são não correlacionados, basta um pouco de manipulação algébrica
 
 $$
 \begin{aligned}
-\cov(p_i, u_i) &= \cov(\left[\alpha_0 + \alpha_1 c_i + v_i\right], u_i) \\
-\cov(p_i, u_i) &= \alpha_1 \cov(c_i, u_i) + \cov(v_i, u_i) \\
-\cov(p_i, u_i) &= \alpha_1 \cov(\left[\beta_0 + \beta_1 p_i + u_i\right], u_i) \\
-\cov(p_i, u_i) &= \alpha_1 \beta_1 \cov(p_i, u_i) + \alpha_1 \cov(u_i, u_i)
+Cov(p_i, u_i) &= Cov(\left[\alpha_0 + \alpha_1 c_i + v_i\right], u_i) \\
+Cov(p_i, u_i) &= \alpha_1 Cov(c_i, u_i) + Cov(v_i, u_i) \\
+Cov(p_i, u_i) &= \alpha_1 Cov(\left[\beta_0 + \beta_1 p_i + u_i\right], u_i) \\
+Cov(p_i, u_i) &= \alpha_1 \beta_1 Cov(p_i, u_i) + \alpha_1 Cov(u_i, u_i)
 \end{aligned}
 $$
 
-Note que $\cov(u_i, u_i) = Var(u_i) \equiv \sigma_{u_i}$. Assumindo que $\alpha_1 \beta_1 \neq 1$, basta resolver para a covariância entre o efetivo policial $p_i$ e o termo de erro $u_i$ em função dos parâmetros e da variância de $u_i$.
+Note que $Cov(u_i, u_i) = Var(u_i) \equiv \sigma_{u_i}$. Assumindo que $\alpha_1 \beta_1 \neq 1$, basta resolver para a covariância entre o efetivo policial $p_i$ e o termo de erro $u_i$ em função dos parâmetros e da variância de $u_i$.
 
 $$
-\cov(p_i, u_i) = \frac{\alpha_1}{1 - \alpha_1\beta_1} \cdot \sigma_{u_i} \neq 0
+Cov(p_i, u_i) = \frac{\alpha_1}{1 - \alpha_1\beta_1} \cdot \sigma_{u_i} \neq 0
 $$ {#eq-simult_bias}
 
-Lembre que, para estimar o coeficiente $\beta_1$ de forma consistente e não-viesada usando Mínimos Quadrados Ordinários (MQO) precisamos da hipótese de independência condicional, i.e., $E(u_i | p_i) = 0$. Mas o fato de $\cov(p_i, u_i) \neq 0$ implica em $E(u_i | p_i)$ também é diferente de zero. Portanto, estimar a @eq-simult1 por MQO retornaria um $\hat{\beta_1}$ viesado e não representativo do verdadeiro efeito estrutural de alterações no efetivo policial sobre as taxas de criminalidade.
+Lembre que, para estimar o coeficiente $\beta_1$ de forma consistente e não-viesada usando Mínimos Quadrados Ordinários (MQO) precisamos da hipótese de independência condicional, i.e., $E(u_i | p_i) = 0$. Mas o fato de $Cov(p_i, u_i) \neq 0$ implica em $E(u_i | p_i)$ também é diferente de zero. Portanto, estimar a @eq-simult1 por MQO retornaria um $\hat{\beta_1}$ viesado e não representativo do verdadeiro efeito estrutural de alterações no efetivo policial sobre as taxas de criminalidade.
 
 ## Evidências empíricas
 
@@ -70,7 +70,7 @@ A @tbl-policia_crime resume o efeito estimado em vários artigos desde @levitt19
 | @mastrobuoni2019 | $-0.6$                        | $-0.9$               |                 |
 | @weisburd2021    | $-0.5$                        |                      |                 |
 
-: Comparando as elasticidades estimadas do efetivo policial em relação a diferentes tipos de crime {#tbl-policia_crime}
+: Comparando as elasticidades estimadas do efetivo policial em relação a diferentes tipos de crime {#tbl-policia_crime tbl-colwidths="[37,21,21,21]"}
 
 ::: {.nota-tabela}
 *Notas:* Tabela retirada de @buonanno2022chp4.

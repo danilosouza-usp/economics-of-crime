@@ -27,7 +27,7 @@ book:
         - undergrad/Ehrlich1973.qmd
         - undergrad/limitacoes.qmd
         
-    - part: evidencia_classica.qmd
+    - part: undergrad/evidencia_classica.qmd
       chapters:
         - undergrad/policiamento.qmd
     #    - incarceration.qmd

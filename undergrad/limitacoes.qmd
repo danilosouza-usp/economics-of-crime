@@ -20,7 +20,7 @@ Como observam @chalfin2017, é essa incapacidade de "levar em consideração de 
 
 A cada período, o indivíduo se depara com uma oportunidade criminosa cujo ganho $b$ varia: às vezes aparece um crime muito lucrativo, às vezes um de retorno modesto. Ele aproveita a oportunidade quando o ganho supera certo patamar — o benefício de reserva $b^\star$ — e deixa passar quando não supera. Toda a análise de política pública se resume, então, a uma pergunta: o que desloca $b^\star$?
 
-### O que determina o patamar
+### O benefício reserva
 
 @chalfin2017 resumem assim a condição que define o benefício de reserva:
 
@@ -44,7 +44,7 @@ A @tbl-nu reporta o valor de $\nu$ para diferentes combinações de paciência e
 |   0.70   |  0.70 |  1.77 |   2.33 |      2.33    |              76%               |
 |   0.50   |  0.50 |  0.94 |   1.00 |      1.00    |              94%               |
 
-: Valor de $\nu$ por fator de desconto e duração da pena (em anos) {#tbl-nu}
+: Valor de $\nu$ por fator de desconto e duração da pena (em anos) {#tbl-nu tbl-colwidths="[16,16,16,16,16,20]"}
 
 ### Três implicações
 
@@ -61,8 +61,6 @@ A @tbl-nu reporta o valor de $\nu$ para diferentes combinações de paciência e
 **Equilíbrio parcial.** Becker e Ehrlich tomam como dados a probabilidade de apreensão, o retorno do crime e o salário lícito. Nenhum dos três é exógeno. A probabilidade de apreensão é congestionável — dado um efetivo policial fixo, mais crimes significam menor chance de punição por crime —, o que gera complementaridade estratégica e abre espaço para múltiplos equilíbrios: comunidades idênticas em fundamentos podem se estabilizar em níveis de criminalidade muito distintos (@glaeser1996). Uma literatura mais avançada, que não formalizaremos aqui, incorpora ainda fricções no mercado de trabalho (@burdett2003, @engelhardt2008) e produz resultados como o de que a desigualdade salarial afeta o crime mesmo com salário médio constante.
 
 **A prisão como tratamento.** No arcabouço original a punição só desincentiva. Mas o encarceramento também transforma quem passa por ele: deprecia capital humano, rompe vínculos com o mercado formal, gera estigma e forma redes criminosas. A evidência é mista e a leitura razoável é que o sinal depende do que a prisão de fato é em cada contexto. Essa dimensão é particularmente relevante no caso brasileiro, dada a consolidação de facções no ambiente prisional.
-
-## Conclusão
 
 ## Conclusão
 

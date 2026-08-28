@@ -16,7 +16,7 @@ Desde então, o campo se expandiu consideravelmente, tanto em escopo quanto em s
 
 O resultado é uma produção acadêmica crescente e diversificada. A @fig-papers_jd ilustra essa tendência, mostrando a evolução do número de publicações acadêmicas dedicadas à economia do crime nas últimas décadas:
 
-![Publicações de artigos em Economia do Crime nos periódicos mais importantes da profissão. Fonte: [https://jenniferdoleac.com/resources/](https://jenniferdoleac.com/resources/)](/images/papers_jd.svg){#fig-papers_jd width="80%" fig-align="center"}
+![Publicações de artigos em Economia do Crime nos periódicos mais importantes da profissão. Fonte: [https://jenniferdoleac.com/resources/](https://jenniferdoleac.com/resources/)](/images/papers_jd.svg){#fig-papers_jd width="90%" fig-align="center"}
 
 ## Crimes violentos: Mundo _versus_ América Latina
 
@@ -24,7 +24,7 @@ Nos últimos anos, observou-se uma tendência geral de queda nas taxas de crimes
 
 Essa queda global, contudo, mascara uma distribuição extremamente desigual da violência. A América Latina é o caso mais evidente dessa disparidade. Utilizando essa mesma amostra de 61 países, países da região respondem por um fração constante de $10\%$ da população mundial, mas respondem por uma fração crescente dos homicídios registrados no planeta, tendo atingido impressionantes $53\%$ em 2018. Esse descompasso tem sido persistente e revela um padrão estrutural: a violência letal na América Latina não decorre de conflitos armados ou guerras civis em curso, mas de fatores internos, como instituições frágeis, baixa capacidade estatal, desigualdade elevada, mercados ilegais lucrativos e disputas territoriais entre grupos criminosos. A @fig-world_latam ilustra essa assimetria, comparando a participação da América Latina na população global com sua participação nos crimes violentos reportados internacionalmente:
 
-![Participação da América Latina na população e homicídios mundiais. Fonte: _World Bank_](/images/world_latam.svg){#fig-world_latam width="80%" fig-align="center"}
+![Participação da América Latina na população e homicídios mundiais. Fonte: _World Bank_](/images/world_latam.svg){#fig-world_latam width="90%" fig-align="center"}
 
 ## A evolução da violência no Brasil
 
@@ -32,7 +32,7 @@ O Brasil se destaca como um caso emblemático dentro desse contexto. Nas última
 
 Em contrapartida, o Norte e especialmente o Nordeste do Brasil passaram a registrar aumentos expressivos nas taxas de violência letal no mesmo período. Essa transição geográfica da violência parece estar relacionada à expansão de facções criminosas interestaduais, à ausência de coordenação entre políticas de segurança pública, à maior vulnerabilidade institucional e ao enfraquecimento da presença estatal nessas regiões. A @fig-crimes_brasil mostra a evolução das taxas de homicídio no Brasil ao longo do tempo, destacando o contraste entre a tendência de queda no Sudeste e o aumento preocupante no Nordeste:
 
-![Evolução das taxas de homicídio no Brasil por região. Fonte: _IPEADATA_](/images/crimes_brasil.svg){#fig-crimes_brasil width="80%" fig-align="center"}
+![Evolução das taxas de homicídio no Brasil por região. Fonte: _IPEADATA_](/images/crimes_brasil.svg){#fig-crimes_brasil width="90%" fig-align="center"}
 
 Esse padrão desigual de violência, tanto entre países quanto dentro de um mesmo território, é central para a agenda contemporânea da economia do crime. Ele impõe a necessidade de análises contextuais, baseadas em evidência empírica de qualidade, capazes de informar políticas públicas com foco na prevenção, na repressão inteligente e na construção de instituições mais eficazes e legítimas.
 
