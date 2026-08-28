@@ -20,23 +20,6 @@ Como observam @chalfin2017, é essa incapacidade de "levar em consideração de 
 
 A cada período, o indivíduo se depara com uma oportunidade criminosa cujo ganho $b$ varia: às vezes aparece um crime muito lucrativo, às vezes um de retorno modesto. Ele aproveita a oportunidade quando o ganho supera certo patamar — o benefício de reserva $b^\star$ — e deixa passar quando não supera. Toda a análise de política pública se resume, então, a uma pergunta: o que desloca $b^\star$?
 
-### Por que uma pena longa vale menos do que parece
-
-Este é o ponto central, e ele é puramente intuitivo. A pena é cumprida um dia de cada vez, e o indivíduo desconta o futuro. O primeiro mês de prisão pesa integralmente na decisão de hoje; o mês número sessenta pesa bem menos; e, para alguém suficientemente impaciente, o mês número cento e vinte não pesa praticamente nada. O custo esperado de ser preso, portanto, não cresce proporcionalmente à duração da pena: cresce cada vez mais devagar.
-
-Seja $\delta$ o fator de desconto e $S$ a duração da pena, e defina $\nu = \delta + \delta^{2} + \dots + \delta^{S-1}$, o peso em valor presente de todos os períodos de pena além do primeiro. Dois fatos sobre $\nu$ organizam o resto da seção: ele é nulo quando a pena dura um único período ou quando o indivíduo é completamente míope; e, por mais longa que seja a pena, ele nunca ultrapassa $\delta/(1-\delta)$.
-
-| $\delta$ | $S=2$ | $S=5$ | $S=10$ | $S=20$ | $S\to\infty$ | % do teto já atingida em $S=5$ |
-|:--|--:|--:|--:|--:|--:|--:|
-| 0,95 | 0,95 | 3,52 | 7,03 | 11,83 | 19,00 | 19% |
-| 0,90 | 0,90 | 3,10 | 5,51 | 7,78 | 9,00 | 34% |
-| 0,70 | 0,70 | 1,77 | 2,24 | 2,33 | 2,33 | 76% |
-| 0,50 | 0,50 | 0,94 | 1,00 | 1,00 | 1,00 | 94% |
-
-: Valor de $\nu$ por fator de desconto e duração da pena (em anos) {#tbl-nu}
-
-Leia a última linha da @tbl-nu: para um indivíduo com $\delta = 0{,}5$, uma pena de cinco anos já entrega $94\%$ de todo o poder dissuasório que o encarceramento é capaz de gerar — dobrar ou quadruplicar essa pena praticamente não desloca $b^\star$. Para um indivíduo paciente ($\delta = 0{,}95$), a mesma pena entrega menos de um quinto do potencial, e aumentos continuam surtindo efeito por muito tempo. A eficácia da severidade depende inteiramente de quem é o público-alvo da política.
-
 ### O que determina o patamar
 
 @chalfin2017 resumem assim a condição que define o benefício de reserva:
@@ -45,9 +28,23 @@ $$
 b^\star \;=\; \underbrace{\frac{p}{1-p}\,c}_{\text{primeiro período de pena}} \;+\; \nu\left[\;\underbrace{\frac{p}{1-p}\,c}_{\text{demais períodos}} \;+\; \underbrace{p\,\Omega}_{\text{valor de opção da liberdade}}\;\right]
 $$ {#eq-bstar_LM}
 
-em que $c$ é o custo do encarceramento por período — o análogo de fluxo do $L$ do @sec-becker — e $\Omega$ o valor esperado das oportunidades criminosas perdidas enquanto se está preso. Não é preciso derivar a expressão para lê-la; basta observar três coisas.
+em que $c$ é o custo do encarceramento por período — o análogo de fluxo do $L$ do @sec-becker — e $\Omega$ o valor esperado das oportunidades criminosas perdidas enquanto se está preso, e $\nu = \delta + \delta^{2} + \dots + \delta^{S-1}$ é o peso, em valor presente, de todos os períodos de pena além do primeiro, com $\delta$ o fator de desconto do indivíduo e $S$ a duração da pena. 
 
-O termo inicial é exatamente o modelo estático: a condição de indiferença de um indivíduo neutro ao risco que vimos na @eq-bstar_Becker, com $c$ no lugar de $L$. A duração da pena entra na expressão apenas através de $\nu$ — e já sabemos que esse canal tem teto. E o termo $p\,\Omega$ não tem contrapartida no modelo estático: ele diz que a liberdade tem valor econômico, pois estar solto preserva o acesso a oportunidades futuras. Daí uma implicação curiosa: em um ambiente com muitas oportunidades lucrativas, ser preso custa mais, o que eleva $b^\star$ e reduz a atratividade do crime.
+Não é preciso derivar a expressão para compreende-la; basta observar três coisas. O termo inicial é exatamente o modelo estático: a condição de indiferença de um indivíduo neutro ao risco que vimos na @eq-bstar_Becker, com $c$ no lugar de $L$. O termo $p\,\Omega$ não tem contrapartida no modelo estático: ele diz que a liberdade tem valor econômico, pois estar solto preserva o acesso a oportunidades futuras. Daí uma implicação curiosa, a de que em um ambiente com muitas oportunidades lucrativas, ser preso custa mais, o que eleva $b^\star$ e reduz a atratividade do crime. Por fim, o termo $\nu$ resume os efeitos que a duração da pena tem sobre $b^\star$.
+
+É esse último ponto que carrega o resultado central do artigo. A pena é cumprida um dia de cada vez, e o indivíduo desconta o futuro. O primeiro mês de prisão pesa integralmente na decisão de hoje, o mês número sessenta pesa bem menos, e, para alguém suficientemente impaciente, o mês número cento e vinte não pesa praticamente nada. O custo esperado de ser preso, portanto, não cresce proporcionalmente à duração da pena: cresce cada vez mais devagar. Formalmente, $\nu$ é nulo quando a pena dura um único período ou quando o indivíduo é completamente míope, e, por mais longa que seja a pena, nunca ultrapassa $\delta/(1-\delta)$.^[Isso é resultado da aplicação da fórmula da soma de uma progressão geométrica (PG) infinita com razão menor do que 1. Seja o primeiro termo de uma PG inifinita dado por $a_1$ e a razão por $q\in(0,1)$, nesse caso a soma $S$ dos seus infinitos termos é tal que $\frac{a_1}{1-q}$. Com $a_1=\delta$ e $q=\delta$, $S=\frac{\delta}{1-\delta}$.].
+
+A @tbl-nu reporta o valor de $\nu$ para diferentes combinações de paciência e duração da pena — tratando cada período como um ano — e, na última coluna, a fração do teto $\delta/(1-\delta)$ que uma pena de cinco anos já alcança. O contraste entre as linhas é o que interessa: para um indivíduo impaciente ($\delta = 0{,}5$), cinco anos de pena já entregam $94\%$ de todo o poder dissuasório que o encarceramento é capaz de gerar, de modo que dobrar ou quadruplicar essa pena praticamente não desloca $b^\star$; para um indivíduo paciente ($\delta = 0{,}95$), a mesma pena entrega menos de um quinto do potencial, e aumentos de duração continuam surtindo efeito por muito tempo. Em resumo, a eficácia da severidade depende inteiramente de quem é o público-alvo da política.
+
+
+| $\delta$ | $S=2$ | $S=5$ | $S=20$ | $S\to\infty$ | % do teto já atingida em $S=5$ |
+|:---------|------:|------:|-------:|-------------:|-------------------------------:|
+|   0.95   |  0.95 |  3.52 |  11.83 |     19.00    |              19%               |
+|   0.90   |  0.90 |  3.10 |   7.78 |      9.00    |              34%               |
+|   0.70   |  0.70 |  1.77 |   2.33 |      2.33    |              76%               |
+|   0.50   |  0.50 |  0.94 |   1.00 |      1.00    |              94%               |
+
+: Valor de $\nu$ por fator de desconto e duração da pena (em anos) {#tbl-nu}
 
 ### Três implicações
 
@@ -67,7 +64,11 @@ O termo inicial é exatamente o modelo estático: a condição de indiferença d
 
 ## Conclusão
 
-Bla bla bla
+## Conclusão
+
+A crítica mais séria aos modelos de @becker1968 e @ehrlich1973 é o seu caráter estático: a punição efetivamente aplicada pelos sistemas de justiça é o encarceramento, um fluxo que se estende no tempo, e não um valor descontado de uma só vez. O modelo de @lee2017 incorpora essa dinâmica com uma alteração mínima na estrutura de incentivos original. Se por um lado a duração esperada das penas tem efeito de dissuasão, o efeito marginal diminui com o tamanho da pena. A taxa de impaciência passa a ter um papel central. 
+
+Vimos ainda limitações relativas à percepção do risco de punição e aos efeitos que a própria prisão produz sobre quem passa por ela. Nada disso invalida o arcabouço de escolha racional: a proposição de que o crime responde a incentivos segue sendo a regularidade mais robusta da área. A partir da próxima aula nosso foco passar a ser a discussão a respeito da evidência empírica sobre policiamento, encarceramento, mercado de trabalho e educação, em que o problema deixa de ser derivar previsões teóricas e passa a ser avaliação estatística de políticas reais.
 
 ## Questões para discussão
 

@@ -103,7 +103,7 @@ w_m \left(pU_{C_A} + (1-p)U_{C_B}\right)
 \end{aligned}
 $$ {#eq-FOC2a_Ehrlich}
 
-Unindo as equações (@eq-FOC1a_Ehrlich) e (@eq-FOC2a_Ehrlich), é possível reescrever a condição de primeira ordem como:
+Unindo a @eq-FOC1a_Ehrlich à @eq-FOC2a_Ehrlich, é possível reescrever a condição de primeira ordem como:
 
 $$
 \frac{w_c - w_m}{w_c - f_c - w_m}
@@ -117,7 +117,7 @@ Adicionalmente, note que o lado esquerdo dessa equação pode ser entendido como
 
 Defina $\hat{T}$ como a dotação de tempo a ser alocada entre as atividades, já descontado o tempo alocado para o lazer, tal que $\hat{T} \equiv T - L$. A figura abaixo resume o problema de otimização:
 
-[INSERIR FIGURA]
+{{< include ../_widgets/_ehrlich.qmd >}}
 
 em que $(C_A^\star, C_B^\star)$ representa o ponto de escolha ótima entre o tempo dedicado a cada atividade, tal que $C_A^\star$ representa o nível de consumo no estado em que o indivíduo é capturado e punido e $C_B^\star$ o consumo no estado em que o indivíduo não é capturado.
 
@@ -139,7 +139,7 @@ $$ {#eq-Ehrlich_intsol}
 
 Assumindo que as oportunidades disponíveis aos potenciais criminosos são independentes do comportamento do indivíduo em relação ao risco, é possível mostrar que um agente amante do risco dedicaria mais tempo à prática de atividades ilícitas do que um agente neutro ao risco e ainda mais tempo quando comparado a um agente avesso ao risco.^[Ver @ehrlich1973] A prática de atividades ilícitas, porém, não depende das preferências em relação ao risco, podendo ocorrer em qualquer um dos casos. Já as condições para especialização em uma atividade ou outra dependem do quão avesso ou amante do risco o indivíduo é.^[Um caso interessante é dos indivíduos amantes do risco, i.e. $U_s^{''}(C_s) > 0$ e curva de indiferença côncava em relação à origem. Sob a hipótese de uma fronteira de produção linear no espaço $C_A \times C_B$, o que é garantido por algumas hipóteses em relação à segunda derivada de $W_c$, $W_c$ e $W_c$, a decisão ótima para esse tipo de indivíduo é a especialização completa em atividades criminosas.]
 
-Agora que você já sabe as condições necessárias para que o indivíduo avesso ao risco dedique tempo tanto a atividades lícitas quanto ilícitas (i.e., não especialização), é possível avançar e compreender como essas escolhas variam com mudanças na probabilidade de apreensão, no retorno marginal de cada atividade e no custo marginal da punição. Com base na condição de ótimo, representada pela equação (@eq-opt_Ehrlich), fica claro que:
+Agora que você já sabe as condições necessárias para que o indivíduo avesso ao risco dedique tempo tanto a atividades lícitas quanto ilícitas (i.e., não especialização), é possível avançar e compreender como essas escolhas variam com mudanças na probabilidade de apreensão, no retorno marginal de cada atividade e no custo marginal da punição. Com base na condição de ótimo, representada pela @eq-opt_Ehrlich, fica claro que:
 
 - Um aumento da probabilidade de apreensão $p$ implica em um aumento, em valor absoluto, da inclinação da curva de indiferença. Assim, para que a igualdade se mantenha, é preciso que aumente a diferença entre $w_c - w_m$ e/ou diminua $f_c$. Como a segunda derivada de $W_c$ e $W_m$ é negativa e a segunda derivada de $F$ positiva, então $w_c$ aumenta, $f_c$ e $w_m$ diminuem com uma redução do tempo dedicado às atividades ilícitas e um aumento do tempo dedicado às atividades lícitas. Assim,
 	
@@ -167,10 +167,16 @@ Ambos os mecanismos -- *deterrence* e *incapacitation* -- são importantes para 
 
 ## Conclusão
 
-Bla bla bla
+Neste capítulo estudamos o modelo de @ehrlich1973, que reformula a decisão criminal como um problema de alocação de tempo. A mudança em relação a @becker1968 é substantiva: atividades lícitas e ilícitas deixam de ser mutuamente excludentes, e o indivíduo escolhe quanto tempo dedicar a cada uma delas, além do lazer. Vimos que a condição de ótimo interior iguala a inclinação da fronteira do conjunto de produção no espaço $C_A \times C_B$ à inclinação da curva de indiferença, a mesma lógica de tangência entre Taxa Marginal de Substituição (TMS) e Taxa Marginal de Transformação (TMT) dos cursos de Microeconomia.
+
+As estáticas comparativas reproduzem os resultados de dissuasão de Becker, agora na margem intensiva: aumentos na probabilidade de apreensão e no custo marginal da punição reduzem o tempo dedicado ao crime e aumentam aquele dedicado à atividade lícita. Uma implicação merece destaque: a reincidência não exige miopia nem irracionalidade, basta que as oportunidades no mercado lícito não melhorem. No próximo capítulo examinamos as limitações comuns aos dois modelos e as contribuições mais recentes que buscam superá-las.
 
 ## Questões para discussão
 
-1. X
+1. Considere a condição de solução interior expressa na @eq-Ehrlich_intsol.
 
-2. Y
+    a. Interprete economicamente cada uma das duas desigualdades.
+    b. O que aconteceria com a alocação de tempo se $w_c - w_m$ fosse maior do que $f_c$?
+    c. E se fosse menor do que $p \cdot f_c$?
+
+2. Considere duas políticas voltadas a egressos do sistema prisional: (i) ampliação do monitoramento durante o período de condicional, que eleva $p$; (ii) um programa de qualificação profissional, que eleva $w_m$. Discuta as previsões que o modelo de @ehrlich1973 faz sobre o efeito de cada uma sobre o tempo dedicado ao crime ($h_c$).

@@ -136,3 +136,13 @@ table.table thead th {
 table td .math {
   font-size: 0.9em;
 }
+
+.nota-tabela{
+  font-size:.85em;
+  line-height:1.45;
+  color:var(--bs-secondary-color, #5b6470);   /* acompanha claro/escuro */
+  margin-top:-.5rem;
+  margin-bottom:1.4rem;
+}
+.nota-tabela p{ margin-bottom:.25rem; }
+.nota-tabela p:last-child{ margin-bottom:0; }

@@ -204,6 +204,23 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">evidencia_classica.qmd</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../undergrad/policiamento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policiamento</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../undergrad/referencias.html" class="sidebar-item-text sidebar-link">
@@ -337,7 +354,7 @@ w_m \left(pU_{C_A} + (1-p)U_{C_B}\right)
 &amp;= U_L
 \end{aligned}
 \tag{2.5}\]</span></span></p>
-<p>Unindo as equações (<a href="#eq-FOC1a_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.4</span></a>) e (<a href="#eq-FOC2a_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.5</span></a>), é possível reescrever a condição de primeira ordem como:</p>
+<p>Unindo a <a href="#eq-FOC1a_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.4</span></a> à <a href="#eq-FOC2a_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.5</span></a>, é possível reescrever a condição de primeira ordem como:</p>
 <p><span id="eq-opt_Ehrlich"><span class="math display">\[
 \frac{w_c - w_m}{w_c - f_c - w_m}
 =
@@ -346,7 +363,308 @@ w_m \left(pU_{C_A} + (1-p)U_{C_B}\right)
 <p>A <a href="#eq-opt_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.6</span></a> foi derivada a partir da hipótese de uma solução interior, com participação nas atividades lícitas e ilícitas ao mesmo tempo. Assim, uma hipótese implícita para a validade dessa relação é a de que a punição marginal pelo envolvimento no crime seja maior do que a diferença do retorno marginal entre as atividades criminosas e as atividades lícitas, i.e.&nbsp;<span class="math inline">\(f_c &gt; w_c - w_m &gt; 0\)</span>. Caso contrário, atividades lícitas seriam sempre dominadas pelas ilícitas e todo o tempo não dedicado ao lazer seria dedicado ao crime.</p>
 <p>Adicionalmente, note que o lado esquerdo dessa equação pode ser entendido como a inclinação do conjunto de pontos factíveis de produção no espaço <span class="math inline">\(C_A \times C_B\)</span>. Já o lado direito da equação representa a inclinação da curva de indiferença do indivíduo nesse mesmo espaço. Esse ponto de máximo, portanto, é equivalente ao ponto de igualdade entre a taxa de transformação técnica e a taxa marginal de substituição, que você já deve ter visto nos cursos introdutórios de Microeconomia.</p>
 <p>Defina <span class="math inline">\(\hat{T}\)</span> como a dotação de tempo a ser alocada entre as atividades, já descontado o tempo alocado para o lazer, tal que <span class="math inline">\(\hat{T} \equiv T - L\)</span>. A figura abaixo resume o problema de otimização:</p>
-<p>[INSERIR FIGURA]</p>
+<!-- ===========================================================================
+     Escolha entre estados — Ehrlich (1973)
+     Widget interativo autocontido: SVG + JavaScript puro, sem dependências.
+
+     C_A = consumo se apreendido, C_B = consumo se não apreendido.
+     T′  = todo o tempo na atividade lícita (sobre a linha de certeza,
+           C_A = C_B = W0 + W_m).
+     T″  = todo o tempo no crime. Com retornos lineares em T̂, ele é dado pelos
+           dois parâmetros marginais: C_B = (W0 + W_m) + (W_c − W_m) e
+           C_A = C_B − f_c. Note que a figura só faz sentido com f_c > W_c − W_m;
+           caso contrário o crime aumentaria o consumo NOS DOIS estados e não
+           haveria risco nenhum a ponderar (o código trava esse caso).
+     A fronteira de oportunidades é o arco de elipse que passa por T′ e T″ — a
+     mesma forma estilizada do TikZ original, generalizada para acompanhar os
+     controles. As curvas de indiferença são utilidade esperada de verdade:
+         E[U] = p·ln(C_A) + (1−p)·ln(C_B)
+     e por isso cortam a linha de certeza com inclinação −p/(1−p).
+
+     Uso no Quarto: um shortcode de include apontando para este arquivo, com o
+     caminho relativo ao .qmd que faz a inclusão. Veja o GUIA-widget.md.
+     (O exemplo literal do shortcode não pode ser escrito aqui: o Quarto o
+     executaria, e o arquivo se incluiria a si mesmo sem parar.)
+
+     Cada instância se configura por atributos data-* no <div>:
+         data-p   probabilidade de apreensão inicial       (padrão 0.25)
+         data-dw  retorno marginal relativo w_c − W_m      (padrão 1.8)
+         data-fc  punição marginal f_c                     (padrão 5)
+         data-wm  renda lícita W0 + W_m(T̂), fixa           (padrão 4.2)
+     Pode aparecer mais de uma vez na mesma página.
+
+     ATENÇÃO ao renomear: a classe "ehrlich" é o elo entre o <div> e as regras
+     do <style> abaixo. Se você trocar o nome no <div>, troque também em TODAS as
+     regras CSS — senão o widget aparece sem estilo nenhum. (O JavaScript não
+     depende do nome: ele acha o <div> por conta própria.)
+     =========================================================================== -->
+<div class="ehrlich">
+<style>
+.ehrlich{
+  --fg:#1a1a1a; --muted:#8a8a8a; --curve:#1f3864; --chord:#7a7a7a;
+  --bad:#b3261e; --good:#2e7d4f; --panel:#f6f7f9; --edge:#dfe3e8;
+  --ind:#1f77b4;                       /* curvas de indiferença */
+  font-family:inherit; color:var(--fg); margin:1.4rem 0;
+}
+[data-bs-theme="dark"] .ehrlich{
+  --fg:#e8e8e8; --muted:#8b93a0; --curve:#8ab0e8; --chord:#9aa2ad;
+  --bad:#f2837a; --good:#6fc898; --panel:#20242b; --edge:#39414d;
+}
+.ehrlich svg{ width:100%; height:auto; display:block; overflow:visible; }
+.ehrlich .ctrl{ background:var(--panel); border:1px solid var(--edge);
+  border-radius:10px; padding:1rem 1.1rem; margin-top:.9rem; }
+/* subgrid alinha os três controles mesmo quando um rótulo ocupa duas linhas */
+.ehrlich .sliders{ display:grid; grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto; gap:.2rem 1.6rem; }
+.ehrlich .sliders > div{ display:grid; grid-row:span 2;
+  grid-template-rows:subgrid; align-content:start; }
+@media (max-width:620px){
+  .ehrlich .sliders{ grid-template-columns:1fr; grid-template-rows:none; }
+  .ehrlich .sliders > div{ grid-row:auto; grid-template-rows:none; }
+}
+.ehrlich label{ display:block; margin:0 0 .3rem; font-size:.95rem; }
+.ehrlich input[type=range]{ width:100%; margin:0 0 .9rem; accent-color:var(--curve);
+  display:block; }
+.ehrlich .verdict{ border-radius:8px; padding:.65rem .8rem; margin-top:.35rem;
+  font-size:1rem; line-height:1.6; border-left:4px solid; }
+.ehrlich .verdict.ok{ background:color-mix(in srgb,var(--good) 12%,transparent);
+  border-color:var(--good); }
+.ehrlich .verdict.no{ background:color-mix(in srgb,var(--bad) 12%,transparent);
+  border-color:var(--bad); }
+.ehrlich .reset{ margin-top:.7rem; font-size:.8rem; background:none; cursor:pointer;
+  border:1px solid var(--edge); border-radius:6px; padding:.32rem .65rem;
+  color:var(--muted); font-family:inherit; }
+.ehrlich text{ font-family:"MJXTEX-I","MJXTEX",Georgia,"Times New Roman",serif;
+  font-style:normal; }
+.ehrlich text.txt{ font-family:inherit; } 
+</style>
+
+<svg viewbox="0 0 620 560" role="img" aria-label="Espaço de consumo nos estados apreendido e não apreendido, com a linha de certeza, a fronteira de oportunidades entre T linha e T duas linhas, e as curvas de indiferença tangentes"><g data-el="plot"></g></svg>
+
+<div class="ctrl">
+  <div class="sliders">
+    <div>
+      <label>Prob. de apreensão: \(p\)</label>
+      <input type="range" data-el="p" min="0.05" max="0.75" step="0.01">
+    </div>
+    <div>
+      <label>Retorno marginal relativo: \(w_c - w_m\)</label>
+      <input type="range" data-el="dw" min="0.2" max="3.8" step="0.05">
+    </div>
+    <div>
+      <label>Punição marginal: \(f_c\)</label>
+      <input type="range" data-el="fc" min="0.5" max="7" step="0.1">
+    </div>
+  </div>
+  <div class="verdict" data-el="verdict"></div>
+  <button class="reset" data-el="reset">Restaurar condições iniciais</button>
+</div>
+
+<script>
+(function(){
+  // ---- 1. a instância: tudo é buscado dentro DESTE div, então a mesma página
+  //         pode conter vários widgets sem que um atropele o outro ------------
+  const root = document.currentScript.parentElement;
+  root.classList.add("ehrlich");   // reaplica a classe usada pelo <style> acima
+  const el = n => root.querySelector('[data-el="' + n + '"]');
+
+  // lê data-p, data-dw, etc. no próprio div ou em qualquer div que o envolva
+  const cfg = n => {
+    for (let e = root; e; e = e.parentElement)
+      if (e.dataset && e.dataset[n] !== undefined && e.dataset[n] !== "") return e.dataset[n];
+  };
+  const num = (n, d) => { const v = cfg(n); return v === undefined ? d : +v; };
+
+  const INI = { p: num("p", 0.25), dw: num("dw", 1.8), fc: num("fc", 5) };
+  const WM  = num("wm", 4.2);        // renda lícita: fixa, sem slider
+
+  // ---- 2. as preferências: troque aqui para mudar a economia da figura ------
+  const U = c => Math.log(c);        // avesso ao risco (log)
+  //  E[U] = p·U(C_A) + (1−p)·U(C_B)
+
+  // ---- 3. o desenho: helpers de SVG e as escalas ----------------------------
+  const NS = "http://www.w3.org/2000/svg";
+  const g  = el("plot");
+  const M = { l: 132, r: 38, t: 26, b: 82 }, W = 620, H = 560;
+  const pw = W - M.l - M.r, ph = H - M.t - M.b;
+  const XMAX = 8.6, YMAX = 8.6;             // eixos fixos: a figura não "pula"
+  const X = v => M.l + (v / XMAX) * pw;
+  const Y = v => M.t + ph - (v / YMAX) * ph;
+
+  const mk = (tag, attrs, txt) => {
+    const n = document.createElementNS(NS, tag);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    if (txt != null) n.textContent = txt;
+    g.appendChild(n); return n;
+  };
+  const line  = (x1, y1, x2, y2, o = {}) => mk("line",
+    Object.assign({ x1, y1, x2, y2, stroke: "currentColor", "stroke-width": 1.2 }, o));
+  const label = (x, y, t, o = {}) => mk("text",
+    Object.assign({ x, y, "font-size": 17, fill: "currentColor" }, o), t);
+
+  // texto com índices: "W_0 + W_c(T̂) − F(T̂)" e "C_A^★" saem formatados
+  const rich = (x, y, s, o = {}) => {
+    const t = label(x, y, null, o), base = +(o["font-size"] || 17);
+    const push = (txt, shift) => {
+      const sp = document.createElementNS(NS, "tspan");
+      if (shift){ sp.setAttribute("baseline-shift", shift);
+                  sp.setAttribute("font-size", (base * 0.72).toFixed(1)); }
+      sp.textContent = txt; t.appendChild(sp);
+    };
+    let buf = "", i = 0;
+    while (i < s.length){
+      const c = s[i];
+      if (c === "_" || c === "^"){
+        if (buf){ push(buf); buf = ""; }
+        i++;
+        let tok;
+        if (s[i] === "{"){ const j = s.indexOf("}", i); tok = s.slice(i + 1, j); i = j + 1; }
+        else { tok = s[i]; i++; }
+        push(tok, c === "_" ? "sub" : "super");
+      } else { buf += c; i++; }
+    }
+    if (buf) push(buf);
+    return t;
+  };
+
+  // desenha y = f(x) recortando o que sai da área do gráfico
+  const curva = (f, x0, x1, o) => {
+    let d = "", pen = false;
+    for (let i = 0; i <= 260; i++){
+      const x = x0 + (x1 - x0) * i / 260, y = f(x);
+      if (!isFinite(y) || y < 0 || y > YMAX){ pen = false; continue; }
+      d += (pen ? "L" : "M") + X(x).toFixed(1) + " " + Y(y).toFixed(1) + " ";
+      pen = true;
+    }
+    if (d) mk("path", Object.assign({ d, fill: "none" }, o));
+  };
+
+  // ---- 4. o coração: recalcula o modelo e redesenha a cada movimento --------
+  function draw(){
+    const p = +el("p").value;
+    const m = WM;                                   // T′ = (m, m)
+    const dw = +el("dw").value;                     // retorno marginal relativo
+    const fc = +el("fc").value;                     // punição marginal
+    const cB = m + dw;                              // T″: consumo se impune
+    // trava f_c > W_c − W_m: sem isso o crime não teria contrapartida em estado algum
+    const cA = Math.min(Math.max(cB - fc, 0.4), m - 0.3);   // T″: se apreendido
+
+    // fronteira: arco da elipse (C_A/A)² + (C_B/Bx)² = 1 que passa por T′ e por T″
+    const den = m * m * (cB * cB - cA * cA);
+    const A  = 1 / Math.sqrt((cB * cB - m * m) / den);
+    const Bx = 1 / Math.sqrt((m * m - cA * cA) / den);
+    const thL = Math.acos(m / A);                   // ângulo de T′
+    const thT = Math.acos(cA / A);                  // ângulo de T″
+
+    // ótimo: max p·ln(A cosθ) + (1−p)·ln(Bx senθ)  ⇒  tan²θ = (1−p)/p
+    let th = Math.atan(Math.sqrt((1 - p) / p));
+    th = Math.min(Math.max(th, thL), thT);          // preso aos extremos T′ e T″
+    const oA = A * Math.cos(th), oB = Bx * Math.sin(th);
+    const k = p * U(oA) + (1 - p) * U(oB);          // nível de utilidade esperada
+    const noCanto  = th <= thL + 1e-4 ? "T′" : (th >= thT - 1e-4 ? "T″" : "");
+    const temCrime = noCanto !== "T′";
+
+    const css = getComputedStyle(root), C = n => css.getPropertyValue(n).trim();
+    const cGrey = C("--muted"), cCurve = C("--ind");
+    const cHi = temCrime ? C("--good") : C("--bad");
+
+    g.textContent = "";
+    mk("defs").innerHTML =
+      '<marker id="ehr-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" ' +
+      'markerHeight="7" orient="auto-start-reverse">' +
+      '<path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>';
+
+    // eixos
+    line(M.l, Y(0), M.l + pw + 16, Y(0), { "marker-end": "url(#ehr-ar)" });
+    line(M.l, Y(0), M.l, M.t - 12,       { "marker-end": "url(#ehr-ar)" });
+    rich(M.l + pw + 22, Y(0) + 6, "C_A", { "font-style": "italic" });
+    rich(M.l - 6, M.t - 18, "C_B", { "font-style": "italic", "text-anchor": "end" });
+
+    // linha de certeza
+    line(X(0), Y(0), X(8.0), Y(8.0), { "stroke-width": 2.2 });
+    label(X(8.0), Y(8.0) - 12, "Linha de certeza",
+      { "text-anchor": "end", "font-size": 15, fill: cGrey, class: "txt" });
+
+    // curvas de indiferença: a tangente e duas de referência
+    const ind = kk => ca => Math.exp((kk - p * U(ca)) / (1 - p));
+    const x0 = 0.9, x1 = 7.2;                       // domínio desenhado, como no TikZ
+    [-0.14, 0.14].forEach(dk => curva(ind(k + dk), x0, x1,
+      { stroke: cCurve, "stroke-width": 1.6, opacity: 0.38 }));
+    curva(ind(k), x0, x1, { stroke: cCurve, "stroke-width": 2.6 });
+    // o rótulo desce abaixo da curva mais baixa, e nunca sobe a ponto de esbarrar
+    // em T′ quando as curvas ficam achatadas (p pequeno)
+    const yLab = Math.max(0.5, Math.min(ind(k - 0.14)(x1) - 0.5, m - 1.1));
+    label(X(x1), Y(yLab), "Curvas de indiferença",
+      { "text-anchor": "end", "font-size": 15, fill: cCurve , class: "txt"});
+
+    // fronteira de oportunidades: o arco de T′ até T
+    let d = "";
+    for (let i = 0; i <= 160; i++){
+      const t = thL + (thT - thL) * i / 160;
+      d += (i ? "L" : "M") + X(A * Math.cos(t)).toFixed(1) + " " +
+           Y(Bx * Math.sin(t)).toFixed(1) + " ";
+    }
+    mk("path", { d, fill: "none", stroke: "currentColor", "stroke-width": 2.8 });
+
+    // guias tracejadas de T′ e T″
+    const guia = (x, y) => {
+      const o = { stroke: cGrey, "stroke-width": 1.2, "stroke-dasharray": "4 3" };
+      line(X(x), Y(0), X(x), Y(y), o);
+      line(M.l, Y(y), X(x), Y(y), o);
+    };
+    guia(m, m);
+    guia(cA, cB);
+
+    // rótulos dos eixos (escalonados na vertical para não colidirem)
+    const pq = { "font-size": 13 };
+    rich(X(m), Y(0) + 24, "W_0 + W_m(T̂)",
+      Object.assign({ "text-anchor": "middle" }, pq));
+    rich(X(cA), Y(0) + 48, "W_0 + W_c(T̂) − F(T̂)",
+      Object.assign({ "text-anchor": "middle" }, pq));
+    rich(M.l - 10, Y(m) + 5, "W_0 + W_m(T̂)",
+      Object.assign({ "text-anchor": "end" }, pq));
+    rich(M.l - 10, Y(cB) + 5, "W_0 + W_c(T̂)",
+      Object.assign({ "text-anchor": "end" }, pq));
+
+    // pontos T′ e T″
+    mk("circle", { cx: X(m), cy: Y(m), r: 5.5, fill: "currentColor" });
+    label(X(m) + 12, Y(m) + 18, "T^′", {});
+    mk("circle", { cx: X(cA), cy: Y(cB), r: 5.5, fill: "currentColor" });
+    label(X(cA), Y(cB) - 13, "T^″", { "text-anchor": "middle"});
+
+    // o ótimo, comandado pelos controles
+    mk("circle", { cx: X(oA), cy: Y(oB), r: 8, fill: cHi });
+    rich(X(oA) + 16, Y(oB) - 19, "(C_A^*, C_B^*)",
+      { fill: cHi, "font-style": "italic", "font-size": 16 });
+
+    // veredito: interior (tangência) ou um dos dois extremos da fronteira
+    const v = el("verdict");
+    v.className = "verdict " + (temCrime ? "ok" : "no");
+    v.innerHTML =
+      noCanto === "T′"
+        ? "<b>O indivíduo dedica todo o tempo à atividade lícita.</b><br>" +
+          "O ótimo é o próprio T′: a punição esperada é alta demais"
+      : noCanto === "T″"
+        ? "<b>O indivíduo dedica todo o tempo ao crime.</b><br>" +
+          "O ótimo é o próprio T″: a punição esperada é baixa demais"
+        : "<b>O indivíduo comete crime.</b><br>A tangência cai entre T′ e T″, " +
+          "fora da linha de certeza";
+  }
+
+  // ---- 5. as ligações --------------------------------------------------------
+  const restaurar = () => {
+    el("p").value = INI.p; el("dw").value = INI.dw; el("fc").value = INI.fc;
+  };
+  ["p", "dw", "fc"].forEach(n => el(n).addEventListener("input", draw));
+  el("reset").addEventListener("click", () => { restaurar(); draw(); });
+  restaurar();
+  draw();
+  // redesenha quando o Quarto alterna entre tema claro e escuro
+  new MutationObserver(draw).observe(document.documentElement,
+    { attributes: true, attributeFilter: ["data-bs-theme", "class"] });
+})();
+</script>
+</div>
 <p>em que <span class="math inline">\((C_A^\star, C_B^\star)\)</span> representa o ponto de escolha ótima entre o tempo dedicado a cada atividade, tal que <span class="math inline">\(C_A^\star\)</span> representa o nível de consumo no estado em que o indivíduo é capturado e punido e <span class="math inline">\(C_B^\star\)</span> o consumo no estado em que o indivíduo não é capturado.</p>
 <p>Se o indivíduo se especializa em atividade lícitas (<span class="math inline">\(h_c=0\)</span> e <span class="math inline">\(h_m = \hat{T}\)</span>) seu nível de consumo, tanto no estado A quanto no estado B, será igual a <span class="math inline">\(W_0 + W_m(\hat{T})\)</span>. Esse ponto é representado por <span class="math inline">\(T^{'}\)</span>, que pertence à linha de certeza e onde não há risco associado. No extremo oposto, onde há especialização em atividades ilícitas (<span class="math inline">\(h_c=\hat{T}\)</span> e <span class="math inline">\(h_m = 0\)</span>), o consumo no estado em que o indivíduo é capturado e punido é igual a <span class="math inline">\(W_0 + W_c(\hat{T}) - F(\hat{T})\)</span>, enquanto no estado em que o indivíduo passa impune o consumo é igual a <span class="math inline">\(W_0 + W_c(\hat{T})\)</span>. Esse ponto é representado por <span class="math inline">\(T\)</span>, que se encontra à esquerda e acima do ponto <span class="math inline">\(T^{'}\)</span> pelas hipóteses de que <span class="math inline">\(W_c(0) = W_m(0)\)</span> e <span class="math inline">\(w_c - w_m &gt; 0\)</span>. Finalmente, a concavidade desse conjunto de pontos factíveis de produção no espaço <span class="math inline">\(C_A \times C_B\)</span> está diretamente associada às hipóteses em relação às derivadas parciais de primeira ordem e segunda ordem de <span class="math inline">\(W_c\)</span>, <span class="math inline">\(W_m\)</span> e <span class="math inline">\(F\)</span>.</p>
 <p>No caso das preferências, elas são representadas por curvas de indiferenças convexas em relação à origem, o que vem da hipótese de retornos marginais decrescentes do consumo em ambos os estados. Matematicamente, <span class="math inline">\(U_s^{''}(C_s) &lt; 0\)</span> com <span class="math inline">\(s=\{A,B\}\)</span>. Em termos de preferências em relação ao risco, isso está associado a um indivíduo avesso ao risco.</p>
@@ -360,7 +678,7 @@ w_m \left(pU_{C_A} + (1-p)U_{C_B}\right)
 f_c &gt; w_c - w_m &gt; p \cdot f_c
 \tag{2.7}\]</span></span></p>
 <p>Assumindo que as oportunidades disponíveis aos potenciais criminosos são independentes do comportamento do indivíduo em relação ao risco, é possível mostrar que um agente amante do risco dedicaria mais tempo à prática de atividades ilícitas do que um agente neutro ao risco e ainda mais tempo quando comparado a um agente avesso ao risco.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> A prática de atividades ilícitas, porém, não depende das preferências em relação ao risco, podendo ocorrer em qualquer um dos casos. Já as condições para especialização em uma atividade ou outra dependem do quão avesso ou amante do risco o indivíduo é.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p>Agora que você já sabe as condições necessárias para que o indivíduo avesso ao risco dedique tempo tanto a atividades lícitas quanto ilícitas (i.e., não especialização), é possível avançar e compreender como essas escolhas variam com mudanças na probabilidade de apreensão, no retorno marginal de cada atividade e no custo marginal da punição. Com base na condição de ótimo, representada pela equação (<a href="#eq-opt_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.6</span></a>), fica claro que:</p>
+<p>Agora que você já sabe as condições necessárias para que o indivíduo avesso ao risco dedique tempo tanto a atividades lícitas quanto ilícitas (i.e., não especialização), é possível avançar e compreender como essas escolhas variam com mudanças na probabilidade de apreensão, no retorno marginal de cada atividade e no custo marginal da punição. Com base na condição de ótimo, representada pela <a href="#eq-opt_Ehrlich" class="quarto-xref">Equação&nbsp;<span>2.6</span></a>, fica claro que:</p>
 <ul>
 <li><p>Um aumento da probabilidade de apreensão <span class="math inline">\(p\)</span> implica em um aumento, em valor absoluto, da inclinação da curva de indiferença. Assim, para que a igualdade se mantenha, é preciso que aumente a diferença entre <span class="math inline">\(w_c - w_m\)</span> e/ou diminua <span class="math inline">\(f_c\)</span>. Como a segunda derivada de <span class="math inline">\(W_c\)</span> e <span class="math inline">\(W_m\)</span> é negativa e a segunda derivada de <span class="math inline">\(F\)</span> positiva, então <span class="math inline">\(w_c\)</span> aumenta, <span class="math inline">\(f_c\)</span> e <span class="math inline">\(w_m\)</span> diminuem com uma redução do tempo dedicado às atividades ilícitas e um aumento do tempo dedicado às atividades lícitas. Assim,</p>
 <p><span class="math display">\[ \uparrow p \quad\implies\quad \downarrow h_c \quad e \quad \uparrow h_m \]</span></p></li>
@@ -382,13 +700,19 @@ f_c &gt; w_c - w_m &gt; p \cdot f_c
 </section>
 <section id="conclusão" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">2.5</span> Conclusão</h2>
-<p>Bla bla bla</p>
+<p>Neste capítulo estudamos o modelo de <span class="citation" data-cites="ehrlich1973">Ehrlich (<a href="referencias.html#ref-ehrlich1973" role="doc-biblioref">1973</a>)</span>, que reformula a decisão criminal como um problema de alocação de tempo. A mudança em relação a <span class="citation" data-cites="becker1968">Becker (<a href="referencias.html#ref-becker1968" role="doc-biblioref">1968</a>)</span> é substantiva: atividades lícitas e ilícitas deixam de ser mutuamente excludentes, e o indivíduo escolhe quanto tempo dedicar a cada uma delas, além do lazer. Vimos que a condição de ótimo interior iguala a inclinação da fronteira do conjunto de produção no espaço <span class="math inline">\(C_A \times C_B\)</span> à inclinação da curva de indiferença, a mesma lógica de tangência entre Taxa Marginal de Substituição (TMS) e Taxa Marginal de Transformação (TMT) dos cursos de Microeconomia.</p>
+<p>As estáticas comparativas reproduzem os resultados de dissuasão de Becker, agora na margem intensiva: aumentos na probabilidade de apreensão e no custo marginal da punição reduzem o tempo dedicado ao crime e aumentam aquele dedicado à atividade lícita. Uma implicação merece destaque: a reincidência não exige miopia nem irracionalidade, basta que as oportunidades no mercado lícito não melhorem. No próximo capítulo examinamos as limitações comuns aos dois modelos e as contribuições mais recentes que buscam superá-las.</p>
 </section>
 <section id="questões-para-discussão" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="questões-para-discussão"><span class="header-section-number">2.6</span> Questões para discussão</h2>
 <ol type="1">
-<li><p>X</p></li>
-<li><p>Y</p></li>
+<li><p>Considere a condição de solução interior expressa na <a href="#eq-Ehrlich_intsol" class="quarto-xref">Equação&nbsp;<span>2.7</span></a>.</p>
+<ol type="a">
+<li>Interprete economicamente cada uma das duas desigualdades.</li>
+<li>O que aconteceria com a alocação de tempo se <span class="math inline">\(w_c - w_m\)</span> fosse maior do que <span class="math inline">\(f_c\)</span>?</li>
+<li>E se fosse menor do que <span class="math inline">\(p \cdot f_c\)</span>?</li>
+</ol></li>
+<li><p>Considere duas políticas voltadas a egressos do sistema prisional: (i) ampliação do monitoramento durante o período de condicional, que eleva <span class="math inline">\(p\)</span>; (ii) um programa de qualificação profissional, que eleva <span class="math inline">\(w_m\)</span>. Discuta as previsões que o modelo de <span class="citation" data-cites="ehrlich1973">Ehrlich (<a href="referencias.html#ref-ehrlich1973" role="doc-biblioref">1973</a>)</span> faz sobre o efeito de cada uma sobre o tempo dedicado ao crime (<span class="math inline">\(h_c\)</span>).</p></li>
 </ol>
 
 

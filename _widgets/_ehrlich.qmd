@@ -1,0 +1,305 @@
+```{=html}
+<!-- ===========================================================================
+     Escolha entre estados — Ehrlich (1973)
+     Widget interativo autocontido: SVG + JavaScript puro, sem dependências.
+
+     C_A = consumo se apreendido, C_B = consumo se não apreendido.
+     T′  = todo o tempo na atividade lícita (sobre a linha de certeza,
+           C_A = C_B = W0 + W_m).
+     T″  = todo o tempo no crime. Com retornos lineares em T̂, ele é dado pelos
+           dois parâmetros marginais: C_B = (W0 + W_m) + (W_c − W_m) e
+           C_A = C_B − f_c. Note que a figura só faz sentido com f_c > W_c − W_m;
+           caso contrário o crime aumentaria o consumo NOS DOIS estados e não
+           haveria risco nenhum a ponderar (o código trava esse caso).
+     A fronteira de oportunidades é o arco de elipse que passa por T′ e T″ — a
+     mesma forma estilizada do TikZ original, generalizada para acompanhar os
+     controles. As curvas de indiferença são utilidade esperada de verdade:
+         E[U] = p·ln(C_A) + (1−p)·ln(C_B)
+     e por isso cortam a linha de certeza com inclinação −p/(1−p).
+
+     Uso no Quarto: um shortcode de include apontando para este arquivo, com o
+     caminho relativo ao .qmd que faz a inclusão. Veja o GUIA-widget.md.
+     (O exemplo literal do shortcode não pode ser escrito aqui: o Quarto o
+     executaria, e o arquivo se incluiria a si mesmo sem parar.)
+
+     Cada instância se configura por atributos data-* no <div>:
+         data-p   probabilidade de apreensão inicial       (padrão 0.25)
+         data-dw  retorno marginal relativo w_c − W_m      (padrão 1.8)
+         data-fc  punição marginal f_c                     (padrão 5)
+         data-wm  renda lícita W0 + W_m(T̂), fixa           (padrão 4.2)
+     Pode aparecer mais de uma vez na mesma página.
+
+     ATENÇÃO ao renomear: a classe "ehrlich" é o elo entre o <div> e as regras
+     do <style> abaixo. Se você trocar o nome no <div>, troque também em TODAS as
+     regras CSS — senão o widget aparece sem estilo nenhum. (O JavaScript não
+     depende do nome: ele acha o <div> por conta própria.)
+     =========================================================================== -->
+<div class="ehrlich">
+<style>
+.ehrlich{
+  --fg:#1a1a1a; --muted:#8a8a8a; --curve:#1f3864; --chord:#7a7a7a;
+  --bad:#b3261e; --good:#2e7d4f; --panel:#f6f7f9; --edge:#dfe3e8;
+  --ind:#1f77b4;                       /* curvas de indiferença */
+  font-family:inherit; color:var(--fg); margin:1.4rem 0;
+}
+[data-bs-theme="dark"] .ehrlich{
+  --fg:#e8e8e8; --muted:#8b93a0; --curve:#8ab0e8; --chord:#9aa2ad;
+  --bad:#f2837a; --good:#6fc898; --panel:#20242b; --edge:#39414d;
+}
+.ehrlich svg{ width:100%; height:auto; display:block; overflow:visible; }
+.ehrlich .ctrl{ background:var(--panel); border:1px solid var(--edge);
+  border-radius:10px; padding:1rem 1.1rem; margin-top:.9rem; }
+/* subgrid alinha os três controles mesmo quando um rótulo ocupa duas linhas */
+.ehrlich .sliders{ display:grid; grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto; gap:.2rem 1.6rem; }
+.ehrlich .sliders > div{ display:grid; grid-row:span 2;
+  grid-template-rows:subgrid; align-content:start; }
+@media (max-width:620px){
+  .ehrlich .sliders{ grid-template-columns:1fr; grid-template-rows:none; }
+  .ehrlich .sliders > div{ grid-row:auto; grid-template-rows:none; }
+}
+.ehrlich label{ display:block; margin:0 0 .3rem; font-size:.95rem; }
+.ehrlich input[type=range]{ width:100%; margin:0 0 .9rem; accent-color:var(--curve);
+  display:block; }
+.ehrlich .verdict{ border-radius:8px; padding:.65rem .8rem; margin-top:.35rem;
+  font-size:1rem; line-height:1.6; border-left:4px solid; }
+.ehrlich .verdict.ok{ background:color-mix(in srgb,var(--good) 12%,transparent);
+  border-color:var(--good); }
+.ehrlich .verdict.no{ background:color-mix(in srgb,var(--bad) 12%,transparent);
+  border-color:var(--bad); }
+.ehrlich .reset{ margin-top:.7rem; font-size:.8rem; background:none; cursor:pointer;
+  border:1px solid var(--edge); border-radius:6px; padding:.32rem .65rem;
+  color:var(--muted); font-family:inherit; }
+.ehrlich text{ font-family:"MJXTEX-I","MJXTEX",Georgia,"Times New Roman",serif;
+  font-style:normal; }
+.ehrlich text.txt{ font-family:inherit; } 
+</style>
+
+<svg viewBox="0 0 620 560" role="img"
+     aria-label="Espaço de consumo nos estados apreendido e não apreendido, com a linha de certeza, a fronteira de oportunidades entre T linha e T duas linhas, e as curvas de indiferença tangentes"><g data-el="plot"></g></svg>
+
+<div class="ctrl">
+  <div class="sliders">
+    <div>
+      <label>Prob. de apreensão: \(p\)</label>
+      <input type="range" data-el="p" min="0.05" max="0.75" step="0.01">
+    </div>
+    <div>
+      <label>Retorno marginal relativo: \(w_c - w_m\)</label>
+      <input type="range" data-el="dw" min="0.2" max="3.8" step="0.05">
+    </div>
+    <div>
+      <label>Punição marginal: \(f_c\)</label>
+      <input type="range" data-el="fc" min="0.5" max="7" step="0.1">
+    </div>
+  </div>
+  <div class="verdict" data-el="verdict"></div>
+  <button class="reset" data-el="reset">Restaurar condições iniciais</button>
+</div>
+
+<script>
+(function(){
+  // ---- 1. a instância: tudo é buscado dentro DESTE div, então a mesma página
+  //         pode conter vários widgets sem que um atropele o outro ------------
+  const root = document.currentScript.parentElement;
+  root.classList.add("ehrlich");   // reaplica a classe usada pelo <style> acima
+  const el = n => root.querySelector('[data-el="' + n + '"]');
+
+  // lê data-p, data-dw, etc. no próprio div ou em qualquer div que o envolva
+  const cfg = n => {
+    for (let e = root; e; e = e.parentElement)
+      if (e.dataset && e.dataset[n] !== undefined && e.dataset[n] !== "") return e.dataset[n];
+  };
+  const num = (n, d) => { const v = cfg(n); return v === undefined ? d : +v; };
+
+  const INI = { p: num("p", 0.25), dw: num("dw", 1.8), fc: num("fc", 5) };
+  const WM  = num("wm", 4.2);        // renda lícita: fixa, sem slider
+
+  // ---- 2. as preferências: troque aqui para mudar a economia da figura ------
+  const U = c => Math.log(c);        // avesso ao risco (log)
+  //  E[U] = p·U(C_A) + (1−p)·U(C_B)
+
+  // ---- 3. o desenho: helpers de SVG e as escalas ----------------------------
+  const NS = "http://www.w3.org/2000/svg";
+  const g  = el("plot");
+  const M = { l: 132, r: 38, t: 26, b: 82 }, W = 620, H = 560;
+  const pw = W - M.l - M.r, ph = H - M.t - M.b;
+  const XMAX = 8.6, YMAX = 8.6;             // eixos fixos: a figura não "pula"
+  const X = v => M.l + (v / XMAX) * pw;
+  const Y = v => M.t + ph - (v / YMAX) * ph;
+
+  const mk = (tag, attrs, txt) => {
+    const n = document.createElementNS(NS, tag);
+    for (const k in attrs) n.setAttribute(k, attrs[k]);
+    if (txt != null) n.textContent = txt;
+    g.appendChild(n); return n;
+  };
+  const line  = (x1, y1, x2, y2, o = {}) => mk("line",
+    Object.assign({ x1, y1, x2, y2, stroke: "currentColor", "stroke-width": 1.2 }, o));
+  const label = (x, y, t, o = {}) => mk("text",
+    Object.assign({ x, y, "font-size": 17, fill: "currentColor" }, o), t);
+
+  // texto com índices: "W_0 + W_c(T̂) − F(T̂)" e "C_A^★" saem formatados
+  const rich = (x, y, s, o = {}) => {
+    const t = label(x, y, null, o), base = +(o["font-size"] || 17);
+    const push = (txt, shift) => {
+      const sp = document.createElementNS(NS, "tspan");
+      if (shift){ sp.setAttribute("baseline-shift", shift);
+                  sp.setAttribute("font-size", (base * 0.72).toFixed(1)); }
+      sp.textContent = txt; t.appendChild(sp);
+    };
+    let buf = "", i = 0;
+    while (i < s.length){
+      const c = s[i];
+      if (c === "_" || c === "^"){
+        if (buf){ push(buf); buf = ""; }
+        i++;
+        let tok;
+        if (s[i] === "{"){ const j = s.indexOf("}", i); tok = s.slice(i + 1, j); i = j + 1; }
+        else { tok = s[i]; i++; }
+        push(tok, c === "_" ? "sub" : "super");
+      } else { buf += c; i++; }
+    }
+    if (buf) push(buf);
+    return t;
+  };
+
+  // desenha y = f(x) recortando o que sai da área do gráfico
+  const curva = (f, x0, x1, o) => {
+    let d = "", pen = false;
+    for (let i = 0; i <= 260; i++){
+      const x = x0 + (x1 - x0) * i / 260, y = f(x);
+      if (!isFinite(y) || y < 0 || y > YMAX){ pen = false; continue; }
+      d += (pen ? "L" : "M") + X(x).toFixed(1) + " " + Y(y).toFixed(1) + " ";
+      pen = true;
+    }
+    if (d) mk("path", Object.assign({ d, fill: "none" }, o));
+  };
+
+  // ---- 4. o coração: recalcula o modelo e redesenha a cada movimento --------
+  function draw(){
+    const p = +el("p").value;
+    const m = WM;                                   // T′ = (m, m)
+    const dw = +el("dw").value;                     // retorno marginal relativo
+    const fc = +el("fc").value;                     // punição marginal
+    const cB = m + dw;                              // T″: consumo se impune
+    // trava f_c > W_c − W_m: sem isso o crime não teria contrapartida em estado algum
+    const cA = Math.min(Math.max(cB - fc, 0.4), m - 0.3);   // T″: se apreendido
+
+    // fronteira: arco da elipse (C_A/A)² + (C_B/Bx)² = 1 que passa por T′ e por T″
+    const den = m * m * (cB * cB - cA * cA);
+    const A  = 1 / Math.sqrt((cB * cB - m * m) / den);
+    const Bx = 1 / Math.sqrt((m * m - cA * cA) / den);
+    const thL = Math.acos(m / A);                   // ângulo de T′
+    const thT = Math.acos(cA / A);                  // ângulo de T″
+
+    // ótimo: max p·ln(A cosθ) + (1−p)·ln(Bx senθ)  ⇒  tan²θ = (1−p)/p
+    let th = Math.atan(Math.sqrt((1 - p) / p));
+    th = Math.min(Math.max(th, thL), thT);          // preso aos extremos T′ e T″
+    const oA = A * Math.cos(th), oB = Bx * Math.sin(th);
+    const k = p * U(oA) + (1 - p) * U(oB);          // nível de utilidade esperada
+    const noCanto  = th <= thL + 1e-4 ? "T′" : (th >= thT - 1e-4 ? "T″" : "");
+    const temCrime = noCanto !== "T′";
+
+    const css = getComputedStyle(root), C = n => css.getPropertyValue(n).trim();
+    const cGrey = C("--muted"), cCurve = C("--ind");
+    const cHi = temCrime ? C("--good") : C("--bad");
+
+    g.textContent = "";
+    mk("defs").innerHTML =
+      '<marker id="ehr-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" ' +
+      'markerHeight="7" orient="auto-start-reverse">' +
+      '<path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>';
+
+    // eixos
+    line(M.l, Y(0), M.l + pw + 16, Y(0), { "marker-end": "url(#ehr-ar)" });
+    line(M.l, Y(0), M.l, M.t - 12,       { "marker-end": "url(#ehr-ar)" });
+    rich(M.l + pw + 22, Y(0) + 6, "C_A", { "font-style": "italic" });
+    rich(M.l - 6, M.t - 18, "C_B", { "font-style": "italic", "text-anchor": "end" });
+
+    // linha de certeza
+    line(X(0), Y(0), X(8.0), Y(8.0), { "stroke-width": 2.2 });
+    label(X(8.0), Y(8.0) - 12, "Linha de certeza",
+      { "text-anchor": "end", "font-size": 15, fill: cGrey, class: "txt" });
+
+    // curvas de indiferença: a tangente e duas de referência
+    const ind = kk => ca => Math.exp((kk - p * U(ca)) / (1 - p));
+    const x0 = 0.9, x1 = 7.2;                       // domínio desenhado, como no TikZ
+    [-0.14, 0.14].forEach(dk => curva(ind(k + dk), x0, x1,
+      { stroke: cCurve, "stroke-width": 1.6, opacity: 0.38 }));
+    curva(ind(k), x0, x1, { stroke: cCurve, "stroke-width": 2.6 });
+    // o rótulo desce abaixo da curva mais baixa, e nunca sobe a ponto de esbarrar
+    // em T′ quando as curvas ficam achatadas (p pequeno)
+    const yLab = Math.max(0.5, Math.min(ind(k - 0.14)(x1) - 0.5, m - 1.1));
+    label(X(x1), Y(yLab), "Curvas de indiferença",
+      { "text-anchor": "end", "font-size": 15, fill: cCurve , class: "txt"});
+
+    // fronteira de oportunidades: o arco de T′ até T
+    let d = "";
+    for (let i = 0; i <= 160; i++){
+      const t = thL + (thT - thL) * i / 160;
+      d += (i ? "L" : "M") + X(A * Math.cos(t)).toFixed(1) + " " +
+           Y(Bx * Math.sin(t)).toFixed(1) + " ";
+    }
+    mk("path", { d, fill: "none", stroke: "currentColor", "stroke-width": 2.8 });
+
+    // guias tracejadas de T′ e T″
+    const guia = (x, y) => {
+      const o = { stroke: cGrey, "stroke-width": 1.2, "stroke-dasharray": "4 3" };
+      line(X(x), Y(0), X(x), Y(y), o);
+      line(M.l, Y(y), X(x), Y(y), o);
+    };
+    guia(m, m);
+    guia(cA, cB);
+
+    // rótulos dos eixos (escalonados na vertical para não colidirem)
+    const pq = { "font-size": 13 };
+    rich(X(m), Y(0) + 24, "W_0 + W_m(T̂)",
+      Object.assign({ "text-anchor": "middle" }, pq));
+    rich(X(cA), Y(0) + 48, "W_0 + W_c(T̂) − F(T̂)",
+      Object.assign({ "text-anchor": "middle" }, pq));
+    rich(M.l - 10, Y(m) + 5, "W_0 + W_m(T̂)",
+      Object.assign({ "text-anchor": "end" }, pq));
+    rich(M.l - 10, Y(cB) + 5, "W_0 + W_c(T̂)",
+      Object.assign({ "text-anchor": "end" }, pq));
+
+    // pontos T′ e T″
+    mk("circle", { cx: X(m), cy: Y(m), r: 5.5, fill: "currentColor" });
+    label(X(m) + 12, Y(m) + 18, "T^′", {});
+    mk("circle", { cx: X(cA), cy: Y(cB), r: 5.5, fill: "currentColor" });
+    label(X(cA), Y(cB) - 13, "T^″", { "text-anchor": "middle"});
+
+    // o ótimo, comandado pelos controles
+    mk("circle", { cx: X(oA), cy: Y(oB), r: 8, fill: cHi });
+    rich(X(oA) + 16, Y(oB) - 19, "(C_A^*, C_B^*)",
+      { fill: cHi, "font-style": "italic", "font-size": 16 });
+
+    // veredito: interior (tangência) ou um dos dois extremos da fronteira
+    const v = el("verdict");
+    v.className = "verdict " + (temCrime ? "ok" : "no");
+    v.innerHTML =
+      noCanto === "T′"
+        ? "<b>O indivíduo dedica todo o tempo à atividade lícita.</b><br>" +
+          "O ótimo é o próprio T′: a punição esperada é alta demais"
+      : noCanto === "T″"
+        ? "<b>O indivíduo dedica todo o tempo ao crime.</b><br>" +
+          "O ótimo é o próprio T″: a punição esperada é baixa demais"
+        : "<b>O indivíduo comete crime.</b><br>A tangência cai entre T′ e T″, " +
+          "fora da linha de certeza";
+  }
+
+  // ---- 5. as ligações --------------------------------------------------------
+  const restaurar = () => {
+    el("p").value = INI.p; el("dw").value = INI.dw; el("fc").value = INI.fc;
+  };
+  ["p", "dw", "fc"].forEach(n => el(n).addEventListener("input", draw));
+  el("reset").addEventListener("click", () => { restaurar(); draw(); });
+  restaurar();
+  draw();
+  // redesenha quando o Quarto alterna entre tema claro e escuro
+  new MutationObserver(draw).observe(document.documentElement,
+    { attributes: true, attributeFilter: ["data-bs-theme", "class"] });
+})();
+</script>
+</div>
+```

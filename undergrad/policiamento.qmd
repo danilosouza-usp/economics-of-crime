@@ -1,0 +1,91 @@
+# Policiamento {#sec-policiamento}
+
+## Introdução
+
+A predição de que uma maior presença policial reduz o incentivo individual para participação na atividade criminosa talvez seja uma das mais óbvias quando da análise de custos e benefícios do crime. Seja através de um efetivo maior ou mesmo de uma maior produtividade para um dado efetivo, a presença policial afeta diretamente a probabilidade de apreensão e, portanto, a probabilidade de punição pela realização de alguma atividade ilícita. Assim, pelo modelo de escolha racional, se esperaria uma relação negativa entre polícia e crime através, principalmente, do canal de *deterrence*. 
+
+A identificação empírica do efeito causal que a polícia potencialmente tem em desestimular a atividade criminosa, no entanto, é muito mais difícil.
+
+## Mais polícia, menos crime?
+
+Para além do potencial efeito mecânico da polícia sobre o crime através do canal de *incapacitation*^[Mesmo em um mundo em que um efetivo policial maior não afete a probabilidade subjetiva de apreensão, é possível que mais polícia esteja associada a menos crime pelo simples fato de aumentar o número de prisões. Se vale a predição teórica de que indivíduos que cometeram crimes no passado tem uma probabilidade maior de cometer novos crimes @ehrlich1973, um número maior de prisões deveria estar mecanicamente associado a uma redução das taxas de criminalidade.], existe um sério problema de endogeneidade que surge da determinação simultânea da polícia e do crime. Para além do efeito que a polícia possa ter sobre o crime, é de se esperar que localidades mais violentas também contratem mais policiais. De fato, a identificação da relação verdadeira entre crime e polícia é um exemplo clássico do problema que chamamos de *causalidade reversa*. Nesse caso, o número de policiais teriam impacto sobre o crime, ao mesmo tempo em que as taxas de criminalidade afetariam o número de policiais alocados.
+
+Dessa forma, é possível que o efeito verdadeiro seja negativo (mais polícia, menos crime) mas a correlação empírica mostre um coeficiente positivo, resultado de mais polícia sendo alocada em lugares com mais crime. A @fig-policia_crime mostra exatamente esse caso, de uma correlação empírica positiva entre o efetivo policial e crime, usando dados de 2015 para uma amostra de 73 países.^[Utilizando dados de 2018, @pinotti2020 mostra a mesma correlação positiva entre homicídios e efetivo policial para os estados norte-americanos e para as cidades do país com mais de $10{,}000$ habitantes.]
+
+![Efetivo policial e crimes violentos no mundo (2015). Fonte: _UNODC_](/images/policia_crime.svg){#fig-policia_crime width="80%" fig-align="center"}
+
+### Viés de simultaneidade
+
+Para visualizar matematicamente esse problema^[Essa demonstração foi inspirada em @stock2019.], suponha que exista uma equação estrutural que determina a relação entre as taxas de crime no município $i$ ($c_i$) e o efetivo policial nessa mesma localidade ($p_i$). O termo $u_i$ representa a parcela de $c_i$ que não é explicada por $p_i$. 
+
+$$
+c_i = \beta_0 + \beta_1 p_i + u_i
+$$ {#eq-simult1}
+
+Por outro lado, existe uma outra equação que representa a regra utilizada pelo formulador de políticas e define uma alocação maior de policiais para regiões com mais crime. O termo $v_i$ representa o termo de erro da equação e é não correlacionado com $u_i$. 
+
+$$
+p_i = \alpha_0 + \alpha_1 c_i + v_i
+$$ {#eq-simult2}
+
+Nesse caso, é possível demonstrar que o efetivo policial $p_i$ é, geralmente, correlacionado com o termo de erro $u_i$, i.e., $\cov(p_i, u_i) \neq 0$. Para ver isso no caso em que $u_i$ e $v_i$ são não correlacionados, basta um pouco de manipulação algébrica
+
+$$
+\begin{aligned}
+\cov(p_i, u_i) &= \cov(\left[\alpha_0 + \alpha_1 c_i + v_i\right], u_i) \\
+\cov(p_i, u_i) &= \alpha_1 \cov(c_i, u_i) + \cov(v_i, u_i) \\
+\cov(p_i, u_i) &= \alpha_1 \cov(\left[\beta_0 + \beta_1 p_i + u_i\right], u_i) \\
+\cov(p_i, u_i) &= \alpha_1 \beta_1 \cov(p_i, u_i) + \alpha_1 \cov(u_i, u_i)
+\end{aligned}
+$$
+
+Note que $\cov(u_i, u_i) = Var(u_i) \equiv \sigma_{u_i}$. Assumindo que $\alpha_1 \beta_1 \neq 1$, basta resolver para a covariância entre o efetivo policial $p_i$ e o termo de erro $u_i$ em função dos parâmetros e da variância de $u_i$.
+
+$$
+\cov(p_i, u_i) = \frac{\alpha_1}{1 - \alpha_1\beta_1} \cdot \sigma_{u_i} \neq 0
+$$ {#eq-simult_bias}
+
+Lembre que, para estimar o coeficiente $\beta_1$ de forma consistente e não-viesada usando Mínimos Quadrados Ordinários (MQO) precisamos da hipótese de independência condicional, i.e., $E(u_i | p_i) = 0$. Mas o fato de $\cov(p_i, u_i) \neq 0$ implica em $E(u_i | p_i)$ também é diferente de zero. Portanto, estimar a @eq-simult1 por MQO retornaria um $\hat{\beta_1}$ viesado e não representativo do verdadeiro efeito estrutural de alterações no efetivo policial sobre as taxas de criminalidade.
+
+## Evidências empíricas
+
+### Elasticidades estimadas
+
+Talvez um dos primeiros artigos que tenha se debruçado sobre o efeito do efetivo policial nas taxas de criminalidade utilizando métodos econométricos modernos, que solucionam o problema de viés de simultaneidade e identificam o verdadeiro efeito causal, tenha sido @levitt1997. O artigo traz evidências de que anos que precedem eleições locais são caracterizados por um aumento do efetivo policial. Partindo então da hipótese de que o crime não está correlacionado com o ciclo eleitoral, o autor utiliza esse aumento como fonte de variação exógena no efetivo policial para identificação do efeito causal sobre o crime. Os resultados sugerem que um aumento de $1\%$ no número de policiais levaria a uma queda de $0.44\%$ na taxa de roubo de veículos (elasticidade de $-0.44$) e quedas ainda maiores em outros tipos de crimes.  
+
+Os resultados iniciais do artigo foram colocados em dúvida após @mccrary2002, que identificou problemas na base de dados e método de estimação. O próprio autor do artigo, no entanto, reconhece a importância do trabalho pioneiro de @levitt1997 na busca pela identificação causal do efeito da polícia sobre as taxas de crime.
+
+Evidencias mais recentes se utilizam de diferentes políticas de alocação do efetivo policial como fonte de variação exógena para identificar o efeito causal que a polícia potencialmente tenha sobre o crime. Três exemplos bastante influentes na literatura são @ditella2004, que estuda o efeito de uma alteração na intensidade do policiamento local em algumas áreas de Buenos Aires após o ataque terrorista de 1994; @klick2005, que avalia mudanças na alocação de policiais em Washington-DC resultante de mudanças nos níveis de alerta de terrorismo; e @draca2011, que também se utiliza de mudanças no padrão de policiamento após os ataques terroristas ao metrô de Londres em 2005.^[Juntos, os três artigos possuíam mais de $2{,}200$ citações no Google Scholar em 30 de Julho de 2025.]
+
+A @tbl-policia_crime resume o efeito estimado em vários artigos desde @levitt1997. Mesmo utilizando estratégias de identificação econométrica, bases de dados e contextos bastante distintos, alguns padrões se mantém. É interessante notar que o aumento do efetivo policial parece ter um efeito maior sobre crimes violentos do que sobre crimes contra propriedade. Além disso, as elasticidades tendem a ser maiores ou estatisticamente não diferentes de $-1$ nesse caso, o que implica em uma reação mais do que proporcional dos crime violentos em relação ao efetivo policial. Por fim, embora as elasticidades estimadas variem bastante, de $-0.3$ a $-1.3$, são sempre negativas e estatisticamente significantes, o que nos leva a concluir que mais polícia leva sim a menos crime.
+
+| **Artigo**       | **Crimes contra propriedade** | **Crimes violentos** | **Crime total** |
+|:-----------------|:-----------------------------:|:--------------------:|:---------------:|
+| @levitt1997      | $-0.3$                        | $-1$                 |                 |
+| @klick2005       |                               |                      | $-0.3$          |
+| @evans2007       | $-0.26$                       | $-0.99$              |                 |
+| @draca2011       |                               |                      | $(-0.3, -0.4)$  |
+| @weisburst2019   | $-0.7$                        | $-1.3$               |                 |
+| @mello2019       | $-0.8$                        | $-1.3$               |                 |
+| @mastrobuoni2019 | $-0.6$                        | $-0.9$               |                 |
+| @weisburd2021    | $-0.5$                        |                      |                 |
+
+: Comparando as elasticidades estimadas do efetivo policial em relação a diferentes tipos de crime {#tbl-policia_crime}
+
+::: {.nota-tabela}
+*Notas:* Tabela retirada de @buonanno2022chp4.
+:::
+
+### Ataques terroristas de Londres, 2005 (Draca et. al., 2011)
+
+Vamos nos debruçar sobre @draca2011 para entender um pouco mais os métodos utilizados para identificação do efeito causal. Utilizando dados bastante precisos de presença e atividade policial por semana e bairro ao longo do período de 01/01/2004 à 31/12/2005, os autores se utilizam do forte e não-antecipado aumento do número de policiais, como resposta aos ataques terroristas ao metrô de Londres, para identificar o efeito causal sobre as taxas de criminalidade. Para dar uma ideia da magnitude desse aumento do efetivo, alguns dos resultados do artigo sugerem um aumento de mais de $30\%$ nos índices de atividade policial na região central da cidade e ao longo das seis semanas que se seguiram ao dia 07 de Julho de 2005, data do ataque terrorista. Os índices de atividade policial, no entanto, voltaram aos níveis pré-ataques logo depois.
+
+Se o objetivo é estimar a elasticidade do crime em relação ao efetivo policial, gostaríamos de estimar a seguinte relação nesse contexto:
+
+## Conclusão
+
+Bla bla bla
+
+## Questões para discussão
+
+1. X

@@ -136,10 +136,19 @@ No entanto, apesar das críticas, o artigo original inaugurou uma área de pesqu
 
 ## Conclusão
 
-Bla bla bla
+Neste capítulo apresentamos o modelo de @becker1968, o primeiro tratamento formal da decisão criminal como um problema de escolha sob incerteza. Vimos que o indivíduo compara a utilidade esperada de uma loteria -- a atividade criminosa -- com a utilidade de uma alternativa segura, e que essa comparação depende de três parâmetros: a probabilidade de apreensão, o custo efetivo da punição e o benefício gerado pelo crime. As estáticas comparativas derivadas dessa estrutura são o resultado central da aula: aumentos em $p$ e em $L$ reduzem a propensão ao crime, enquanto aumentos em $b$ a elevam. Nada disso exige supor que criminosos sejam pessoas diferentes das demais, apenas que enfrentem custos e benefícios diferentes. No próximo capítulo veremos como @ehrlich1973 relaxa a hipótese de que crime e trabalho lícito são atividades mutuamente excludentes, substituindo a escolha binária por uma decisão de alocação de tempo.
+
 
 ## Questões para discussão
 
-1. X
+1. Releia a passagem de @becker1968 citada na introdução deste capítulo, segundo a qual algumas pessoas se tornam criminosas não porque sua motivação básica seja diferente, mas porque seus custos e benefícios o são. Suponha que se observe uma correlação positiva entre pobreza e criminalidade em um conjunto de municípios. Como o modelo de Becker interpretaria essa correlação? A interpretação é sobre preferências ou sobre restrições?
 
-2. Y
+2. Considere um indivíduo neutro ao risco, para o qual o benefício que o deixa indiferente entre as duas atividades é dado pela @eq-bstar_Becker. O que acontece com $b^\star$ quando $p$ se aproxima de $1$? E quando se aproxima de $0$? Interprete economicamente cada um dos dois limites.
+
+3. O modelo conclui que o nível socialmente ótimo de crime é estritamente positivo.
+
+    a. Explique esse resultado para alguém sem formação em Economia, sem usar a palavra "ótimo".
+    b. Que hipótese sobre a função $C(p,O)$ precisaria ser violada para que o ótimo fosse zero? Ela é plausível?
+    c. O resultado significa que a sociedade "tolera" o crime? Discuta a diferença entre uma afirmação normativa e uma afirmação sobre alocação de recursos escassos.
+
+4. No debate público brasileiro sobre segurança, propostas de aumento de penas costumam receber mais atenção do que propostas de ampliação da capacidade de investigação. À luz do modelo, que informação seria necessária para avaliar qual das duas é mais eficaz por real gasto?
