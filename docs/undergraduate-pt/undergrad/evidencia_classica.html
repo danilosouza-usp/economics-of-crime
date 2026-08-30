@@ -92,6 +92,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -236,47 +265,76 @@ div.csl-indent {
 </header>
 
 
-<p>A pergunta que organiza esta primeira parte do curso é fácil de enunciar e difícil de responder: por que algumas pessoas cometem crimes e outras não — e por que a mesma pessoa comete crimes em certos contextos e não em outros?</p>
-<p>Durante boa parte do século XX, a resposta dominante nas ciências sociais buscava a explicação em características que distinguiriam criminosos de não-criminosos: traços de personalidade, patologia individual, socialização deficiente, etc. A contribuição principal de <span class="citation" data-cites="becker1968">Becker (<a href="referencias.html#ref-becker1968" role="doc-biblioref">1968</a>)</span> foi deslocar o eixo da explicação. Se as pessoas respondem a incentivos nas demais dimensões da vida – no consumo, na escolha ocupacional, na decisão de estudar –, não há razão evidente para supor que deixem de fazê-lo quando a atividade em questão é ilegal. O crime passa, então, a ser tratado como uma escolha, tomada sob incerteza, e sensível a custos, benefícios e restrições.</p>
-<p>Essa mudança de perspectiva tem três consequências analíticas importantes, e é sobre elas que os três capítulos seguintes se apoiam. A primeira (e mais direta) é que <em>o crime deixa de ser um atributo e passa a ser um comportamento</em>. O objeto de análise não é “o criminoso”, mas a decisão de cometer um crime em um dado momento, dadas as alternativas disponíveis. Isso explica fatos que uma teoria baseada em tipos de pessoa acomoda com dificuldade: por que as taxas de criminalidade variam tanto entre bairros vizinhos, por que caem abruptamente com a idade, por que respondem a mudanças no mercado de trabalho e por que a mesma pessoa transita entre atividades lícitas e ilícitas ao longo da vida.</p>
-<p>Em segundo lugar, <em>a punição vira um componente de custo</em>. A probabilidade de apreensão e a severidade da pena deixam de ser apenas instrumentos de ordem moral e passam a ser parâmetros que alteram o custo esperado de uma atividade. Isso permite formular perguntas quantitativas e traduzi-las em objetos estimáveis, como elasticidades. É essa tradução que conecta a teoria desta parte do curso à literatura empírica que veremos nas partes seguintes.</p>
-<p>Por fim, <em>torna-se possível falar em política de segurança ótima</em>. Se combater o crime consome recursos escassos e se cada instrumento tem uma eficácia distinta na margem, então a pergunta de política pública não é “como eliminar o crime?”, mas “como alocar recursos limitados entre instrumentos com custos e efeitos diferentes?”.</p>
+<p>A parte anterior entregou um conjunto de previsões: aumentos na probabilidade de apreensão e no custo da punição reduzem o envolvimento no crime, assim como melhores oportunidades no mercado lícito. São previsões de <em>sinal</em>, derivadas de um modelo deliberadamente simples, e é natural perguntar se elas se sustentam quando confrontadas com os dados. É essa a pergunta que organiza esta segunda parte do curso: o que a evidência empírica corrobora, o que ela contradiz e o que permanece em disputa.</p>
+<p>Confrontar teoria e evidência é bem mais difícil do que derivar uma estática comparativa, e é sobre essa dificuldade que os quatro capítulos seguintes se apoiam. O primeiro obstáculo é que <em>as políticas de segurança não são alocadas ao acaso</em>. Contrata-se mais policiais onde o crime está subindo, constroem-se presídios onde há mais condenações, e programas sociais são direcionados a regiões vulneráveis. Toda a literatura desta parte do curso pode ser lida como uma sequência de tentativas de contornar esse problema de endogeneidade, e é por isso que discutiremos com cuidado a estratégia de identificação empírica de cada trabalho.</p>
+<p>O segundo ponto é um critério de leitura. <em>Um resultado isolado, por mais bem identificado que seja, tem alcance limitado.</em> A confiança em um achado vem do acúmulo: da replicação em outros países, períodos e populações, e da convergência de estratégias de identificação diferentes sobre o mesmo sinal. A pergunta relevante ao longo desta parte, portanto, não será apenas se um artigo específico é convincente, mas se o conjunto da evidência aponta na direção prevista pela teoria – e o que fazer quando não aponta.</p>
+<p>Por fim, um princípio de organização. Cada um dos quatro capítulos desta parte movimenta um parâmetro diferente do modelo estudado na parte anterior: o policiamento atua sobre a probabilidade de apreensão <span class="math inline">\(p\)</span>; as prisões e punições, sobre o custo da punição <span class="math inline">\(f\)</span> e sobre a incapacitação; o mercado de trabalho, sobre o custo de oportunidade <span class="math inline">\(w_m\)</span>; e a educação, sobre o retorno futuro da atividade lícita, sobre o tempo disponível para o crime e, possivelmente, sobre as próprias preferências intertemporais. Manter esse mapa em mente é a melhor forma de não tratar a literatura empírica como uma coleção de resultados isolados.</p>
 <section id="os-capítulos-desta-parte" class="level2">
 <h2 class="anchored" data-anchor-id="os-capítulos-desta-parte">Os capítulos desta parte</h2>
 <ul>
-<li><p><strong>Capítulo 4 — Policiamento.</strong> Apresenta a decisão criminal como um problema de escolha sob incerteza, no qual o indivíduo compara a utilidade esperada de uma atividade com desfecho incerto (o crime) com a utilidade de uma alternativa segura (a atividade lícita). Derivamos as estáticas comparativas em relação à probabilidade de apreensão, à severidade da punição e ao ganho do crime; e discutimos o problema de minimização da perda social que leva ao resultado do nível ótimo de crime.</p></li>
-<li><p><strong>Capítulo 5 — Prisões e punições.</strong> Substitui a escolha binária de Becker por uma decisão de alocação de tempo entre atividades lícitas e ilícitas, que deixam de ser mutuamente excludentes. O modelo torna o custo de oportunidade explícito e permite tratar a margem intensiva do crime — não apenas <em>se</em>, mas <em>quanto</em>. Derivamos a condição de ótimo interior, as condições sob as quais um indivíduo avesso ao risco não se especializa em nenhuma das atividades, e as estáticas comparativas correspondentes. O capítulo introduz também a distinção entre <strong>dissuasão</strong> e <strong>incapacitação</strong>, central para interpretar praticamente toda a literatura empírica sobre policiamento e, principalmente, encarceramento.</p></li>
-<li><p><strong>Capítulo 6 — Mercado de trabalho.</strong> Submete os dois modelos anteriores a um exame crítico. A limitação mais séria é o fato de serem estáticos: a punição real não é uma transferência monetária instantânea, mas um fluxo de desutilidade que se estende no tempo e começa depois da apreensão. Apresentamos brevemente o modelo dinâmico de <span class="citation" data-cites="lee2017">Lee e McCrary (<a href="referencias.html#ref-lee2017" role="doc-biblioref">2017</a>)</span>, seguindo a discussão de <span class="citation" data-cites="chalfin2017">Chalfin e McCrary (<a href="referencias.html#ref-chalfin2017" role="doc-biblioref">2017</a>)</span>, e mostramos como a impaciência pode explicar por que a certeza da punição dissuade mais do que a severidade. Em seguida, revisamos outras limitações: a diferença entre probabilidade objetiva e percebida, a evidência comportamental sobre impulsividade, os modelos de equilíbrio geral com fricções de busca, e o fato de que a prisão não é apenas um preço, mas também um tratamento com efeitos sobre o comportamento futuro.</p></li>
-<li><p><strong>Capítulo 7 — Educação.</strong> Submete os dois modelos anteriores a um exame crítico. A limitação mais séria é o fato de serem estáticos: a punição real não é uma transferência monetária instantânea, mas um fluxo de desutilidade que se estende no tempo e começa depois da apreensão. Apresentamos brevemente o modelo dinâmico de <span class="citation" data-cites="lee2017">Lee e McCrary (<a href="referencias.html#ref-lee2017" role="doc-biblioref">2017</a>)</span>, seguindo a discussão de <span class="citation" data-cites="chalfin2017">Chalfin e McCrary (<a href="referencias.html#ref-chalfin2017" role="doc-biblioref">2017</a>)</span>, e mostramos como a impaciência pode explicar por que a certeza da punição dissuade mais do que a severidade. Em seguida, revisamos outras limitações: a diferença entre probabilidade objetiva e percebida, a evidência comportamental sobre impulsividade, os modelos de equilíbrio geral com fricções de busca, e o fato de que a prisão não é apenas um preço, mas também um tratamento com efeitos sobre o comportamento futuro.</p></li>
+<li><p><strong>Capítulo 4 — Policiamento.</strong> Trata do instrumento que atua diretamente sobre <span class="math inline">\(p\)</span>. Começamos pelo problema da causalidade reversa e pelas estratégias construídas para superá-lo: choques de alocação policial motivados por razões alheias ao crime, como o atentado terrorista estudado por <span class="citation" data-cites="ditella2004">Di Tella e Schargrodsky (<a href="referencias.html#ref-ditella2004" role="doc-biblioref">2004</a>)</span>; ciclos eleitorais na contratação de policiais (<span class="citation" data-cites="levitt1997">Levitt (<a href="referencias.html#ref-levitt1997" role="doc-biblioref">1997</a>)</span>); e programas federais de financiamento, como em <span class="citation" data-cites="evans2007">Evans e Owens (<a href="referencias.html#ref-evans2007" role="doc-biblioref">2007</a>)</span>. Em seguida, separamos duas perguntas distintas que a literatura frequentemente confunde: quanto importa o efetivo policial e quanto importa a forma de alocá-lo, tema da literatura sobre policiamento em <em>hot spots</em> (<span class="citation" data-cites="braga2019">Braga et al. (<a href="referencias.html#ref-braga2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="blattman2021">Blattman et al. (<a href="referencias.html#ref-blattman2021" role="doc-biblioref">2021</a>)</span>). Fechamos avaliando o quanto os resultados são consistentes entre países, períodos e desenhos de pesquisa, e discutindo a evidência sobre qualidade e conduta policial.</p></li>
+<li><p><strong>Capítulo 5 — Prisões e punições.</strong> Trata da severidade das punições e do efeito da incapacitação. Retomamos a distinção entre <em>deterrence</em> e <em>incapacitation</em> apresentada no <a href="../undergrad/Ehrlich1973.html">Capítulo 2</a> e discutimos por que separá-las empiricamente é tão difícil, além das poucas situações em que isso é possível. Examinamos desenhos que exploram variações exógenas na duração das penas, como o perdão coletivo italiano estudado por <span class="citation" data-cites="drago2009">Drago, Galbiati, e Vertova (<a href="referencias.html#ref-drago2009" role="doc-biblioref">2009</a>)</span>, e avaliamos se a evidência é consistente com a assimetria entre certeza e severidade discutida no <a href="../undergrad/limitacoes.html">Capítulo 3</a>. Tratamos também dos efeitos da prisão sobre quem passa por ela – reincidência, empregabilidade, formação de capital criminoso – e das alternativas ao encarceramento.</p></li>
+<li><p><strong>Capítulo 6 — Mercado de trabalho.</strong> O foco principal deste capítulo é entender o efeito de alterações no custo de oportunidade da atividade criminosa. Analisamos choques exógenos à demanda por trabalho, incluindo evidência brasileira sobre a abertura comercial (<span class="citation" data-cites="dix2018">Dix-Carneiro, Soares, e Ulyssea (<a href="referencias.html#ref-dix2018" role="doc-biblioref">2018</a>)</span>) e sobre perda de emprego e seguro-desemprego (<span class="citation" data-cites="britto2022">Britto, Pinotti, e Sampaio (<a href="referencias.html#ref-britto2022" role="doc-biblioref">2022</a>)</span>). Discutimos ainda a distinção entre choques transitórios e permanentes e por que crimes contra a propriedade e crimes violentos respondem de maneiras diferentes.</p></li>
+<li><p><strong>Capítulo 7 — Educação.</strong> Uma política educacional pode reduzir o crime por pelo menos três canais: incapacitação, ao ocupar o tempo do jovem; capital humano, ao elevar o retorno futuro da atividade lícita (<span class="citation" data-cites="lochner2004">Lochner e Moretti (<a href="referencias.html#ref-lochner2004" role="doc-biblioref">2004</a>)</span>, <span class="citation" data-cites="machin2011">Machin, Marie, e Vujić (<a href="referencias.html#ref-machin2011" role="doc-biblioref">2011</a>)</span>); e formação de preferências, ao alterar paciência e horizonte de decisão. Veremos desenhos engenhosos que conseguem separar esses canais, como o uso de dias letivos e greves de professores para isolar o efeito de incapacitação (<span class="citation" data-cites="jacob2003">Jacob e Lefgren (<a href="referencias.html#ref-jacob2003" role="doc-biblioref">2003</a>)</span>). Discutimos também evidência brasileira sobre a interação entre desempenho escolar e exposição local à violência (<span class="citation" data-cites="monteiro2017">Monteiro e Rocha (<a href="referencias.html#ref-monteiro2017" role="doc-biblioref">2017</a>)</span>,<span class="citation" data-cites="menezes2021">Koppensteiner e Menezes (<a href="referencias.html#ref-menezes2021" role="doc-biblioref">2021</a>)</span>).</p></li>
 </ul>
 </section>
 <section id="objetivos-de-aprendizagem" class="level2">
 <h2 class="anchored" data-anchor-id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Ao final desta parte do curso, espera-se que o aluno seja capaz de:</p>
 <ol type="1">
-<li>Formular a decisão de cometer um crime como um problema de escolha sob incerteza e derivar suas estáticas comparativas.</li>
-<li>Distinguir a margem extensiva (participar ou não) da margem intensiva (quanto tempo alocar), e reconhecer qual delas é relevante em cada aplicação empírica.</li>
-<li>Explicar a distinção entre certeza e severidade da punição e avaliar criticamente as diferentes justificativas teóricas para a assimetria entre elas.</li>
-<li>Separar conceitualmente os mecanismos de dissuasão e incapacitação e identificar por que são difíceis de distinguir empiricamente.</li>
-<li>Identificar quais parâmetros do modelo uma dada política pública ou desenho de pesquisa efetivamente movimenta.</li>
-<li>Reconhecer as principais limitações do modelo estático e o que os modelos dinâmicos e de equilíbrio acrescentam.</li>
+<li>Identificar qual parâmetro do modelo de escolha racional uma dada política pública efetivamente movimenta.</li>
+<li>Explicar por que a correlação simples entre uma política de segurança e a criminalidade tende a ser enviesada por definição.</li>
+<li>Avaliar, em termos intuitivos, a plausibilidade da estratégia de identificação de um trabalho empírico e dizer o que ela permite e o que não permite concluir.</li>
+<li>Confrontar um conjunto de resultados empíricos com as previsões do modelo teórico, avaliando se são consistentes entre si e reconhecendo quando a literatura permanece em disputa.</li>
+<li>Distinguir empiricamente, quando possível, os mecanismos de dissuasão, incapacitação e formação de capital humano.</li>
+<li>Avaliar criticamente a validade externa de resultados obtidos em outros contextos institucionais, com atenção às particularidades do caso brasileiro.</li>
 </ol>
 </section>
 <section id="pré-requisitos-e-observações" class="level2">
 <h2 class="anchored" data-anchor-id="pré-requisitos-e-observações">Pré-requisitos e observações</h2>
-<p>Os pré-requisitos são os de um curso intermediário de microeconomia: otimização com restrições, preferências pelo risco, escolha sob incerteza e utilidade esperada de <em>von Neumann–Morgenstern</em>.</p>
-<p>Uma última observação sobre a função destes modelos no restante do curso. Eles não devem ser lidos como descrições literais de como decisões criminais são tomadas — nenhum modelo econômico é isso. Sua utilidade é tripla: organizam os mecanismos pelos quais uma política pode afetar o crime; disciplinam a leitura da evidência, ao obrigar a explicitar qual parâmetro um desenho de pesquisa está de fato movimentando; e entregam os objetos que a literatura empírica tenta estimar que são exatamente o que a análise de custo-benefício de uma política exige. Quando, nas partes seguintes, discutirmos os efeitos de mais policiamento, de penas mais longas, de programas de transferência de renda ou de expansão da escolaridade, será a este arcabouço que retornaremos para interpretar o sinal e as magnitudes encontradas.</p>
+<p>Os pré-requisitos são os de um curso básico de econometria: regressão linear, interpretação de coeficientes e a noção de viés de variável omitida e viés de simultaneidade. Os desenhos de pesquisa utilizados nos artigos discutidos – diferenças em diferenças, variáveis instrumentais, regressão descontínua e experimentos – serão apresentados de forma intuitiva, com ênfase em <em>por que</em> uma estratégia é convincente e no que ela permite concluir, e não em sua formalização.</p>
+<p>Uma observação sobre como ler os capítulos que se seguem. Todos obedecem à mesma sequência: caracterizamos primeiro o problema, discutimos em seguida como a variável de interesse é medida, apresentamos a estratégia de identificação empregada pelos principais trabalhos e só então tratamos dos resultados e de suas implicações. Um resultado empírico só significa alguma coisa quando se sabe de onde veio a variação que o produziu, e boa parte do trabalho intelectual desta parte do curso consiste justamente em aprender a fazer essa pergunta antes de olhar para o coeficiente estimado.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-becker1968" class="csl-entry" role="listitem">
-Becker, Gary S. 1968. <span>“Crime and punishment: an economic approach”</span>. <em>Journal of Political Economy</em> Vol. 76 (No. 2): pp. 169–217.
+<div id="ref-blattman2021" class="csl-entry" role="listitem">
+Blattman, Christopher, Donald P Green, Daniel Ortega, e Santiago Tobón. 2021. <span>“Place-based interventions at scale: The direct and spillover effects of policing and city services on crime”</span>. <em>Journal of the European Economic Association</em> Vol. 19 (No. 4): pp. 2022–2051.
 </div>
-<div id="ref-chalfin2017" class="csl-entry" role="listitem">
-Chalfin, Aaron, e Justin McCrary. 2017. <span>“Criminal Deterrence: A Review of the Literature”</span>. <em>Journal of Economic Literature</em> Vol. 55 (No. 1): pp. 5–48.
+<div id="ref-braga2019" class="csl-entry" role="listitem">
+Braga, Anthony A, Brandon Turchan, Andrew V Papachristos, e David M Hureau. 2019. <span>“Hot spots policing of small geographic areas effects on crime”</span>. <em>Campbell systematic reviews</em> Vol. 15 (No. 3): e1046.
 </div>
-<div id="ref-lee2017" class="csl-entry" role="listitem">
-Lee, David S, e Justin McCrary. 2017. <span>“The deterrence effect of prison: Dynamic theory and evidence”</span>. Em <em>Regression discontinuity designs: Theory and applications</em>, 38:73–146. Advances em Econometrics. Emerald Group Publishing Limited.
+<div id="ref-britto2022" class="csl-entry" role="listitem">
+Britto, Diogo GC, Paolo Pinotti, e Breno Sampaio. 2022. <span>“The effect of job loss and unemployment insurance on crime in Brazil”</span>. <em>Econometrica</em> Vol. 90 (No. 4): pp. 1393–1423.
+</div>
+<div id="ref-ditella2004" class="csl-entry" role="listitem">
+Di Tella, Rafael, e Ernesto Schargrodsky. 2004. <span>“Do police reduce crime? Estimates using the allocation of police forces after a terrorist attack”</span>. <em>American Economic Review</em> Vol. 94 (No. 1): pp. 115–133.
+</div>
+<div id="ref-dix2018" class="csl-entry" role="listitem">
+Dix-Carneiro, Rafael, Rodrigo R Soares, e Gabriel Ulyssea. 2018. <span>“Economic shocks and crime: Evidence from the Brazilian trade liberalization”</span>. <em>American Economic Journal: Applied Economics</em> Vol. 10 (No. 4): pp. 158–195.
+</div>
+<div id="ref-drago2009" class="csl-entry" role="listitem">
+Drago, Francesco, Roberto Galbiati, e Pietro Vertova. 2009. <span>“The deterrent effects of prison: Evidence from a natural experiment”</span>. <em>Journal of Political Economy</em> Vol. 117 (No. 2): pp. 257–280.
+</div>
+<div id="ref-evans2007" class="csl-entry" role="listitem">
+Evans, William N, e Emily G Owens. 2007. <span>“COPS and Crime”</span>. <em>Journal of public Economics</em> Vol. 91 (No. 1-2): pp. 181–201.
+</div>
+<div id="ref-jacob2003" class="csl-entry" role="listitem">
+Jacob, Brian A, e Lars Lefgren. 2003. <span>“Are idle hands the devil’s workshop? Incapacitation, concentration, and juvenile crime”</span>. <em>American economic review</em> Vol. 93 (No. 5): pp. 1560–1577.
+</div>
+<div id="ref-menezes2021" class="csl-entry" role="listitem">
+Koppensteiner, Martin Foureaux, e Livia Menezes. 2021. <span>“Violence and human capital investments”</span>. <em>Journal of Labor Economics</em> Vol. 39 (No. 3): pp. 787–823.
+</div>
+<div id="ref-levitt1997" class="csl-entry" role="listitem">
+Levitt, Steven D. 1997. <span>“Using Electoral Cycles in Police Hiring to Estimate the Effect of Police on Crime”</span>. <em>American Economic Review</em> Vol. 87 (No. 3): pp. 270–290.
+</div>
+<div id="ref-lochner2004" class="csl-entry" role="listitem">
+Lochner, Lance, e Enrico Moretti. 2004. <span>“The effect of education on crime: Evidence from prison inmates, arrests, and self-reports”</span>. <em>American economic review</em> Vol. 94 (No. 1): pp. 155–189.
+</div>
+<div id="ref-machin2011" class="csl-entry" role="listitem">
+Machin, Stephen, Olivier Marie, e Sunčica Vujić. 2011. <span>“The crime reducing effect of education”</span>. <em>The Economic Journal</em> Vol. 121 (No. 552): pp. 463–484.
+</div>
+<div id="ref-monteiro2017" class="csl-entry" role="listitem">
+Monteiro, Joana, e Rudi Rocha. 2017. <span>“Drug battles and school achievement: evidence from Rio de Janeiro’s favelas”</span>. <em>Review of Economics and Statistics</em> Vol. 99 (No. 2): pp. 213–228.
 </div>
 </div>
 </section>
