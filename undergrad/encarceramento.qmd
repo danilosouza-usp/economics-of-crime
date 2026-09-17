@@ -1,0 +1,105 @@
+# Encarceramento e sentenças {#sec-policiamento}
+
+## Introdução
+
+Quando olhamos para os dados da população prisional em várias partes do mundo, várias são as histórias que aparecem. A Figura @fig-prisoes_paises mostra a evolução do número de indivíduos encarcerados a cada $100{,}000$ habitantes ao comparar os dados de $2004$ e $2022$ de 82 países. Pontos abaixo da linha de $45$ graus representam países que tiveram uma redução relativa da população prisional, enquanto países acima da linha tiveram um aumento. Apesar da redução de cerca de $30\%$, os EUA continuam com uma das maiores taxas do mundo e com números absolutos que superam $1.2$ milhões de pessoas encarceradas. Por outro lado, países da América Latina como Uruguai, Peru, Panamá e Brasil apresentaram aumento das taxas de encarceramento nesse mesmo período. A Turquia é um exemplo de forte variação positiva, tendo saído de uma taxa de $85$ para $392$ presos por $100{,}000$ habitantes, um aumento de mais de $360\%$
+
+[INSERIR FIGURA]
+
+Já a Figura @fig-presos_brasil mostra a evolução ano a ano da população prisional no Brasil nos últimos $25$ anos. O número de pessoas privadas de liberdade subiu de $232$ mil para $909$ mil, um aumento de mais de $290\%$. Mesmo quando considerado o aumento populacional no período, a taxa de pessoas encarceradas por $100{,}000$ habitantes subiu de $137$ para mais de $420$. A Figura traz uma outra evidência interessante e que pode estar ligada à ampliação do número de vagas no sistema penintenciário ao longo das últimas duas décadas: a forte redução da participação de pessoas sob custódia das polícias no total de pessoas encarceradas. Em $2000$ essa categoria respondia por $25\%$ do total, com $57$ mil pessoas nessa condição. Em $2024$ apenas $3{,}751$ pessoas privadas de liberdade estavam sob custódia das polícias, de um total de $909{,}594$ indivíduos encarcerados ($0.4\%$).
+
+[INSERIR FIGURA]
+
+Fato é que a privação de liberdade como punição sempre foi, ao longo da história da humanidade, uma das principais formas de reduzir a incidência de atividades ilícitas e criminosas. Apesar das predições dos modelos iniciais em Economia do Crime apontarem para um maior efeito de mudanças da probabilidade de apreensão em detrimento da severidade das punições sobre as taxas de criminalidade, em ambos os casos [@becker1968;@ehrlich1973] um aumento da punição marginal, seja por maior severidade (e.g., pena de morte) ou duração (e.g., tempo de condenação para o mesmo crime) da pena, reduz o incentivo para se cometer crime em equilíbrio.
+
+Na prática, porém, a análise dos efeitos potenciais de redução do crime é dificultada pela existência de dois canais bastante distintos de atuação das punições: (i) disuasão ou *deterrence* e (ii) incapacitação ou *incapacitation*. Assim como discutido brevemente no Capítulo 2, entender empiricamente quanto de um efeito observado é resultado de um ou outro canal é uma tarefa bastante difícil que fica ainda mais evidente na análise dos efeitos de maior encarceramento e penas mais duras.
+
+## *Incapacitation versus Deterrence*
+
+Antes de discutir as evidências empíricas sobre o efeito de um aumento na severidade da punição e as estratégias utilizadas para isolar os canais concorrentes de incapacitação e dissuassão convém definir o que cada canal realmente representa:
+
+::: {.callout-tip title="*Deterrence*"}
+Ocorre quando, em resposta a alguma alteração de política pública ou regra institucional, indivíduos deixam de praticar crimes que cometeriam no cenário em que não houvesse nenhuma mudança. Tal efeito é resultado de alterações no balanço entre custos e benefícios da atividade criminosa.
+:::
+
+::: {.callout-tip title="*Incapacitation*"}
+Resultado da retirada de infratores de circulação, como resultado de ações como prisão preventiva e encarceramento. O efeito sobre o crime nesse caso é mecânico: uma vez privados de liberdade, infratores com alta probabilidade de cometer novos crimes são impedidos de fazê-los.
+:::
+
+Embora a canal de dissuassão possa aparecer como resposta a toda e qualquer política ou alteração institucional que altere o balanço de custos e benefícios da atividade criminosa, o efeito de incapacitação em geral está associado apenas a alterações que de alguma forma alterem a probabilidade de apreensão ou a duração/severidade das penas associadas a detenção. A separação empírica desses efeitos, porém, é muito difícil e depende de desenhos metodológicos bastante engenhosos para que seja possível avaliar de forma isolada a conntribuição de cada um dos canais. Por fim, é importante destacar que o efeito *deterrence* em si é uma caixa-preta: representa uma resposta comportamental dos potenciais infratores que depende não apenas de mudanças efetivas nos custos e e benefícios da atividade, mas da própria percepção dos infratores em relação a essas potenciais mudanças.
+
+## Evidências empíricas
+
+### População prisional
+
+Da mesma forma que a relação entre efetivo policial e crime sofre do problema de causalidade reversa, a relação entre população prisional e crime também são determinados simultaneamente. Por um lado, uma população prisional maior pode representar tanto uma maior probabilidade de apreensão quanto uma severidade maior da punição, o que desincentiva duplamente o crime, além de gerar efeitos mecânicos de redução do crime via incapacitação. Por outro lado, mantendo constante a taxa de encarceramento, a população prisional deveria crescer em uma relação um para um com o aumento das taxas de criminalidade. Para eliminar o viés e estimar o efeito das prisões sobre o crime consistentemente, é preciso encontrar alguma fonte de variação exógena na população prisional e que não esteja diretamente ligada ao crime local.
+
+Assim como no caso dos efeitos do policiamento sobre as taxas de crime, é @levitt1996 quem traz uma das primeiras evidências causais do efeito que a população prisional tem sobre a atividade criminosa. Em posse de um painel de estados americanos ao longo do período $1971-1993$, o autor utiliza ordens judiciais para redução da superlotação nos presídios como instrumento para o tamanho da população prisional na relação com as taxas de crime. A elasticidade estimada é de $-0.4$ em crimes violentos e de $-0.3\%$ em crimes contra a propriedade, sugerindo que uma redução de $10\%$ na população prisional implicaria em um aumento de $4\%$ e $3\%$ nesses dois tipos de crime, respectivamente.
+
+@johnson2012 é outra contribuição nessa linha, que se vale de variações institucionais nos estados americanos como instrumento para a população prisional local. Com dados um pouco mais recentes ($1978-2004$) e uma estratégia de variáveis instrumentais, os autores estimam uma elasticidade no intervalo $[-0.11 \ ; \ -0.06]$ para crimes violentos e $[-0.21 \ ; \ -0.15]$ para crimes contra propriedade. Apesar de apontarem um efeito médio menor, quando restringem a análise para um período mais parecido as elasticidades se aproximam daquelas estimadas em @levitt1996. Os autores argumentam que essa diferença de efeitos sugere que aumentos mais recentes no encarceramento, partindo de uma prisão populacional já bastante alta, podem ter tido um efeito bem menor em termos de redução da criminalidade.
+
+Evidências mais recentes apontam para uma elasticidade entre $-0.1$ e $-0.7$, inferior aos valores observados para a elasticidade entre efetivo policial e crime. Tal resultado vai ao encontro dos achados teóricos iniciais, que sugeriam um efeito disuasão maior como resultado do aumento na probabilidade de apreensão (mais policiais) em comparação ao efeito gerado por penas mais severas (prisões). É difícil, porém, dizer o quanto do resultado está associado ao canal de disuasão e quanto ao canal de incapacitação. No fim das contas, o efeito disuasão resultado das prisões pode ser ainda menor, ou mesmo não diferente de zero, já que parte do efeito negativo que a população prisional tem sobre o crime local vem necessariamente do efeito de incapacitar potenciais criminosos e dificultar reincidência.
+
+### Duração das sentenças
+
+Apesar de informativa e relacionada com a observação empírica de aumento da população prisional em várias partes do mundo, é preciso buscar novas estratégias de identificação e fontes de variação exógena para separar os efeitos de disuasão e incapacitação. @drago2009 e @buonanno2013 são contribuições nessa linha, que utilizam como fonte de variação exógena na duração das penas uma mudança institucional ocorrida na Itália em 2006. No mês de julho de 2006 o parlamento italiano aprovou um projeto de lei de perdão coletivo, que propunha uma redução imediata de 3 anos na pena de todos os prisioneiros que haviam cometido crimes antes de 2 de maio de 2006.^[O perdão coletivo não foi aplicado aos prisioneiros que estavam cumprindo penas por crimes relacionados à máfia, terrorismo, gangues, crimes sexuais, sequestros e exploração da prostituição.] Na prática, isso fez com que mais de $22{,}000$ pessoas, aproximadamente $40\%$ da população prisional da época, fosse liberada das prisões (@fig-DragoPrisoners). 
+
+[INSERIR FIGURA]
+
+A redução da pena, no entanto, estava atrelada ao não cometimento de novos crimes no período de 5 anos após a soltura. No caso de um indivíduo solto pela lei, que ainda tivesse a cumprir 2 anos de pena em maio de 2006 e que fosse apreendido e julgado pelo cometimento de qualquer novo crime em até 5 anos, teria à sentença desse novo crime adicionado os dois anos perdoados inicialmente. Dessa forma, dois indivíduos distintos, soltos em $2006$ por conta da lei, mas que diferiam em relação ao número de meses/anos perdoados, teriam penas diferentes caso fossem condenados pelo mesmo crime em até 5 anos após o perdão coeltivo. Essa variação na duração esperada de uma pena associada a determinado crime serviria então como uma variação exógena da duração das sentenças, relacionada apenas à data de admissão do indivíduo no sistema prisional.
+
+Em posse de dados sigiliosos dos indivíduos efetivamente soltos pela lei e a potencial reentrada no sistema prisional, @drago2009 puderam avaliar o efeito de um aumento esperado na sentença sobre a probabilidade de um indivíduo cometer um novo crime. Nesse caso, qualquer efeito observado seria resultado de um efeito de disuasão e não incapacitação. Dado o caráter exógeno da variação na duração esperada da sentença de crimes futuros, o efeito causal é obtido através de uma simples análise de regressão:
+
+$$
+y_i = \alpha + \beta_0 sentence_i + \beta_1 sentres_i + \epsilon_i
+$$ {#eq-drago2009}
+
+em que $y_i$ é uma variável dummy que indica se o criminoso que foi solto com o perdão coletivo cometeu um novo crime, $sentence_i$ é a sentença do crime original, antes do perdão, em meses e $sentres_i$ é a parte da sentença original que foi perdoada. O coeficiente de interesse é $\beta_1$ e sua identificação depende da hipótese de que, condicional à sentença original, qualquer variação em $sentres_i$ não é correlacionado com variáveis não observáveis que afetam a probabilidade do indivíduo reincidir.
+
+A @tab-drago2009 reporta os resultados principais utilizando um modelo logit. Os coeficientes estimados mostram os efeitos marginais quando todas as variáveis independentes são avaliadas em suas médias. Em parênteses são reportados as estatísticas Z robustas à heterocedasticidade. O coeficiente da sentença residual mostra um efeito bastante estável e significante, sugerindo que um mês a mais na sentença esperada futura implicaria em uma redução de $-0.16$ a $-0.17$ pontos percentuais na probabilidade do indivíduo cometer um novo crime. Extrapolando esse resultado para o período todo que os dados permitem observar os indivíduos após a soltura, os autores calculam uma elasticidade da probabilidade de envolvimento em um ato criminoso em relação ao aumento da pena esperada da ordem de $-0.50$ no período de um ano após a soltura, o que é consideravelmente maior do que as estimativas calculadas utilizando variações exógenas na população prisional.
+
+[INSERIR TABELA]
+
+@buonanno2013 por outro lado, utiliza a variação gerada pela mesma política e uma estratégia empírica baseada em avaliar o efeito relativo nas variáveis de interesse no meses logo antes e logo depois de julho de 2006. Diferentemente de @drago2009, a estratégia permite avaliar o canal de incapacitação, com resultados que sugerem um aumento considerável do crime associado ao perdão coletivo. Em linha com @johnson2012, a magnitude dos efeitos sobre crime decresce com o aumento da taxa de encarceramento, i.e., retornos marginais descrecentes. 
+
+### Punição e efeitos individuais de longo-prazo
+
+Consistente com as predições em @becker1968 e @ehrlich1973, a literatura empírica parece apontar para um efeito negativo do aumento da severidade da punição -- medido, principalmente, pelo tamanho da população prisional local ou pela duração esperada das penas -- sobre as taxas de criminalidade. Embora seja difícil separar os canais de disuasão e incapacitação, alguns artigos sugerem um efeito dissuasão estatisticamente significante mas com magnitude menor do que o efeito estimado para mudanças na probabilidade subjetiva de apreensão, em linha também com as predições teóricas.
+
+Contribuições mais recentes, no entanto, buscam avaliar os potenciais efeitos colaterais de um maior encarceramento sobre as taxas futuras de crime. A ideia principal é a de que existem vários canais pelos quais um indivíduo condenado e/ou que tenha passado um tempo na prisão tenha sua chance de reincidência futura aumentada, a exemplo da piora nas condições no mercado de trabalho para indivíduos com histórico criminal e aquisição de capital humano específico à atividade criminosa dentro dos presídios.
+
+@aizer2015 e @agan2023 são duas contribuições nesse sentido. Enquanto o primeiro artigo discute os efeitos de encarceramento de jovens sobre a probabilidade de conclusão do ensino secundário e encarceramento futuro, o segundo artigo discute os efeitos colaterais de punições à infrações de menor gravidade que não constituem crimes penais nos Estados Unidos.^[Chamadas de *misdemeanor offenses*, as infrações mais comuns nesse grupo incluem: dirigir sob a influência de álcool (DUI), desordem, posse de drogas, embriaguez, jogos de azar, violações de leis sobre bebidas alcoólicas, prostituição e vandalismo.] Em ambos os casos, o argumento principal remete aos potenciais efeitos dinâmicos e de alteração da trajetória potencial do ciclo de vida de indivíduos expostos à prisão, mesmo que por poucas semanas ou meses, ou o registro no sistema judiciário da existência de antecedentes criminais. 
+
+Vejamos o caso discutido em @agan2023. Milhões de norte-americanos são acusados pelo cometimento de infrações de menor gravidade todos os anos. Embora em muitos casos esse tipo de infração não leve à prisão, em várias jurisdições o envolvimento em uma *misdemeanor offense* pode compor o histórico de antecedentes criminais e fazer com que um indivíduo deixe de ter a "ficha limpa". Se por um lado, a decisão de processar criminalmente um indivíduo por esse tipo de infração possa afetar negativamente o balanço subjetivo de custo e benefícios futuros da atividade criminosa, por outro lado, indivíduos com um histórico criminal por conta dessas infrações passam a ter menos a perder pelo envolvimento em atividade criminosas de maior gravidade. O efeito líquido, portanto, é uma questão essencialmente empírica.
+
+Em posse de dados de *Suffolk County*, no estado de Massachusetts, no período $2004-2018$, @agan2023 exploram o fato que juízes responsáveis por avaliar os casos de infrações de menor gravidade variam no grau de leniência que possuem e são sorteados aleatoriamente para os casos que chegam à justiça local. Assim, a variação na probabilidade de condenação de determinado indivíduo advinda do quão duro o juiz sorteado para aquele caso é, não estaria relacionada às características não-observáveis do indivíduo e serviria, portanto, como uma boa candidata a variável instrumental. A estratégia empírica se baseia na estimação de mínimos quadrados em dois estágios, seguindo os seguintes passos:
+
+1. Seja $NotPros_{icta}$ uma dmmy que indique um indivíduo $i$ que não foi processado pelo juiz $a$ em relação ao envolvimento na infração $c$ no ano $t$. Além disso, seja $Z_{cta}$ a medida de leniência, estimada a partir das decisões prévias do juiz. Estima-se a relação entre o instrumento e a dummy de processo criminal através da equação abaixo:
+
+    $$
+    NotPros_{icta} = \alpha_1 Z_{cta} + \alpha_2 X_{it} + \gamma_{ct} + \epsilon_{icta}
+    $$ {#eq-agan2023_1stage}
+
+2. Calcula-se o valor previsto $\widehat{NotPros}_{icta}$ a partir da estimação do primeiro estágio.
+
+3. Estima-se a relação entre a variável de resultado $Y_{icta}$ (e.g, probabilidade e número de queixas criminais após o caso $c$) e a chance de não ser processado pela infração de mnor gravidade $c$ através da equação abaixo:
+
+    $$
+    Y_{icta} = \beta_1 \widehat{NotPros}_{icta} + \beta_2 X_{it} + \gamma_{ct} + \epsilon_{icta}
+    $$ {#eq-agan2023_2stage}
+
+    em que $\beta_1$ é o coeficiente de interesse, que captura e relação causal entre a chance de ser processado por uma infração de menor gravidade -- vindo da leniência estimada do juiz -- sobre a variável de resultado $Y_{ict}$.
+
+A @tab-agan2023 mostra os principais resultados. Tanto as estimativas de OLS quanto de variáveis instrumentais (colunas 1-4) mostram que um indivíduo não processado após envolvimento em uma infração de menor gravidade tem uma probabilidade menor de envolvimento em crimes (Painel A) e também um número menor de queixas criminais (Painel B) nos dois anos seguintes ao caso inicial. Em relação à magnitude dos efeitos, o fato de não ser processado por uma *misdemeanor offense* reduz a probabilidade relativa de envolvimento em crimes em $29$ pontos percentuais e faz com que o indivíduo recaba 1.7 queixas criminais a menos em até dois anos após o caso inicial.
+
+[INSERIR TABELA]
+
+O artigo discute então potenciais mecanismos. As evidências adicionais sugerem que os efeitos vêm em grande parte do grupo de indivíduos que não possuem antecedentes criminais, enquanto os efeitos para réus que já possuem registros criminais são inconsistentes, estatisticamente insignificantes e até mesmo sugerem possíveis aumentos em novas queixas criminais. Além disso, o efeito parece ser maior nos casos em que os policiais têm menos espaço para decisões discricionárias. De forma conjunta, esses resultados sugerem que os efeitos estão ligados à mudanças do comportamento criminal dos indivíduos em resposta ao fato de ser ou não processado. 
+
+## Conclusão
+
+Bla bla bla
+
+## Questões para discussão
+
+1. X

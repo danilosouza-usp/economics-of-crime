@@ -30,7 +30,7 @@ book:
     - part: undergrad/evidencia_classica.qmd
       chapters:
         - undergrad/policiamento.qmd
-    #    - incarceration.qmd
+        - undergrad/encarceramento.qmd
     #    - labor_markets.qmd
     #    - education.qmd
         

@@ -82,6 +82,112 @@ Vamos nos debruçar sobre @draca2011 para entender um pouco mais os métodos uti
 
 Se o objetivo é estimar a elasticidade do crime em relação ao efetivo policial, gostaríamos de estimar a seguinte relação nesse contexto:
 
+$$
+c_{it} = \delta_0 + \delta_1 p_{it} + \lambda X_{it} + \epsilon_{it}
+$$ {#eq-draca2011_ols1}
+
+em que $c_{it}$ é a taxa de criminalidade no bairro $j$ e semana $t$, $p_{it}$ é o nível de polícia alocado à região no mesmo instante de tempo e $X_{it}$ é um vetor de variáveis de controle que contém elementos observáveis e não-observáveis que também afetam as taxas de crime. Nesse caso, o coeficiente de interesse que representa a relação entre polícia e crime e $\delta_1$.
+
+Estimar a @eq-draca2011_ols1 por mínimos quadrados ordinários em geral trará estimativas viesadas para $\delta_1$ por diversas razões, sendo o viés de simultaneidade uma das principais, como visto anteriormente. Uma primeira tentativa para nos livrarmos de fontes de endogeneidade que venham de variáveis omitidas não-observáveis, presentes em $\epsilon_{it}$ e correlacionadas com $p_{it}$, seria a diferenciação no tempo.
+
+$$
+(c_{i,t} - c_{i,t-k}) = \delta_0 + \delta_1 (p_{i,t} - p_{i,t-k}) + \lambda (X_{i,t} - X_{i,t-k}) + (\epsilon_{i,t}-\epsilon_{i,t-k})
+$$ {#eq-draca2011_ols2}
+
+No entanto, mesmo com a eliminação de fatores específicos e não observáveis dos bairros que não variam no tempo e são correlacionados tanto com o crime quanto com o efetivo policial (densidade urbana e presença de delegacias policiais, por exemplo), o coeficiente $\delta_1$ estimado através da equação (\ref{eq:draca2011_ols2}) ainda estaria sujeito ao viés de simultaneidade. É preciso utilizar alguma fonte de variação no efetivo policial que não esteja sujeita ao viés de simultaneidade e é aí que entra a resposta do governo aos ataques terroristas. Nesse caso, o aumento do efetivo policial estaria ligado aos locais com maior risco de sofrer novos ataques e não aos locais com maiores taxas de crime inicialmente.
+
+#### Especificação de differenças-em-differenças
+
+A primeira forma de avaliar o efeito causal do efetivo policial sobre o crime é através do método de diferenças-em-diferenças (diff-in-diff ou DiD). O foco aqui não é entender toda a matemática e hipóteses por trás do método (existem cursos e cursos só para isso), mas sua intuição e como é aplicada em @draca2011. A ideia central por trás do método é a de que uma determinada política, implementada em um dado instante, por alguma razão (não manipulada) afeta um certo grupo de agentes mas não outro. No caso mais simples, com 2 períodos e 2 grupos de agentes, teríamos as observações antes e depois da política para o grupo não-tratado e antes e depois da política para o grupo tratado. Assim, o método consistiria em comparar a evolução de uma certa variável de interesse entre os períodos $1$ e $2$ e entre os grupos tratado e não-tratado. Com um número maior de observações no tempo, a ideia é comparar a média dos períodos pré-tratamento e pós-tratamento entre os grupos tratado e controle.^[Para o aluno mais interessado em entender o método a fundo, @cunningham2021chp9 é uma ótima referência. Disponível [aqui](https://mixtape.scunning.com/).] 
+
+No caso do artigo em questão, a estratégia consistiria em estimar uma equação como a apresentada abaixo:
+
+$$
+\Delta y_{it} = \alpha_0 + \alpha_1 POST_t + \alpha_2 (T_i \times POST_i) + \alpha_3 \Delta x_{it} + \epsilon_{it}
+$$ {#eq-draca2011_did}
+
+em que o operador $\Delta$ representa o diferencial em log de uma determinada variável no bairro $i$ ao comparar a semana $t$ com a mesma semana do ano anterior, tal que $\Delta y_{it} \equiv log(y_{i,t}) - log(y_{i,t-52})$. $T_i$ e $POST_t$ são variáveis dummy que representam os bairros que receberam o aumento do efetivo policial (bairros \textit{tratados}) e o período pós primeiro ataque terrorista, respectivamente.  
+
+O coeficiente de interesse aqui é $\alpha_2$, que mede o efeito da diferença pré e pós implementação da política de aumento do efetivo entre o grupo tratado e controle. Nesse caso, o coeficiente não mede exatamente o efeito do aumento do efetivo sobre $y_{it}$, mas o efeito da implementação da política de aumento do efetivo (que pode ter vindo com outras coisas também). 
+
+#### Especificação de variáveis instrumentais
+
+Apesar de lidar com vários problemas de endogeneidade e permitir uma estimação não-viesada de $\alpha_2$, a @eq-draca2011_did não nos permite calcular a elasticidade entre o efetivo policial e o crime, embora nos garanta a direção correta dos efeitos. Para atingir esse objetivo específico, o autor utiliza um outro método de identificação causal de longa tradição na estatística e ciências sociais aplicadas, o método das variáveis instrumentais. Mais uma vez, o objetivo aqui não é descrever a matemática e hipótese por trás do método^[Ver @cunningham2021chp7], mas desenvolver uma rápida intuição e aplicação em @draca2011. A ideia central nesse caso é reconhecer que a variável explicativa varia por diversas razões e a partir dessa decomposição buscar uma fonte que afete essa variável e afete a variável explicada apenas através do efeito que tem sobre a explicativa. No caso em @draca2011, buscamos uma variável instrumento que identifique uma fonte de variação no efetivo policial exógena ao crime, isto é, que afete o crime apenas através do efeito significativo que tenha sobre o número de policiais.
+
+É aqui que entra a realocação do efetivo policial londrino após os ataques terroristas de 2005. A fonte de variação exógena ao crime no efetivo policial, i.e., a variável instrumental, é definida como $T_i \times POST_i$ em que $T_i$ e $POST_i$ seguem as mesmas definições de antes. A estimação é feita então em dois estágios seguindo os seguintes passos:
+
+1. Estima-se a relação entre o instrumento e o efetivo policial através da equação abaixo:
+
+    $$
+    \Delta p_{it} = \gamma_0 + \gamma_1 POST_t + \gamma_2 (T_i \times POST_i) + \gamma_3 \Delta x_{it} + \epsilon_{it}
+    $$ {#eq-draca2011_1stage}
+
+2. Calcula-se o valor previsto do efetivo policial $\Delta \hat{p}_{it}$ a partir da estimação do primeiro estágio.
+
+3. Estima-se a relação entre o efetivo policial e as taxas de crime através da equação abaixo:
+
+    $$
+    \Delta c_{it} = \beta_0 + \beta_1 POST_t + \beta_2 \Delta \hat{p}_{it} + \beta_3 \Delta x_{it} + \epsilon_{it}
+    $$ {#eq-draca2011_2stage}
+
+    em que $\beta_2$ é o coeficiente de interesse, que captura e relação causal entre a mudança no número de policiais -- vindo da política de realocação do efetivo -- sobre a alteração nas taxas de criminalidade por bairro.
+
+#### Resultados principais
+
+A @tab-draca2011 apresenta os resultados principais do artigo, com os painéis A e B mostrando os efeitos da política de realocação policial sobre (i) a atividade policial nos bairros tratados (painel A) e sobre (ii) a taxa de criminalidade (painel B). A coluna (1) de ambos os painéis mostra que a política aumentou efetivamente a presença policial nos bairros tratados e, ao mesmo tempo, reduziu a taxa de crimes totais. A especificação das colunas (2), (3) e (4), por outro lado, mostra que ambos os efeitos estiveram concentrados no período de 6 semanas logo após o primeiro ataque, representado pela dummy $POST-1$, com um efeito não diferente de $0$ quando consideradas as semanas que vieram após esse período até o fim de 2005 ($POST-2$).
+
+[INSERIR FIGURA AQUI]
+
+Outro resultado interessante é dado pela comparação das estimativas de OLS (sujeitas ao viés de simultaneidade) e de variáveis instrumentais reportadas nas colunas (1) e (2) do painel C. Um pesquisador desavisado, olhando apenas para os resultados da coluna (1), poderia inferir erroneamente que um aumento da atividade policial está relacionado a um aumento das taxas de crime, assim como reportado na figura @fig-policia_crime. No entanto, quando um método de indentificação causal é -- com hipóteses mais razoáveis do que independência condicional -- é utilizado o resultado se inverte, com uma maior atividade policial implicando em um menor nível de atividade criminosa.
+
+## Estratégias de policiamento
+
+Embora @ditella2004, @klick2005 e @draca2011 utilizem como fonte de variação exógena mudanças na distribuição do efetivo policial da cidade, nenhum dos artigos adentra nas especificidades das diferentes estratégias de policiamento e seus efeitos particulares. A literatura empírica mais recente sobre o efeito do efetivo policial sobre o crime tem se debruçado mais sobre as diferentes nuances em relação a como esse efetivo policial adicional é alocado. Em especial, três estratégias ganharam destaque tanto na academia quanto com os formuladores de políticas de segurança: *hot spot*, *problem-oriented* e *proactive policing*.
+
+### Hot spot policing
+
+Essa é uma estratégia de alocação em que o efetivo policial é direcionado de forma mais intensa para regiões específicas de uma determinada localidade ou cidade. Esses *hot spots* são tipicamente pequenas áreas -- ruas, pequenos quarteirões ou prédios individuais -- em que um volume desproporcional de crime ocorre.^[A Secretaria de Segurança Pública do Estado de São Paulo possui uma ferramenta interessante que, utilizando a localização dos crime reportados em boletins de ocorrência, nos permite olhar para a concentração de determinados crimes de acordo com as regiões das cidades. A ferramenta é de uso público e está disponível [aqui](https://www.ssp.sp.gov.br/estatistica/spvida).] Essa estratégia tem por objetivo combater o crime de forma direcionada e, a partir de seu combate, gerar um efeito potencial de redução da criminalidade também em regiões vizinhas. No entanto, pode ter como efeito indesejado o deslocamento do crime para outars regiões próximas, sem redução do crime agregado.
+
+Em um artigo recente, \cite{braga2019} revisa a literatura a respeito do efeito de \textit{hot spot policing} e argumenta a favor de um efeito positivo desse tipo de política sobre a redução do crime local, sem evidência clara de deslocamento do crime para regiões vizinhas. Embora a vasta maioria dos artigos revisados aponte na mesma direção, grande parte se vale do contexto norte-americano e outros países desenvolvios. Em um artigo posterior, \cite{blattman2021} traz os resultados de um experimento controlado em Bogotá, capital da Colômbia, que sugerem efeitos insignificantes desse tipo de política. De forma conjunta, as evidências sugerem que \textit{hot spot policing} pode sim ter efeitos significantes de redução do crime, mas que dependem do contexto e do nível prévio de cada tipo de crime avaliado.
+
+### *Proactive policing* e *broken windows theory*
+
+Nesse caso, a estratégia de policiamento está mais ligada a intensidade e presença policial contínua como forma de aumentar a probabilidade subjetiva de apreensão e, a partir dai, desincentivar a prática criminosa. Nesse caso, não há necessariamente um aumento do efetivo policial, mas uma ampliação da presença percebida por criminosos potenciais. Isso pode estar ligado a um aumento da presença física de policiais, através de uma intensificação de rondas, por exemplo, ou mesmo uma maior produtividade da polícia, medida por número de prisões e tipo de crime que leva à prisão.
+
+Nesse último caso, ficaram muito conhecidas as estratégias de tolerância zero ou manutenção da ordem (*order maintenance policing*, em inglês). Esse tipo de política surgiu na esteira daquilo que ficou conhecido como Teoria da Janela Quebrada (**broken windows theory*), proposto por @kelling1982, em que sinais visíveis de desordem e negligência urbana, como janelas quebradas, incentivariam o crime ao transmitir a ideia de baixa probabilidade de punição. No caso das políticas de manutenção da ordem, o princípio geral é a de mesmo crimes considerados de menor gravidade, como vandalismo, deveriam levar a prisão. Isso reduziria a percepção de desordem e ampliaria a percepção em relação ao cumprimento das leis e da probabilidade de apreensão em caso de crimes mais graves, como roubos, reduzindo o incentivo para participação em atividades criminosas.
+
+No entanto, foi após a forte queda das taxas de criminalidade observada na cidade de Noya York na década de 1990 que a política de manutenção da ordem ganhou notoriedade política. O prefeito da cidade à época, Rudolph Giuliani, adotou a estratégia de tolerência zero e atribui a ela a queda dramática dos índices. A @fig-nyc_crimes ilustra a magnitude da variação nas várias taxas de crime durante os mandatos de Giuliani, com uma queda de $70\%$ nas taxas de crimes violentos (homicídios e roubos) e de mais de $50\%$ em crimes contra propriedade. Por outro lado, a @fig-nyc_prisoes mostra como a polícia tornou-se muito mais dura com contravenções penais (infração de menor gravidade, como vandalismo) no período, aumentando as taxas de prisão por esse motivo em mais de $40\%$.
+
+[INSERIR FIGURAS]
+
+A literatura empírica sobre o real efeito de políticas de tolerância zero acabou por se concentrar em avaliar o quanto a política realmente contribui para a queda observada na cidade de Nova York. Enquanto @corman2005 mostra que prisões de crimes mais brandos estão negativamente associadas com prisões futuras em relação a crimes mais graves, @rosenfeld2007 encontra efeitos nulos ou muito próximos de zero.^[Apesar da importância popular que a política de manutenção da ordem ganhou enquanto fator explicativo da queda de crime em Nova York, são várias as outras explicações alternativas discutidas na literatura: forte redução da epidemia de *crack*, estratégias de reocupação de áreas e prédio abandonados, implementação de um sistema central de acompanhamento da atividade criminosa (Compstat), etc.] Por outro lado, em uma contribuição mais recente e focada no contexto de grandes cidades colombianas, @buonanno2022chp4 mostra um efeito negativo e consistente de um aumento da intensidade de policiamento, medida pelo número de prisões em flagrante na localidade, sobre o crime futuro. Além disso, sugere que tal efeito promove uma melhora do nível de segurança também nas regiões vizinhas.
+
+### *Problem oriented policing*
+
+Esse termo geralmente se refere a um conjunto de estratégias que tem por objetivo desincentivar o crime através do direcionamento do policiamento para grupos específicos de criminosos e/ou tipos de crimes. Unidades policiais especializadas e combate direcionado a crimes relacionados a tráfico de drogas e violência entre gangues são exemplos desse tipo de estratégia de policiamento. Por serem, em geral, iniciativas multidimensionais e que envolvem vários aspectos das políticas de segurança, a identificação causal do efeito sobre crime é bastante difícil. Diferentemente das estratégias anteriores, as evidências empíricas robustas são mais escassas e grande parte do que temos vem de artigos não-experimentais e resultados qualitativos @braga2012.
+
+## Vieses no policiamento
+
+Uma questão que tem sido motivo de bastante pesquisa é o quanto o efetivo policial, em suas mais diferentes estratégias de policiamento, pode ter um comportamento diferente a depender das características do indivíduo. Grande parte dessa literatura tem se dedicado aos potenciais vieses raciais, em que decisões técnicas -- como emitir uma multa ou a forma de condução de uma abordagem -- podem ser afetadas por preferências pessoais, informação incompleta ou esteriótipos. 
+
+Em essência, a interação entre a polícia e civis pode ocorrer por duas razões principais: (i) durante uma patrulha, a polícia pode decidir por abordar um determinado indivíduo; (ii) o policial é enviado a um determinado lugar como resultado de um chamado de emergência ou pedido de auxílio. Em ambos os casos, o policial tem bastante discrionariedade a respeito de como conduzir a situação, podendo essa decisão ser afetada pelas características físicas do indivíduo, como raça. O problema é que tanto a forma de reportar esse tipo de dado quanto a probabilidade do encontro entre polícia e indivíduo são não aleatórios, o que complica sobremaneira a identificação causal de qualquer efeito da raça sobre o comportamento policial.
+
+Em um artigo recente, @west2018 aproveita o fato de que oficiais são acionados para atender acidentes de trânsito independentemente da cor da pele das pessoas envolvidas. Isso permite que seja avaliado o efeito da cor da pele do indivíduo sobre o comportamento policial de forma isolada. O autor utiliza o universo de chamadas policiais por acidentes envolvendo veículos em um estado anônimo dos Estados Unidos no período de 2006 a 2012. Os dados incluem características detalhadas do acidente (e.g., localização e condições da estrada), dos indivíduos envolvidos (e.g., raça, sexo e ferimentos), multas e notificações administrativas, e caraterísticas dos policiais envolvidos (e.g., raça, nome e cargo).
+
+Após demonstrar que, controlando por características locais, a raça do policial não é correlacionada com a raça do indivíduo envolvido no acidente, o autor parte para sua especificação principal dada pela equação abaixo:
+
+$$
+CIT_{aij} = \beta_B \cdot BD_i + \gamma_B \cdot BO_j + \delta \cdot (BD_i \times WO_j) + \mu_a + \ controles \ + \epsilon_{aij}
+$$ {#eq-west_did}
+
+em que $CIT_{aij}$ é uma variável dummy que é igual a um quando é emitida uma notificação/multa pelo policial $j$ ao indivíduo $i$ na localidade $a$. $BD_i$ e $BO_j$ são dummies que representam motoristas negros e policiais negros, respectivamente. O coeficiente de interesse, que captura o viés racial na decisão de emitir uma notificação/multa é $\delta$. Esse coeficiente, quando positivo, captura um comportamento mais duro de um oficial branco quando este se depara com um motorista negro (ou de um motorista branco com um oficial negro). É importante ressaltar que esta especificação identifica apenas o viés relativo e, portanto, não é possível distinguir quanto do potencial efeito vem, por exemplo, de policiais brancos emitindo mais multas para motoristas negros, ou policiais negros emitindo menos multas para motoristas negros.
+
+A Tabela @tab-west2018 mostra os principais efeitos do artigo. As colunas (1)-(5) estimam diferentes versões da @eq-west_did, incluindo diferentes controles e conjuntos de dummies. Os resultados são bastante consistentes e robustos, com significância estatística em todos os coeficientes, sugerindo um efeito de discrimnação relativa de um policial de determinada raça contra um motorista de outra raça entre $1.7\%$ e $3.3\%$. Por fim, a coluna (6) apresenta resultados parecidos para uma especificação diferente, que inclui controles no nível do acidente e só é possível de ser implementada em acidentes que envolvam múltiplos veículos e motoristas de diferentes raças.
+
+[INSERIR TABELA]
+
+O autor avança na discussão e tenta trazer evidências em relação a como esses efeitos variam a depender do tipo de notificação/multa e o quanto desses efeitos de viés racial são associados a uma discriminação baseada em preferências e crenças pessoais ou naquilo que se convencionou chamar de discriminação estatística. Os efeitos parecem estar concentrados em notificações sobre infrações mais objetivas, como documentação vencida, o que poderia sugerir (i) que os efeitos principais são condizentes com uma maior leniência em relação à indivíduos da mesma raça (e não um rigor maior contra indivíduos de raças diferentes), e (ii) com um tipo de discriminação mais associado a preferências pessoais dos policiais.
+
 ## Conclusão
 
 Bla bla bla

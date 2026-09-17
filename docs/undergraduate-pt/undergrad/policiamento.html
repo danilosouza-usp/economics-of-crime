@@ -51,7 +51,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../undergrad/referencias.html" rel="next">
+<link href="../undergrad/encarceramento.html" rel="next">
 <link href="../undergrad/evidencia_classica.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -219,6 +219,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Policiamento</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../undergrad/encarceramento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Encarceramento e sentenças</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -247,8 +253,15 @@ window.Quarto = {
   <li><a href="#elasticidades-estimadas" id="toc-elasticidades-estimadas" class="nav-link" data-scroll-target="#elasticidades-estimadas"><span class="header-section-number">4.3.1</span> Elasticidades estimadas</a></li>
   <li><a href="#ataques-terroristas-de-londres-2005-draca-et.-al.-2011" id="toc-ataques-terroristas-de-londres-2005-draca-et.-al.-2011" class="nav-link" data-scroll-target="#ataques-terroristas-de-londres-2005-draca-et.-al.-2011"><span class="header-section-number">4.3.2</span> Ataques terroristas de Londres, 2005 (Draca et. al., 2011)</a></li>
   </ul></li>
-  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão"><span class="header-section-number">4.4</span> Conclusão</a></li>
-  <li><a href="#questões-para-discussão" id="toc-questões-para-discussão" class="nav-link" data-scroll-target="#questões-para-discussão"><span class="header-section-number">4.5</span> Questões para discussão</a></li>
+  <li><a href="#estratégias-de-policiamento" id="toc-estratégias-de-policiamento" class="nav-link" data-scroll-target="#estratégias-de-policiamento"><span class="header-section-number">4.4</span> Estratégias de policiamento</a>
+  <ul class="collapse">
+  <li><a href="#hot-spot-policing" id="toc-hot-spot-policing" class="nav-link" data-scroll-target="#hot-spot-policing"><span class="header-section-number">4.4.1</span> Hot spot policing</a></li>
+  <li><a href="#proactive-policing-e-broken-windows-theory" id="toc-proactive-policing-e-broken-windows-theory" class="nav-link" data-scroll-target="#proactive-policing-e-broken-windows-theory"><span class="header-section-number">4.4.2</span> <em>Proactive policing</em> e <em>broken windows theory</em></a></li>
+  <li><a href="#problem-oriented-policing" id="toc-problem-oriented-policing" class="nav-link" data-scroll-target="#problem-oriented-policing"><span class="header-section-number">4.4.3</span> <em>Problem oriented policing</em></a></li>
+  </ul></li>
+  <li><a href="#vieses-no-policiamento" id="toc-vieses-no-policiamento" class="nav-link" data-scroll-target="#vieses-no-policiamento"><span class="header-section-number">4.5</span> Vieses no policiamento</a></li>
+  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão"><span class="header-section-number">4.6</span> Conclusão</a></li>
+  <li><a href="#questões-para-discussão" id="toc-questões-para-discussão" class="nav-link" data-scroll-target="#questões-para-discussão"><span class="header-section-number">4.7</span> Questões para discussão</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/danilosouza-usp/economics-of-crime/edit/main/undergrad/policiamento.qmd" class="toc-action"><i class="bi bi-github"></i>Editar essa página</a></li><li><a href="https://github.com/danilosouza-usp/economics-of-crime/issues/new" class="toc-action"><i class="bi empty"></i>Criar uma issue</a></li></ul></div></nav>
     </div>
@@ -410,20 +423,109 @@ Tabela&nbsp;4.1: Comparando as elasticidades estimadas do efetivo policial em re
 <h3 data-number="4.3.2" class="anchored" data-anchor-id="ataques-terroristas-de-londres-2005-draca-et.-al.-2011"><span class="header-section-number">4.3.2</span> Ataques terroristas de Londres, 2005 (Draca et. al., 2011)</h3>
 <p>Vamos nos debruçar sobre <span class="citation" data-cites="draca2011">Draca, Machin, e Witt (<a href="referencias.html#ref-draca2011" role="doc-biblioref">2011</a>)</span> para entender um pouco mais os métodos utilizados para identificação do efeito causal. Utilizando dados bastante precisos de presença e atividade policial por semana e bairro ao longo do período de 01/01/2004 à 31/12/2005, os autores se utilizam do forte e não-antecipado aumento do número de policiais, como resposta aos ataques terroristas ao metrô de Londres, para identificar o efeito causal sobre as taxas de criminalidade. Para dar uma ideia da magnitude desse aumento do efetivo, alguns dos resultados do artigo sugerem um aumento de mais de <span class="math inline">\(30\%\)</span> nos índices de atividade policial na região central da cidade e ao longo das seis semanas que se seguiram ao dia 07 de Julho de 2005, data do ataque terrorista. Os índices de atividade policial, no entanto, voltaram aos níveis pré-ataques logo depois.</p>
 <p>Se o objetivo é estimar a elasticidade do crime em relação ao efetivo policial, gostaríamos de estimar a seguinte relação nesse contexto:</p>
+<p><span id="eq-draca2011_ols1"><span class="math display">\[
+c_{it} = \delta_0 + \delta_1 p_{it} + \lambda X_{it} + \epsilon_{it}
+\tag{4.4}\]</span></span></p>
+<p>em que <span class="math inline">\(c_{it}\)</span> é a taxa de criminalidade no bairro <span class="math inline">\(j\)</span> e semana <span class="math inline">\(t\)</span>, <span class="math inline">\(p_{it}\)</span> é o nível de polícia alocado à região no mesmo instante de tempo e <span class="math inline">\(X_{it}\)</span> é um vetor de variáveis de controle que contém elementos observáveis e não-observáveis que também afetam as taxas de crime. Nesse caso, o coeficiente de interesse que representa a relação entre polícia e crime e <span class="math inline">\(\delta_1\)</span>.</p>
+<p>Estimar a <a href="#eq-draca2011_ols1" class="quarto-xref">Equação&nbsp;<span>4.4</span></a> por mínimos quadrados ordinários em geral trará estimativas viesadas para <span class="math inline">\(\delta_1\)</span> por diversas razões, sendo o viés de simultaneidade uma das principais, como visto anteriormente. Uma primeira tentativa para nos livrarmos de fontes de endogeneidade que venham de variáveis omitidas não-observáveis, presentes em <span class="math inline">\(\epsilon_{it}\)</span> e correlacionadas com <span class="math inline">\(p_{it}\)</span>, seria a diferenciação no tempo.</p>
+<p><span id="eq-draca2011_ols2"><span class="math display">\[
+(c_{i,t} - c_{i,t-k}) = \delta_0 + \delta_1 (p_{i,t} - p_{i,t-k}) + \lambda (X_{i,t} - X_{i,t-k}) + (\epsilon_{i,t}-\epsilon_{i,t-k})
+\tag{4.5}\]</span></span></p>
+<p>No entanto, mesmo com a eliminação de fatores específicos e não observáveis dos bairros que não variam no tempo e são correlacionados tanto com o crime quanto com o efetivo policial (densidade urbana e presença de delegacias policiais, por exemplo), o coeficiente <span class="math inline">\(\delta_1\)</span> estimado através da equação (<span class="math inline">\(\ref{eq:draca2011_ols2}\)</span>) ainda estaria sujeito ao viés de simultaneidade. É preciso utilizar alguma fonte de variação no efetivo policial que não esteja sujeita ao viés de simultaneidade e é aí que entra a resposta do governo aos ataques terroristas. Nesse caso, o aumento do efetivo policial estaria ligado aos locais com maior risco de sofrer novos ataques e não aos locais com maiores taxas de crime inicialmente.</p>
+<section id="especificação-de-differenças-em-differenças" class="level4" data-number="4.3.2.1">
+<h4 data-number="4.3.2.1" class="anchored" data-anchor-id="especificação-de-differenças-em-differenças"><span class="header-section-number">4.3.2.1</span> Especificação de differenças-em-differenças</h4>
+<p>A primeira forma de avaliar o efeito causal do efetivo policial sobre o crime é através do método de diferenças-em-diferenças (diff-in-diff ou DiD). O foco aqui não é entender toda a matemática e hipóteses por trás do método (existem cursos e cursos só para isso), mas sua intuição e como é aplicada em <span class="citation" data-cites="draca2011">Draca, Machin, e Witt (<a href="referencias.html#ref-draca2011" role="doc-biblioref">2011</a>)</span>. A ideia central por trás do método é a de que uma determinada política, implementada em um dado instante, por alguma razão (não manipulada) afeta um certo grupo de agentes mas não outro. No caso mais simples, com 2 períodos e 2 grupos de agentes, teríamos as observações antes e depois da política para o grupo não-tratado e antes e depois da política para o grupo tratado. Assim, o método consistiria em comparar a evolução de uma certa variável de interesse entre os períodos <span class="math inline">\(1\)</span> e <span class="math inline">\(2\)</span> e entre os grupos tratado e não-tratado. Com um número maior de observações no tempo, a ideia é comparar a média dos períodos pré-tratamento e pós-tratamento entre os grupos tratado e controle.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>No caso do artigo em questão, a estratégia consistiria em estimar uma equação como a apresentada abaixo:</p>
+<p><span id="eq-draca2011_did"><span class="math display">\[
+\Delta y_{it} = \alpha_0 + \alpha_1 POST_t + \alpha_2 (T_i \times POST_i) + \alpha_3 \Delta x_{it} + \epsilon_{it}
+\tag{4.6}\]</span></span></p>
+<p>em que o operador <span class="math inline">\(\Delta\)</span> representa o diferencial em log de uma determinada variável no bairro <span class="math inline">\(i\)</span> ao comparar a semana <span class="math inline">\(t\)</span> com a mesma semana do ano anterior, tal que <span class="math inline">\(\Delta y_{it} \equiv log(y_{i,t}) - log(y_{i,t-52})\)</span>. <span class="math inline">\(T_i\)</span> e <span class="math inline">\(POST_t\)</span> são variáveis dummy que representam os bairros que receberam o aumento do efetivo policial (bairros ) e o período pós primeiro ataque terrorista, respectivamente.</p>
+<p>O coeficiente de interesse aqui é <span class="math inline">\(\alpha_2\)</span>, que mede o efeito da diferença pré e pós implementação da política de aumento do efetivo entre o grupo tratado e controle. Nesse caso, o coeficiente não mede exatamente o efeito do aumento do efetivo sobre <span class="math inline">\(y_{it}\)</span>, mas o efeito da implementação da política de aumento do efetivo (que pode ter vindo com outras coisas também).</p>
+</section>
+<section id="especificação-de-variáveis-instrumentais" class="level4" data-number="4.3.2.2">
+<h4 data-number="4.3.2.2" class="anchored" data-anchor-id="especificação-de-variáveis-instrumentais"><span class="header-section-number">4.3.2.2</span> Especificação de variáveis instrumentais</h4>
+<p>Apesar de lidar com vários problemas de endogeneidade e permitir uma estimação não-viesada de <span class="math inline">\(\alpha_2\)</span>, a <a href="#eq-draca2011_did" class="quarto-xref">Equação&nbsp;<span>4.6</span></a> não nos permite calcular a elasticidade entre o efetivo policial e o crime, embora nos garanta a direção correta dos efeitos. Para atingir esse objetivo específico, o autor utiliza um outro método de identificação causal de longa tradição na estatística e ciências sociais aplicadas, o método das variáveis instrumentais. Mais uma vez, o objetivo aqui não é descrever a matemática e hipótese por trás do método<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, mas desenvolver uma rápida intuição e aplicação em <span class="citation" data-cites="draca2011">Draca, Machin, e Witt (<a href="referencias.html#ref-draca2011" role="doc-biblioref">2011</a>)</span>. A ideia central nesse caso é reconhecer que a variável explicativa varia por diversas razões e a partir dessa decomposição buscar uma fonte que afete essa variável e afete a variável explicada apenas através do efeito que tem sobre a explicativa. No caso em <span class="citation" data-cites="draca2011">Draca, Machin, e Witt (<a href="referencias.html#ref-draca2011" role="doc-biblioref">2011</a>)</span>, buscamos uma variável instrumento que identifique uma fonte de variação no efetivo policial exógena ao crime, isto é, que afete o crime apenas através do efeito significativo que tenha sobre o número de policiais.</p>
+<p>É aqui que entra a realocação do efetivo policial londrino após os ataques terroristas de 2005. A fonte de variação exógena ao crime no efetivo policial, i.e., a variável instrumental, é definida como <span class="math inline">\(T_i \times POST_i\)</span> em que <span class="math inline">\(T_i\)</span> e <span class="math inline">\(POST_i\)</span> seguem as mesmas definições de antes. A estimação é feita então em dois estágios seguindo os seguintes passos:</p>
+<ol type="1">
+<li><p>Estima-se a relação entre o instrumento e o efetivo policial através da equação abaixo:</p>
+<p><span id="eq-draca2011_1stage"><span class="math display">\[
+\Delta p_{it} = \gamma_0 + \gamma_1 POST_t + \gamma_2 (T_i \times POST_i) + \gamma_3 \Delta x_{it} + \epsilon_{it}
+  \tag{4.7}\]</span></span></p></li>
+<li><p>Calcula-se o valor previsto do efetivo policial <span class="math inline">\(\Delta \hat{p}_{it}\)</span> a partir da estimação do primeiro estágio.</p></li>
+<li><p>Estima-se a relação entre o efetivo policial e as taxas de crime através da equação abaixo:</p>
+<p><span id="eq-draca2011_2stage"><span class="math display">\[
+\Delta c_{it} = \beta_0 + \beta_1 POST_t + \beta_2 \Delta \hat{p}_{it} + \beta_3 \Delta x_{it} + \epsilon_{it}
+  \tag{4.8}\]</span></span></p>
+<p>em que <span class="math inline">\(\beta_2\)</span> é o coeficiente de interesse, que captura e relação causal entre a mudança no número de policiais – vindo da política de realocação do efetivo – sobre a alteração nas taxas de criminalidade por bairro.</p></li>
+</ol>
+</section>
+<section id="resultados-principais" class="level4" data-number="4.3.2.3">
+<h4 data-number="4.3.2.3" class="anchored" data-anchor-id="resultados-principais"><span class="header-section-number">4.3.2.3</span> Resultados principais</h4>
+<p>A <span class="citation" data-cites="tab-draca2011">(<a href="referencias.html#ref-tab-draca2011" role="doc-biblioref"><strong>tab-draca2011?</strong></a>)</span> apresenta os resultados principais do artigo, com os painéis A e B mostrando os efeitos da política de realocação policial sobre (i) a atividade policial nos bairros tratados (painel A) e sobre (ii) a taxa de criminalidade (painel B). A coluna (1) de ambos os painéis mostra que a política aumentou efetivamente a presença policial nos bairros tratados e, ao mesmo tempo, reduziu a taxa de crimes totais. A especificação das colunas (2), (3) e (4), por outro lado, mostra que ambos os efeitos estiveram concentrados no período de 6 semanas logo após o primeiro ataque, representado pela dummy <span class="math inline">\(POST-1\)</span>, com um efeito não diferente de <span class="math inline">\(0\)</span> quando consideradas as semanas que vieram após esse período até o fim de 2005 (<span class="math inline">\(POST-2\)</span>).</p>
+<p>[INSERIR FIGURA AQUI]</p>
+<p>Outro resultado interessante é dado pela comparação das estimativas de OLS (sujeitas ao viés de simultaneidade) e de variáveis instrumentais reportadas nas colunas (1) e (2) do painel C. Um pesquisador desavisado, olhando apenas para os resultados da coluna (1), poderia inferir erroneamente que um aumento da atividade policial está relacionado a um aumento das taxas de crime, assim como reportado na figura <a href="#fig-policia_crime" class="quarto-xref">Figura&nbsp;<span>4.1</span></a>. No entanto, quando um método de indentificação causal é – com hipóteses mais razoáveis do que independência condicional – é utilizado o resultado se inverte, com uma maior atividade policial implicando em um menor nível de atividade criminosa.</p>
 </section>
 </section>
-<section id="conclusão" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">4.4</span> Conclusão</h2>
+</section>
+<section id="estratégias-de-policiamento" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="estratégias-de-policiamento"><span class="header-section-number">4.4</span> Estratégias de policiamento</h2>
+<p>Embora <span class="citation" data-cites="ditella2004">Di Tella e Schargrodsky (<a href="referencias.html#ref-ditella2004" role="doc-biblioref">2004</a>)</span>, <span class="citation" data-cites="klick2005">Klick e Tabarrok (<a href="referencias.html#ref-klick2005" role="doc-biblioref">2005</a>)</span> e <span class="citation" data-cites="draca2011">Draca, Machin, e Witt (<a href="referencias.html#ref-draca2011" role="doc-biblioref">2011</a>)</span> utilizem como fonte de variação exógena mudanças na distribuição do efetivo policial da cidade, nenhum dos artigos adentra nas especificidades das diferentes estratégias de policiamento e seus efeitos particulares. A literatura empírica mais recente sobre o efeito do efetivo policial sobre o crime tem se debruçado mais sobre as diferentes nuances em relação a como esse efetivo policial adicional é alocado. Em especial, três estratégias ganharam destaque tanto na academia quanto com os formuladores de políticas de segurança: <em>hot spot</em>, <em>problem-oriented</em> e <em>proactive policing</em>.</p>
+<section id="hot-spot-policing" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="hot-spot-policing"><span class="header-section-number">4.4.1</span> Hot spot policing</h3>
+<p>Essa é uma estratégia de alocação em que o efetivo policial é direcionado de forma mais intensa para regiões específicas de uma determinada localidade ou cidade. Esses <em>hot spots</em> são tipicamente pequenas áreas – ruas, pequenos quarteirões ou prédios individuais – em que um volume desproporcional de crime ocorre.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> Essa estratégia tem por objetivo combater o crime de forma direcionada e, a partir de seu combate, gerar um efeito potencial de redução da criminalidade também em regiões vizinhas. No entanto, pode ter como efeito indesejado o deslocamento do crime para outars regiões próximas, sem redução do crime agregado.</p>
+<p>Em um artigo recente, revisa a literatura a respeito do efeito de e argumenta a favor de um efeito positivo desse tipo de política sobre a redução do crime local, sem evidência clara de deslocamento do crime para regiões vizinhas. Embora a vasta maioria dos artigos revisados aponte na mesma direção, grande parte se vale do contexto norte-americano e outros países desenvolvios. Em um artigo posterior, traz os resultados de um experimento controlado em Bogotá, capital da Colômbia, que sugerem efeitos insignificantes desse tipo de política. De forma conjunta, as evidências sugerem que pode sim ter efeitos significantes de redução do crime, mas que dependem do contexto e do nível prévio de cada tipo de crime avaliado.</p>
+</section>
+<section id="proactive-policing-e-broken-windows-theory" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="proactive-policing-e-broken-windows-theory"><span class="header-section-number">4.4.2</span> <em>Proactive policing</em> e <em>broken windows theory</em></h3>
+<p>Nesse caso, a estratégia de policiamento está mais ligada a intensidade e presença policial contínua como forma de aumentar a probabilidade subjetiva de apreensão e, a partir dai, desincentivar a prática criminosa. Nesse caso, não há necessariamente um aumento do efetivo policial, mas uma ampliação da presença percebida por criminosos potenciais. Isso pode estar ligado a um aumento da presença física de policiais, através de uma intensificação de rondas, por exemplo, ou mesmo uma maior produtividade da polícia, medida por número de prisões e tipo de crime que leva à prisão.</p>
+<p>Nesse último caso, ficaram muito conhecidas as estratégias de tolerância zero ou manutenção da ordem (<em>order maintenance policing</em>, em inglês). Esse tipo de política surgiu na esteira daquilo que ficou conhecido como Teoria da Janela Quebrada (**broken windows theory*), proposto por <span class="citation" data-cites="kelling1982">Kelling e Wilson (<a href="referencias.html#ref-kelling1982" role="doc-biblioref">1982</a>)</span>, em que sinais visíveis de desordem e negligência urbana, como janelas quebradas, incentivariam o crime ao transmitir a ideia de baixa probabilidade de punição. No caso das políticas de manutenção da ordem, o princípio geral é a de mesmo crimes considerados de menor gravidade, como vandalismo, deveriam levar a prisão. Isso reduziria a percepção de desordem e ampliaria a percepção em relação ao cumprimento das leis e da probabilidade de apreensão em caso de crimes mais graves, como roubos, reduzindo o incentivo para participação em atividades criminosas.</p>
+<p>No entanto, foi após a forte queda das taxas de criminalidade observada na cidade de Noya York na década de 1990 que a política de manutenção da ordem ganhou notoriedade política. O prefeito da cidade à época, Rudolph Giuliani, adotou a estratégia de tolerência zero e atribui a ela a queda dramática dos índices. A <span class="quarto-unresolved-ref">?fig-nyc_crimes</span> ilustra a magnitude da variação nas várias taxas de crime durante os mandatos de Giuliani, com uma queda de <span class="math inline">\(70\%\)</span> nas taxas de crimes violentos (homicídios e roubos) e de mais de <span class="math inline">\(50\%\)</span> em crimes contra propriedade. Por outro lado, a <span class="quarto-unresolved-ref">?fig-nyc_prisoes</span> mostra como a polícia tornou-se muito mais dura com contravenções penais (infração de menor gravidade, como vandalismo) no período, aumentando as taxas de prisão por esse motivo em mais de <span class="math inline">\(40\%\)</span>.</p>
+<p>[INSERIR FIGURAS]</p>
+<p>A literatura empírica sobre o real efeito de políticas de tolerância zero acabou por se concentrar em avaliar o quanto a política realmente contribui para a queda observada na cidade de Nova York. Enquanto <span class="citation" data-cites="corman2005">Corman e Mocan (<a href="referencias.html#ref-corman2005" role="doc-biblioref">2005</a>)</span> mostra que prisões de crimes mais brandos estão negativamente associadas com prisões futuras em relação a crimes mais graves, <span class="citation" data-cites="rosenfeld2007">Rosenfeld, Fornango, e Rengifo (<a href="referencias.html#ref-rosenfeld2007" role="doc-biblioref">2007</a>)</span> encontra efeitos nulos ou muito próximos de zero.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> Por outro lado, em uma contribuição mais recente e focada no contexto de grandes cidades colombianas, <span class="citation" data-cites="buonanno2022chp4">Mejía et al. (<a href="referencias.html#ref-buonanno2022chp4" role="doc-biblioref">2022</a>)</span> mostra um efeito negativo e consistente de um aumento da intensidade de policiamento, medida pelo número de prisões em flagrante na localidade, sobre o crime futuro. Além disso, sugere que tal efeito promove uma melhora do nível de segurança também nas regiões vizinhas.</p>
+</section>
+<section id="problem-oriented-policing" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="problem-oriented-policing"><span class="header-section-number">4.4.3</span> <em>Problem oriented policing</em></h3>
+<p>Esse termo geralmente se refere a um conjunto de estratégias que tem por objetivo desincentivar o crime através do direcionamento do policiamento para grupos específicos de criminosos e/ou tipos de crimes. Unidades policiais especializadas e combate direcionado a crimes relacionados a tráfico de drogas e violência entre gangues são exemplos desse tipo de estratégia de policiamento. Por serem, em geral, iniciativas multidimensionais e que envolvem vários aspectos das políticas de segurança, a identificação causal do efeito sobre crime é bastante difícil. Diferentemente das estratégias anteriores, as evidências empíricas robustas são mais escassas e grande parte do que temos vem de artigos não-experimentais e resultados qualitativos <span class="citation" data-cites="braga2012">Braga e Weisburd (<a href="referencias.html#ref-braga2012" role="doc-biblioref">2012</a>)</span>.</p>
+</section>
+</section>
+<section id="vieses-no-policiamento" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="vieses-no-policiamento"><span class="header-section-number">4.5</span> Vieses no policiamento</h2>
+<p>Uma questão que tem sido motivo de bastante pesquisa é o quanto o efetivo policial, em suas mais diferentes estratégias de policiamento, pode ter um comportamento diferente a depender das características do indivíduo. Grande parte dessa literatura tem se dedicado aos potenciais vieses raciais, em que decisões técnicas – como emitir uma multa ou a forma de condução de uma abordagem – podem ser afetadas por preferências pessoais, informação incompleta ou esteriótipos.</p>
+<p>Em essência, a interação entre a polícia e civis pode ocorrer por duas razões principais: (i) durante uma patrulha, a polícia pode decidir por abordar um determinado indivíduo; (ii) o policial é enviado a um determinado lugar como resultado de um chamado de emergência ou pedido de auxílio. Em ambos os casos, o policial tem bastante discrionariedade a respeito de como conduzir a situação, podendo essa decisão ser afetada pelas características físicas do indivíduo, como raça. O problema é que tanto a forma de reportar esse tipo de dado quanto a probabilidade do encontro entre polícia e indivíduo são não aleatórios, o que complica sobremaneira a identificação causal de qualquer efeito da raça sobre o comportamento policial.</p>
+<p>Em um artigo recente, <span class="citation" data-cites="west2018">West (<a href="referencias.html#ref-west2018" role="doc-biblioref">2018</a>)</span> aproveita o fato de que oficiais são acionados para atender acidentes de trânsito independentemente da cor da pele das pessoas envolvidas. Isso permite que seja avaliado o efeito da cor da pele do indivíduo sobre o comportamento policial de forma isolada. O autor utiliza o universo de chamadas policiais por acidentes envolvendo veículos em um estado anônimo dos Estados Unidos no período de 2006 a 2012. Os dados incluem características detalhadas do acidente (e.g., localização e condições da estrada), dos indivíduos envolvidos (e.g., raça, sexo e ferimentos), multas e notificações administrativas, e caraterísticas dos policiais envolvidos (e.g., raça, nome e cargo).</p>
+<p>Após demonstrar que, controlando por características locais, a raça do policial não é correlacionada com a raça do indivíduo envolvido no acidente, o autor parte para sua especificação principal dada pela equação abaixo:</p>
+<p><span id="eq-west_did"><span class="math display">\[
+CIT_{aij} = \beta_B \cdot BD_i + \gamma_B \cdot BO_j + \delta \cdot (BD_i \times WO_j) + \mu_a + \ controles \ + \epsilon_{aij}
+\tag{4.9}\]</span></span></p>
+<p>em que <span class="math inline">\(CIT_{aij}\)</span> é uma variável dummy que é igual a um quando é emitida uma notificação/multa pelo policial <span class="math inline">\(j\)</span> ao indivíduo <span class="math inline">\(i\)</span> na localidade <span class="math inline">\(a\)</span>. <span class="math inline">\(BD_i\)</span> e <span class="math inline">\(BO_j\)</span> são dummies que representam motoristas negros e policiais negros, respectivamente. O coeficiente de interesse, que captura o viés racial na decisão de emitir uma notificação/multa é <span class="math inline">\(\delta\)</span>. Esse coeficiente, quando positivo, captura um comportamento mais duro de um oficial branco quando este se depara com um motorista negro (ou de um motorista branco com um oficial negro). É importante ressaltar que esta especificação identifica apenas o viés relativo e, portanto, não é possível distinguir quanto do potencial efeito vem, por exemplo, de policiais brancos emitindo mais multas para motoristas negros, ou policiais negros emitindo menos multas para motoristas negros.</p>
+<p>A Tabela <span class="citation" data-cites="tab-west2018">(<a href="referencias.html#ref-tab-west2018" role="doc-biblioref"><strong>tab-west2018?</strong></a>)</span> mostra os principais efeitos do artigo. As colunas (1)-(5) estimam diferentes versões da <a href="#eq-west_did" class="quarto-xref">Equação&nbsp;<span>4.9</span></a>, incluindo diferentes controles e conjuntos de dummies. Os resultados são bastante consistentes e robustos, com significância estatística em todos os coeficientes, sugerindo um efeito de discrimnação relativa de um policial de determinada raça contra um motorista de outra raça entre <span class="math inline">\(1.7\%\)</span> e <span class="math inline">\(3.3\%\)</span>. Por fim, a coluna (6) apresenta resultados parecidos para uma especificação diferente, que inclui controles no nível do acidente e só é possível de ser implementada em acidentes que envolvam múltiplos veículos e motoristas de diferentes raças.</p>
+<p>[INSERIR TABELA]</p>
+<p>O autor avança na discussão e tenta trazer evidências em relação a como esses efeitos variam a depender do tipo de notificação/multa e o quanto desses efeitos de viés racial são associados a uma discriminação baseada em preferências e crenças pessoais ou naquilo que se convencionou chamar de discriminação estatística. Os efeitos parecem estar concentrados em notificações sobre infrações mais objetivas, como documentação vencida, o que poderia sugerir (i) que os efeitos principais são condizentes com uma maior leniência em relação à indivíduos da mesma raça (e não um rigor maior contra indivíduos de raças diferentes), e (ii) com um tipo de discriminação mais associado a preferências pessoais dos policiais.</p>
+</section>
+<section id="conclusão" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">4.6</span> Conclusão</h2>
 <p>Bla bla bla</p>
 </section>
-<section id="questões-para-discussão" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="questões-para-discussão"><span class="header-section-number">4.5</span> Questões para discussão</h2>
+<section id="questões-para-discussão" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="questões-para-discussão"><span class="header-section-number">4.7</span> Questões para discussão</h2>
 <ol type="1">
 <li>X</li>
 </ol>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-braga2012" class="csl-entry" role="listitem">
+Braga, Anthony A, e David L Weisburd. 2012. <span>“The effects of <span>‘pulling levers’</span> focused deterrence strategies on crime”</span>. <em>Campbell systematic reviews</em> Vol. 8 (No. 1): pp. 1–90.
+</div>
+<div id="ref-corman2005" class="csl-entry" role="listitem">
+Corman, Hope, e Naci Mocan. 2005. <span>“Carrots, sticks, and broken windows”</span>. <em>The Journal of Law and Economics</em> Vol. 48 (No. 1): pp. 235–266.
+</div>
+<div id="ref-cunningham2021chp9" class="csl-entry" role="listitem">
+Cunningham, Scott. 2021a. <span>“Differences-in-Differences”</span>. Em <em>Causal Inference: The Mixtape</em>, 406–510. New Haven, US: Yale University Press.
+</div>
+<div id="ref-cunningham2021chp7" class="csl-entry" role="listitem">
+———. 2021b. <span>“Instrumental Variables”</span>. Em <em>Causal Inference: The Mixtape</em>, 315–85. New Haven, US: Yale University Press.
+</div>
 <div id="ref-ditella2004" class="csl-entry" role="listitem">
 Di Tella, Rafael, e Ernesto Schargrodsky. 2004. <span>“Do police reduce crime? Estimates using the allocation of police forces after a terrorist attack”</span>. <em>American Economic Review</em> Vol. 94 (No. 1): pp. 115–133.
 </div>
@@ -435,6 +537,9 @@ Ehrlich, Isaac. 1973. <span>“Participation in illegitimate activities: A theor
 </div>
 <div id="ref-evans2007" class="csl-entry" role="listitem">
 Evans, William N, e Emily G Owens. 2007. <span>“COPS and Crime”</span>. <em>Journal of public Economics</em> Vol. 91 (No. 1-2): pp. 181–201.
+</div>
+<div id="ref-kelling1982" class="csl-entry" role="listitem">
+Kelling, George L., e James Q. Wilson. 1982. <span>“Broken windows”</span>. <em>Atlantic monthly</em> Vol. 249 (No. 3): pp. 29–38.
 </div>
 <div id="ref-klick2005" class="csl-entry" role="listitem">
 Klick, Jonathan, e Alexander Tabarrok. 2005. <span>“Using terror alert levels to estimate the effect of police on crime”</span>. <em>The Journal of Law and Economics</em> Vol. 48 (No. 1): pp. 267–279.
@@ -457,6 +562,9 @@ Mello, Steven. 2019. <span>“More COPS, less crime”</span>. <em>Journal of pu
 <div id="ref-pinotti2020" class="csl-entry" role="listitem">
 Pinotti, Paolo. 2020. <span>“The Credibility Revolution in the Empirical Analysis of Crime”</span>. <em>Italian Economic Journal</em> Vol. 6: pp. 207–220.
 </div>
+<div id="ref-rosenfeld2007" class="csl-entry" role="listitem">
+Rosenfeld, Richard, Robert Fornango, e Andres F. Rengifo. 2007. <span>“The impact of order-maintenance policing on New York City homicide and robbery rates: 1988-2001”</span>. <em>Criminology</em> Vol. 45 (No. 2): pp. 355–384.
+</div>
 <div id="ref-stock2019" class="csl-entry" role="listitem">
 Stock, James H., e Mark W. Watson. 2019. <span>“Assessing Studies Based on Multiple Regression”</span>. Em <em>Introduction to Econometrics</em>, 341–43. Harlow, UK: Pearson Education Limited.
 </div>
@@ -465,6 +573,9 @@ Weisburd, Sarit. 2021. <span>“Police presence, rapid response rates, and crime
 </div>
 <div id="ref-weisburst2019" class="csl-entry" role="listitem">
 Weisburst, Emily K. 2019. <span>“Patrolling public schools: The impact of funding for school police on student discipline and long-term education outcomes”</span>. <em>Journal of Policy Analysis and Management</em> Vol. 38 (No. 2): pp. 338–365.
+</div>
+<div id="ref-west2018" class="csl-entry" role="listitem">
+West, Jeremy. 2018. <span>“Racial bias in police investigations”</span>. <em>Acessado no website da University of California, Santa Cruz: <a href="https://people.ucsc.edu/~jwest1/articles/West_RacialBiasPolice.pdf" class="uri">https://people.ucsc.edu/~jwest1/articles/West_RacialBiasPolice.pdf</a></em>.
 </div>
 </div>
 </section>
@@ -475,6 +586,10 @@ Weisburst, Emily K. 2019. <span>“Patrolling public schools: The impact of fund
 <li id="fn2"><p>Utilizando dados de 2018, <span class="citation" data-cites="pinotti2020">Pinotti (<a href="referencias.html#ref-pinotti2020" role="doc-biblioref">2020</a>)</span> mostra a mesma correlação positiva entre homicídios e efetivo policial para os estados norte-americanos e para as cidades do país com mais de <span class="math inline">\(10{,}000\)</span> habitantes.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Essa demonstração foi inspirada em <span class="citation" data-cites="stock2019">Stock e Watson (<a href="referencias.html#ref-stock2019" role="doc-biblioref">2019</a>)</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Juntos, os três artigos possuíam mais de <span class="math inline">\(2{,}200\)</span> citações no Google Scholar em 30 de Julho de 2025.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Para o aluno mais interessado em entender o método a fundo, <span class="citation" data-cites="cunningham2021chp9">Cunningham (<a href="referencias.html#ref-cunningham2021chp9" role="doc-biblioref">2021a</a>)</span> é uma ótima referência. Disponível <a href="https://mixtape.scunning.com/">aqui</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Ver <span class="citation" data-cites="cunningham2021chp7">Cunningham (<a href="referencias.html#ref-cunningham2021chp7" role="doc-biblioref">2021b</a>)</span><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>A Secretaria de Segurança Pública do Estado de São Paulo possui uma ferramenta interessante que, utilizando a localização dos crime reportados em boletins de ocorrência, nos permite olhar para a concentração de determinados crimes de acordo com as regiões das cidades. A ferramenta é de uso público e está disponível <a href="https://www.ssp.sp.gov.br/estatistica/spvida">aqui</a>.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Apesar da importância popular que a política de manutenção da ordem ganhou enquanto fator explicativo da queda de crime em Nova York, são várias as outras explicações alternativas discutidas na literatura: forte redução da epidemia de <em>crack</em>, estratégias de reocupação de áreas e prédio abandonados, implementação de um sistema central de acompanhamento da atividade criminosa (Compstat), etc.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -891,8 +1006,8 @@ Weisburst, Emily K. 2019. <span>“Patrolling public schools: The impact of fund
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../undergrad/referencias.html" class="pagination-link" aria-label="Referências bibliográficas">
-        <span class="nav-page-text">Referências bibliográficas</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../undergrad/encarceramento.html" class="pagination-link" aria-label="Encarceramento e sentenças">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Encarceramento e sentenças</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
