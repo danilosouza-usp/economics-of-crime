@@ -1,0 +1,131 @@
+# Educação {#sec-educacao}
+
+## Introdução
+
+Assim como mudanças nas condições do mercado de trabalho, a educação altera o balanço de custos e benefícios do envolvimento na atividade criminal ao elevar os retornos do mercado de trabalho legal e, ao mesmo tempo, aumentar os custos de oportunidade da atividade ilícita. Dessa forma, indivíduos com maior escolaridade têm mais a perder ao se engajar em comportamentos criminosos, seja em termos de rendimentos futuros, seja em termos de reputação e trajetória de vida.
+
+Com o avanço da literatura que estuda o tema, ficou claro que a influência da educação sobre o crime vai além do canal estritamente econômico previsto inicialmente. São vários os canais pelos quais a educação altera esse balanço de custos e benefícios. O mais direto é o canal de renda, descrito anteriormente e presente nos modelos teóricos iniciais, mas a escolaridade também atua sobre dimensões não cognitivas, ajudando a formar preferências mais voltadas para o futuro e maior aversão, o que tende a reduzir a propensão ao envolvimento criminal.
+
+Além disso, há o efeito de incapacitação, pelo qual o tempo passado na escola limita a oportunidade de cometer crimes, sobretudo durante a adolescência, período crítico do ciclo de vida criminal. Esse conjunto de canais mostra que a relação entre educação e crime é multifacetada, combinando elementos econômicos, comportamentais e sociais. Assim, a teoria sugere que a escolarização não apenas aumenta o custo de oportunidade do crime, como também modifica preferências, habilidades e redes de interação. Nas próximas seções, discutiremos cada um desses mecanismos de forma separada e as evidêncais empíricas a respeito de alguns deles.
+
+## Canais pelos quais a educação afeta o envolvimento criminal
+
+Considere o seguinte *framework* teórico, tal que a decisão de envolvimento criminal passa por uma escolha racional e uma avaliação dos custos e benefícios da prática, mas com custos e benefícios respondendo direta e indiretamente ao nível de educação $S$.^[Essa forma de apresentação do balanço de custo e benefícios da atividade criminosa foi retirada de @buonanno2022chp7.] Seja $A$ o nível de habilidade do indivíduo e $F$ os fatores externos, como policiamento, que não estão sob controle dos indivíduos. Nesse caso, um indivíduo escolhe participar da atividade criminosa se, e somente se,
+
+$$
+\begin{split}
+\mathbb{E}&\left[Benefit_{crime}(R(CC(S)),P(S))\right] \\
+&> \mathbb{E}\left[Cost_{crime}(T(S),W(HC(S,A)),C(S,F),P(S))\right]
+\end{split}
+$$
+
+em que $R$ é a função de rendimentos da atividade criminosa. $CC$ é o nível de capital criminal do indivíduo e $P$ as preferências pelo crime, com ambos os objetos sendo função do nível de educação $S$. Além disso, $T$ representa o custo de tempo associado à atividade criminosa (execução, planejamento, tempo encarcerado, etc.), $HC$ o nível de capital humano e que afeta diretamente os salários no mercado lícito, e $C$ a probabilidade do indivíduo ser capturado. 
+
+**Renda.** O primeiro canal pelo qual o nível de educação afetaria o balanço de custos e benefícios acima remete ao canal proposto nos modelos iniciais e o primeiro que nos vem à cabeça: o canal da renda. Seguindo a ideia de retornos mincerianos da educação, um aumento de $S$ estaria associado a um aumento do rendimento associado ao trabalho no mercado lícito e, portanto, um aumento do custo de oportunidade do crime. No entanto, a educação também pode ter um efeito potencial no acúmulo de capital criminal e no retorno esperado do crime (e..g, um conhecimento maior em matemática pode facilitar o cometimento de fraudes financeiras). Nesse caso, mais educação levaria a menos crime se:
+
+$$ \frac{\partial W}{\partial HC} \times \frac{\partial HC}{\partial S} > \frac{\partial R}{\partial CC} \times \frac{\partial CC}{\partial S} $$
+
+A desigualdade acima nos diz que a educação reduz a propensão ao crime via o canal de renda quando, tudo o mais constante, o retorno marginal de um ano a mais de escolaridade em termos de salários no mercado lícito supera o retorno marginal de maior escolaridade sobre o rendimento da atividade criminosa.
+
+**Efeitos não-cognitivos.** Um outro mecanismo pelo qual a educação pode impactar a propensão ao crime é através dos seus efeitos sobre as preferências individuais. A literatura de educação traz evidências de que uma maior escolaridade pode tornar o indivíduo mais avesso ao risco, *forward-looking* e mais propenso a aumentar o peso, em termos de utilidade esperada, de rendimentos e realizações futuras [@oreopoulos2006]. Além disso, @bell2016 mostram que mesmo em um contexto em que políticas de expansão da educação não afetam nível de emprego e salários, existe um efeito negativo sobre a propensão ao crime, o que sugere a existência de um canal não-cognitivo. Nesse caso, mais educação levaria a menos crime se:
+
+$$ 
+\frac{\partial P}{\partial S} < 0 
+$$
+
+**Educação infantil e *peer effects*.** É extensa a literatura que documenta um retorno marginal bastante alto da educação infantil, seja em acúmulo de capital humano futuro ou desenvolvimento de *soft skills* importantes para o pleno desenvolvimento no mercado de trabalho. Além disso, a existência de *peer effects* positivos nessa fase da vida escolar [@henry2007] pode ajudar a reforçar o retorno marginal da educação infantil e sua importância para a produtividade futura. A educação reduz o crime nesse caso se:
+
+$$ 
+\frac{\partial A}{\partial S} > 0 
+$$
+
+**Incapacitação.** O último e um dos mais importantes canais pelos quais a educação impacta o envolvimento criminal é a incapacitação. Nesse caso, a ideia é bem parecida com a discussão do efeito das prisões, se por um lado a educação afeta a decisão de cometer crime pelo seu efeito sobre salários, emprego, *peer effects* e preferências mais direcionadas ao futuro (efeito dissuasão), por outro lado o simples fato do jovem estar presente em sala de aula reduz, mecanicamente, a probabilidade da prática da atividade criminosa (efeito incapacitação). Assim, a educação impactaria negativamente a atividade criminosa se:
+
+$$ 
+\frac{\partial T_t}{\partial S_t} > 0 
+$$ 
+
+em que a escolaridade aumentaria o custo marginal de tempo para o cometimento de crime, como por exemplo através da necessidade de substituição de parte do tempo fora da escola (lazer) por tempo dedicado ao crime.
+
+No entanto, é possível que a educação, em especial infantil e primária, tenha um efeito positivo sobre o nível de habilidade do indivíduo e sua propensão a continuar se educando. Nesse sentido, a educação teria um efeito de incapacitação não apenas de curto-prazo, mas também dinâmico e que afeta o nível de educação futura. O crime seria impactado negativamente nesse caso se:
+
+$$
+\frac{\partial S_{t+1}}{\partial A_{t+1}} \times \frac{\partial A_{t+1}}{\partial S_t} > 0
+$$
+
+## Evidências empíricas
+
+### Quantidade de educação e escolaridade compulsória
+
+Apesar da existência de vários canais teóricos pelos quais a educação reduziria crime, os desafios empíricos para obtenção de estimativas consistentes do efeito causal são inúmeros. Uma das primeiras estratégias de identificação utilizadas na literatura foi baseada nas chamadas leis de escolaridade compulsória ou *compulsory schooling laws*. Essa estratégia gera variação exógena no nível de instrução sem estar correlacionada a características individuais não observáveis. 
+
+@lochner2004 é uma das contribuições seminais nessa área. O artigo se utiliza de um painel no nível do estado americano, com variação nas leis de educação compulsória, para avaliar como a quantidade de educação afeta encarceramento futuro. Os efeitos são estimados a partir de três fontes de dados: (i) Censos dos EUA (1960, 1970 e 1980); (ii) relatórios do *Uniform Crime Reports* (UCR) do FBI, que permitem analisar prisões por diferentes tipos de crime; e (iii) a *National Longitudinal Survey* (NLSY), que traz dados autorrelatados de envolvimento em atividades criminosas.  
+
+O artigo sugere um efeito robusto no primeiro estágio: a elevação da idade mínima de permanência escolar no estado de origem dos indivíduos aumentou de forma significativa os anos médios de escolaridade. Por outro lado, a análise de forma reduzida das prisões mostra uma queda expressiva na criminalidade entre as coortes afetadas, indicando que cada ano adicional de estudo reduz em pelo menos $11\%$ a taxa de prisões no nível estadual, tanto para crimes violentos quanto para crimes contra a propriedade. Além disso, os efeitos parecem ser mais fortes para jovens negros: um ano adicional de escolaridade reduz em $0.1$ ponto percentual a probabilidade de encarceramento entre brancos e em $0.37$ pontos entre negros, o que explica até $23\%$ da diferença racial de encarceramento em 1980. 
+
+Um outro artigo bastante influente nessa literatura é @machin2011. Os autores exploram uma mudança institucional ocorrida na Inglaterra e no País de Gales entre 1972 e 1973, quando a idade mínima de escolaridade obrigatória foi elevada de 15 para 16 anos. Apesar de utilizarem mudanças nas regras de escolaridade compulsória, a principal estratégia de identificação do artigo se baseia na comparação entre coortes que, por pouco, foram afetadas ou não afetadas pela política. Assim, a estimação é feita através de uma regressão descontínua, em que a *running variable* é o ano de nascimento do indivíduo, o que determina de forma exógena se o mesmo será afetado ou não pela política de escolaridade mínima.
+
+A @fig-machin2011 sintetiza os resultados do estudo a partir de dados compreendidos entre 1972 e 1996. A lei, promulgada em setembro de 1972, determinou que os indivíduos que completassem 15 anos naquele ano (nascidos em 1957) não seriam afetados, ao passo que aqueles que deveriam concluir a escolaridade em 1973 (nascidos em 1958) seriam obrigados a permanecer na escola por um ano adicional, até os 16 anos. O Painel A evidencia o impacto dessa mudança sobre a idade média de saída da escola, revelando um aumento significativo a partir da coorte nascida em 1958. O Painel B, por sua vez, mostra uma redução estatisticamente significativa na probabilidade de condenação criminal por crimes contra propriedade quando comparadas as coortes anteriores e posteriores a 1958. Em conjunto, esses resultados apontam para um efeito causal negativo da ampliação da escolaridade obrigatória na redução da criminalidade.
+
+[INSERIR FIGURA]
+
+São várias as contribuições que vieram após Lochner and Moretti (2004) e Draca et al. (2011) que reforçam a evidência de que maior escolaridade, medida pela elevação da idade mínima de conclusão do ensino obrigatório, reduz a criminalidade. Esse padrão aparece em diferentes países, como Estados Unidos, Reino Unido, Austrália, Suécia, Dinamarca e Itália. No entanto, esses estudos não analisam diretamente os efeitos das reformas sobre estudantes que permaneceriam na escola mesmo sem a mudança legal. Para esse grupo, a extensão do período de escolaridade obrigatória pode implicar maior tempo de convivência com colegas indisciplinados, o que tende a afetar negativamente o aprendizado, as perspectivas salariais e até o risco de envolvimento em atividades criminosas — um ponto ainda pouco explorado e promissor para pesquisas futuras.
+
+### Incapacitação
+
+O mecanismo de incapacitação parte da ideia de que o tempo que os jovens passam na escola reduz diretamente as oportunidades de envolvimento em atividades criminosas. Ao manter estudantes ocupados em sala de aula durante parte significativa do dia, a escolarização funciona como uma barreira imediata contra o crime, especialmente em idades críticas da adolescência, quando a propensão a comportamentos de risco tende a ser maior. 
+
+Uma estratégia bastante utilizada para diferenciar empiricamente os mecanismos de produtividade (e o impacto de disuasão *à la* Becker) e de incapacitação consiste em investigar se a relação entre educação e criminalidade se manifesta durante o período em que os indivíduos ainda estão na escola ou apenas no longo prazo. Em geral, os artigos que tentam isolar o efeito de incapacitação se valem de variações exógenas no número e duração dos dias escolares para avaliar o impacto sobre crime nesse período sem aulas.
+
+@jacob2003 fornecem uma das primeiras evidências robustas desse mecanismo. Os autores exploram variações exógenas na frequência escolar decorrentes de dias de treinamento de professores e mostram que, quando os jovens estão na escola, há uma redução contemporânea nos crimes contra a propriedade dos estados americanos. Por outro lado, encontram um aumento em crimes violentos, sugerindo que a maior concentração de adolescentes em um mesmo ambiente pode gerar conflitos interpessoais. Na mesma linha, @luallen2006 analisa greves de professores nos Estados Unidos como choques inesperados na oferta de dias letivos. Os resultados indicam que a ausência prolongada de aulas eleva a criminalidade juvenil, particularmente entre jovens em situação de maior vulnerabilidade, sugerindo que a incapacitação pode ter impactos mais intensos sobre grupos de maior risco.
+
+Uma outra contribuição importante nessa literatura é @berthelon2011, que investigam a ampliação da duração do dia escolar no Chile através da implementação de escolas de tempo integral. O estudo mostra que o aumento do tempo diário de permanência na escola reduziu não apenas a criminalidade juvenil, mas também a maternidade precoce, outro comportamento de risco fortemente associado à trajetória de vulnerabilidade social. Essas evidências sugerem que os efeitos da incapacitação vão além da redução imediata do crime, afetando também outras dimensões do comportamento juvenil.
+
+### Qualidade da educação
+
+Mais recentemente, a literatura tem destacado não apenas a quantidade, mas também a qualidade da educação como fator determinante da criminalidade. Desde meados dos anos 2000, diversos estudos documentam que o efeito disuasão que a educação tem sobre o crime é potencializado quando ela ocorre em escolas de melhor qualidade. Em geral, esses trabalhos exploram contextos em que a demanda excede a oferta de vagas nessas escolas de melhor qualidade, solucionada por meio de aleatorização e loterias, o que permite identificar efeitos causais.
+
+Um dos primeiros estudos nesse campo é @cullen2006, que analisam dados administrativos de alunos e escolas públicas de Chicago. Utilizando a aleatorização das vagas em escolas de alta qualidade $-$ medidas por indicadores como taxas de abandono e conclusão do ensino $-$ os autores investigam o impacto sobre desempenho escolar e comportamento. Os resultados indicam que, embora os alunos sorteados não apresentem ganhos significativos de desempenho acadêmico, frequentar uma escola de melhor qualidade reduz em cerca de $60\%$ as taxas de prisão autoreportadas. Os resultados parecem ser mais fortes entre alunos que tiveram um aumento significativo na qualidade média dos pares com quem interagem em relação àqueles que costumavam interagir. 
+
+Seguindo a mesma linha, @deming2011 analisa um distrito escolar da Carolina do Norte que adotou matrícula aberta em toda a rede, com distribuição de vagas em escolas superlotadas também definida por loteria. Diferentemente do estudo de Chicago, o foco aqui recai diretamente sobre os efeitos do acesso à escola de melhor qualidade sobre indicadores de criminalidade. O autor acompanha os alunos por sete anos após a randomização e mostra que, entre indivíduos de alto risco $-$ identificados por características demográficas e desempenho escolar prévio $-$, os vencedores da loteria apresentaram $45\%$ menos prisões por crimes graves na vida adulta. A investigação dos mecanismos sugere dois canais principais: (i) maior retorno da escolaridade e consequente aumento do custo de oportunidade do crime para alunos sorteados para escolas de melhor qualidade no ensino secundário; e (ii) efeitos de rede, já que a exposição a colegas com menor propensão ao crime no ensino primário gera impactos duradouros sobre o comportamento criminal na vida adulta.
+
+## O impacto do crime na educação
+
+Apesar da literatura considerar, majoritariamente, o efeito da educação sobre o crime, existe um potencial link causal na direção contrária, em que experiências com violência podem afetar o acúmulo educacional. Isso é verdade tanto para os indivíduos envolvidos diretamente na atividade ilícita quanto aqueles não envolvidos, mas expostos a algum nível de violência local.
+
+@monteiro2017 é um dos artigos que avalia os efeitos sobre educação de jovens expostos a eventos violentos. Nesse estudo, os autores investigam como tiroteios entre facções do tráfico em favelas da cidade do Rio de Janeiro afetam o aprendizado de alunos da rede pública. Para isso, os autores exploram variações exógenas na intensidade da violência em áreas específicas ao longo do tempo, identificadas a partir de registros de confrontos obtidos com o Disque-Denúncia. Esses dados foram combinados a informações de desempenho e nota na Prova Brasil $-$ exame aplicado a todos alunos da quinta série da rede pública de ensino $-$ e registros administrativos das escolas entre os anos de 2003 e 2009.
+
+A estratégia empírica se baseia na seguinte regressão:
+
+$$
+Y_{ist} = \beta V_{st} + \alpha X_{ist} + \mu_s + \gamma_t + \epsilon_{ist} 
+$$ {eq-monteiro2017}
+
+em que $Y_{ist}$ é a variável que mede o desempenho escolar do aluno $i$, matriculado na quinta série da escola $s$, no ano $t \in \{2005,2007,2009\}$. $\mu_s$ e $\gamma_t$ são efeitos fixos de escola e ano, respectivamente. $V_{st}$ é a variável que mede a exposição à violência entre grupos rivais e é definida como
+
+$$ 
+V_{st} = \begin{cases}
+1, & \text{se } \sum_j \mathbb{1}\{D_{sj}<B\} \vartheta_{jt} \ge n, \\
+0, & \text{caso contrário}
+\end{cases}
+$$
+
+em que $\vartheta_{jt}$ é o número de dias com registro de conflito entre grupos rivais na favela $j$ ao longo do ano $t$. O termo $\mathbb{1}\{D_{sj}<B\}$ é uma função que indica se a distância $D_{sj}$ entre a escola $s$ e a fronteira da favela $j$ é menor do que $B$ metros. Assim, $V_{st}$ é igual a $1$ se, ao considerar todas as favelas a uma certa distância da escola, houve ao menos $n$ dias ao longo do ano com registro de tiroteios entre grupos organizados.
+
+[INSERIR TABELA]
+
+A @tab-monteiro2017 mostra as estimativas do efeito da violência sobre a proficiência dos alunos, em número de desvios-padrão, em matemática e linguagens para o caso em que $B=250m$ e $n=2$. Na especificação principal, que contempla efeito fixo da escola e está representada na coluna (3), os resultados indicam que a exposição à violência, medida pela presença de tiroteios, não parece ter efeito significativo sobre as notas em linguagens mas leva a uma redução significativa das notas em matemática — aproximadamente $0.054$ desvios-padrão. A @fig-monteiro2017 sugere que os efeitos em matemática são maiores quanto mais próximo da escola forem os eventos e quanto maior o número de eventos dentro de um mesmo ano escolar.   
+
+[INSERIR FIGURA]
+
+Por fim, os autores testam potenciais mecanismos para os efeitos da violência sobre o desempenho em matemática. Os resultados sugerem que esses efeitos decorrem, em grande medida, de choques na oferta de educação: professores faltam mais, há maior rotatividade de diretores e, em alguns casos, fechamento temporário das escolas. Assim, a violência impacta diretamente o ambiente escolar e a qualidade da instrução recebida pelos alunos.
+
+Evidências complementares vêm de @menezes2021, que analisam o efeito de homicídios sobre investimentos em capital humano na cidade de São Paulo. Utilizando dados administrativos detalhados de saúde e educação, os autores avaliam os efeitos da exposição de crianças e adolescentes a homicídios ocorridos nas proximidades de suas residências, das escolas que frequentam e do caminho que potencialmente utilizam para ir de suas casas até a escola. Os resultados mostram que a violência reduz a probabilidade de frequência escolar regular e prejudica o desempenho acadêmico, sobretudo em áreas de maior vulnerabilidade. Além disso, os efeitos vão além do curto prazo, influenciando de forma significativa as aspirações educacionais, sobretudo entre os meninos, grupo historicamente mais exposto e afetado pelos homicídios.
+
+## Conclusão
+
+Bla bla bla
+
+## Questões para discussão
+
+1. X

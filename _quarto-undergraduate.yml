@@ -21,18 +21,18 @@ book:
     - index.qmd
     - undergrad/prefacio.qmd
     
-    - part: undergrad/modelo_racional.qmd
+    - part: undergrad/modelo-racional.qmd
       chapters:
         - undergrad/Becker1968.qmd
         - undergrad/Ehrlich1973.qmd
         - undergrad/limitacoes.qmd
         
-    - part: undergrad/evidencia_classica.qmd
+    - part: undergrad/evidencia-classica.qmd
       chapters:
         - undergrad/policiamento.qmd
         - undergrad/encarceramento.qmd
-    #    - labor_markets.qmd
-    #    - education.qmd
+        - undergrad/mercado-de-trabalho.qmd
+        - undergrad/educacao.qmd
         
     #- part: topics.qmd
     #  chapters:

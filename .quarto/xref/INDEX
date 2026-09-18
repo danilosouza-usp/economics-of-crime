@@ -43,5 +43,17 @@
   },
   "undergrad/encarceramento.qmd": {
     "encarceramento.html": "b96f17f9"
+  },
+  "undergrad/modelo-racional.qmd": {
+    "modelo-racional.html": "4e44a1fa"
+  },
+  "undergrad/evidencia-classica.qmd": {
+    "evidencia-classica.html": "69e34d77"
+  },
+  "undergrad/mercado-de-trabalho.qmd": {
+    "mercado-de-trabalho.html": "c3f18d32"
+  },
+  "undergrad/educacao.qmd": {
+    "educacao.html": "8f2fd154"
   }
 }

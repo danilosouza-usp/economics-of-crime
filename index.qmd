@@ -20,12 +20,11 @@ As notas não substituem a leitura dos artigos e demais referências indicadas n
 
 Este website é atualizado continuamente, refletindo *feedbacks* a respeito do conteúdo, incorporação de novos resultados da literatura e ajustes na estrutura da disciplina.
 
+- **18 de Setembro, 2026**: Correção de typos; disponibilização de rascunho para consulta dos capítulos 4, 5, 6 e 7.
 - **30 de Agosto, 2026**: Disponibilização da versão final dos capítulos 1, 2 e 3.
 - **24 de Agosto, 2026**: Disponibilização da primeira versão das notas de aula e dos capítulo 1 e 2.
 
 ## Agradecimentos
-
-[Inserir agradecimentos, caso aplicável.]
 
 Este material é de propriedade intelectual do autor e não deve ser copiado ou reproduzido para fins comerciais. Não houve, até o momento, revisão técnica completa do material, de modo que o uso para fins acadêmicos é de inteira responsabilidade daquele que decidir por assim utilizar o material. Eventuais erros ou imprecisões são de responsabilidade exclusiva do autor do material.
 
